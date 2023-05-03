@@ -37,6 +37,9 @@ rpms:
   # add your own below
   - fish
   - gnome-console
+  # TODO: Add later after initial tests
+  #- rocm-opencl
+  #- rocm-clinfo
 
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
