@@ -2,7 +2,7 @@
 # If you are looking at this file in your root directory on your computer, editing it does nothing.
 
 # The image will be at ghcr.io/yourusername/name
-name: startingpoint
+name: zeliblue
 
 # The native container image to build on top of
 # Warning: Non-uBlue images might function unexpectly
@@ -12,10 +12,10 @@ base-image: ghcr.io/ublue-os/silverblue-main
 # If you use `latest`, you will be automatically updated
 # to the next major version assuming the image you're using as your base container
 # builds with the tag (all uBlue images do this).
-fedora-version: 37
+fedora-version: latest
 
 # This description will be visible in the container metadata
-description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
+description: Akzel's custom uBlue image, based on https://ublue.it/making-your-own/
 
 # These scripts will be executed during the container build
 # Place scripts in scripts/ and put the corresponding filename here
@@ -32,19 +32,22 @@ extrarepos:
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
   # needed for yafti (the first boot installer) (remove if you're not using yafti)
-  - python3-pip
-  - libadwaita # libadwaita comes with silverblue, but not with other flavors
+  #- python3-pip
+  #- libadwaita # libadwaita comes with silverblue, but not with other flavors
   # add your own below
+  - fish
+  - gnome-console
+  # TODO: Add later after initial tests
+  #- rocm-opencl
+  #- rocm-clinfo
 
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
 # If you leave this empty you can use yafti for post-boot installation
 flatpaks:
-  - org.mozilla.firefox
-  - org.mozilla.Thunderbird
+  - org.gnome.Epiphany
   - com.mattjakeman.ExtensionManager
   - org.libreoffice.LibreOffice
-  - org.gnome.DejaDup
-  - org.gustavoperedo.FontDownloader
+  - org.gnome.World.PikaBackup
   - com.github.tchx84.Flatseal
-  - io.github.celluloid_player.Celluloid
+  - com.github.rafostar.Clapper
