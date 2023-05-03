@@ -42,11 +42,9 @@ rpms:
 # this is just an example selection.
 # If you leave this empty you can use yafti for post-boot installation
 flatpaks:
-  - org.mozilla.firefox
-  - org.mozilla.Thunderbird
+  - org.gnome.Epiphany
   - com.mattjakeman.ExtensionManager
   - org.libreoffice.LibreOffice
-  - org.gnome.DejaDup
-  - org.gustavoperedo.FontDownloader
+  - org.gnome.World.PikaBackup
   - com.github.tchx84.Flatseal
-  - io.github.celluloid_player.Celluloid
+  - com.github.rafostar.Clapper
