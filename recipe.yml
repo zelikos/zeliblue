@@ -2,7 +2,7 @@
 # If you are looking at this file in your root directory on your computer, editing it does nothing.
 
 # The image will be at ghcr.io/yourusername/name
-name: startingpoint
+name: zeliblue
 
 # The native container image to build on top of
 # Warning: Non-uBlue images might function unexpectly
