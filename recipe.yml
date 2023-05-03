@@ -15,7 +15,7 @@ base-image: ghcr.io/ublue-os/silverblue-main
 fedora-version: latest
 
 # This description will be visible in the container metadata
-description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
+description: Akzel's custom uBlue image, based on https://ublue.it/making-your-own/
 
 # These scripts will be executed during the container build
 # Place scripts in scripts/ and put the corresponding filename here
