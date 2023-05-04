@@ -39,16 +39,16 @@ setup-flatpaks:
 setup-gaming:
   #!/bin/bash
   echo 'Setting up gaming experience ... lock and load.'
-  flatpak install -y --user \\
-  com.discordapp.Discord \\
-  org.freedesktop.Platform.GStreamer.gstreamer-vaapi//22.08 \\
-  org.freedesktop.Platform.VulkanLayer.MangoHud//22.08 \\
-  org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \\
-  org.freedesktop.Platform.VulkanLayer.vkBasalt//22.08 \\
-  com.obsproject.Studio \\
-  com.obsproject.Studio.Plugin.OBSVkCapture \\
-  com.obsproject.Studio.Plugin.Gstreamer \\
-  com.valvesoftware.Steam \\
+  flatpak install -y --user \
+  com.discordapp.Discord \
+  org.freedesktop.Platform.GStreamer.gstreamer-vaapi//22.08 \
+  org.freedesktop.Platform.VulkanLayer.MangoHud//22.08 \
+  org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \
+  org.freedesktop.Platform.VulkanLayer.vkBasalt//22.08 \
+  com.obsproject.Studio \
+  com.obsproject.Studio.Plugin.OBSVkCapture \
+  com.obsproject.Studio.Plugin.Gstreamer \
+  com.valvesoftware.Steam \
   com.valvesoftware.Steam.Utility.gamescope
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam
   flatpak override --user --env=OBS_VKCAPTURE=1 com.valvesoftware.Steam
