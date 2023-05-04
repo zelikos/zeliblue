@@ -24,8 +24,6 @@ screens:
     source: yafti.screen.consent
     values:
       title: Setup flathub
-      condition:
-        run: flatpak remotes --user | grep flathub
       description: |
         Setting up Flathub for the current user.
       actions:
