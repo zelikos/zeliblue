@@ -48,6 +48,11 @@ setup-gaming:
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam
   flatpak override --user --env=OBS_VKCAPTURE=1 com.valvesoftware.Steam
 
+setup-just:
+  echo 'Copying over justfile from /etc/justfile ...'
+  mv ~/.justfile ~/.justfile-bak
+  cp /etc/justfile ~/.justfile
+
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
   /usr/bin/ublue-nix-install
