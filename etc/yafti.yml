@@ -23,9 +23,9 @@ screens:
   modify-flatpaks-2:
     source: yafti.screen.consent
     values:
-      title: Setup flathub
+      title: Setup Flathub
       description: |
-        Setting up Flathub for the current user.
+        Set up Flathub for the current user.
       actions:
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   applications:
@@ -43,23 +43,23 @@ screens:
             - Calculator: org.gnome.Calculator
             - Calendar: org.gnome.Calendar
             - Characters: org.gnome.Characters
+            - Clocks: org.gnome.clocks
             - Contacts: org.gnome.Contacts
+            - Disk Usage Analyzer: org.gnome.baobab
             - Document Viewer: org.gnome.Evince
             - Extensions Manager: com.mattjakeman.ExtensionManager
             - Fedora Media Writer: org.fedoraproject.MediaWriter
-            - Web: org.gnome.Epiphany
             - Flatseal Permissions Manager: com.github.tchx84.Flatseal
+            - Font Downloader: org.gustavoperedo.FontDownloader
+            - Font Viewer: org.gnome.font-viewer
+            - Image Viewer: org.gnome.Loupe
             - Logs: org.gnome.Logs
             - Maps: org.gnome.Maps
             - Text Editor: org.gnome.TextEditor
             - Weather: org.gnome.Weather
-            - Disk Usage Analyzer: org.gnome.baobab
-            - Clocks: org.gnome.clocks
-            - Image Viewer: org.gnome.Loupe
-            - Font Viewer: org.gnome.font-viewer
-            - Font Downloader: org.gustavoperedo.FontDownloader
+            - Web: org.gnome.Epiphany
         Web Browsers:
-          description: Additional browsers to complement GNOME Web
+          description: Additional browsers to complement Web
           default: false
           packages:
             - Brave: com.brave.Browser
@@ -85,7 +85,6 @@ screens:
             - Iotas: org.gnome.gitlab.cheywood.Iotas
             - LibreOffice: org.libreoffice.LibreOffice
             - OnlyOffice: org.onlyoffice.desktopeditors
-            - Slack: com.slack.Slack
             - Standard Notes: org.standardnotes.standardnotes
             - Thunderbird Email: org.mozilla.Thunderbird
         Streaming:
@@ -93,9 +92,6 @@ screens:
           default: false
           packages:
             - OBS Studio: com.obsproject.Studio
-            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
-            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
-            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
             - Boatswain for Streamdeck: com.feaneron.Boatswain
 
   final-screen:
