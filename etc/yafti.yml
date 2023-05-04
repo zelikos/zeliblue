@@ -92,8 +92,6 @@ screens:
           default: false
           packages:
             - OBS Studio: com.obsproject.Studio
-            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
-            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
             - Boatswain for Streamdeck: com.feaneron.Boatswain
 
   final-screen:
