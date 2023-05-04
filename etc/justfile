@@ -49,8 +49,9 @@ setup-gaming:
   flatpak override --user --env=OBS_VKCAPTURE=1 com.valvesoftware.Steam
 
 setup-just:
-  echo 'Copying over justfile from /etc/justfile ...'
+  echo 'Backing up current justfile to ~/.justfile-bak ...'
   mv ~/.justfile ~/.justfile-bak
+  echo 'Copying over justfile from /etc/justfile ...'
   cp /etc/justfile ~/.justfile
 
 nix-me-up:
