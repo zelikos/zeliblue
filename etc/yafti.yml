@@ -23,9 +23,9 @@ screens:
   modify-flatpaks-2:
     source: yafti.screen.consent
     values:
-      title: Setup flathub
+      title: Setup Flathub
       description: |
-        Setting up Flathub for the current user.
+        Set up Flathub for the current user.
       actions:
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   applications:
