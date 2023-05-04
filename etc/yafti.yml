@@ -94,7 +94,6 @@ screens:
             - OBS Studio: com.obsproject.Studio
             - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
             - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
-            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
             - Boatswain for Streamdeck: com.feaneron.Boatswain
 
   final-screen:
