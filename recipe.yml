@@ -32,13 +32,16 @@ extrarepos:
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
   # needed for yafti (the first boot installer) (remove if you're not using yafti)
-  #- python3-pip
+  - python3-pip
   #- libadwaita # libadwaita comes with silverblue, but not with other flavors
   # add your own below
   - fish
   - gnome-console
-  - rocm-opencl
-  - rocm-clinfo
+  # Tentatively removing ROCm again because my main usage for OpenCL is for DaVinci Resolve,
+  # which is usable inside of a container: https://gist.github.com/bluesabre/8814afece711b0ca49de34c41e50b296
+  # No need to clutter up the base image here.
+  #- rocm-opencl
+  #- rocm-clinfo
 
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
