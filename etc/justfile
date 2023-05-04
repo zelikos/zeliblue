@@ -36,7 +36,7 @@ setup-gaming:
   echo 'Setting up gaming experience ... lock and load.'
   flatpak install -y --user \\
   com.discordapp.Discord \\
-  org.freedesktop.Platform.GStreamer.gstreamer-vaapi \\
+  org.freedesktop.Platform.GStreamer.gstreamer-vaapi//22.08 \\
   org.freedesktop.Platform.VulkanLayer.MangoHud//22.08 \\
   org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \\
   org.freedesktop.Platform.VulkanLayer.vkBasalt//22.08 \\
@@ -47,6 +47,12 @@ setup-gaming:
   com.valvesoftware.Steam.Utility.gamescope
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam
   flatpak override --user --env=OBS_VKCAPTURE=1 com.valvesoftware.Steam
+
+setup-just:
+  echo 'Backing up current justfile to ~/.justfile-bak ...'
+  mv ~/.justfile ~/.justfile-bak
+  echo 'Copying over justfile from /etc/justfile ...'
+  cp /etc/justfile ~/.justfile
 
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
