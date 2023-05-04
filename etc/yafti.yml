@@ -85,7 +85,6 @@ screens:
             - Iotas: org.gnome.gitlab.cheywood.Iotas
             - LibreOffice: org.libreoffice.LibreOffice
             - OnlyOffice: org.onlyoffice.desktopeditors
-            - Slack: com.slack.Slack
             - Standard Notes: org.standardnotes.standardnotes
             - Thunderbird Email: org.mozilla.Thunderbird
         Streaming:
