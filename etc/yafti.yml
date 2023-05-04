@@ -43,21 +43,21 @@ screens:
             - Calculator: org.gnome.Calculator
             - Calendar: org.gnome.Calendar
             - Characters: org.gnome.Characters
+            - Clocks: org.gnome.clocks
             - Contacts: org.gnome.Contacts
+            - Disk Usage Analyzer: org.gnome.baobab
             - Document Viewer: org.gnome.Evince
             - Extensions Manager: com.mattjakeman.ExtensionManager
             - Fedora Media Writer: org.fedoraproject.MediaWriter
-            - Web: org.gnome.Epiphany
             - Flatseal Permissions Manager: com.github.tchx84.Flatseal
+            - Font Downloader: org.gustavoperedo.FontDownloader
+            - Font Viewer: org.gnome.font-viewer
+            - Image Viewer: org.gnome.Loupe
             - Logs: org.gnome.Logs
             - Maps: org.gnome.Maps
             - Text Editor: org.gnome.TextEditor
             - Weather: org.gnome.Weather
-            - Disk Usage Analyzer: org.gnome.baobab
-            - Clocks: org.gnome.clocks
-            - Image Viewer: org.gnome.Loupe
-            - Font Viewer: org.gnome.font-viewer
-            - Font Downloader: org.gustavoperedo.FontDownloader
+            - Web: org.gnome.Epiphany
         Web Browsers:
           description: Additional browsers to complement GNOME Web
           default: false
