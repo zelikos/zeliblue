@@ -59,7 +59,7 @@ screens:
             - Weather: org.gnome.Weather
             - Web: org.gnome.Epiphany
         Web Browsers:
-          description: Additional browsers to complement GNOME Web
+          description: Additional browsers to complement Web
           default: false
           packages:
             - Brave: com.brave.Browser
