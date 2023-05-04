@@ -55,6 +55,7 @@ screens:
             - Image Viewer: org.gnome.Loupe
             - Logs: org.gnome.Logs
             - Maps: org.gnome.Maps
+            - Media Player: com.github.rafostar.Clapper
             - Text Editor: org.gnome.TextEditor
             - Weather: org.gnome.Weather
             - Web: org.gnome.Epiphany
