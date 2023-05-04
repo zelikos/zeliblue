@@ -8,18 +8,22 @@ changelogs:
   rpm-ostree db diff --changelogs
 
 distrobox-boxkit:
+  #!/bin/bash
   echo 'Creating Boxkit distrobox ...'
   distrobox create --image ghcr.io/ublue-os/boxkit -n boxkit -Y
 
 distrobox-debian:
+  #!/bin/bash
   echo 'Creating Debian distrobox ...'
   distrobox create --image quay.io/toolbx-images/debian-toolbox:unstable -n debian -Y
 
 distrobox-opensuse:
+  #!/bin/bash
   echo 'Creating openSUSE distrobox ...'
   distrobox create --image quay.io/toolbx-images/opensuse-toolbox:tumbleweed -n opensuse -Y
 
 distrobox-ubuntu:
+  #!/bin/bash
   echo 'Creating Ubuntu distrobox ...'
   distrobox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04 -n ubuntu -Y
 
@@ -33,6 +37,7 @@ setup-flatpaks:
   done
 
 setup-gaming:
+  #!/bin/bash
   echo 'Setting up gaming experience ... lock and load.'
   flatpak install -y --user \\
   com.discordapp.Discord \\
@@ -49,12 +54,14 @@ setup-gaming:
   flatpak override --user --env=OBS_VKCAPTURE=1 com.valvesoftware.Steam
 
 setup-just:
+  #!/bin/bash
   echo 'Backing up current justfile to ~/.justfile-bak ...'
   mv ~/.justfile ~/.justfile-bak
   echo 'Copying over justfile from /etc/justfile ...'
   cp /etc/justfile ~/.justfile
 
 nix-me-up:
+  #!/bin/bash
   echo 'Setting phasers to kill. Installing nix.'
   /usr/bin/ublue-nix-install
 
