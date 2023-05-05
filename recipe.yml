@@ -37,9 +37,6 @@ rpms:
   # add your own below
   - fish
   - gnome-console
-  - virt-install
-  - virt-manager
-  - virt-viewer
   # Tentatively removing ROCm again because my main usage for OpenCL is for DaVinci Resolve,
   # which is usable inside of a container: https://gist.github.com/bluesabre/8814afece711b0ca49de34c41e50b296
   # No need to clutter up the base image here.
