@@ -28,9 +28,9 @@ distrobox-ubuntu:
   distrobox create --image quay.io/toolbx-images/ubuntu-toolbox:22.04 -n ubuntu -Y
 
 setup-flatpaks:
-  #!/bin/bash
+  #!/usr/bin/env bash
   echo 'Installing flatpaks from the ublue recipe ...'
-  flatpaks=$(yq '.flatpaks[]' < /usr/etc/ublue-recipe.yml)
+  flatpaks=$(yq '.flatpaks[]' < /usr/share/ublue-os/recipe.yml)
   for pkg in $flatpaks; do \
       echo "Installing: ${pkg}" && \
       flatpak install --user --noninteractive flathub $pkg; \
@@ -66,7 +66,7 @@ nix-me-up:
   /usr/bin/ublue-nix-install
 
 update:
-  #!/bin/bash
+  #!/usr/bin/env bash
   echo "Staging system update..."
   rpm-ostree update
 
