@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/zelikos/zeliblue/compare/v1.0.2...v1.1.0) (2023-05-14)
+
+
+### Features
+
+* **yafti:** Try setting groups to user installs ([c7e145b](https://github.com/zelikos/zeliblue/commit/c7e145bead8facc3035c87def3b8144a984b4bbe))
+* **yafti:** Update Flatpaks selection ([ca0be60](https://github.com/zelikos/zeliblue/commit/ca0be60429278447bd1e512f6e088a459fc7408c))
+
 ## [1.0.2](https://github.com/zelikos/zeliblue/compare/v1.0.1...v1.0.2) (2023-05-14)
 
 
