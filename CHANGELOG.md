@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/zelikos/zeliblue/compare/v1.0.0...v1.0.1) (2023-05-14)
+
+
+### Bug Fixes
+
+* Add boot_menu.yml ([ed587af](https://github.com/zelikos/zeliblue/commit/ed587af39cb47eec6e946ad54f2e05f2593bb2ae))
+
 ## 1.0.0 (2023-05-14)
 
 
