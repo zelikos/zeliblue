@@ -50,64 +50,128 @@ screens:
       show_terminal: true
       package_manager: yafti.plugin.flatpak
       package_manager_defaults:
-        user: false
-        system: true
+        system: false
+        user: true
       groups:
         Core GNOME Apps:
           description: Core system applications for the GNOME desktop environment.
           default: true
           packages:
-            - Backup: org.gnome.World.PikaBackup
-            - Calculator: org.gnome.Calculator
-            - Calendar: org.gnome.Calendar
-            - Characters: org.gnome.Characters
-            - Contacts: org.gnome.Contacts
-            - Disk Usage Analyzer: org.gnome.baobab
-            - Document Scanner: org.gnome.SimpleScan
-            - Document Viewer: org.gnome.Evince
-            - Extensions Manager: com.mattjakeman.ExtensionManager
-            - Fedora Media Writer: org.fedoraproject.MediaWriter
-            - Web: org.gnome.Epiphany
-            - Flatseal Permissions Manager: com.github.tchx84.Flatseal
-            - Logs: org.gnome.Logs
-            - Maps: org.gnome.Maps
-            - Text Editor: org.gnome.TextEditor
-            - Videos (Player): org.gnome.Totem
-            - Weather: org.gnome.Weather
-            - Disk Usage Analyzer: org.gnome.baobab
-            - Clocks: org.gnome.clocks
-            - Image Viewer: org.gnome.Loupe
-            - Font Viewer: org.gnome.font-viewer
-            - Font Downloader: org.gustavoperedo.FontDownloader
-            - Mozilla Firefox: org.mozilla.firefox
+            - Calculator:
+                package: org.gnome.Calculator
+                system: true
+                user: false
+            - Calendar:
+                package: org.gnome.Calendar
+                system: true
+                user: false
+            - Celluloid (Media Player):
+                package: io.github.celluloid_player.Celluloid
+                system: true
+                user: false
+            - Characters:
+                package: org.gnome.Characters
+                system: true
+                user: false
+            - Clocks:
+                package: org.gnome.clocks
+                system: true
+                user: false
+            - Contacts:
+                package: org.gnome.Contacts
+                system: true
+                user: false
+            - Disk Usage Analyzer:
+                package: org.gnome.baobab
+                system: true
+                user: false
+            - Document Scanner:
+                package: org.gnome.SimpleScan
+                system: true
+                user: false
+            - Document Viewer:
+                package: org.gnome.Evince
+                system: true
+                user: false
+            - Extensions Manager:
+                package: com.mattjakeman.ExtensionManager
+                system: true
+                user: false
+            - Font Viewer:
+                package: org.gnome.font-viewer
+                system: true
+                user: false
+            - Image Viewer:
+                package: org.gnome.Loupe
+                system: true
+                user: false
+            - Logs:
+                package: org.gnome.Logs
+                system: true
+                user: false
+            - Maps:
+                package: org.gnome.Maps
+                system: true
+                user: false
+            - Text Editor:
+                package: org.gnome.TextEditor
+                system: true
+                user: false
+            - Weather:
+                package: org.gnome.Weather
+                system: true
+                user: false
+            - Web:
+                package: org.gnome.Epiphany
+                system: true
+                user: false
+        System Apps:
+          description: System applications for all desktop environments.
+          default: true
+          packages:
+            - Fedora Media Writer:
+                package: org.fedoraproject.MediaWriter
+                system: true
+                user: false
+            - Flatseal (Permission Manager):
+                package: com.github.tchx84.Flatseal
+                system: true
+                user: false
+            - Font Downloader:
+                package: org.gustavoperedo.FontDownloader
+                system: true
+                user: false
+            - Mozilla Firefox:
+                package: org.mozilla.firefox
+                system: true
+                user: false
+            - Pika Backup:
+                package: org.gnome.World.PikaBackup
+                system: true
+                user: false
         Web Browsers:
-          description: Additional browsers to complement GNOME Web
+          description: Additional browsers to complement or replace Firefox.
           default: false
           packages:
-            - Brave: com.brave.Browser
             - Chromium: org.chromium.Chromium
             - Google Chrome: com.google.Chrome
             - Microsoft Edge: com.microsoft.Edge
-            - Mozilla Firefox: org.mozilla.firefox
         Gaming:
           description: "Rock and Stone!"
           default: false
           packages:
-            - Bottles: com.usebottles.bottles
             - Discord: com.discordapp.Discord
-            - Cartridges: hu.kramo.Cartridges
             - Heroic Games Launcher: com.heroicgameslauncher.hgl
             - Steam: com.valvesoftware.Steam
-            - Gamescope for Steam: com.valvesoftware.Steam.Utility.gamescope
+            - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
+            - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+            - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
         Office:
           description: Boost your productivity.
           default: false
           packages:
-            - Iotas: org.gnome.gitlab.cheywood.Iotas
             - LibreOffice: org.libreoffice.LibreOffice
             - OnlyOffice: org.onlyoffice.desktopeditors
-            - Obsidian: md.obsidian.Obsidian
-            - Slack: com.slack.Slack
             - Standard Notes: org.standardnotes.standardnotes
             - Thunderbird Email: org.mozilla.Thunderbird
         Streaming:
@@ -115,9 +179,6 @@ screens:
           default: false
           packages:
             - OBS Studio: com.obsproject.Studio
-            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
-            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
-            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
             - Boatswain for Streamdeck: com.feaneron.Boatswain
 
   final-screen:
