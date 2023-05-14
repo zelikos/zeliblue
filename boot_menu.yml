@@ -1,0 +1,6 @@
+ublue_variants:
+  - label: ublue-os/main
+    ks: /kickstart/ublue-os.ks
+    flavors:
+      - label: zeliblue
+        info: GNOME
