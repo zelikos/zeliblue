@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/zelikos/zeliblue/compare/v1.0.1...v1.0.2) (2023-05-14)
+
+
+### Bug Fixes
+
+* Change fedora-version to 38 in recipe ([fd32cff](https://github.com/zelikos/zeliblue/commit/fd32cff8c106cfd923613f268c28805b85d8b206))
+
 ## [1.0.1](https://github.com/zelikos/zeliblue/compare/v1.0.0...v1.0.1) (2023-05-14)
 
 
