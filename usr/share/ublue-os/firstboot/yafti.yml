@@ -8,66 +8,88 @@ screens:
       title: "Welcome to uBlue (Alpha)"
       icon: "/path/to/icon"
       description: |
-        Pick some applications to get started
+        This guided installer will help you get started with your new system.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Traveler
+      title: Welcome, Traveler!
       condition:
-        run: flatpak remotes --system | grep fedora
+        run: flatpak remotes --columns=name | grep fedora
       description: |
-        WARNING: This will modify your Flatpaks if you are rebasing! If you do not want to do this exit the installer.
+        We have detected the limited, Fedora-provided Flatpak remote on your system, whose applications are usually missing important codecs and other features. This step will therefore remove all basic Fedora Flatpaks from your system! We will instead switch all core Flatpak applications over to the vastly superior, unfiltered Flathub. If you don't want to do this, simply exit this installer.
       actions:
-        - run: flatpak remote-delete fedora --force
+        - run: flatpak remote-delete --system --force fedora
+        - run: flatpak remote-delete --user --force fedora
         - run: flatpak remove --system --noninteractive --all
-  modify-flatpaks-2:
+        - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+  check-system-flathub:
     source: yafti.screen.consent
     values:
-      title: Setup Flathub
+      title: Missing Flathub Repository (System)
+      condition:
+        run: flatpak remotes --system --columns=name | grep flathub | wc -l | grep '^0$'
       description: |
-        Set up Flathub for the current user.
+        We have detected that you don't have Flathub's repository on your system. We will now add that repository to your system-wide list.
+      actions:
+        - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+  check-user-flathub:
+    source: yafti.screen.consent
+    values:
+      title: Missing Flathub Repository (User)
+      condition:
+        run: flatpak remotes --user --columns=name | grep flathub | wc -l | grep '^0$'
+      description: |
+        We have detected that you don't have Flathub's repository on your current user account. We will now add that repository to your account.
       actions:
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   applications:
     source: yafti.screen.package
     values:
-      title: Application Installation
+      title: Application Installer
       show_terminal: true
       package_manager: yafti.plugin.flatpak
+      package_manager_defaults:
+        user: false
+        system: true
       groups:
-        Core:
-          description: Core Applications
+        Core GNOME Apps:
+          description: Core system applications for the GNOME desktop environment.
           default: true
           packages:
-            - Backup: org.gnome.World.PikaBackup
             - Calculator: org.gnome.Calculator
             - Calendar: org.gnome.Calendar
             - Characters: org.gnome.Characters
             - Clocks: org.gnome.clocks
             - Contacts: org.gnome.Contacts
             - Disk Usage Analyzer: org.gnome.baobab
+            - Document Scanner: org.gnome.SimpleScan
             - Document Viewer: org.gnome.Evince
             - Extensions Manager: com.mattjakeman.ExtensionManager
-            - Fedora Media Writer: org.fedoraproject.MediaWriter
-            - Flatseal Permissions Manager: com.github.tchx84.Flatseal
-            - Font Downloader: org.gustavoperedo.FontDownloader
             - Font Viewer: org.gnome.font-viewer
             - Image Viewer: org.gnome.Loupe
             - Logs: org.gnome.Logs
             - Maps: org.gnome.Maps
-            - Media Player: com.github.rafostar.Clapper
+            - Media Player: io.github.celluloid_player.Celluloid
             - Text Editor: org.gnome.TextEditor
             - Weather: org.gnome.Weather
-            - Web: org.gnome.Epiphany
+        System Apps:
+          description: System applications for all desktop environments.
+          default: true
+          packages:
+            - Fedora Media Writer: org.fedoraproject.MediaWriter
+            - Flatseal (Permission Manager): com.github.tchx84.Flatseal
+            - Font Downloader: org.gustavoperedo.FontDownloader
+            - Mozilla Firefox: org.mozilla.firefox
+            - Pika Backup: org.gnome.World.PikaBackup
         Web Browsers:
-          description: Additional browsers to complement Web
+          description: Additional browsers to complement or replace Firefox.
           default: false
           packages:
-            - Brave: com.brave.Browser
             - Chromium: org.chromium.Chromium
-            - Google Chrome: com.google.Chrome
+            - Falkon: org.kde.falkon
             - Microsoft Edge: com.microsoft.Edge
-            - Mozilla Firefox: org.mozilla.firefox
+            - Web: org.gnome.Epiphany
         Gaming:
           description: "Rock and Stone!"
           default: false
@@ -76,11 +98,12 @@ screens:
             - Discord: com.discordapp.Discord
             - Cartridges: hu.kramo.Cartridges
             - Heroic Games Launcher: com.heroicgameslauncher.hgl
-            - MangoHUD: org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
             - Steam: com.valvesoftware.Steam
-            - Gamescope for Steam: com.valvesoftware.Steam.Utility.gamescope
+            - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
+            - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+            - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
         Office:
-          description: Bow to Capitalism
+          description: Boost your productivity.
           default: false
           packages:
             - Iotas: org.gnome.gitlab.cheywood.Iotas
@@ -89,7 +112,7 @@ screens:
             - Standard Notes: org.standardnotes.standardnotes
             - Thunderbird Email: org.mozilla.Thunderbird
         Streaming:
-          description: Stream to the Internet
+          description: Stream to the Internet.
           default: false
           packages:
             - OBS Studio: com.obsproject.Studio
