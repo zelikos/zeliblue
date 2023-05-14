@@ -59,6 +59,7 @@ screens:
           packages:
             - Calculator: org.gnome.Calculator
             - Calendar: org.gnome.Calendar
+            - Celluloid (Media Player): io.github.celluloid_player.Celluloid
             - Characters: org.gnome.Characters
             - Clocks: org.gnome.clocks
             - Contacts: org.gnome.Contacts
@@ -70,9 +71,9 @@ screens:
             - Image Viewer: org.gnome.Loupe
             - Logs: org.gnome.Logs
             - Maps: org.gnome.Maps
-            - Media Player: io.github.celluloid_player.Celluloid
             - Text Editor: org.gnome.TextEditor
             - Weather: org.gnome.Weather
+            - Web: org.gnome.Epiphany
         System Apps:
           description: System applications for all desktop environments.
           default: true
@@ -87,16 +88,13 @@ screens:
           default: false
           packages:
             - Chromium: org.chromium.Chromium
-            - Falkon: org.kde.falkon
+            - Google Chrome: com.google.Chrome
             - Microsoft Edge: com.microsoft.Edge
-            - Web: org.gnome.Epiphany
         Gaming:
           description: "Rock and Stone!"
           default: false
           packages:
-            - Bottles: com.usebottles.bottles
             - Discord: com.discordapp.Discord
-            - Cartridges: hu.kramo.Cartridges
             - Heroic Games Launcher: com.heroicgameslauncher.hgl
             - Steam: com.valvesoftware.Steam
             - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
@@ -106,7 +104,6 @@ screens:
           description: Boost your productivity.
           default: false
           packages:
-            - Iotas: org.gnome.gitlab.cheywood.Iotas
             - LibreOffice: org.libreoffice.LibreOffice
             - OnlyOffice: org.onlyoffice.desktopeditors
             - Standard Notes: org.standardnotes.standardnotes
