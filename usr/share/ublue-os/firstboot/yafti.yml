@@ -50,8 +50,8 @@ screens:
       show_terminal: true
       package_manager: yafti.plugin.flatpak
       package_manager_defaults:
-        user: false
-        system: true
+        system: false
+        user: true
       groups:
         Core GNOME Apps:
           description: Core system applications for the GNOME desktop environment.
