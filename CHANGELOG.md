@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.0.0 (2023-05-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* only deploy the branch named "live", to simplify development
+### Features
+
+* **yafti:** Make user install the default ([ad3cdde](https://github.com/zelikos/zeliblue/commit/ad3cdde64f2998943d8c912ffbf5ed98dfb12da7))
+
+
+### Miscellaneous Chores
+
+* release 2.0.0 ([d570cf6](https://github.com/zelikos/zeliblue/commit/d570cf69415cdb83bf41505147582a90738cb98b))
+
 ## [1.1.0](https://github.com/zelikos/zeliblue/compare/v1.0.2...v1.1.0) (2023-05-14)
 
 
