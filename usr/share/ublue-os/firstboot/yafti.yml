@@ -168,6 +168,14 @@ screens:
             - OnlyOffice: org.onlyoffice.desktopeditors
             - Standard Notes: org.standardnotes.standardnotes
             - Thunderbird Email: org.mozilla.Thunderbird
+        Graphics:
+          description: Express yourself.
+          default: false
+          packages:
+            - Darktable: org.darktable.Darktable
+            - GIMP: org.gimp.GIMP
+            - Inkscape: org.inkscape.Inkscape
+            - Krita: org.kde.krita
         Streaming:
           description: Stream to the Internet.
           default: false
