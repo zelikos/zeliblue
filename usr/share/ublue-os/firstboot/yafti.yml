@@ -57,26 +57,74 @@ screens:
           description: Core system applications for the GNOME desktop environment.
           default: true
           packages:
-            - Calculator: org.gnome.Calculator
-            - Calendar: org.gnome.Calendar
-            - Characters: org.gnome.Characters
-            - Cheese: org.gnome.Cheese
-            - Clocks: org.gnome.clocks
-            - Connections: org.gnome.Connections
-            - Contacts: org.gnome.Contacts
-            - Disk Usage Analyzer: org.gnome.baobab
-            - Document Scanner: org.gnome.SimpleScan
-            - Document Viewer: org.gnome.Evince
-            - Extension Manager: com.mattjakeman.ExtensionManager
-            - Font Viewer: org.gnome.font-viewer
-            - Image Viewer: org.gnome.eog
-            - Logs: org.gnome.Logs
-            - Maps: org.gnome.Maps
-            - Photos (Organizer): org.gnome.Photos
-            - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
-            - Text Editor: org.gnome.TextEditor
-            - Videos (Player): org.gnome.Totem
-            - Weather: org.gnome.Weather
+            - Calculator:
+                package: org.gnome.Calculator
+                system: true
+                user: false
+            - Calendar:
+                package: org.gnome.Calendar
+                system: true
+                user: false
+            - Celluloid (Media Player):
+                package: io.github.celluloid_player.Celluloid
+                system: true
+                user: false
+            - Characters:
+                package: org.gnome.Characters
+                system: true
+                user: false
+            - Clocks:
+                package: org.gnome.clocks
+                system: true
+                user: false
+            - Contacts:
+                package: org.gnome.Contacts
+                system: true
+                user: false
+            - Disk Usage Analyzer:
+                package: org.gnome.baobab
+                system: true
+                user: false
+            - Document Scanner:
+                package: org.gnome.SimpleScan
+                system: true
+                user: false
+            - Document Viewer:
+                package: org.gnome.Evince
+                system: true
+                user: false
+            - Extensions Manager:
+                package: com.mattjakeman.ExtensionManager
+                system: true
+                user: false
+            - Font Viewer:
+                package: org.gnome.font-viewer
+                system: true
+                user: false
+            - Image Viewer:
+                package: org.gnome.Loupe
+                system: true
+                user: false
+            - Logs:
+                package: org.gnome.Logs
+                system: true
+                user: false
+            - Maps:
+                package: org.gnome.Maps
+                system: true
+                user: false
+            - Text Editor:
+                package: org.gnome.TextEditor
+                system: true
+                user: false
+            - Weather:
+                package: org.gnome.Weather
+                system: true
+                user: false
+            - Web:
+                package: org.gnome.Epiphany
+                system: true
+                user: false
         System Apps:
           description: System applications for all desktop environments.
           default: true
