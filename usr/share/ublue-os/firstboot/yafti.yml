@@ -164,9 +164,12 @@ screens:
           description: Boost your productivity.
           default: false
           packages:
+            - Iotas (Notes): org.gnome.gitlab.cheywood.Iotas
             - LibreOffice: org.libreoffice.LibreOffice
+            - List (ToDos): io.github.mrvladus.List
             - OnlyOffice: org.onlyoffice.desktopeditors
             - Standard Notes: org.standardnotes.standardnotes
+            - Sticky Notes: com.vixalien.sticky
             - Thunderbird Email: org.mozilla.Thunderbird
         Graphics:
           description: Express yourself.
