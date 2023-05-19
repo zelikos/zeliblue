@@ -129,11 +129,18 @@ screens:
           description: System applications for all desktop environments.
           default: true
           packages:
-            - Deja Dup Backups: org.gnome.DejaDup
-            - Fedora Media Writer: org.fedoraproject.MediaWriter
-            - Flatseal (Permission Manager): com.github.tchx84.Flatseal
-            - Font Downloader: org.gustavoperedo.FontDownloader
-            - Mozilla Firefox: org.mozilla.firefox
+            - Fedora Media Writer:
+                package: org.fedoraproject.MediaWriter
+                system: true
+                user: false
+            - Flatseal (Permission Manager):
+                package: com.github.tchx84.Flatseal
+                system: true
+                user: false
+            - Pika Backup:
+                package: org.gnome.World.PikaBackup
+                system: true
+                user: false
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
           default: false
