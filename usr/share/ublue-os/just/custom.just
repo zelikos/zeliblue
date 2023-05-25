@@ -21,7 +21,7 @@ setup-gaming:
   com.valvesoftware.Steam \
   com.valvesoftware.Steam.Utility.gamescope
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam
-  flatpak override --user --env=OBS_VKCAPTURE=1 com.valvesoftware.Steam
+  #flatpak override --user --env=OBS_VKCAPTURE=1 com.valvesoftware.Steam
 
 nix-me-up:
   #!/usr/bin/env bash
