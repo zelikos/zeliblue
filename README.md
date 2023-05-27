@@ -1,4 +1,4 @@
-# Starting point
+# zeliblue
 
 This repository is based off of the [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of setting up your own container image based on top of Fedora Silverblue.
 
