@@ -1,10 +1,18 @@
 # zeliblue
 
-This repository is based off of the [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of setting up your own container image based on top of Fedora Silverblue.
+This repository is based off of the [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of setting up your own container image based on top of Fedora Silverblue. For more info, check out the [uBlue homepage](https://ublue.it/) and the [main uBlue repo](https://github.com/ublue-os/main/)
 
-This specific repo, "zeliblue," is mainly intended for my own minor customizations to the default uBlue-ified Silverblue experience.
+This specific repo, "zeliblue," features my own customizations to the default uBlue-ified Silverblue experience. It is mainly intended for my own use, but I am still experimenting with making it a general-purpose and user-friendly experience.
 
-For more info, check out the [uBlue homepage](https://ublue.it/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+Notable changes include:
+
+**yafti**
+- Changes and expansion to the selection of apps
+- User installation by default instead of upstream's systemwide; exceptions to this are for the Core GNOME Apps and System Apps
+
+**dconf settings**
+- Workspace navigation shortcuts are more akin to elementary OS's, to be more intuitive for horizontal workspaces
+- Other miscellaneous tweaks
 
 ## Installation
 
