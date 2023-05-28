@@ -16,13 +16,13 @@ While I highly recommend looking into either the [main uBlue images](https://ubl
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/zelikos/zeliblue:latest
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/zelikos/zeliblue:latest
 ```
 
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```
-sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/zelikos/zeliblue:YYYYMMDD
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/zelikos/zeliblue:YYYYMMDD
 ```
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
