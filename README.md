@@ -15,6 +15,8 @@ Notable changes include:
 - Super+t to launch Console, also à la elementary OS
 - Other miscellaneous tweaks
 
+GNOME Console replaces GNOME Terminal as the default terminal; Black Box is available at first boot via yafti for more advanced needs.
+
 ## Installation
 
 While I highly recommend looking into either the [main uBlue images](https://ublue.it/images/), or [making your own](https://ublue.it/making-your-own/), you can rebase onto zelibue if you really want to via the following:
