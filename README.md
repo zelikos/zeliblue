@@ -12,6 +12,7 @@ Notable changes include:
 
 **dconf settings**
 - Workspace navigation shortcuts are more akin to elementary OS's, to be more intuitive for horizontal workspaces
+- Super+t to launch Console, also à la elementary OS
 - Other miscellaneous tweaks
 
 ## Installation
