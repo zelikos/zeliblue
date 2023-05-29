@@ -198,6 +198,7 @@ screens:
           description: Development tools.
           default: false
           packages:
+            - Black Box (Terminal): com.raggesilver.BlackBox
             - Boxes: org.gnome.Boxes
             - Builder: org.gnome.Builder
             - Commit (Editor): re.sonny.Commit
