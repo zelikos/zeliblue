@@ -201,10 +201,11 @@ screens:
             - Black Box (Terminal): com.raggesilver.BlackBox
             - Boxes: org.gnome.Boxes
             - Builder: org.gnome.Builder
+            - Visual Studio Code: com.visualstudio.code
+            - Codium: com.vscodium.codium
             - Commit (Editor): re.sonny.Commit
             - Dconf Editor: ca.desrt.dconf-editor
             - Playhouse (HTML/CSS/JS): re.sonny.Playhouse
-            - Visual Studio Code: com.visualstudio.code
             - Workbench (GTK4/libadwaita): re.sonny.Workbench
 
   final-screen:
