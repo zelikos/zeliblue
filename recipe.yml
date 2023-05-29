@@ -72,6 +72,7 @@ rpm:
     - firefox
     - firefox-langpacks
     - gnome-terminal
+    - gnome-terminal-nautilus
 
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
