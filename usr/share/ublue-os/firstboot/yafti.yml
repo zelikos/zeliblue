@@ -78,10 +78,6 @@ screens:
                 package: org.gnome.Evince
                 system: true
                 user: false
-            - Font Viewer:
-                package: org.gnome.font-viewer
-                system: true
-                user: false
             - Logs:
                 package: org.gnome.Logs
                 system: true
