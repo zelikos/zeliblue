@@ -163,4 +163,4 @@ screens:
         - "Join the Discord Community":
             run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx
       description: |
-        Thanks for trying uBlue, we hope you enjoy it!
+        Thanks for trying Zeliblue, we hope you enjoy it!
