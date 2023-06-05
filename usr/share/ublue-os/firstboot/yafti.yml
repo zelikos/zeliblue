@@ -5,18 +5,18 @@ screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to uBlue (Alpha)"
+      title: "Welcome to Zeliblue (Alpha)"
       icon: "/path/to/icon"
       description: |
-        This guided installer will help you get started with your new system.
+        Pick some apps to get started.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Traveler!
+      title: Set Up Flathub
       condition:
         run: flatpak remotes --columns=name | grep fedora
       description: |
-        We have detected the limited, Fedora-provided Flatpak remote on your system, whose applications are usually missing important codecs and other features. This step will therefore remove all basic Fedora Flatpaks from your system! We will instead switch all core Flatpak applications over to the vastly superior, unfiltered Flathub. If you don't want to do this, simply exit this installer.
+        Set up Flathub. This is the source of apps installed in later steps, and the primary source of apps installed via Software.
       actions:
         - run: flatpak remote-delete --system --force fedora
         - run: flatpak remote-delete --user --force fedora
@@ -30,7 +30,7 @@ screens:
       condition:
         run: flatpak remotes --system --columns=name | grep flathub | wc -l | grep '^0$'
       description: |
-        We have detected that you don't have Flathub's repository on your system. We will now add that repository to your system-wide list.
+        Set up Flathub on the system.
       actions:
         - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
   check-user-flathub:
@@ -40,21 +40,18 @@ screens:
       condition:
         run: flatpak remotes --user --columns=name | grep flathub | wc -l | grep '^0$'
       description: |
-        We have detected that you don't have Flathub's repository on your current user account. We will now add that repository to your account.
+        Set up Flathub for the current user.
       actions:
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   applications:
     source: yafti.screen.package
     values:
-      title: Application Installer
+      title: App Installation
       show_terminal: true
       package_manager: yafti.plugin.flatpak
-      package_manager_defaults:
-        system: false
-        user: true
       groups:
-        Core GNOME Apps:
-          description: Core system applications for the GNOME desktop environment.
+        Core:
+          description: Core apps for the GNOME desktop environment.
           default: true
           packages:
             - Calculator:
@@ -214,7 +211,7 @@ screens:
       title: "All done!"
       icon: "/path/to/icon"
       links:
-        - "Install More Applications":
+        - "Install More Apps":
             run: /usr/bin/gnome-software
         - "Website":
             run: /usr/bin/xdg-open https://ublue.it
