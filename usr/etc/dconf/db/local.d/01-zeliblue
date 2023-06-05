@@ -1,3 +1,6 @@
+[org/gnome/shell] 
+favorite-apps = ['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Software.desktop']
+
 [org/gnome/desktop/interface]
 clock-format='12h'
 clock-show-weekday=true
