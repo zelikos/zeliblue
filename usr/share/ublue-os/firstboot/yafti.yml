@@ -126,20 +126,8 @@ screens:
                 package: org.gnome.baobab
                 system: false
                 user: true
-            - Document Scanner:
-                package: org.gnome.SimpleScan
-                system: false
-                user: true
             - Extensions Manager:
                 package: com.mattjakeman.ExtensionManager
-                system: false
-                user: true
-            - Fedora Media Writer:
-                package: org.fedoraproject.MediaWriter
-                system: false
-                user: true
-            - Flatseal (Permission Manager):
-                package: com.github.tchx84.Flatseal
                 system: false
                 user: true
             - Pika Backup:
