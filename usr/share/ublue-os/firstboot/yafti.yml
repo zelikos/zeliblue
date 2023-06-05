@@ -51,7 +51,7 @@ screens:
       package_manager: yafti.plugin.flatpak
       groups:
         Core:
-          description: Core apps for the GNOME desktop environment.
+          description: Core apps for the system.
           default: true
           packages:
             - Calculator:
@@ -60,10 +60,6 @@ screens:
                 user: false
             - Calendar:
                 package: org.gnome.Calendar
-                system: true
-                user: false
-            - Celluloid (Media Player):
-                package: io.github.celluloid_player.Celluloid
                 system: true
                 user: false
             - Characters:
@@ -78,36 +74,28 @@ screens:
                 package: org.gnome.Contacts
                 system: true
                 user: false
-            - Disk Usage Analyzer:
-                package: org.gnome.baobab
-                system: true
-                user: false
-            - Document Scanner:
-                package: org.gnome.SimpleScan
-                system: true
-                user: false
             - Document Viewer:
                 package: org.gnome.Evince
-                system: true
-                user: false
-            - Extensions Manager:
-                package: com.mattjakeman.ExtensionManager
                 system: true
                 user: false
             - Font Viewer:
                 package: org.gnome.font-viewer
                 system: true
                 user: false
-            - Image Viewer:
-                package: org.gnome.Loupe
-                system: true
-                user: false
             - Logs:
                 package: org.gnome.Logs
                 system: true
                 user: false
+            - Loupe (Image Viewer):
+                package: org.gnome.Loupe
+                system: true
+                user: false
             - Maps:
                 package: org.gnome.Maps
+                system: true
+                user: false
+            - Nautilus Preview:
+                package: org.gnome.NautilusPreviewer
                 system: true
                 user: false
             - Text Editor:
@@ -122,89 +110,46 @@ screens:
                 package: org.gnome.Epiphany
                 system: true
                 user: false
-        System Apps:
-          description: System applications for all desktop environments.
-          default: true
+        Utilities:
+          description: Extra apps that go beyond the core needs.
+          default: false
           packages:
+            - Black Box (Terminal):
+                package: com.raggesilver.BlackBox
+                system: false
+                user: true
+            - Boxes:
+                package: org.gnome.Boxes
+                system: false
+                user: true
+            - Celluloid (Media Player):
+                package: io.github.celluloid_player.Celluloid
+                system: false
+                user: true
+            - Disk Usage Analyzer:
+                package: org.gnome.baobab
+                system: false
+                user: true
+            - Document Scanner:
+                package: org.gnome.SimpleScan
+                system: false
+                user: true
+            - Extensions Manager:
+                package: com.mattjakeman.ExtensionManager
+                system: false
+                user: true
             - Fedora Media Writer:
                 package: org.fedoraproject.MediaWriter
-                system: true
-                user: false
+                system: false
+                user: true
             - Flatseal (Permission Manager):
                 package: com.github.tchx84.Flatseal
-                system: true
-                user: false
+                system: false
+                user: true
             - Pika Backup:
                 package: org.gnome.World.PikaBackup
-                system: true
-                user: false
-        Web Browsers:
-          description: Additional browsers to complement or replace the default.
-          default: false
-          packages:
-            - Chromium: org.chromium.Chromium
-            - Google Chrome: com.google.Chrome
-            - Microsoft Edge: com.microsoft.Edge
-            - Mozilla Firefox: org.mozilla.firefox
-            - Opera: com.opera.Opera
-        Gaming:
-          description: "Rock and Stone!"
-          default: false
-          packages:
-            - Discord: com.discordapp.Discord
-            - Heroic Games Launcher: com.heroicgameslauncher.hgl
-            - Steam: com.valvesoftware.Steam
-            - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
-            - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
-            - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
-        Office:
-          description: Boost your productivity.
-          default: false
-          packages:
-            - Iotas (Notes): org.gnome.gitlab.cheywood.Iotas
-            - LibreOffice: org.libreoffice.LibreOffice
-            - List (ToDos): io.github.mrvladus.List
-            - OnlyOffice: org.onlyoffice.desktopeditors
-            - Standard Notes: org.standardnotes.standardnotes
-            - Sticky Notes: com.vixalien.sticky
-            - Thunderbird Email: org.mozilla.Thunderbird
-        Graphics:
-          description: Express yourself.
-          default: false
-          packages:
-            - Darktable: org.darktable.Darktable
-            - GIMP: org.gimp.GIMP
-            - Inkscape: org.inkscape.Inkscape
-            - Krita: org.kde.krita
-        Streaming:
-          description: Stream to the Internet.
-          default: false
-          packages:
-            - OBS Studio: com.obsproject.Studio
-            - Boatswain for Streamdeck: com.feaneron.Boatswain
-        Video Production:
-          description: Video editing software and related utilities.
-          default: false
-          packages:
-            - Handbrake: fr.handbrake.ghb
-            - Kdenlive: org.kde.kdenlive
-            - Olive: org.olivevideoeditor.Olive
-            - Pitivi: org.pitivi.Pitivi
-            - Video Trimmer: org.gnome.gitlab.YaLTeR.VideoTrimmer
-        Development:
-          description: Development tools.
-          default: false
-          packages:
-            - Black Box (Terminal): com.raggesilver.BlackBox
-            - Boxes: org.gnome.Boxes
-            - Builder: org.gnome.Builder
-            - Visual Studio Code: com.visualstudio.code
-            - Codium: com.vscodium.codium
-            - Commit (Editor): re.sonny.Commit
-            - Dconf Editor: ca.desrt.dconf-editor
-            - Playhouse (HTML/CSS/JS): re.sonny.Playhouse
-            - Workbench (GTK4/libadwaita): re.sonny.Workbench
-
+                system: false
+                user: true
   final-screen:
     source: yafti.screen.title
     values:
