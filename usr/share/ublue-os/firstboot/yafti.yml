@@ -62,6 +62,10 @@ screens:
                 package: org.gnome.Calendar
                 system: true
                 user: false
+            - Celluloid (Media Player):
+                package: io.github.celluloid_player.Celluloid
+                system: true
+                user: false
             - Characters:
                 package: org.gnome.Characters
                 system: true
@@ -107,7 +111,7 @@ screens:
                 system: true
                 user: false
         Utilities:
-          description: Extra apps that go beyond the core needs.
+          description: Apps for more advanced use cases.
           default: false
           packages:
             - Black Box (Terminal):
@@ -116,10 +120,6 @@ screens:
                 user: true
             - Boxes:
                 package: org.gnome.Boxes
-                system: false
-                user: true
-            - Celluloid (Media Player):
-                package: io.github.celluloid_player.Celluloid
                 system: false
                 user: true
             - Disk Usage Analyzer:
