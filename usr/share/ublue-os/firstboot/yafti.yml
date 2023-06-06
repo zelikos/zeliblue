@@ -82,10 +82,6 @@ screens:
                 package: org.gnome.Evince
                 system: true
                 user: false
-            - Logs:
-                package: org.gnome.Logs
-                system: true
-                user: false
             - Loupe (Image Viewer):
                 package: org.gnome.Loupe
                 system: true
@@ -130,6 +126,10 @@ screens:
                 package: com.mattjakeman.ExtensionManager
                 system: false
                 user: true
+            - Logs:
+                package: org.gnome.Logs
+                system: true
+                user: false
             - Pika Backup:
                 package: org.gnome.World.PikaBackup
                 system: false
