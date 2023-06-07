@@ -22,6 +22,7 @@ screens:
         - run: flatpak remote-delete --user --force fedora
         - run: flatpak remove --system --noninteractive --all
         - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-modify --system flathub --no-filter --title="Flathub (System)"
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   check-system-flathub:
     source: yafti.screen.consent
