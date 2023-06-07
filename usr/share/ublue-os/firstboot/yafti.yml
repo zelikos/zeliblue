@@ -83,6 +83,10 @@ screens:
                 package: org.gnome.Evince
                 system: true
                 user: false
+            - Fonts:
+                package: org.gnome.font-viewer
+                system: true
+                user: false
             - Loupe (Image Viewer):
                 package: org.gnome.Loupe
                 system: true
