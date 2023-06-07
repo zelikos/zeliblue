@@ -5,23 +5,24 @@ screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to uBlue (Alpha)"
+      title: "Welcome to Zeliblue (Alpha)"
       icon: "/path/to/icon"
       description: |
-        This guided installer will help you get started with your new system.
+        Pick some apps to get started.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Traveler!
+      title: Set Up Flathub
       condition:
         run: flatpak remotes --columns=name | grep fedora
       description: |
-        We have detected the limited, Fedora-provided Flatpak remote on your system, whose applications are usually missing important codecs and other features. This step will therefore remove all basic Fedora Flatpaks from your system! We will instead switch all core Flatpak applications over to the vastly superior, unfiltered Flathub. If you don't want to do this, simply exit this installer.
+        Set up Flathub. This is the source of apps installed in later steps, and the primary source of apps installed via Software.
       actions:
         - run: flatpak remote-delete --system --force fedora
         - run: flatpak remote-delete --user --force fedora
         - run: flatpak remove --system --noninteractive --all
         - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-modify --system flathub --no-filter --title="Flathub (System)"
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   check-system-flathub:
     source: yafti.screen.consent
@@ -30,9 +31,10 @@ screens:
       condition:
         run: flatpak remotes --system --columns=name | grep flathub | wc -l | grep '^0$'
       description: |
-        We have detected that you don't have Flathub's repository on your system. We will now add that repository to your system-wide list.
+        Set up Flathub on the system.
       actions:
         - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-modify --system flathub --no-filter --title="Flathub (System)"
   check-user-flathub:
     source: yafti.screen.consent
     values:
@@ -40,21 +42,18 @@ screens:
       condition:
         run: flatpak remotes --user --columns=name | grep flathub | wc -l | grep '^0$'
       description: |
-        We have detected that you don't have Flathub's repository on your current user account. We will now add that repository to your account.
+        Set up Flathub for the current user.
       actions:
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   applications:
     source: yafti.screen.package
     values:
-      title: Application Installer
+      title: App Installation
       show_terminal: true
       package_manager: yafti.plugin.flatpak
-      package_manager_defaults:
-        system: false
-        user: true
       groups:
-        Core GNOME Apps:
-          description: Core system applications for the GNOME desktop environment.
+        Core:
+          description: Core apps for the system.
           default: true
           packages:
             - Calculator:
@@ -81,36 +80,24 @@ screens:
                 package: org.gnome.Contacts
                 system: true
                 user: false
-            - Disk Usage Analyzer:
-                package: org.gnome.baobab
-                system: true
-                user: false
-            - Document Scanner:
-                package: org.gnome.SimpleScan
-                system: true
-                user: false
             - Document Viewer:
                 package: org.gnome.Evince
                 system: true
                 user: false
-            - Extensions Manager:
-                package: com.mattjakeman.ExtensionManager
-                system: true
-                user: false
-            - Font Viewer:
+            - Fonts:
                 package: org.gnome.font-viewer
                 system: true
                 user: false
-            - Image Viewer:
+            - Loupe (Image Viewer):
                 package: org.gnome.Loupe
-                system: true
-                user: false
-            - Logs:
-                package: org.gnome.Logs
                 system: true
                 user: false
             - Maps:
                 package: org.gnome.Maps
+                system: true
+                user: false
+            - Nautilus Preview:
+                package: org.gnome.NautilusPreviewer
                 system: true
                 user: false
             - Text Editor:
@@ -125,100 +112,49 @@ screens:
                 package: org.gnome.Epiphany
                 system: true
                 user: false
-        System Apps:
-          description: System applications for all desktop environments.
-          default: true
+        Utilities:
+          description: Apps for more advanced use cases.
+          default: false
           packages:
-            - Fedora Media Writer:
-                package: org.fedoraproject.MediaWriter
-                system: true
-                user: false
+            - Black Box (Terminal):
+                package: com.raggesilver.BlackBox
+                system: false
+                user: true
+            - Boxes:
+                package: org.gnome.Boxes
+                system: false
+                user: true
+            - Disk Usage Analyzer:
+                package: org.gnome.baobab
+                system: false
+                user: true
+            - Extensions Manager:
+                package: com.mattjakeman.ExtensionManager
+                system: false
+                user: true
             - Flatseal (Permission Manager):
                 package: com.github.tchx84.Flatseal
-                system: true
-                user: false
+                system: false
+                user: true
+            - Logs:
+                package: org.gnome.Logs
+                system: false
+                user: true
             - Pika Backup:
                 package: org.gnome.World.PikaBackup
-                system: true
-                user: false
-        Web Browsers:
-          description: Additional browsers to complement or replace the default.
-          default: false
-          packages:
-            - Chromium: org.chromium.Chromium
-            - Google Chrome: com.google.Chrome
-            - Microsoft Edge: com.microsoft.Edge
-            - Mozilla Firefox: org.mozilla.firefox
-            - Opera: com.opera.Opera
-        Gaming:
-          description: "Rock and Stone!"
-          default: false
-          packages:
-            - Discord: com.discordapp.Discord
-            - Heroic Games Launcher: com.heroicgameslauncher.hgl
-            - Steam: com.valvesoftware.Steam
-            - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
-            - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
-            - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
-        Office:
-          description: Boost your productivity.
-          default: false
-          packages:
-            - Iotas (Notes): org.gnome.gitlab.cheywood.Iotas
-            - LibreOffice: org.libreoffice.LibreOffice
-            - List (ToDos): io.github.mrvladus.List
-            - OnlyOffice: org.onlyoffice.desktopeditors
-            - Standard Notes: org.standardnotes.standardnotes
-            - Sticky Notes: com.vixalien.sticky
-            - Thunderbird Email: org.mozilla.Thunderbird
-        Graphics:
-          description: Express yourself.
-          default: false
-          packages:
-            - Darktable: org.darktable.Darktable
-            - GIMP: org.gimp.GIMP
-            - Inkscape: org.inkscape.Inkscape
-            - Krita: org.kde.krita
-        Streaming:
-          description: Stream to the Internet.
-          default: false
-          packages:
-            - OBS Studio: com.obsproject.Studio
-            - Boatswain for Streamdeck: com.feaneron.Boatswain
-        Video Production:
-          description: Video editing software and related utilities.
-          default: false
-          packages:
-            - Handbrake: fr.handbrake.ghb
-            - Kdenlive: org.kde.kdenlive
-            - Olive: org.olivevideoeditor.Olive
-            - Pitivi: org.pitivi.Pitivi
-            - Video Trimmer: org.gnome.gitlab.YaLTeR.VideoTrimmer
-        Development:
-          description: Development tools.
-          default: false
-          packages:
-            - Black Box (Terminal): com.raggesilver.BlackBox
-            - Boxes: org.gnome.Boxes
-            - Builder: org.gnome.Builder
-            - Visual Studio Code: com.visualstudio.code
-            - Codium: com.vscodium.codium
-            - Commit (Editor): re.sonny.Commit
-            - Dconf Editor: ca.desrt.dconf-editor
-            - Playhouse (HTML/CSS/JS): re.sonny.Playhouse
-            - Workbench (GTK4/libadwaita): re.sonny.Workbench
-
+                system: false
+                user: true
   final-screen:
     source: yafti.screen.title
     values:
       title: "All done!"
       icon: "/path/to/icon"
       links:
-        - "Install More Applications":
+        - "Install More Apps":
             run: /usr/bin/gnome-software
         - "Website":
             run: /usr/bin/xdg-open https://ublue.it
         - "Join the Discord Community":
             run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx
       description: |
-        Thanks for trying uBlue, we hope you enjoy it!
+        Thanks for trying Zeliblue, we hope you enjoy it!
