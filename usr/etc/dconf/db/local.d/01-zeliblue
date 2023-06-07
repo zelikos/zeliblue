@@ -25,6 +25,9 @@ center-new-windows=true
 toggle-tiled-left = ['<Control><Super>Left']
 toggle-tiled-right = ['<Control><Super>Right']
 
+[org/gnome/nautilus/icon-view]
+captions = ['size', 'date_modified', 'none']
+
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>t'
 command='kgx'
