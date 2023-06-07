@@ -137,8 +137,8 @@ screens:
                 user: true
             - Logs:
                 package: org.gnome.Logs
-                system: true
-                user: false
+                system: false
+                user: true
             - Pika Backup:
                 package: org.gnome.World.PikaBackup
                 system: false
