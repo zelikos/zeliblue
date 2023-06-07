@@ -31,6 +31,9 @@ captions = ['size', 'date_modified', 'none']
 [org/gnome/nautilus/list-view]
 use-tree-view=true
 
+[org/gnome/nautilus/preferences]
+show-create-link=true
+
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>t'
 command='kgx'
