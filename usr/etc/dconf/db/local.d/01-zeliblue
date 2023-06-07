@@ -25,6 +25,15 @@ center-new-windows=true
 toggle-tiled-left = ['<Control><Super>Left']
 toggle-tiled-right = ['<Control><Super>Right']
 
+[org/gnome/nautilus/icon-view]
+captions = ['size', 'date_modified', 'none']
+
+[org/gnome/nautilus/list-view]
+use-tree-view=true
+
+[org/gnome/nautilus/preferences]
+show-create-link=true
+
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>t'
 command='kgx'
@@ -32,3 +41,6 @@ name="Launch Console"
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gtk/gtk4/settings/file-chooser]
+sort-directories-first=true
