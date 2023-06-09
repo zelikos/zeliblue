@@ -12,11 +12,11 @@ screens:
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Set Up Flathub
+      title: Prepare System
       condition:
         run: flatpak remotes --columns=name | grep fedora
       description: |
-        Set up Flathub. This is the source of apps installed in later steps, and the primary source of apps installed via Software.
+        Prepare system for app installation via the Software app.
       actions:
         - run: flatpak remote-delete --system --force fedora
         - run: flatpak remote-delete --user --force fedora
@@ -28,7 +28,7 @@ screens:
       condition:
         run: flatpak remotes --system --columns=name | grep flathub | wc -l | grep '^0$'
       description: |
-        Set up Flathub on the system.
+        Set up Flathub on the system. This is the source of core system apps installed in a later step, and can also be used to install more apps for every user on the system.
       actions:
         - run: flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub https://flathub.org/repo/flathub.flatpakrepo
   check-user-flathub:
@@ -38,7 +38,7 @@ screens:
       condition:
         run: flatpak remotes --user --columns=name | grep flathub | wc -l | grep '^0$'
       description: |
-        Set up Flathub for the current user.
+        Set up Flathub for the current user. Apps can be installed for the current user only, without affecting other users on the system.
       actions:
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
   applications:
