@@ -26,21 +26,21 @@ screens:
     values:
       title: Missing Flathub Repository (System)
       condition:
-        run: flatpak remotes --system --columns=name | grep flathub | wc -l | grep '^0$'
+        run: flatpak remotes --system --columns=name | grep flathub-system | wc -l | grep '^0$'
       description: |
         Set up Flathub on the system. This is the source of core system apps installed in a later step, and can also be used to install more apps for every user on the system.
       actions:
-        - run: flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub-system https://flathub.org/repo/flathub.flatpakrepo
   check-user-flathub:
     source: yafti.screen.consent
     values:
       title: Missing Flathub Repository (User)
       condition:
-        run: flatpak remotes --user --columns=name | grep flathub | wc -l | grep '^0$'
+        run: flatpak remotes --user --columns=name | grep flathub-user | wc -l | grep '^0$'
       description: |
         Set up Flathub for the current user. Apps can be installed for the current user only, without affecting other users on the system.
       actions:
-        - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+        - run: flatpak remote-add --if-not-exists --user flathub-user https://flathub.org/repo/flathub.flatpakrepo
   applications:
     source: yafti.screen.package
     values:
