@@ -10,7 +10,7 @@ setup-flatpaks:
 setup-gaming:
   #!/usr/bin/env bash
   echo 'Setting up gaming experience ... lock and load.'
-  flatpak install -y --user \
+  flatpak install -y flathub-user \
   org.freedesktop.Platform.GStreamer.gstreamer-vaapi//22.08 \
   org.freedesktop.Platform.VulkanLayer.MangoHud//22.08 \
   org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \
