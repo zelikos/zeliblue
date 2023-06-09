@@ -33,8 +33,7 @@ screens:
       description: |
         Set up Flathub on the system.
       actions:
-        - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
-        - run: flatpak remote-modify --system flathub --no-filter --title="Flathub (System)"
+        - run: flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub https://flathub.org/repo/flathub.flatpakrepo
   check-user-flathub:
     source: yafti.screen.consent
     values:
