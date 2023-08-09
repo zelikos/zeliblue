@@ -7,8 +7,7 @@ This specific repo, "zeliblue," features my own customizations to the default uB
 Notable changes include:
 
 **yafti**
-- Changes and expansion to the selection of apps
-- User installation by default instead of upstream's systemwide; exceptions to this are for the Core GNOME Apps and System Apps
+- App selection is greatly reduced to focus more on core GNOME apps and related extra utilities, inspired by [Beyond](https://github.com/ublue-os/beyond)
 
 **dconf settings**
 - Workspace navigation shortcuts are more akin to elementary OS's, to be more intuitive for horizontal workspaces
