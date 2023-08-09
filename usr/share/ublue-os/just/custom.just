@@ -1,3 +1,6 @@
+!include /usr/share/ublue-os/just/bling.just
+
+# Install all flatpaks defined in recipe.yml
 setup-flatpaks:
   #!/usr/bin/env bash
   echo 'Installing flatpaks from the ublue recipe ...'
@@ -27,3 +30,5 @@ nix-me-up:
   #!/usr/bin/env bash
   echo 'Setting phasers to kill. Installing nix.'
   /usr/bin/ublue-nix-install
+
+# Include some of your custom scripts here!
