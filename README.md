@@ -1,8 +1,8 @@
 # zeliblue
 
-This repository is based off of the [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of setting up your own container image based on top of Fedora Silverblue. For more info, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+This repository is based off of the [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of setting up your own container image based on top of Fedora Silverblue, Kinoite, or other OSTree-based images. For more info, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/)
 
-This specific repo, "zeliblue," features my own customizations to the default uBlue-ified Silverblue experience. It is mainly intended for my own use, but I am still experimenting with making it a general-purpose and user-friendly experience.
+This specific repo, "zeliblue," features my own customizations to the default uBlue-ified Silverblue experience. It is mainly intended for my own use, but I am still working on making it a general-purpose and user-friendly experience. I'm also experimenting with a Kinoite version.
 
 Notable changes include:
 
