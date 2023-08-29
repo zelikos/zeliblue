@@ -3,4 +3,6 @@ ublue_variants:
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: zeliblue
+        info: GNOME
       - label: zeliblue-kinoite
+        info: KDE Plasma (EXPERIMENTAL)
