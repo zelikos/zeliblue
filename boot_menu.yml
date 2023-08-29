@@ -3,3 +3,4 @@ ublue_variants:
     ks: /kickstart/ublue-os.ks
     flavors:
       - label: zeliblue
+      - label: zeliblue-kinoite
