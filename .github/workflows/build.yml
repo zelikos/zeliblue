@@ -48,6 +48,7 @@ jobs:
       matrix:
         recipe:
           - recipe.yml
+          - recipe-kinoite.yml
 
     steps:
       # Checkout push-to-registry action GitHub repository
