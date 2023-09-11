@@ -28,6 +28,7 @@ modules:
       # - starship
       - gamescope
       - gamescope-session
+      - mangohud
       - sddm
       - steam
     remove:
