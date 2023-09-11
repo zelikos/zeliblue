@@ -21,11 +21,11 @@ GNOME Console replaces GNOME Terminal as the default terminal; Black Box is avai
 While I highly recommend looking into either the [main uBlue images](https://universal-blue.org/images/), or [making your own](https://universal-blue.org/tinker/make-your-own/), you can rebase onto zelibue if you really want to via the following:
 
 > **Warning**
-> This is an experimental feature and should not be used in production, try it in a VM for a while!
+> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
 
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 
-- First rebase to the image unsigned, to get the proper signing keys and policies installed:
+- First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
   sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/zelikos/zeliblue:latest
   ```
@@ -42,14 +42,13 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
   systemctl reboot
   ```
 
-
 This repository builds date tags as well, so if you want to rebase to a particular day's build:
 
 ```
 sudo rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zelikos/zeliblue:YYYYMMDD
 ```
 
-This repository by default also supports signing 
+This repository by default also supports signing.
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
 
