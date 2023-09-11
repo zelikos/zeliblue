@@ -28,6 +28,7 @@ modules:
       gamescope
       gamescope-session
       steam
+    remove:
 
   # - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
   #               #  will be installed and set up
