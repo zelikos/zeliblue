@@ -1,0 +1,41 @@
+# image will be published to ghcr.io/<user>/<name>
+name: zeliblue
+# description will be included in the image's metadata
+description: The zeliblue GNOME experience, but for Steam Deck
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/zelikos/zeliblue
+image-version: 38 # latest is also supported if you want new updates ASAP
+
+# list of modules, executed in order
+# you can include multiple instances of the same module
+modules:
+
+  - type: files
+    files:
+      - usr: /usr # copy static configurations
+                  # configuration you wish to end up in /etc/ on the booted system should be
+                  # added into /usr/etc/ as that is the proper "distro" config directory on ostree
+                  # read more in the files module's README
+
+  - type: rpm-ostree
+    repos:
+      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-38/kylegospo-bazzite-fedora-38.repo
+    install:
+      # - micro
+      # - starship
+      gamescope
+      gamescope-session
+      steam
+
+  # - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
+  #               #  will be installed and set up
+  #   custom-flatpaks: # this section is optional
+  #     # - Celluloid: io.github.celluloid_player.Celluloid
+  #     # - Krita: org.kde.krita
+
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      - signing.sh
