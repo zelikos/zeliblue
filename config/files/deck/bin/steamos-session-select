@@ -4,7 +4,8 @@ set -e
 
 die() { echo >&2 "!! $*"; exit 1; }
 
-source /etc/default/bazzite
+#source /etc/default/bazzite
+BASE_IMAGE_NAME=silverblue
 #source /etc/default/desktop-wayland
 DESKTOP_WAYLAND=true
 
