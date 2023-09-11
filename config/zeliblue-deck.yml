@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: zeliblue
+name: zeliblue-deck
 # description will be included in the image's metadata
 description: The zeliblue GNOME experience, but for Steam Deck
 
