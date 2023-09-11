@@ -4,5 +4,5 @@ ublue_variants:
     flavors:
       - label: zeliblue
         info: GNOME
-      - label: zeliblue-kinoite
-        info: KDE Plasma (EXPERIMENTAL)
+      # - label: zeliblue-kinoite
+      #   info: KDE Plasma (EXPERIMENTAL)
