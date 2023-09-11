@@ -17,7 +17,7 @@ modules:
                   # configuration you wish to end up in /etc/ on the booted system should be
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
-      - deck/bin: /usr/bin
+      - deck: /usr
 
   - type: rpm-ostree
     repos:
@@ -28,6 +28,7 @@ modules:
       # - starship
       - gamescope
       - gamescope-session
+      - sddm
       - steam
     remove:
       - mesa-va-drivers-freeworld
