@@ -29,14 +29,6 @@ modules:
       - gamescope
       # - gamescope-session
       - mangohud
-      - mesa-dri-drivers
-      - mesa-filesystem
-      - mesa-libEGL
-      - mesa-libGL
-      - mesa-libgbm
-      - mesa-libglapi
-      - mesa-va-drivers
-      - mesa-vulkan-drivers
       - steam
     remove:
       - mesa-va-drivers-freeworld
