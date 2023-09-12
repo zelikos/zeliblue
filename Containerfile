@@ -32,11 +32,6 @@ COPY --from=ghcr.io/ublue-os/bling:latest /files /tmp/bling/files
 COPY build.sh /tmp/build.sh
 COPY config /tmp/config/
 
-RUN chmod +x /tmp/config/files/deck/bin/gamescope-session && \
-    chmod +x /tmp/config/files/deck/bin/steamos-session-select && \
-    chmod +x /tmp/config/files/deck/bin/steamos-update && \
-    chmod +x /tmp/config/files/deck/share/gamescope-session/gamescope-session-script
-
 # Copy modules
 # The default modules are inside ublue-os/bling
 COPY --from=ghcr.io/ublue-os/bling:latest /modules /tmp/modules/
