@@ -29,17 +29,9 @@ modules:
       - gamescope
       - gamescope-session
       - mangohud
-      - sddm
       - steam
     remove:
       - mesa-va-drivers-freeworld
-
-  - type: systemd
-    system:
-      enable:
-        - sddm.service
-      disable:
-        - gdm.service
 
   # - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
   #               #  will be installed and set up
