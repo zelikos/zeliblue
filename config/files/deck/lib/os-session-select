@@ -101,6 +101,6 @@ fi
 # } > "$CONF_FILE"
 
 echo "Updated system autologin session to $session_launcher"
-systemctl reset-failed lightdm
-systemctl restart lightdm
-echo "Restarted LightDM"
+systemctl reset-failed gdm
+systemctl restart gdm
+echo "Restarted GDM"
