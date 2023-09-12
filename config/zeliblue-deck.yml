@@ -29,6 +29,7 @@ modules:
       - gamescope
       # - gamescope-session
       - mangohud
+      - mesa-dri-drivers
       - steam
     remove:
       - mesa-va-drivers-freeworld
