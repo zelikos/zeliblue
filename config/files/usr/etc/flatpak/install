@@ -4,7 +4,7 @@ io.github.celluloid_player.Celluloid
 org.gnome.Characters
 org.gnome.clocks
 org.gnome.Contacts
-org.gnome.baobab # Disk Usage Analyzer
+org.gnome.baobab
 org.gnome.Evince
 org.gnome.font-viewer
 org.gnome.Logs
@@ -13,4 +13,4 @@ org.gnome.Maps
 org.gnome.NautilusPreviewer
 org.gnome.TextEditor
 org.gnome.Weather
-org.gnome.Epiphany # Web
+org.gnome.Epiphany
