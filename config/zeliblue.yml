@@ -44,6 +44,13 @@ modules:
       - dconf-update-service # a service unit that updates the dconf db on boot
       # - devpod # https://devpod.sh/ as an rpm
 
+  - type: systemd
+    system:
+      enabled:
+        - zeliblue-flatpak-manager.service
+    user:
+      enabled:
+        - zeliblue-user-setup.service
 
   # - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
                 #  will be installed and set up
@@ -53,5 +60,6 @@ modules:
 
   - type: script
     scripts:
+      - flatpak-setup.sh
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
