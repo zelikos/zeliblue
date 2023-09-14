@@ -34,7 +34,7 @@ REMOVE_LIST=$(cat /usr/etc/flatpak/remove)
 if [[ -n $INSTALL_LIST ]]; then
   for flatpak in $INSTALL_LIST; do
     if grep -qvz $flatpak <<< $FLATPAK_LIST; then
-      flatpak install --system --noninteractive flathub $flatpak
+      flatpak install --system --noninteractive flathub-system $flatpak
     fi
   done
 fi
