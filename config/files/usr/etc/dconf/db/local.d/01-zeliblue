@@ -1,4 +1,4 @@
-[org/gnome/shell] 
+[org/gnome/shell]
 favorite-apps = ['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Settings.desktop', 'org.gnome.Software.desktop']
 
 [org/gnome/desktop/interface]
@@ -41,6 +41,9 @@ name="Launch Console"
 
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/software]
+packaging-format-preference=['flatpak']
 
 [org/gtk/gtk4/settings/file-chooser]
 sort-directories-first=true
