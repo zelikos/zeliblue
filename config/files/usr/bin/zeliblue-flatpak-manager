@@ -22,7 +22,7 @@ if grep -qz 'fedora' <<< $(flatpak remotes); then
   flatpak remote-delete fedora --force
 fi
 
-# Set up system flathub
+# Set up system Flathub
 flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub-system https://flathub.org/repo/flathub.flatpakrepo
 
 # Lists of flatpaks
