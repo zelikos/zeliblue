@@ -44,6 +44,5 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
-    systemctl unmask dconf-update.service && \
-    systemctl enable dconf-update.service && \
+    systemctl --global enable zeliblue-user-setup.service && \
     rm -rf /tmp/* /var/* && ostree container commit
