@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Imported and tweaked from uBlue's Bazzite
+# Adapted from uBlue's Bazzite (https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/bin/bazzite-flatpak-manager)
 
 #source /etc/default/bazzite
 
