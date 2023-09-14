@@ -14,3 +14,5 @@ org.gnome.NautilusPreviewer
 org.gnome.TextEditor
 org.gnome.Weather
 org.gnome.Epiphany
+com.github.tchx84.Flatseal
+org.gnome.World.PikaBackup
