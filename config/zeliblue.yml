@@ -49,8 +49,8 @@ modules:
       enabled:
         - zeliblue-flatpak-manager.service
     user:
-      # enabled:
-      #   - zeliblue-user-setup.service
+      enabled:
+        - zeliblue-user-setup.service
 
   # - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
                 #  will be installed and set up
