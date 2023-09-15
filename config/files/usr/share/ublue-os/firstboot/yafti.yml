@@ -9,6 +9,21 @@ screens:
       icon: "/path/to/icon"
       description: |
         Configure your system to get started.
+  sign-image:
+    source: yafti.screen.package
+    values:
+      title: Signing Zeliblue
+      condition:
+        run: grep -qvz "signed" <<< $(rpm-ostree status)
+      show_terminal: true
+      package_manager: yafti.plugin.run
+      groups:
+        Sign Bazzite:
+          description: |
+            This will sign your current install of Zeliblue. Mandatory for offline installs. This will take some time.
+          default: true
+          packages:
+          - Sign Bazzite: just --unstable sign-image
   applications:
     source: yafti.screen.package
     values:
