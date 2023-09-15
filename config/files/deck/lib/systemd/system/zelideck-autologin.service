@@ -1,10 +1,10 @@
 [Unit]
-Description=Enables Bazzite autologin
+Description=Enables ZeliDeck autologin
 Before=display-manager.service
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/bazzite-autologin
+ExecStart=/usr/bin/zelideck-autologin
 
 [Install]
 WantedBy=multi-user.target
