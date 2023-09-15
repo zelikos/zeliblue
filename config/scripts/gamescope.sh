@@ -10,5 +10,6 @@ chmod +x /usr/bin/gamescope-session
 chmod +x /usr/bin/gnome-session-oneshot
 chmod +x /usr/bin/steamos-session-select
 chmod +x /usr/bin/steamos-update
+chmod +x /usr/bin/zelideck-autologin
 chmod +x /usr/lib/os-session-select
 chmod +x /usr/share/gamescope-session/gamescope-session-script

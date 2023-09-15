@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# source /etc/default/bazzite
+# source /etc/default/desktop-wayland
+
+USER=$(id -nu 1000)
+
+# SteamOS SDDM config
+SDDM_CONF='/etc/sddm.conf.d/steamos.conf'
+DESKTOP_AUTOLOGIN="/etc/bazzite/desktop_autologin"
+
+# Configure autologin if Steam has been updated
+if [[ ! -f $DESKTOP_AUTOLOGIN && -f /var/home/$USER/.local/share/Steam/ubuntu12_32/steamui.so ]]; then
+  AUTOLOGIN_CONF='/etc/sddm.conf.d/zz-steamos-autologin.conf'
+  # Avoid autologin conflict
+  if [[ -f ${AUTOLOGIN_CONF} ]]; then
+    rm -f ${AUTOLOGIN_CONF}
+  fi
+  sed -i 's/.*Session=.*/Session=gamescope-session.desktop/g' ${SDDM_CONF}
+else
+  sed -i 's/.*Session=.*/Session=gnome-wayland.desktop/g' ${SDDM_CONF}
+fi
+sed -i 's/.*User=.*/User='${USER}'/g' ${SDDM_CONF}
