@@ -28,18 +28,18 @@ modules:
       # - starship
       - gamescope
       # - gamescope-session
-      - lightdm
       - mangohud
+      - sddm
       - steam
     remove:
       - mesa-va-drivers-freeworld
 
   - type: systemd
     system:
-      enabled:
-        - lightdm.service
       disabled:
         - gdm.service
+      enabled:
+        - sddm.service
 
   # - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
   #               #  will be installed and set up
