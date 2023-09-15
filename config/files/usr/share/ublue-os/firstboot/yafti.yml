@@ -8,39 +8,7 @@ screens:
       title: "Welcome to Zeliblue (Alpha)"
       icon: "/path/to/icon"
       description: |
-        Pick some apps to get started.
-  can-we-modify-your-flatpaks:
-    source: yafti.screen.consent
-    values:
-      title: Prepare System
-      condition:
-        run: flatpak remotes --columns=name | grep fedora
-      description: |
-        Prepare system for app installation via the Software app.
-      actions:
-        - run: flatpak remote-delete --system --force fedora
-        - run: flatpak remote-delete --user --force fedora
-        - run: flatpak remove --system --noninteractive --all
-  check-system-flathub:
-    source: yafti.screen.consent
-    values:
-      title: Add Flathub (System)
-      condition:
-        run: flatpak remotes --system --columns=name | grep flathub-system | wc -l | grep '^0$'
-      description: |
-        Add Flathub for the system. This is the source of core system apps installed in a later step, and it can also be used to install more apps for every user on the system.
-      actions:
-        - run: flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub-system https://flathub.org/repo/flathub.flatpakrepo
-  check-user-flathub:
-    source: yafti.screen.consent
-    values:
-      title: Add Flathub (User)
-      condition:
-        run: flatpak remotes --user --columns=name | grep flathub-user | wc -l | grep '^0$'
-      description: |
-        Add Flathub for the current user. This allows additional apps to be installed for the current user only, without affecting other users on the system.
-      actions:
-        - run: flatpak remote-add --if-not-exists --user flathub-user https://flathub.org/repo/flathub.flatpakrepo
+        Configure your system to get started.
   applications:
     source: yafti.screen.package
     values:
