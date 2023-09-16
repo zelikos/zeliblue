@@ -6,11 +6,11 @@ set -oue pipefail
 echo "Setting up container signing in policy.json and cosign.yaml for $IMAGE_NAME"
 echo "Registry to write: $IMAGE_REGISTRY"
 
-cp /usr/share/ublue-os/cosign.pub /usr/etc/pki/containers/"$IMAGE_NAME".pub
+cp /usr/share/ublue-os/cosign.pub /usr/etc/pki/containers/"$IMAGE_REGISTRY".pub
 
 FILE=/usr/etc/containers/policy.json
 
-yq -i -o=j '.transports.docker |= 
+yq -i -o=j '.transports.docker |=
     {"'"$IMAGE_REGISTRY"'": [
             {
                 "type": "sigstoreSigned",
@@ -23,5 +23,5 @@ yq -i -o=j '.transports.docker |=
     }
 + .' "$FILE"
 
-cp /usr/etc/containers/registries.d/ublue-os.yaml /usr/etc/containers/registries.d/"$IMAGE_NAME".yaml
-sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/"$IMAGE_NAME".yaml
+cp /usr/etc/containers/registries.d/ublue-os.yaml /usr/etc/containers/registries.d/"$IMAGE_REGISTRY".yaml
+sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/"$IMAGE_REGISTRY".yaml
