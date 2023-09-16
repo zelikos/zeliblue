@@ -27,7 +27,7 @@ modules:
       # - micro
       # - starship
       - gamescope
-      # - gamescope-session
+      - gamescope-session
       - mangohud
       - sddm
       - sddm-sugar-steamOS

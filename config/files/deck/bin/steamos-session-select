@@ -1,11 +1,129 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-# Hook for custom OS script
-GAMESCOPE_SESSION_SCRIPT="/usr/lib/os-session-select"
-if [ -f $GAMESCOPE_SESSION_SCRIPT ] ; then
-	# Call session script from the OS
-	${GAMESCOPE_SESSION_SCRIPT} $@
+set -e
+
+die() { echo >&2 "!! $*"; exit 1; }
+
+# source /etc/default/bazzite
+BASE_IMAGE_NAME=silverblue
+# source /etc/default/desktop-wayland
+DESKTOP_WAYLAND=true
+
+# File this script will modify, in addition to (potentially) the per-user sentinel file
+CONF_FILE="/etc/sddm.conf.d/zz-steamos-autologin.conf"
+
+SENTINEL_FILE="steamos-session-select"
+
+# For sanity this shipped file must be present, to ensure we're still on a normal-looking steamos setup.
+CHECK_FILE="/etc/sddm.conf.d/steamos.conf"
+
+session="${1:-gamescope}"
+if ${DESKTOP_WAYLAND}; then
+  session_type="wayland"
 else
-	# Simply call shutdown on the client
-	steam -shutdown
+  session_type="x11"
 fi
+
+session_launcher=""
+create_sentinel=""
+
+if [[ "$2" == "--sentinel-created" ]]; then
+  SENTINEL_CREATED=1
+  if ${DESKTOP_WAYLAND}; then
+      session_type="wayland"
+  else
+      session_type="x11"
+  fi
+fi
+
+# Update config sentinel
+if [[ -z $SENTINEL_CREATED ]]; then
+  [[ $EUID == 0 ]] && die "Running $0 as root is not allowed"
+
+  [[ -n ${HOME+x} ]] || die "No \$HOME variable"
+  config_dir="${XDG_CONF_DIR:-"$HOME/.config"}"
+  session_type=$(
+    cd "$HOME"
+    mkdir -p "$config_dir"
+    cd "$config_dir"
+    if [[ -f "steamos-session-type" ]]; then
+      cp steamos-session-type "$SENTINEL_FILE"
+    else
+      if ${DESKTOP_WAYLAND}; then
+        echo "wayland" > "$SENTINEL_FILE"
+      else
+        echo "x11" > "$SENTINEL_FILE"
+      fi
+    fi
+    cat "$SENTINEL_FILE"
+  )
+
+  if [[ ${BASE_IMAGE_NAME} == 'silverblue' ]]; then
+    # clear steam game desktop shortcut clutter
+    DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+    grep --files-with-matches "Exec=steam steam://rungameid/" ${DATA_HOME}/applications/* | tr '\n' '\0' | xargs -0 -I {} rm {} || true
+  fi
+
+  # If we were executed as a session user and then re-execute as root below, we don't want to set root's sentinel too
+  export SENTINEL_CREATED=1
+fi
+
+# We use "plasma" as "desktop" to hook up to SteamOS's scripts
+case "$session" in
+  plasma-wayland-persistent)
+    if [[ ${BASE_IMAGE_NAME} == 'kinoite' ]]; then
+      session_launcher="plasma.desktop"
+    elif [[ ${BASE_IMAGE_NAME} == 'silverblue' ]]; then
+      session_launcher="gnome-wayland.desktop"
+    fi
+  ;;
+  plasma-x11-persistent)
+    if [[ ${BASE_IMAGE_NAME} == 'kinoite' ]]; then
+      session_launcher="plasmax11.desktop"
+    elif [[ ${BASE_IMAGE_NAME} == 'silverblue' ]]; then
+      session_launcher="gnome-xorg.desktop"
+    fi
+  ;;
+  desktop|plasma)
+    if [[ ${BASE_IMAGE_NAME} == 'kinoite' ]]; then
+      if ${DESKTOP_WAYLAND}; then
+        session_launcher="plasma-steamos-wayland-oneshot.desktop"
+      else
+        session_launcher="plasma-steamos-oneshot.desktop"
+      fi
+    elif [[ ${BASE_IMAGE_NAME} == 'silverblue' ]]; then
+      if ${DESKTOP_WAYLAND}; then
+        session_launcher="gnome-wayland-oneshot.desktop"
+      else
+        session_launcher="gnome-xorg-oneshot.desktop"
+      fi
+    fi
+    create_sentinel=1
+  ;;
+  gamescope)
+    session_launcher="gamescope-session.desktop"
+    create_sentinel=1
+  ;;
+  *)
+    echo >&2 "!! Unrecognized session '$session'"
+    exit 1
+  ;;
+esac
+
+echo "Updated user selected session to $session_launcher"
+
+# Become root
+if [[ $EUID != 0 ]]; then
+  exec pkexec "$(realpath $0)" "$session" --sentinel-created "$session_type"
+  exit 1
+fi
+
+{
+  echo "[Autologin]"
+  echo "Session=$session_launcher"
+} > "$CONF_FILE"
+
+echo "Updated system autologin session to $session_launcher"
+systemctl reset-failed sddm
+systemctl restart sddm
+echo "Restarted SDDM"
