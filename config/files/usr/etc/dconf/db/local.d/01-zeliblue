@@ -43,7 +43,7 @@ name="Launch Console"
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 
 [org/gnome/software]
-packaging-format-preference=['flatpak']
+packaging-format-preference=['flatpak:flathub-user']
 
 [org/gtk/gtk4/settings/file-chooser]
 sort-directories-first=true
