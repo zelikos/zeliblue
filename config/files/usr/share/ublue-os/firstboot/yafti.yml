@@ -31,66 +31,6 @@ screens:
       show_terminal: true
       package_manager: yafti.plugin.flatpak
       groups:
-        Core:
-          description: Core apps for the system.
-          default: true
-          packages:
-            - Calculator:
-                package: org.gnome.Calculator
-                system: true
-                user: false
-            - Calendar:
-                package: org.gnome.Calendar
-                system: true
-                user: false
-            - Celluloid (Media Player):
-                package: io.github.celluloid_player.Celluloid
-                system: true
-                user: false
-            - Characters:
-                package: org.gnome.Characters
-                system: true
-                user: false
-            - Clocks:
-                package: org.gnome.clocks
-                system: true
-                user: false
-            - Contacts:
-                package: org.gnome.Contacts
-                system: true
-                user: false
-            - Document Viewer:
-                package: org.gnome.Evince
-                system: true
-                user: false
-            - Fonts:
-                package: org.gnome.font-viewer
-                system: true
-                user: false
-            - Loupe (Image Viewer):
-                package: org.gnome.Loupe
-                system: true
-                user: false
-            - Maps:
-                package: org.gnome.Maps
-                system: true
-                user: false
-            - Nautilus Preview:
-                package: org.gnome.NautilusPreviewer
-                system: true
-                user: false
-            - Text Editor:
-                package: org.gnome.TextEditor
-                system: true
-                user: false
-            - Weather:
-                package: org.gnome.Weather
-                system: true
-                user: false
-            - Web:
-                package: org.gnome.Epiphany
-                system: true
-                user: false
         Utilities:
           description: Apps for more advanced use cases.
           default: false
@@ -103,24 +43,8 @@ screens:
                 package: org.gnome.Boxes
                 system: false
                 user: true
-            - Disk Usage Analyzer:
-                package: org.gnome.baobab
-                system: false
-                user: true
             - Extensions Manager:
                 package: com.mattjakeman.ExtensionManager
-                system: false
-                user: true
-            - Flatseal (Permission Manager):
-                package: com.github.tchx84.Flatseal
-                system: false
-                user: true
-            - Logs:
-                package: org.gnome.Logs
-                system: false
-                user: true
-            - Pika Backup:
-                package: org.gnome.World.PikaBackup
                 system: false
                 user: true
   final-screen:
