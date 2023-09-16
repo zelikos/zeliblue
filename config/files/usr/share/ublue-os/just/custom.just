@@ -2,6 +2,16 @@
 
 # Include some of your custom scripts here!
 
+# Toggle between desktop/gamescope autologin
+toggle-autologin:
+  #!/usr/bin/env bash
+  DESKTOP_AUTOLOGIN="/etc/zeliblue/desktop_autologin"
+  if [[ -f $DESKTOP_AUTOLOGIN ]]; then
+    sudo rm -f $DESKTOP_AUTOLOGIN
+  else
+    sudo touch $DESKTOP_AUTOLOGIN
+  fi
+
 # Sign the current OCI OSTree Image (If unsigned)
 sign-image:
   source /etc/default/zeliblue && \

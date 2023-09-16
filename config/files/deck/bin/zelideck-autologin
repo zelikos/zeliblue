@@ -7,7 +7,7 @@ USER=$(id -nu 1000)
 
 # SteamOS SDDM config
 SDDM_CONF='/etc/sddm.conf.d/steamos.conf'
-DESKTOP_AUTOLOGIN="/etc/bazzite/desktop_autologin"
+DESKTOP_AUTOLOGIN="/etc/zeliblue/desktop_autologin"
 
 # Configure autologin if Steam has been updated
 if [[ ! -f $DESKTOP_AUTOLOGIN && -f /var/home/$USER/.local/share/Steam/ubuntu12_32/steamui.so ]]; then
