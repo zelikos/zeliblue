@@ -24,29 +24,6 @@ screens:
           default: true
           packages:
           - Sign Bazzite: just --unstable sign-image
-  applications:
-    source: yafti.screen.package
-    values:
-      title: App Installation
-      show_terminal: true
-      package_manager: yafti.plugin.flatpak
-      groups:
-        Utilities:
-          description: Apps for more advanced use cases.
-          default: false
-          packages:
-            - Black Box (Terminal):
-                package: com.raggesilver.BlackBox
-                system: false
-                user: true
-            - Boxes:
-                package: org.gnome.Boxes
-                system: false
-                user: true
-            - Extensions Manager:
-                package: com.mattjakeman.ExtensionManager
-                system: false
-                user: true
   final-screen:
     source: yafti.screen.title
     values:
