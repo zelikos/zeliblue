@@ -14,6 +14,7 @@ chmod +x /usr/bin/steamos-logger
 chmod +x /usr/bin/steamos-session-select
 chmod +x /usr/bin/steamos-update
 chmod +x /usr/bin/zelideck-autologin
+chmod +x /usr/bin/zelideck-steam
 chmod +x /usr/lib/os-session-select
 chmod +x /usr/share/gamescope-session/gamescope-session-script
 
