@@ -58,5 +58,6 @@ modules:
   - type: script
     scripts:
       - flatpak-setup.sh
+      - image-info.sh
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
