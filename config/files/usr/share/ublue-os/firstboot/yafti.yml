@@ -18,12 +18,12 @@ screens:
       show_terminal: true
       package_manager: yafti.plugin.run
       groups:
-        Sign Bazzite:
+        Sign Zeliblue:
           description: |
             This will sign your current install of Zeliblue. Mandatory for offline installs. This will take some time.
           default: true
           packages:
-          - Sign Bazzite: just --unstable sign-image
+          - Sign Zeliblue: just --unstable sign-image
   final-screen:
     source: yafti.screen.title
     values:
