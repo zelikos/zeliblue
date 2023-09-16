@@ -14,7 +14,6 @@ chmod +x /usr/bin/steamos-session-select
 chmod +x /usr/bin/steamos-update
 chmod +x /usr/bin/zelideck-autologin
 chmod +x /usr/bin/zelideck-steam
-chmod +x /usr/lib/os-session-select
 
 # Steam setup
 ln -s /usr/bin/steamos-logger /usr/bin/steamos-info
