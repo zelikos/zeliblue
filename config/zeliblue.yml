@@ -11,6 +11,8 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
 
+  - from-file: gnome-packages.yml
+
   - type: files
     files:
       - usr: /usr # copy static configurations
@@ -29,9 +31,6 @@ modules:
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      - gnome-classic-session
-      - gnome-terminal
-      - gnome-terminal-nautilus
 
   - type: bling # configure what to pull in from ublue-os/bling
     install:

@@ -1,0 +1,7 @@
+type: rpm-ostree
+install:
+ - gnome-console
+remove:
+ - gnome-classic-session
+ - gnome-terminal
+ - gnome-terminal-nautilus
