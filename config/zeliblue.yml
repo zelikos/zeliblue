@@ -21,6 +21,8 @@ modules:
   - from-file: common-packages.yml
   - from-file: gnome-packages.yml
 
+  - from-file: common-bling.yml
+
   - from-file: common-services.yml
 
   - type: yafti

@@ -36,6 +36,8 @@ modules:
     remove:
       - mesa-va-drivers-freeworld
 
+  - from-file: common-bling.yml
+
   - from-file: common-services.yml
 
   - type: systemd
