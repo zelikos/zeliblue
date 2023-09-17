@@ -40,8 +40,7 @@ modules:
       enabled:
         - zeliblue-user-setup.service
 
-  - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
-                #  will be installed and set up
+  - type: yafti
 
   - type: script
     scripts:
