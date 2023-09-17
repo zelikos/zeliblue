@@ -1,0 +1,6 @@
+type: rpm-ostree
+install:
+ - fish
+remove:
+ - firefox
+ - firefox-langpacks
