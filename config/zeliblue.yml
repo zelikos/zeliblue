@@ -18,46 +18,17 @@ modules:
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
 
-  - type: rpm-ostree
-    repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-    install:
-      # - micro
-      # - starship
-      - fish
-      - gnome-console
-    remove:
-      - firefox # default firefox removed in favor of flatpak
-      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      - gnome-classic-session
-      - gnome-terminal
-      - gnome-terminal-nautilus
+  # rpm-ostree
+  - from-file: common-packages.yml
+  - from-file: gnome-packages.yml
 
-  - type: bling # configure what to pull in from ublue-os/bling
-    install:
-      # - fonts # selection of common good free fonts
-      - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
-                  # in your custom.just (added by default) or local justfile
-      # - nix-installer # shell shortcuts for determinate system's nix installers
-      - ublue-os-wallpapers
-      - ublue-update # https://github.com/ublue-os/ublue-update
-      - dconf-update-service # a service unit that updates the dconf db on boot
-      # - devpod # https://devpod.sh/ as an rpm
+  # uBlue bling
+  - from-file: common-bling.yml
 
-  - type: systemd
-    system:
-      enabled:
-        - zeliblue-flatpak-manager.service
-    user:
-      enabled:
-        - zeliblue-user-setup.service
+  # systemd services
+  - from-file: common-services.yml
 
-  - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
-                #  will be installed and set up
+  - type: yafti
 
-  - type: script
-    scripts:
-      - flatpak-setup.sh
-      - image-info.sh
-      # this sets up the proper policy & signing files for signed images to work
-      - signing.sh
+  # Setup scripts, etc
+  - from-file: common-scripts.yml

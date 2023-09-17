@@ -1,0 +1,7 @@
+type: systemd
+system:
+  enabled:
+    - zeliblue-flatpak-manager.service
+user:
+  enabled:
+    - zeliblue-user-setup.service
