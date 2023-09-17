@@ -50,9 +50,8 @@ modules:
 
   - type: yafti
 
+  - from-file: common-scripts.yml
+
   - type: script
     scripts:
-      - image-info.sh
-      # - steamos-setup.sh
-      # this sets up the proper policy & signing files for signed images to work
-      - signing.sh
+      - steamos-setup.sh
