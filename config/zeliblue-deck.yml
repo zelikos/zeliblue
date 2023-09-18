@@ -47,6 +47,9 @@ modules:
         - sddm.service
       disabled:
         - gdm.service
+    user:
+      enabled:
+        - zelideck-gamescope-setup.service
 
   - type: yafti
 
