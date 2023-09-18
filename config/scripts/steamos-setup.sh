@@ -9,6 +9,7 @@ set -oue pipefail
 
 # Executables
 chmod +x /usr/bin/gnome-session-oneshot
+chmod +x /usr/bin/return-to-gamemode
 chmod +x /usr/bin/steamos-logger
 chmod +x /usr/bin/steamos-session-select
 chmod +x /usr/bin/steamos-update
