@@ -1,0 +1,11 @@
+[Unit]
+Description=Configure gamescope-session for current user
+Requires=xdg-desktop-autostart.target
+ConditionPathExists=!%h/.config/zeliblue/zeliblue-configured
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/zelideck-gamescope-setup
+
+[Install]
+WantedBy=default.target
