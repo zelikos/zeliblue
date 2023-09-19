@@ -1,7 +1,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: zeliblue-deck
 # description will be included in the image's metadata
-description: The zeliblue GNOME experience, but for Steam Deck
+description: A zeliblue-based SteamOS experience
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
