@@ -1,7 +1,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: zeliblue-kinoite
 # description will be included in the image's metadata
-description: Akzel's custom uBlue image, based on https://ublue.it/making-your-own/
+description: Zeliblue, with KDE Plasma
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
