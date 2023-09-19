@@ -41,7 +41,7 @@ jobs:
         recipe:
           - zeliblue.yml
           - zeliblue-deck.yml
-        #   - zeliblue-kinoite.yml
+          - zeliblue-kinoite.yml
 # !!!
 
     steps:
