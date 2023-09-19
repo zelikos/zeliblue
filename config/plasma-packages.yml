@@ -1,9 +1,12 @@
 type: rpm-ostree
 remove:
  - ark
+ - ark-libs
  - filelight
  - gwenview
+ - gwenview-libs
  - kate
+ - kate-plugins
  - kcalc
  - kfind
  - okular
