@@ -22,6 +22,11 @@ modules:
   - from-file: common-config.yml
   - from-file: plasma-packages.yml
 
+  - type: systemd
+    user:
+      enabled:
+        - zeliblue-kinoite-config.service
+
   - type: script
     scripts:
       - kinoite-setup.sh

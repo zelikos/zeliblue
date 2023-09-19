@@ -1,5 +1,5 @@
 [Unit]
-Description=Configure Zeliblue for current user
+Description=Configure Zeliblue Plasma for current user
 Requires=xdg-desktop-autostart.target
 ConditionPathExists=!%h/.config/zeliblue/zeliblue-configured
 
