@@ -19,7 +19,7 @@ modules:
                   # read more in the files module's README
       - deck: /usr
 
-  - from-file: common-packages.yml
+  - from-file: common-config.yml
   - from-file: gnome-packages.yml
 
   - type: rpm-ostree
@@ -36,10 +36,6 @@ modules:
     remove:
       - mesa-va-drivers-freeworld
 
-  - from-file: common-bling.yml
-
-  - from-file: common-services.yml
-
   - type: systemd
     system:
       enabled:
@@ -50,10 +46,6 @@ modules:
     user:
       enabled:
         - zelideck-gamescope-setup.service
-
-  - type: yafti
-
-  - from-file: common-scripts.yml
 
   - type: script
     scripts:

@@ -18,17 +18,5 @@ modules:
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
 
-  # rpm-ostree
-  - from-file: common-packages.yml
+  - from-file: common-config.yml
   - from-file: gnome-packages.yml
-
-  # uBlue bling
-  - from-file: common-bling.yml
-
-  # systemd services
-  - from-file: common-services.yml
-
-  - type: yafti
-
-  # Setup scripts, etc
-  - from-file: common-scripts.yml
