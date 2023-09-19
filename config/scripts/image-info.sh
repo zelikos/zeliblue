@@ -15,5 +15,5 @@ then
   sed -i '/^PRETTY_NAME/s/Silverblue/Zeliblue/' /usr/lib/os-release
 elif grep -q "kinoite" <<< "${BASE_IMAGE}"
 then
-  sed -i '/^PRETTY_NAME/s/Kinoite/Zeliblue/' /usr/lib/os-release
+  sed -i '/^PRETTY_NAME/s/Kinoite/Zeliblue Plasma/' /usr/lib/os-release
 fi
