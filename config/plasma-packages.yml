@@ -1,0 +1,9 @@
+type: rpm-ostree
+remove:
+ - ark
+ - filelight
+ - gwenview
+ - kate
+ - kcalc
+ - kfind
+ - okular

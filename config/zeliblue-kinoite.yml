@@ -19,3 +19,4 @@ modules:
                   # read more in the files module's README
 
   - from-file: common-config.yml
+  - from-file: plasma-packages.yml
