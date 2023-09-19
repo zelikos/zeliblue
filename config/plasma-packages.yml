@@ -1,6 +1,6 @@
 type: rpm-ostree
-install:
- - ksystemlog
+# install:
+#  - ksystemlog
 remove:
  - ark
  - ark-libs
