@@ -21,3 +21,7 @@ modules:
 
   - from-file: common-config.yml
   - from-file: plasma-packages.yml
+
+  - type: script
+    scripts:
+      - kinoite-setup.sh
