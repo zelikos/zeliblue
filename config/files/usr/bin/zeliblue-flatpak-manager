@@ -26,7 +26,7 @@ fi
 flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub-system https://flathub.org/repo/flathub.flatpakrepo
 
 # Lists of flatpaks
-FLATPAK_LIST=$(flatpak list --column=application)
+FLATPAK_LIST=$(flatpak list --columns=application)
 INSTALL_LIST=$(cat /usr/etc/flatpak/install)
 REMOVE_LIST=$(cat /usr/etc/flatpak/remove)
 
