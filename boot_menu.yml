@@ -4,5 +4,7 @@ ublue_variants:
     flavors:
       - label: zeliblue
         info: GNOME
+      - label: zeliblue-kinoite
+        info: KDE Plasma
       - label: zeliblue-deck
-        info: GNOME for Deck (EXPERIMENTAL)
+        info: SteamOS-like Experience (EXPERIMENTAL)
