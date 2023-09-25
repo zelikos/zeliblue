@@ -14,4 +14,3 @@ toggle-autologin:
 
 assemble:
   distrobox assemble create --replace --file ~/dev/distrobox/distrobox.ini
-!include /usr/share/ublue-os/justfile
