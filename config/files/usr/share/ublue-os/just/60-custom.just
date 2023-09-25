@@ -13,4 +13,4 @@ toggle-autologin:
   fi
 
 assemble:
-  distrobox assemble create --replace --file ~/dev/distrobox/distrobox.ini
+  distrobox assemble create --replace --file ~/dev/dotfiles/distrobox.ini
