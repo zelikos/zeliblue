@@ -44,6 +44,8 @@ custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybin
 
 [org/gnome/software]
 packaging-format-preference=['flatpak:flathub-user']
+download-updates=false
+download-updates-notify=false
 
 [org/gtk/gtk4/settings/file-chooser]
 sort-directories-first=true
