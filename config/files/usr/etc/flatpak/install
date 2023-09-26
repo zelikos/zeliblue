@@ -5,6 +5,7 @@ org.gnome.Characters
 org.gnome.clocks
 org.gnome.Contacts
 org.gnome.baobab
+org.gnome.SimpleScan
 org.gnome.Evince
 org.gnome.font-viewer
 org.gnome.Logs
