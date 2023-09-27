@@ -28,9 +28,11 @@ modules:
       - mangohud
       - sddm
       - sddm-sugar-steamOS
-      - steam
+      # - steam
     remove:
       - mesa-va-drivers-freeworld
+
+  - type: steam-setup
 
   - type: systemd
     system:
