@@ -5,18 +5,6 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
-# Your code goes here.
-
-# Executables
-chmod +x /usr/bin/gnome-session-oneshot
-chmod +x /usr/bin/return-to-gamemode
-chmod +x /usr/bin/steamos-logger
-chmod +x /usr/bin/steamos-session-select
-chmod +x /usr/bin/steamos-update
-chmod +x /usr/bin/zelideck-autologin
-chmod +x /usr/bin/zelideck-gamescope-setup
-chmod +x /usr/bin/zelideck-steam
-
 # Steam setup
 ln -s /usr/bin/steamos-logger /usr/bin/steamos-info
 ln -s /usr/bin/steamos-logger /usr/bin/steamos-notice

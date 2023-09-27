@@ -23,6 +23,3 @@ modules:
       enabled:
         - zeliblue-kinoite-config.service
 
-  - type: script
-    scripts:
-      - kinoite-setup.sh
