@@ -3,7 +3,14 @@ set -oue pipefail
 
 # Based on Bazzite's solution for installing Steam without package conflicts: https://github.com/ublue-os/bazzite/pull/330
 
+
+# Enable bazzite-multilib for their build of Mesa, and for extest later.
+echo "Adding bazzite-multilib repository"
+
 wget https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-${OS_VERSION}/kylegospo-bazzite-multilib-fedora-${OS_VERSION}.repo?arch=x86_64 -O /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
+
+# Ensure that needed Mesa packages are installed from bazzite-multilib
+echo "Installing Mesa packages from bazzite-multilib"
 
 rpm-ostree override replace \
     --experimental \
@@ -22,6 +29,10 @@ rpm-ostree override replace \
     --experimental \
     --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib:ml \
         mesa-vulkan-drivers.i686 \
+
+# Install other 32-bit Steam dependencies
+
+echo "Installing other Steam dependencies"
 
 rpm-ostree install \
     mesa-dri-drivers.i686 \
@@ -50,6 +61,8 @@ rpm-ostree install \
     libdbusmenu-gtk3.i686 \
     libatomic.i686 \
     pipewire-alsa.i686
+
+echo "Installing Steam"
 
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
 sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree.repo
