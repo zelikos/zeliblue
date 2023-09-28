@@ -3,7 +3,7 @@ set -oue pipefail
 
 # Based on Bazzite's solution for installing Steam without package conflicts: https://github.com/ublue-os/bazzite/pull/330
 
-wget https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-38/kylegospo-bazzite-multilib-fedora-38.repo?arch=x86_64 -O /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
+wget https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-${OS_VERSION}/kylegospo-bazzite-multilib-fedora-${OS_VERSION}.repo?arch=x86_64 -O /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
 
 rpm-ostree override replace \
     --experimental \
