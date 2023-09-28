@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -oue pipefail
 
-
 # Based on Bazzite's solution for installing Steam without package conflicts: https://github.com/ublue-os/bazzite/pull/330
+
+wget https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-38/kylegospo-bazzite-multilib-fedora-38.repo?arch=x86_64 -O /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
+
 rpm-ostree override replace \
     --experimental \
     --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib \
@@ -13,13 +15,16 @@ rpm-ostree override replace \
         mesa-libgbm \
         mesa-libGL \
         mesa-libglapi \
+        mesa-va-drivers\
         mesa-vulkan-drivers \
 
-rpm-ostree install mesa-va-drivers
+rpm-ostree override replace \
+    --experimental \
+    --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib:ml \
+        mesa-vulkan-drivers.i686 \
 
 rpm-ostree install \
     mesa-dri-drivers.i686 \
-    mesa-vulkan-drivers.i686 \
     vulkan-loader.i686 \
     alsa-lib.i686 \
     fontconfig.i686 \
@@ -54,3 +59,6 @@ sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree-steam.rep
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree.repo
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates.repo
+
+# Cleanup
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
