@@ -27,6 +27,7 @@ rpm-ostree install \
     mesa-dri-drivers.i686 \
     vulkan-loader.i686 \
     alsa-lib.i686 \
+    extest.i686 \
     fontconfig.i686 \
     gtk2.i686 \
     libICE.i686 \
