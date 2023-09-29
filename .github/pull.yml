@@ -1,0 +1,7 @@
+version: "1"
+rules:
+  - base: template
+    upstream: ublue-os:template    # change `wei` to the owner of upstream repo
+    # mergeMethod: hardreset
+  - base: live
+    upstream: zelikos:template
