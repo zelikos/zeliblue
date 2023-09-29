@@ -2,4 +2,4 @@ version: "1"
 rules:
   - base: live
     upstream: ublue-os:template
-    mergeMethod: squash
+    mergeMethod: merge
