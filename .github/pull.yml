@@ -1,5 +1,7 @@
 version: "1"
 rules:
-  - base: live
+  - base: template
     upstream: ublue-os:template
-    mergeMethod: merge
+    mergeMethod: hardreset
+  - base: live
+    upstream: template
