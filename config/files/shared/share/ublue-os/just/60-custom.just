@@ -91,3 +91,7 @@ remove-davinci:
   distrobox enter davincibox -- add-davinci-launcher remove
   distrobox stop -Y davincibox
   distrobox rm -Y davincibox
+
+# Set up Waydroid in a distrobox
+setup-waybox:
+  distrobox create --root --image ghcr.io/vanilla-os/waydroid:main --init --unshare-all --name waybox
