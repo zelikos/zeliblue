@@ -121,3 +121,7 @@ disable-zeliblue-cli-container:
   systemctl --user daemon-reload
 
   echo "Zeliblue CLI is now disabled."
+
+# Set up Waydroid in a distrobox
+setup-waybox:
+  distrobox create --root --image ghcr.io/vanilla-os/waydroid:main --init --unshare-all --name waybox
