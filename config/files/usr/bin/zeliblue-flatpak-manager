@@ -48,5 +48,7 @@ if [[ -n $REMOVE_LIST ]]; then
   done
 fi
 
+/usr/bin/notify-send --app-name="Initial Setup" --urgency=normal --icon=applications-system-symbolic "Setup complete. Your system is ready to go!"
+
 mkdir -p /etc/zeliblue
 echo $VER > $VER_FILE
