@@ -13,8 +13,6 @@ if [[ -f $VER_FILE && $VER = $VER_RAN ]]; then
   exit 0
 fi
 
-/usr/bin/notify-send --app-name="Initial Setup" --urgency=normal --icon=applications-system-symbolic "Finalizing system setup. Please wait."
-
 # Opt out of and remove Fedora's flatpak repo
 if grep -qz 'fedora' <<< $(flatpak remotes); then
   /usr/lib/fedora-third-party/fedora-third-party-opt-out
@@ -47,8 +45,6 @@ if [[ -n $REMOVE_LIST ]]; then
     fi
   done
 fi
-
-/usr/bin/notify-send --app-name="Initial Setup" --urgency=normal --icon=applications-system-symbolic "Setup complete. Your system is ready to go!"
 
 mkdir -p /etc/zeliblue
 echo $VER > $VER_FILE
