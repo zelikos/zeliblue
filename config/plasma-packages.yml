@@ -1,14 +1,34 @@
-type: rpm-ostree
-# install:
-#  - ksystemlog
-remove:
- - ark
- - ark-libs
- - filelight
- - gwenview
- - gwenview-libs
- - kate
- - kate-plugins
- - kcalc
- - kfind
- - okular
+modules:
+
+- type: rpm-ostree
+  # install:
+  #  - ksystemlog
+  remove:
+  - ark
+  - ark-libs
+  - filelight
+  - gwenview
+  - gwenview-libs
+  - kate
+  - kate-plugins
+  - kcalc
+  - kfind
+  - okular
+
+- type: flatpaks
+  system:
+    install:
+    - org.kde.ark
+    - org.kde.filelight
+    - org.kde.gwenview
+    - org.kde.haruna
+    - org.kde.kalk
+    - org.kde.kclock
+    - org.kde.kfind
+    - org.kde.kweather
+    - org.kde.kwrite
+    - org.kde.okular
+    - org.mozilla.firefox
+    - com.borgbase.Vorta
+    - com.github.tchx84.Flatseal
+    - org.gnome.Logs
