@@ -43,7 +43,7 @@ name="Launch Console"
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
 
 [org/gnome/software]
-packaging-format-preference=['flatpak:flathub-user']
+packaging-format-preference=['flatpak:flathub']
 download-updates=false
 download-updates-notify=false
 
