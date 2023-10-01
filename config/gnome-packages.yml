@@ -30,8 +30,3 @@ modules:
     - org.gnome.Epiphany
     - com.github.tchx84.Flatseal
     - org.gnome.World.PikaBackup
-  user:
-    install:
-    - org.mozilla.firefox
-    - re.sonny.Junction
-    - org.libreoffice.LibreOffice
