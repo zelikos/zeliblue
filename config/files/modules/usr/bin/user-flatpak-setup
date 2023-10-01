@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Adapted from uBlue's Bazzite (https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/bin/bazzite-user-setup)
-
 # Setup Flathub
 if grep -qz 'fedora' <<< $(flatpak remotes); then
   flatpak remote-delete --user fedora --force
@@ -10,5 +8,5 @@ flatpak remote-add --if-not-exists --user flathub-user https://flathub.org/repo/
 
 # Prevent future executions
 echo "Writing state file"
-mkdir -p $HOME/.config/zeliblue/
-touch $HOME/.config/zeliblue/zeliblue-configured
+mkdir -p $HOME/.config/ublue-os/
+touch $HOME/.config/ublue-os/user-flatpak-configured

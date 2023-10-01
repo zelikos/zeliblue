@@ -6,7 +6,7 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/zeliblue-flatpak-manager
+ExecStart=/usr/bin/system-flatpak-setup
 Restart=on-failure
 
 [Install]
