@@ -16,9 +16,10 @@ if grep -qz 'fedora' <<< $(flatpak remotes); then
   /usr/lib/fedora-third-party/fedora-third-party-opt-out
   /usr/bin/fedora-third-party disable
   flatpak remote-delete fedora --force
+  flatpak remote-modify flathub --enable --system --title="Flathub (System)"
 fi
 
-# Set up system Flathub
+# Set up system Flathub if not already installed
 flatpak remote-add --if-not-exists --system --title="Flathub (System)" flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Lists of flatpaks
