@@ -28,13 +28,13 @@ modules:
     - dconf-update-service # a service unit that updates the dconf db on boot
     # - devpod # https://devpod.sh/ as an rpm
 
-- type: systemd
-  system:
-    enabled:
-      - zeliblue-flatpak-manager.service
-  user:
-    enabled:
-      - zeliblue-user-setup.service
+# - type: systemd
+#   system:
+#     enabled:
+#       - zeliblue-flatpak-manager.service
+#   user:
+#     enabled:
+#       - zeliblue-user-setup.service
 
 # - type: yafti
 
