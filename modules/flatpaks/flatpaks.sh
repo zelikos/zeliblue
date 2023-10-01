@@ -22,7 +22,7 @@ echo "Creating system Flatpak install list"
 if [[ ${#SYSTEM_INSTALL[@]} -gt 0 ]]; then
     rm -f $SYS_INSTALL_LIST && touch $SYS_INSTALL_LIST
     for flatpak in "${SYSTEM_INSTALL[@]}"; do
-        echo $flatpak
+        echo "Adding to system flatpak installs: $(printf ${flatpak})"
         echo $flatpak >> $SYS_INSTALL_LIST
     done
 fi
@@ -31,7 +31,7 @@ echo "Creating system Flatpak removals list"
 if [[ ${#SYSTEM_REMOVE[@]} -gt 0 ]]; then
     rm -f $SYS_REMOVE_LIST && touch $SYS_REMOVE_LIST
     for flatpak in "${SYSTEM_REMOVE[@]}"; do
-        echo $flatpak
+        echo "Adding to system flatpak removals: $(printf ${flatpak})"
         echo $flatpak >> $SYS_REMOVE_LIST
     done
 fi
@@ -40,7 +40,7 @@ echo "Creating user Flatpak install list"
 if [[ ${#USER_INSTALL[@]} -gt 0 ]]; then
     rm -f $USER_INSTALL_LIST && touch $USER_INSTALL_LIST
     for flatpak in "${USER_INSTALL[@]}"; do
-        echo $flatpak
+        echo "Adding to user flatpak installs: $(printf ${flatpak})"
         echo $flatpak >> $USER_INSTALL_LIST
     done
 fi
@@ -49,7 +49,7 @@ echo "Creating user Flatpak removals list"
 if [[ ${#USER_REMOVE[@]} -gt 0 ]]; then
     rm -f $USER_REMOVE_LIST && touch $USER_REMOVE_LIST
     for flatpak in "${USER_REMOVE[@]}"; do
-        echo $flatpak
+        echo "Adding to user flatpak removals: $(printf ${flatpak})"
         echo $flatpak >> $USER_REMOVE_LIST
     done
 fi
