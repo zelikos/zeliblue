@@ -19,10 +19,7 @@ if grep -qz 'fedora' <<< $(flatpak remotes); then
 fi
 
 # Set up system Flathub if not already installed
-flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# In case fedora flatpak repo is already removed, but Flathub was left disabled by mistake
-flatpak remote-modify flathub --enable --system --title="Flathub (System)"
+flatpak remote-add --if-not-exists --system flathub-system --title="Flathub (System)" https://flathub.org/repo/flathub.flatpakrepo
 
 # Lists of flatpaks
 FLATPAK_LIST=$(flatpak list --columns=application)
@@ -33,7 +30,7 @@ REMOVE_LIST=$(cat /etc/flatpak/system-remove)
 if [[ -n $INSTALL_LIST ]]; then
   for flatpak in $INSTALL_LIST; do
     if grep -qvz $flatpak <<< $FLATPAK_LIST; then
-      flatpak install --system --noninteractive flathub $flatpak
+      flatpak install --system --noninteractive flathub-system $flatpak
     fi
   done
 fi
