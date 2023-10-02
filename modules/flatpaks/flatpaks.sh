@@ -24,9 +24,9 @@ mkdir -p /usr/etc/flatpak/{system,user}
 get_yaml_array SYSTEM_INSTALL '.system.install[]' "$1"
 get_yaml_array SYSTEM_REMOVE '.system.remove[]' "$1"
 
-REPO_URL=$(yq '.system.repo-url' "$1")
-REPO_NAME=$(yq '.system.repo-name' "$1")
-REPO_TITLE=$(yq '.system.repo-title' "$1")
+REPO_URL=$(echo "$1" | yq -I=0 '.system.repo-url')
+REPO_NAME=$(echo "$1" | yq -I=0 '.system.repo-name')
+REPO_TITLE=$(echo "$1" | yq -I=0 '.system.repo-title')
 
 touch $SYS_REPO_INFO
 cat > $SYS_REPO_INFO <<EOF
@@ -38,9 +38,9 @@ EOF
 get_yaml_array USER_INSTALL '.user.install[]' "$1"
 get_yaml_array USER_REMOVE '.user.remove[]' "$1"
 
-REPO_URL=$(yq '.user.repo-url' "$1")
-REPO_NAME=$(yq '.user.repo-name' "$1")
-REPO_TITLE=$(yq '.user.repo-title' "$1")
+REPO_URL=$(echo "$1" | yq -I=0 '.user.repo-url')
+REPO_NAME=$(echo "$1" | yq -I=0 '.user.repo-name')
+REPO_TITLE=$(echo "$1" | yq -I=0 '.user.repo-title')
 
 touch $USER_REPO_INFO
 cat > $USER_REPO_INFO <<EOF
