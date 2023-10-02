@@ -8,10 +8,10 @@ export FLATPAKS_MODULE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/nul
 cp -r "$FLATPAKS_MODULE_DIR"/files/bin/* /usr/bin/
 cp -r "$FLATPAKS_MODULE_DIR"/files/systemd/* /usr/lib/systemd/
 
-SYS_INSTALL_LIST=/usr/etc/flatpak/system-install
-SYS_REMOVE_LIST=/usr/etc/flatpak/system-remove
-USER_INSTALL_LIST=/usr/etc/flatpak/user-install
-USER_REMOVE_LIST=/usr/etc/flatpak/user-remove
+SYS_INSTALL_LIST=/usr/etc/flatpak/system/install
+SYS_REMOVE_LIST=/usr/etc/flatpak/system/remove
+USER_INSTALL_LIST=/usr/etc/flatpak/user/install
+USER_REMOVE_LIST=/usr/etc/flatpak/user/remove
 
 echo "Enabling flatpaks module"
 systemctl enable system-flatpak-setup.service
