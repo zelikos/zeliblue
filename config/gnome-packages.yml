@@ -10,6 +10,9 @@ modules:
 
 - type: flatpaks
   system:
+    repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    repo-name: flathub-system
+    repo-title: "Flathub (System)"
     install:
     - org.gnome.Calculator
     - org.gnome.Calendar
@@ -30,3 +33,6 @@ modules:
     - org.gnome.Epiphany
     - com.github.tchx84.Flatseal
     - org.gnome.World.PikaBackup
+  user:
+    repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    repo-name: flathub-user
