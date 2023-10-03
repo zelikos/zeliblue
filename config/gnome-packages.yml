@@ -29,12 +29,13 @@ modules:
     - org.gnome.Logs
     - org.gnome.Loupe
     - org.gnome.Maps
-    - org.gnome.NautilusPreviewer
     - org.gnome.TextEditor
     - org.gnome.Weather
     - org.gnome.Epiphany
     - com.github.tchx84.Flatseal
     - org.gnome.World.PikaBackup
+    remove:
+    - org.gnome.NautilusPreviewer
   user:
     repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
     repo-name: flathub-user
