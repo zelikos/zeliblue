@@ -20,6 +20,7 @@ tap-to-click=true
 
 [org/gnome/mutter]
 center-new-windows=true
+check-alive-timeout=uint32 20000
 
 [org/gnome/mutter/keybindings]
 toggle-tiled-left = ['<Control><Super>Left']
