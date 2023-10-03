@@ -14,3 +14,10 @@ toggle-autologin:
 
 assemble:
   distrobox assemble create --replace --file ~/dev/dotfiles/distrobox.ini
+
+# Refresh default flatpaks
+refresh-default-flatpaks:
+  pkexec rm /etc/ublue-os/system-flatpak-configured
+  pkexec /usr/bin/system-flatpak-setup
+  rm $HOME/.config/ublue-os/user-flatpak-configured
+  /usr/bin/user-flatpak-setup
