@@ -5,8 +5,10 @@ modules:
   - gnome-console
   remove:
   - gnome-classic-session
+  - gnome-software-rpm-ostree
   - gnome-terminal
   - gnome-terminal-nautilus
+  - gnome-tweaks
 
 - type: flatpaks
   system:
