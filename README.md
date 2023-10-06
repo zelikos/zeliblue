@@ -1,5 +1,7 @@
 # zeliblue
 
+![Zeliblue Desktop](/repo_content/desktop1.webp?raw=true)
+
 Zeliblue is based off of [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of creating your own personalized image-based Fedora experience. For more detailed information, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/).
 
 Zeliblue features the GNOME desktop as the flagship experience. Notable changes include:
