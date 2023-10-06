@@ -22,12 +22,11 @@ The SteamOS variant, zeliblue-deck, is functional but very experimental; it shou
 
 ## Installation
 
-While I highly recommend looking into either the [main uBlue images](https://universal-blue.org/images/), or [making your own](https://universal-blue.org/tinker/make-your-own/), you can rebase onto zelibue if you really want to via the following:
+I recommend looking into either the [main uBlue images](https://universal-blue.org/images/) or [making your own](https://universal-blue.org/tinker/make-your-own/), but, if you want to, here's how you can use Zelibue on your system:
 
-> **Warning**
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
+The recommended installation method is to use the latest ISO from [the Releases page](https://github.com/zelikos/zeliblue/releases/tag/auto-iso).
 
-To rebase an existing Silverblue/Kinoite installation to the latest build:
+You can also rebase an existing Silverblue/Kinoite installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
@@ -37,31 +36,11 @@ To rebase an existing Silverblue/Kinoite installation to the latest build:
   ```
   systemctl reboot
   ```
-- Upon first boot into Zeliblue, yafti will pop up and prompt you to sign the image. You can do so there, or follow the steps below.
 
-- Then rebase to the signed image, like so:
-  ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zelikos/zeliblue:latest
-  ```
-- Reboot again to complete the installation
-  ```
-  systemctl reboot
-  ```
-
-This repository builds date tags as well, so if you want to rebase to a particular day's build:
-
-```
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zelikos/zeliblue:YYYYMMDD
-```
-
-This repository by default also supports signing.
-
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+After first boot, the first time that [ublue-update]() runs it will automatically rebase you onto the signed image.
 
 ## Verification
 
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
 
     cosign verify --key cosign.pub ghcr.io/zelikos/zeliblue
-
-If you're forking this repo, the uBlue website has [instructions](https://universal-blue.org/tinker/make-your-own/) for setting up signing properly.
