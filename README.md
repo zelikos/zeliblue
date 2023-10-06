@@ -1,24 +1,22 @@
 # zeliblue
 
-This repository is based off of the [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of setting up your own container image based on top of Fedora Silverblue, Kinoite, or other OSTree-based images. For more info, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/)
+Zeliblue is based off of [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of creating your own personalized image-based Fedora experience. For more detailed information, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/).
 
-This specific repo, "zeliblue," features my own customizations to the default uBlue-ified Silverblue experience. It is mainly intended for my own use, but I am still working on making it a general-purpose and user-friendly experience.
+Zeliblue features the GNOME desktop as the flagship experience. Notable changes include:
 
-Notable changes include:
-
-- Workspace navigation shortcuts are more akin to elementary OS's, to be more intuitive for horizontal workspaces
-- GNOME Console replaces GNOME Terminal as the default terminal, and can be launched with Super+t à la elementary OS
-- Flathub is set up in the background on first boot (adapted from [Bazzite](https://github.com/ublue-os/bazzite)), both system-wide (flathub-system) and for per-user installs (flathub-user)
+- Workspace navigation shortcuts are adjusted, with the aim of being more intuitive for horizontal workspaces
+- GNOME Console replaces GNOME Terminal as the default terminal, and can be launched with Super+t
+- Flathub is set up in the background on first boot, both system-wide (flathub-system) and for per-user installs (flathub-user)
 - GNOME Software defaults to installing apps from flathub-user
 - Core system apps are installed to flathub-system after first boot
 - System apps are selected based on the official [GNOME Core apps](https://apps.gnome.org/), with some substitutions and additions
 - And more miscellaneous tweaks
 
-Zeliblue also features a Kinoite spin and a SteamOS/Steam Deck flavor.
+There are also some additional flavors of Zeliblue:
 
-Zeliblue Plasma (zeliblue-kinoite) replaces multiple apps layered into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
+Zeliblue Plasma (zeliblue-kinoite) uses the Plasma desktop environment instead of GNOME. It replaces multiple apps layered that are into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
 
-The SteamOS variant, zeliblue-deck, is functional but very experimental; it shouldn't *break* anything, but I'd recommend using [uBlue's Bazzite](https://github.com/ublue-os/bazzite) instead, if you're looking for a SteamOS alternative.
+Zeliblue Deck shares the same core as Zeliblue but with additional customizations to offer a SteamOS-like experience. It is functional but very experimental; it shouldn't *break* anything, but, if you're looking for a SteamOS alternative, I'd recommend using [uBlue's Bazzite](https://github.com/ublue-os/bazzite) instead.
 
 ## Installation
 
