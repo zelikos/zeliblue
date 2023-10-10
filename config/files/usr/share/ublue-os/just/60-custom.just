@@ -21,3 +21,30 @@ refresh-default-flatpaks:
   pkexec /usr/bin/system-flatpak-setup
   rm $HOME/.config/ublue-os/user-flatpak-configured
   /usr/bin/user-flatpak-setup
+
+# Install Homebrew
+brew:
+  echo "Installing homebrew ..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Enable Homebrew in shells
+brew-shell:
+  #!/usr/bin/env bash
+  set -euxo pipefail
+  echo "Adding homebrew to shell configuration"
+  touch $HOME/.zprofile
+  touch $HOME/.bash_profile
+  if grep -q "linuxbrew" $HOME/.zprofile
+  then
+    echo "Brew configuration already present in .zprofile"
+  else
+    echo "Adding Brew configuration to .zprofile"
+    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile
+  fi
+  if grep -q "linuxbrew" $HOME/.bash_profile
+  then
+    echo "Brew configuration already present in .bash_profile"
+  else
+    echo "Adding Brew configuration to .bash_profile"
+    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bash_profile
+  fi
