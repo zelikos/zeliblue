@@ -23,6 +23,7 @@ screens:
           packages:
           - Install Homebrew: just --unstable brew
           - Enable Homebrew in shells: just --unstable brew-shell
+          - Install some CLI utilities: just --unstable brew-utilities
   final-screen:
     source: yafti.screen.title
     values:
