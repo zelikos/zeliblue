@@ -10,9 +10,6 @@ modules:
                 # read more in the files module's README
 
 - type: rpm-ostree
-  install:
-  - fish
-  - micro
   remove:
   - firefox
   - firefox-langpacks
