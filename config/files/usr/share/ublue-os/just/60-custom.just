@@ -34,8 +34,6 @@ brew-shell:
   echo "Adding homebrew to shell configuration"
   touch $HOME/.zprofile
   touch $HOME/.bashrc
-  mkdir -p $HOME/.config/fish
-  touch $HOME/.config/fish/config.fish
   if grep -q "linuxbrew" $HOME/.zprofile
   then
     echo "Brew configuration already present in .zprofile"
@@ -49,13 +47,6 @@ brew-shell:
   else
     echo "Adding Brew configuration to .bashrc"
     echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
-  fi
-  if grep -q "linuxbrew" $HOME/.config/fish/config.fish
-  then
-    echo "Brew configuration already present in config.fish"
-  else
-    echo "Adding Brew configuration to config.fish"
-    echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/config.fish
   fi
 
 # Install CLI utilties with Homebrew
