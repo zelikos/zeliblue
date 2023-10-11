@@ -57,3 +57,14 @@ brew-shell:
     echo "Adding Brew configuration to config.fish"
     echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/config.fish
   fi
+
+# Install CLI utilties with Homebrew
+brew-utilities:
+  #!/usr/bin/env bash
+  set -euxo pipefail
+  if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]
+  then
+    mkdir -p $HOME/.local/share/zeliblue
+    cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
+  fi
+  brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
