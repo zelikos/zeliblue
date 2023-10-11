@@ -5,10 +5,10 @@ screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to Zeliblue (Alpha)"
+      title: "Welcome to Zeliblue"
       icon: "/path/to/icon"
       description: |
-        Configure your system to get started.
+        Default system apps are installing in the background, but it is safe to use your computer in the meantime.
   sign-image:
     source: yafti.screen.package
     values:
