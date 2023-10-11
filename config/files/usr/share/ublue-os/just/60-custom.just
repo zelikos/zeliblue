@@ -33,7 +33,7 @@ brew-shell:
   set -euxo pipefail
   echo "Adding homebrew to shell configuration"
   touch $HOME/.zprofile
-  touch $HOME/.bash_profile
+  touch $HOME/.bashrc
   mkdir -p $HOME/.config/fish
   touch $HOME/.config/fish/config.fish
   if grep -q "linuxbrew" $HOME/.zprofile
@@ -43,12 +43,12 @@ brew-shell:
     echo "Adding Brew configuration to .zprofile"
     echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile
   fi
-  if grep -q "linuxbrew" $HOME/.bash_profile
+  if grep -q "linuxbrew" $HOME/.bashrc
   then
-    echo "Brew configuration already present in .bash_profile"
+    echo "Brew configuration already present in .bashrc"
   else
-    echo "Adding Brew configuration to .bash_profile"
-    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bash_profile
+    echo "Adding Brew configuration to .bashrc"
+    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
   fi
   if grep -q "linuxbrew" $HOME/.config/fish/config.fish
   then
