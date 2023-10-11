@@ -12,6 +12,7 @@ modules:
 - type: rpm-ostree
   install:
   - fish
+  - openssh-askpass
   remove:
   - firefox
   - firefox-langpacks
