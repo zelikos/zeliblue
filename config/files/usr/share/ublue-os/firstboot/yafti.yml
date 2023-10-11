@@ -9,21 +9,20 @@ screens:
       icon: "/path/to/icon"
       description: |
         Default system apps are installing in the background, but it is safe to use your computer in the meantime.
-  sign-image:
+  setup-homebrew:
     source: yafti.screen.package
     values:
-      title: Signing Zeliblue
-      condition:
-        run: grep -qvz "signed" <<< $(rpm-ostree status)
+      title: Setup Homebrew
       show_terminal: true
       package_manager: yafti.plugin.run
       groups:
-        Sign Zeliblue:
+        Setup Homebrew:
           description: |
-            This will sign your current install of Zeliblue. Mandatory for offline installs. This will take some time.
-          default: true
+            This will setup Homebrew on your system. Homebrew allows easy installation of CLI utilities from your host terminal. See https://brew.sh/ for more information.
+          default: false
           packages:
-          - Sign Zeliblue: just --unstable sign-image
+          - Install Homebrew: just --unstable brew
+          - Enable Homebrew in shells: just --unstable brew-shell
   final-screen:
     source: yafti.screen.title
     values:
