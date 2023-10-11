@@ -33,7 +33,7 @@ modules:
 #     enabled:
 #       - zeliblue-user-setup.service
 
-# - type: yafti
+- type: yafti
 
 - type: script
   scripts:
