@@ -48,6 +48,13 @@ brew-shell:
     echo "Adding Brew configuration to .bashrc"
     echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
   fi
+  if [[ -f "$HOME/.config/fish/conf.d/00_homebrew.fish" ]]
+  then
+    echo "Brew configuration already present for fish"
+  else
+    mkdir -p "$HOME/.config/fish/conf.d/"
+    echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/conf.d/00_homebrew.fish
+  fi
 
 # Install CLI utilties with Homebrew
 brew-utilities:
