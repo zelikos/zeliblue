@@ -1,6 +1,5 @@
 tap "homebrew/bundle"
 brew "btop"
-brew "fish"
 brew "gcc"
 brew "htop"
 brew "micro"

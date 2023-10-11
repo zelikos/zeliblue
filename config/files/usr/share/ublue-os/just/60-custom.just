@@ -25,7 +25,7 @@ refresh-default-flatpaks:
 # Install Homebrew
 brew:
   echo "Installing homebrew ..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Enable Homebrew in shells
 brew-shell:
@@ -33,9 +33,7 @@ brew-shell:
   set -euxo pipefail
   echo "Adding homebrew to shell configuration"
   touch $HOME/.zprofile
-  touch $HOME/.bash_profile
-  mkdir -p $HOME/.config/fish
-  touch $HOME/.config/fish/config.fish
+  touch $HOME/.bashrc
   if grep -q "linuxbrew" $HOME/.zprofile
   then
     echo "Brew configuration already present in .zprofile"
@@ -43,19 +41,19 @@ brew-shell:
     echo "Adding Brew configuration to .zprofile"
     echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile
   fi
-  if grep -q "linuxbrew" $HOME/.bash_profile
+  if grep -q "linuxbrew" $HOME/.bashrc
   then
-    echo "Brew configuration already present in .bash_profile"
+    echo "Brew configuration already present in .bashrc"
   else
-    echo "Adding Brew configuration to .bash_profile"
-    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bash_profile
+    echo "Adding Brew configuration to .bashrc"
+    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
   fi
-  if grep -q "linuxbrew" $HOME/.config/fish/config.fish
+  if [[ -f "$HOME/.config/fish/conf.d/00_homebrew.fish" ]]
   then
-    echo "Brew configuration already present in config.fish"
+    echo "Brew configuration already present for fish"
   else
-    echo "Adding Brew configuration to config.fish"
-    echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/config.fish
+    mkdir -p "$HOME/.config/fish/conf.d/"
+    echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/conf.d/00_homebrew.fish
   fi
 
 # Install CLI utilties with Homebrew
