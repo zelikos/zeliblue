@@ -12,7 +12,6 @@ modules:
 
 - type: flatpaks
   system:
-    repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
     repo-name: flathub-system
     repo-title: "Flathub (system-wide)"
     install:
