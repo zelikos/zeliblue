@@ -1,6 +1,5 @@
 [Unit]
 Description=Manage system flatpaks
-Documentation=https://github.com/ublue-os/endlish-oesque/issues/10
 Wants=network-online.target
 After=network-online.target
 
@@ -8,6 +7,8 @@ After=network-online.target
 Type=oneshot
 ExecStart=/usr/bin/system-flatpak-setup
 Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
 
 [Install]
 WantedBy=multi-user.target

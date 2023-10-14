@@ -37,5 +37,4 @@ modules:
     remove:
     - org.gnome.NautilusPreviewer
   user:
-    repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
     repo-name: flathub-user
