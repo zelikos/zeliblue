@@ -8,6 +8,7 @@
 # Tell build process to exit if there are any errors.
 set -oue pipefail
 
+export BLING_DIRECTORY="/tmp/bling"
 export CONFIG_DIRECTORY="/tmp/config"
 RECIPE_FILE="$CONFIG_DIRECTORY/$RECIPE"
 MODULE_DIRECTORY="/tmp/modules"
