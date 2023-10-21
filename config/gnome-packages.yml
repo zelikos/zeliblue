@@ -10,7 +10,7 @@ modules:
   - gnome-terminal-nautilus
   - gnome-tweaks
 
-- type: flatpaks
+- type: default-flatpaks
   system:
     repo-name: flathub-system
     repo-title: "Flathub (system-wide)"

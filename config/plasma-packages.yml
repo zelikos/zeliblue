@@ -15,7 +15,7 @@ modules:
   - kfind
   - okular
 
-- type: flatpaks
+- type: default-flatpaks
   system:
     repo-name: flathub-system
     repo-title: "Flathub (system-wide)"
