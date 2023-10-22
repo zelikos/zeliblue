@@ -12,4 +12,4 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
 
   - from-file: common-config.yml
-  - from-file: gnome-packages.yml
+  - from-file: gnome-config.yml
