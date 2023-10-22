@@ -1,5 +1,9 @@
 modules:
 
+- type: files
+  files:
+    - kinoite: /usr
+
 - type: rpm-ostree
   # install:
   #  - ksystemlog
@@ -36,3 +40,8 @@ modules:
       - org.gnome.Logs
   user:
     repo-name: flathub-user
+
+- type: systemd
+  user:
+    enabled:
+      - zeliblue-kinoite-config.service

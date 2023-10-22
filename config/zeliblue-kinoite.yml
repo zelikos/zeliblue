@@ -13,13 +13,3 @@ modules:
 
   - from-file: common-config.yml
   - from-file: plasma-config.yml
-
-  - type: files
-    files:
-      - kinoite: /usr
-
-  - type: systemd
-    user:
-      enabled:
-        - zeliblue-kinoite-config.service
-
