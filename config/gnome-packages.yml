@@ -1,5 +1,9 @@
 modules:
 
+- type: files
+  files:
+    - silverblue: /usr
+
 - type: rpm-ostree
   install:
     - gnome-console
