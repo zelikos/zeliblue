@@ -1,7 +1,7 @@
 [org/gnome/shell]
 favorite-apps = ['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.World.PikaBackup.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
 
-[org/gnome/console]
+[org/gnome/Console]
 shell = ['fish']
 
 [org/gnome/desktop/interface]
