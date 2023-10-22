@@ -11,11 +11,11 @@ modules:
 
 - type: rpm-ostree
   install:
-  - fish
-  - openssh-askpass
+    - fish
+    - openssh-askpass
   remove:
-  - firefox
-  - firefox-langpacks
+    - firefox
+    - firefox-langpacks
 
 - type: bling # configure what to pull in from ublue-os/bling
   install:
