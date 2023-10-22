@@ -39,6 +39,31 @@ You can also rebase an existing Silverblue/Kinoite installation to the latest bu
 
 After first boot, the first time that [ublue-update]() runs it will automatically rebase you onto the signed image.
 
+## `just` commands
+
+### refresh-default-flatpaks
+
+For existing installations to bring system flatpaks up-to-date with any additions/removals. This is a workaround until an automated solution is implemented.
+
+### brew
+
+Downloads and runs the [Homebrew](https://brew.sh/) installer.
+
+### brew-shell
+
+Enables Homebrew in bash, zsh, and fish.
+
+### brew-utilities
+
+Installs some CLI utilities via Homebrew. The full list can be found in [the Brewfile](/config/files/shared/share/zeliblue/Brewfile).
+
+### toggle-autologin
+
+Toggles between autologin to the desktop, or to Game Mode.
+
+Only useful on Zeliblue Deck, but harmless to run on the other flavors—it creates/deletes an empty file which is checked for in a Zeliblue Deck script.
+
+
 ## Verification
 
 These images are signed with sisgstore's [cosign](https://docs.sigstore.dev/cosign/overview/). You can verify the signature by downloading the `cosign.pub` key from this repo and running the following command:
