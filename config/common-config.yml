@@ -2,32 +2,32 @@
 
 modules:
 
-- type: files
-  files:
-    - shared: /usr # copy static configurations
-                # configuration you wish to end up in /etc/ on the booted system should be
-                # added into /usr/etc/ as that is the proper "distro" config directory on ostree
-                # read more in the files module's README
+  - type: files
+    files:
+      - shared: /usr # copy static configurations
+                  # configuration you wish to end up in /etc/ on the booted system should be
+                  # added into /usr/etc/ as that is the proper "distro" config directory on ostree
+                  # read more in the files module's README
 
-- type: rpm-ostree
-  install:
-    - fish
-    - openssh-askpass
-  remove:
-    - firefox
-    - firefox-langpacks
+  - type: rpm-ostree
+    install:
+      - fish
+      - openssh-askpass
+    remove:
+      - firefox
+      - firefox-langpacks
 
-- type: bling # configure what to pull in from ublue-os/bling
-  install:
-    - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
-                # in your custom.just (added by default) or local justfile
-    - ublue-os-wallpapers
-    - ublue-update # https://github.com/ublue-os/ublue-update
-    - dconf-update-service # a service unit that updates the dconf db on boot
+  - type: bling # configure what to pull in from ublue-os/bling
+    install:
+      - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
+                  # in your custom.just (added by default) or local justfile
+      - ublue-os-wallpapers
+      - ublue-update # https://github.com/ublue-os/ublue-update
+      - dconf-update-service # a service unit that updates the dconf db on boot
 
-- type: yafti
+  - type: yafti
 
-- type: script
-  scripts:
-    # this sets up the proper policy & signing files for signed images to work
-    - signing.sh
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      - signing.sh

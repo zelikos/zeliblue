@@ -1,47 +1,47 @@
 modules:
 
-- type: files
-  files:
-    - kinoite: /usr
+  - type: files
+    files:
+      - kinoite: /usr
 
-- type: rpm-ostree
-  # install:
-  #  - ksystemlog
-  remove:
-    - ark
-    - ark-libs
-    - filelight
-    - gwenview
-    - gwenview-libs
-    - kate
-    - kate-plugins
-    - kcalc
-    - kfind
-    - okular
+  - type: rpm-ostree
+    # install:
+    #  - ksystemlog
+    remove:
+      - ark
+      - ark-libs
+      - filelight
+      - gwenview
+      - gwenview-libs
+      - kate
+      - kate-plugins
+      - kcalc
+      - kfind
+      - okular
 
-- type: default-flatpaks
-  system:
-    repo-name: flathub-system
-    repo-title: "Flathub (system-wide)"
-    install:
-      - org.kde.ark
-      - org.kde.filelight
-      - org.kde.gwenview
-      - org.kde.haruna
-      - org.kde.kalk
-      - org.kde.kclock
-      - org.kde.kfind
-      - org.kde.kweather
-      - org.kde.kwrite
-      - org.kde.okular
-      - org.mozilla.firefox
-      - com.borgbase.Vorta
-      - com.github.tchx84.Flatseal
-      - org.gnome.Logs
-  user:
-    repo-name: flathub-user
+  - type: default-flatpaks
+    system:
+      repo-name: flathub-system
+      repo-title: "Flathub (system-wide)"
+      install:
+        - org.kde.ark
+        - org.kde.filelight
+        - org.kde.gwenview
+        - org.kde.haruna
+        - org.kde.kalk
+        - org.kde.kclock
+        - org.kde.kfind
+        - org.kde.kweather
+        - org.kde.kwrite
+        - org.kde.okular
+        - org.mozilla.firefox
+        - com.borgbase.Vorta
+        - com.github.tchx84.Flatseal
+        - org.gnome.Logs
+    user:
+      repo-name: flathub-user
 
-- type: systemd
-  user:
-    enabled:
-      - zeliblue-kinoite-config.service
+  - type: systemd
+    user:
+      enabled:
+        - zeliblue-kinoite-config.service
