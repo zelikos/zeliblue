@@ -12,14 +12,4 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
 
   - from-file: common-config.yml
-  - from-file: plasma-packages.yml
-
-  - type: files
-    files:
-      - kinoite: /usr
-
-  - type: systemd
-    user:
-      enabled:
-        - zeliblue-kinoite-config.service
-
+  - from-file: plasma-config.yml
