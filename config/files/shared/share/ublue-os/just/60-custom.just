@@ -12,9 +12,6 @@ toggle-autologin:
     sudo touch $DESKTOP_AUTOLOGIN
   fi
 
-assemble:
-  distrobox assemble create --replace --file ~/dev/dotfiles/distrobox.ini
-
 # Refresh default flatpaks
 refresh-default-flatpaks:
   pkexec rm /etc/ublue-os/system-flatpak-configured
