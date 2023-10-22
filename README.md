@@ -41,6 +41,12 @@ After first boot, the first time that [ublue-update]() runs it will automaticall
 
 ## `just` commands
 
+On first boot of any Zeliblue flavor, a `justfile` is created in the user's home directory at `$HOME/.justfile`. The `justfile` gives access to Zeliblue's `just` commands; users can also add their own custom commands.
+
+Commands provided by Zeliblue are documented below.
+
+For more about `just`, see [the manual](https://just.systems/man/en/).
+
 ### refresh-default-flatpaks
 
 For existing installations to bring system flatpaks up-to-date with any additions/removals. This is a workaround until an automated solution is implemented.
