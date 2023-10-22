@@ -17,6 +17,13 @@ modules:
       - firefox
       - firefox-langpacks
 
+  - type: default-flatpaks
+    system:
+      repo-name: flathub-system
+      repo-title: "Flathub (system-wide)"
+    user:
+      repo-name: flathub-user
+
   - type: bling # configure what to pull in from ublue-os/bling
     install:
       - justfiles # add "!include /usr/share/ublue-os/just/bling.just"

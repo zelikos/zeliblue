@@ -16,8 +16,6 @@ modules:
 
   - type: default-flatpaks
     system:
-      repo-name: flathub-system
-      repo-title: "Flathub (system-wide)"
       install:
         - org.gnome.Calculator
         - org.gnome.Calendar
@@ -39,5 +37,3 @@ modules:
         - org.gnome.World.PikaBackup
       remove:
         - org.gnome.NautilusPreviewer
-    user:
-      repo-name: flathub-user

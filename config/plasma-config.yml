@@ -21,8 +21,6 @@ modules:
 
   - type: default-flatpaks
     system:
-      repo-name: flathub-system
-      repo-title: "Flathub (system-wide)"
       install:
         - org.kde.ark
         - org.kde.filelight
@@ -38,8 +36,6 @@ modules:
         - com.borgbase.Vorta
         - com.github.tchx84.Flatseal
         - org.gnome.Logs
-    user:
-      repo-name: flathub-user
 
   - type: systemd
     user:
