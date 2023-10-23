@@ -16,7 +16,7 @@ Zeliblue features the GNOME desktop as the flagship experience. Notable changes 
 
 There are also some additional flavors of Zeliblue:
 
-Zeliblue Plasma (zeliblue-kinoite) uses the Plasma desktop environment instead of GNOME. It replaces multiple apps layered that are into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
+Zeliblue Plasma (zeliblue-kinoite) uses the Plasma desktop environment instead of GNOME. It replaces multiple apps that are layered into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
 
 Zeliblue Deck shares the same core as Zeliblue but with additional customizations to offer a SteamOS-like experience. It is functional but very experimental; it shouldn't *break* anything, but, if you're looking for a SteamOS alternative, I'd recommend using [uBlue's Bazzite](https://github.com/ublue-os/bazzite) instead.
 
@@ -65,11 +65,11 @@ Installs some CLI utilities via Homebrew. The full list can be found in [the Bre
 
 ### setup-davincibox
 
-Sets up a [DaVinciBox](https://github.com/zelikos/davincibox) container with distrobox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
+Sets up a [davincibox](https://github.com/zelikos/davincibox) container with distrobox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
 
 ### install-davinci
 
-Uses the `setup-davincibox` command, then installs DaVinci Resolve into DaVinciBox, which also adds launchers to the app grid/menu for ease of use. DaVinci Resolve must be downloaded from [their website](https://www.blackmagicdesign.com/products/davinciresolve), and the installer passed to the command as a parameter.
+Uses the `setup-davincibox` command, then installs DaVinci Resolve into davincibox, which also adds launchers to the app grid/menu for ease of use. DaVinci Resolve must be downloaded from [their website](https://www.blackmagicdesign.com/products/davinciresolve), and the installer passed to the command as a parameter.
 
 Example 1 (if installer is in current directory):
 
