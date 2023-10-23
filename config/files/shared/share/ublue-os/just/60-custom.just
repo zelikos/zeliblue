@@ -80,7 +80,10 @@ install-davinci installer="":
   just setup-davincibox
   if [[ {{installer}} == "" ]]; then
     echo "Please re-run this command with the path to DaVinci Resolve's installer."
-    echo "Example: just install-davinci DaVinci_Resolve_18.5.1_Linux.run"
+    echo "Example 1 (installer in current directory):"
+    echo "just install-davinci DaVinci_Resolve_18.5.1_Linux.run"
+    echo "Example 2 (installer in different directory):"
+    echo "just install-davinci /path/to/DaVinci_Resolve_18.5.1_Linux.run"
   else
     distrobox enter davincibox -- setup-davinci {{installer}} distrobox
   fi

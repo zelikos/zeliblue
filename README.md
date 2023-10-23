@@ -63,6 +63,26 @@ Enables Homebrew in bash, zsh, and fish.
 
 Installs some CLI utilities via Homebrew. The full list can be found in [the Brewfile](/config/files/shared/share/zeliblue/Brewfile).
 
+### setup-davincibox
+
+Sets up a [DaVinciBox](https://github.com/zelikos/davincibox) container with distrobox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
+
+### install-davinci
+
+Uses the `setup-davincibox` command, then installs DaVinci Resolve into DaVinciBox, which also adds launchers to the app grid/menu for ease of use. DaVinci Resolve must be downloaded from [their website](https://www.blackmagicdesign.com/products/davinciresolve), and the installer passed to the command as a parameter.
+
+Example 1 (if installer is in current directory):
+
+`just install-davinci DaVinci_Resolve_18.5.1_Linux.run`
+
+Example 2 (if installer is in a different directory):
+
+`just install-davinci /path/to/DaVinci_Resolve_18.5.1_Linux.run`
+
+### remove-davinci
+
+Removes DaVinci Resolve app launchers and davincibox container.
+
 ### toggle-autologin
 
 Toggles between autologin to the desktop, or to Game Mode.
