@@ -63,3 +63,14 @@ brew-utilities:
     cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
   fi
   brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
+
+# Setup DaVinciBox container
+setup-davincibox mode="":
+  #!/usr/bin/env bash
+  if [[ mode == "refresh" ]]; then
+    distrobox stop -Y davincibox
+    distrobox rm -Y davincibox
+  fi
+  podman image pull ghcr.io/zelikos/davincibox:latest
+  distrobox create -i ghcr.io/zelikos/davincibox:latest -n davincibox
+
