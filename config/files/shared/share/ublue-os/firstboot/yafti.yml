@@ -32,7 +32,7 @@ screens:
       links:
         - "Install More Apps":
             run: /usr/bin/gnome-software
-        - "Website":
+        - "Universal Blue":
             run: /usr/bin/xdg-open https://universal-blue.org
       description: |
         Thanks for trying Zeliblue, we hope you enjoy it!
