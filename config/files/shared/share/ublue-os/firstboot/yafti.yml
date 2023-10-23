@@ -31,6 +31,13 @@ screens:
           packages:
             - Discord: com.discordapp.Discord
             - Element: im.riot.Riot
+        Gaming:
+          description: Play games
+          default: false
+          packages:
+            - Steam: com.valvesoftware.Steam
+            - itch: io.itch.itch
+            - Lutris: net.lutris.Lutris
         Productivity:
           description: Keep organized, get work done
           default: false
