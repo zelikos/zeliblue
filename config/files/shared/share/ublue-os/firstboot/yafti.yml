@@ -19,6 +19,12 @@ screens:
         user: true
         system: false
       groups:
+        Web Browsers:
+          description: Additional web browsers
+          default: false
+          packages:
+            - Mozilla Firefox: org.mozilla.firefox
+            - Google Chrome: com.google.Chrome
   dev-options:
     source: yafti.screen.package
     values:
@@ -31,9 +37,9 @@ screens:
             This will setup Homebrew on your system. Homebrew allows easy installation of CLI utilities from your host terminal. See https://brew.sh/ for more information.
           default: false
           packages:
-          - Install Homebrew: just --unstable brew
-          - Enable Homebrew in shells: just --unstable brew-shell
-          - Install some CLI utilities: just --unstable brew-utilities
+            - Install Homebrew: just --unstable brew
+            - Enable Homebrew in shells: just --unstable brew-shell
+            - Install some CLI utilities: just --unstable brew-utilities
   final-screen:
     source: yafti.screen.title
     values:
