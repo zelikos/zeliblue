@@ -60,6 +60,33 @@ screens:
             - OBS Studio: com.obsproject.Studio
             - OBS GStreamer Plugin: com.obsproject.Studio.Plugin.Gstreamer
             - Boatswain (Streamdeck app): com.feaneron.Boatswain
+  grant-extra-drive-access:
+    source: yafti.screen.package
+    values:
+      title: Grant Drive Access
+      condition:
+        run: grep -q "com.valvesoftware.Steam" <<< $(flatpak list --user) || grep -q "io.itch.itch" <<< $(flatpak list --user) || grep -q "net.lutris.Lutris" <<< $(flatpak list --user)
+      show_terminal: false
+      package_manager: yafti.plugin.run
+      groups:
+        Steam:
+          description: Grant Steam access to internal and/or external drives for your Steam library.
+          default: true
+          packages:
+            - Internal drives: flatpak override --user --filesystem=/var/mnt com.valvesoftware.Steam
+            - External drives: flatpak override --user --filesystem=/run/media com.valvesoftware.Steam
+        itch:
+          description: Grant itch.io launcher access to internal and/or external drives for your games library.
+          default: true
+          packages:
+            - Internal drives: flatpak override --user --filesystem=/var/mnt io.itch.itch
+            - External drives: flatpak override --user --filesystem=/run/media io.itch.itch
+        Lutris:
+          description: Grant Lutris access to internal and/or external drives for your games library.
+          default: true
+          packages:
+            - Internal drives: flatpak override --user --filesystem=/var/mnt net.lutris.Lutris
+            - External drives: flatpak override --user --filesystem=/run/media net.lutris.Lutris
   dev-options:
     source: yafti.screen.package
     values:
