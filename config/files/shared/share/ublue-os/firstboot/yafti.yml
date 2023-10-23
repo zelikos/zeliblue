@@ -9,6 +9,16 @@ screens:
       icon: "/path/to/icon"
       description: |
         Default system apps are installing in the background, but it is safe to use your computer in the meantime.
+  suggested-apps:
+    source: yafti.screen.package
+    values:
+      title: Suggested Apps
+      show_terminal: true
+      package_manager: yafti.plugin.flatpak
+      package_manager_defaults:
+        user: true
+        system: false
+      groups:
   dev-options:
     source: yafti.screen.package
     values:
