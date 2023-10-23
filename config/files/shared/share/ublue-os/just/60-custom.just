@@ -63,3 +63,31 @@ brew-utilities:
     cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
   fi
   brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
+
+# Setup DaVinciBox container
+setup-davincibox mode="":
+  #!/usr/bin/env bash
+  if [[ {{mode}} == "refresh" ]]; then
+    distrobox stop -Y davincibox
+    distrobox rm -Y davincibox
+  fi
+  podman image pull ghcr.io/zelikos/davincibox:latest
+  distrobox create -i ghcr.io/zelikos/davincibox:latest -n davincibox
+
+# Install DaVinci Resolve to DaVinciBox
+install-davinci installer="":
+  #!/usr/bin/env bash
+  just setup-davincibox
+  if [[ {{installer}} == "" ]]; then
+    echo "Please re-run this command with the path to DaVinci Resolve's installer."
+    echo "Example: just install-davinci DaVinci_Resolve_18.5.1_Linux.run"
+  else
+    distrobox enter davincibox -- setup-davinci {{installer}} distrobox
+  fi
+
+# Remove DaVinci Resolve and DaVinciBox
+remove-davinci:
+  #!/usr/bin/env bash
+  distrobox enter davincibox -- add-davinci-launcher remove
+  distrobox stop -Y davincibox
+  distrobox rm -Y davincibox
