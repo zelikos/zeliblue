@@ -9,10 +9,10 @@ screens:
       icon: "/path/to/icon"
       description: |
         Default system apps are installing in the background, but it is safe to use your computer in the meantime.
-  suggested-apps:
+  additional-apps:
     source: yafti.screen.package
     values:
-      title: Suggested Apps
+      title: Additional Apps
       show_terminal: true
       package_manager: yafti.plugin.flatpak
       package_manager_defaults:
@@ -20,7 +20,7 @@ screens:
         system: false
       groups:
         Web Browsers:
-          description: Additional web browsers
+          description: Alternative web browsers
           default: false
           packages:
             - Mozilla Firefox: org.mozilla.firefox
