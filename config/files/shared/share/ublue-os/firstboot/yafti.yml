@@ -38,6 +38,13 @@ screens:
             - LibreOffice: org.libreoffice.LibreOffice
             - Errands: io.github.mrvladus.List
             - Sticky Notes: com.vixalien.sticky
+        Streaming:
+          description: Broadcast to the internet
+          default: false
+          packages:
+            - OBS Studio: com.obsproject.Studio
+            - OBS GStreamer Plugin: com.obsproject.Studio.Plugin.Gstreamer
+            - Boatswain (Streamdeck app): com.feaneron.Boatswain
   dev-options:
     source: yafti.screen.package
     values:
