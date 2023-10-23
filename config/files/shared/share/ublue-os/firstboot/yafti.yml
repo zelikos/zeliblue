@@ -51,7 +51,7 @@ screens:
           default: false
           packages:
             - LibreOffice: org.libreoffice.LibreOffice
-            - Errands: io.github.mrvladus.List
+            - Errands (ToDo List): io.github.mrvladus.List
             - Sticky Notes: com.vixalien.sticky
         Streaming:
           description: Broadcast to the internet
