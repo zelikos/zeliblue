@@ -67,7 +67,7 @@ brew-utilities:
 # Setup DaVinciBox container
 setup-davincibox mode="":
   #!/usr/bin/env bash
-  if [[ mode == "refresh" ]]; then
+  if [[ $mode == "refresh" ]]; then
     distrobox stop -Y davincibox
     distrobox rm -Y davincibox
   fi
@@ -78,7 +78,7 @@ setup-davincibox mode="":
 install-davinci installer="":
   #!/usr/bin/env bash
   just setup-davincibox
-  if [[ installer == "" ]]; then
+  if [[ $installer == "" ]]; then
     echo "Please re-run this command with the path to DaVinci Resolve's installer."
     echo "Example: just install-davinci DaVinci_Resolve_18.5.1_Linux.run"
   else
