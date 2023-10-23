@@ -84,3 +84,10 @@ install-davinci installer="":
   else
     distrobox enter davincibox -- setup-davinci $installer distrobox
   fi
+
+# Remove DaVinci Resolve and DaVinciBox
+remove-davinci:
+  #!/usr/bin/env bash
+  distrobox enter davincibox -- add-davinci-launcher remove
+  distrobox stop -Y davincibox
+  distrobox rm -Y davincibox
