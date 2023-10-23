@@ -74,3 +74,13 @@ setup-davincibox mode="":
   podman image pull ghcr.io/zelikos/davincibox:latest
   distrobox create -i ghcr.io/zelikos/davincibox:latest -n davincibox
 
+# Install DaVinci Resolve to DaVinciBox
+install-davinci installer="":
+  #!/usr/bin/env bash
+  just setup-davincibox
+  if [[ installer == "" ]]; then
+    echo "Please re-run this command with the path to DaVinci Resolve's installer."
+    echo "Example: just install-davinci DaVinci_Resolve_18.5.1_Linux.run"
+  else
+    distrobox enter davincibox -- setup-davinci $installer distrobox
+  fi
