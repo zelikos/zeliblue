@@ -25,6 +25,12 @@ screens:
           packages:
             - Mozilla Firefox: org.mozilla.firefox
             - Google Chrome: com.google.Chrome
+        Chat:
+          description: Talk with the world
+          default: false
+          packages:
+            - Discord: com.discordapp.Discord
+            - Element: im.riot.Riot
   dev-options:
     source: yafti.screen.package
     values:
