@@ -31,6 +31,13 @@ screens:
           packages:
             - Discord: com.discordapp.Discord
             - Element: im.riot.Riot
+        Productivity:
+          description: Keep organized, get work done
+          default: false
+          packages:
+            - LibreOffice: org.libreoffice.LibreOffice
+            - Errands: io.github.mrvladus.List
+            - Sticky Notes: com.vixalien.sticky
   dev-options:
     source: yafti.screen.package
     values:
