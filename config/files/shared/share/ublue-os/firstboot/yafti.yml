@@ -38,6 +38,14 @@ screens:
             - Steam: com.valvesoftware.Steam
             - itch: io.itch.itch
             - Lutris: net.lutris.Lutris
+        Graphics:
+          description: Visual design and photography
+          default: false
+          packages:
+            - Darktable: org.darktable.Darktable
+            - Krita: org.kde.krita
+            - GIMP: org.gimp.GIMP
+            - Inkscape: org.inkscape.Inkscape
         Productivity:
           description: Keep organized, get work done
           default: false
