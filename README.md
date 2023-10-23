@@ -71,7 +71,13 @@ Sets up a [DaVinciBox](https://github.com/zelikos/davincibox) container with dis
 
 Uses the `setup-davincibox` command, then installs DaVinci Resolve into DaVinciBox, which also adds launchers to the app grid/menu for ease of use. DaVinci Resolve must be downloaded from [their website](https://www.blackmagicdesign.com/products/davinciresolve), and the installer passed to the command as a parameter.
 
-Example: `just install-davinci DaVinci_Resolve_18.5.1_Linux.run`
+Example 1 (if installer is in current directory):
+
+`just install-davinci DaVinci_Resolve_18.5.1_Linux.run`
+
+Example 2 (if installer is in a different directory):
+
+`just install-davinci /path/to/DaVinci_Resolve_18.5.1_Linux.run`
 
 ### remove-davinci
 
