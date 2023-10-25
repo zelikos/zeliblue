@@ -84,7 +84,7 @@ screens:
         - "Install More Apps":
             run: /usr/bin/gnome-software
         - "Website":
-            run: /usr/bin/xdg-open https://github.com/zelikos/zeliblue
+            run: /usr/bin/xdg-open https://zelikos.dev/apps/zeliblue
         - "Universal Blue":
             run: /usr/bin/xdg-open https://universal-blue.org
       description: |
