@@ -85,7 +85,7 @@ screens:
             run: /usr/bin/gnome-software
         - "Website":
             run: /usr/bin/xdg-open https://zelikos.dev/apps/zeliblue
-        - "Universal Blue":
+        - "Built on Universal Blue":
             run: /usr/bin/xdg-open https://universal-blue.org
       description: |
         Thanks for trying Zeliblue, we hope you enjoy it!
