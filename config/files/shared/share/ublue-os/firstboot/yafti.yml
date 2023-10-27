@@ -32,7 +32,7 @@ screens:
             - Discord: com.discordapp.Discord
             - Element: im.riot.Riot
         Gaming:
-          description: Play games
+          description: Play your games
           default: false
           packages:
             - Steam: com.valvesoftware.Steam
