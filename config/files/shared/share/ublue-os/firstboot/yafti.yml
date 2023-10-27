@@ -37,7 +37,7 @@ screens:
           packages:
             - Steam: com.valvesoftware.Steam
             - itch: io.itch.itch
-            - Lutris: net.lutris.Lutris
+            - Cartridges: hu.kramo.Cartridges
         Graphics:
           description: Visual design and photography
           default: false
