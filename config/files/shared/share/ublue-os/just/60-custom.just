@@ -64,6 +64,13 @@ brew-utilities:
   fi
   brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
 
+# Install Homebrew, configure shells, and install Zeliblue utilities
+setup-homebrew:
+  #!/usr/bin/env bash
+  just brew
+  just brew-shell
+  just brew-utilities
+
 # Setup DaVinciBox container
 setup-davincibox mode="":
   #!/usr/bin/env bash
