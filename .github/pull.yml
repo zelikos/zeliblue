@@ -3,5 +3,3 @@ rules:
   - base: template
     upstream: ublue-os:template
     mergeMethod: hardreset
-  - base: live
-    upstream: template
