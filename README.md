@@ -63,6 +63,10 @@ Enables Homebrew in bash, zsh, and fish.
 
 Installs some CLI utilities via Homebrew. The full list can be found in [the Brewfile](/config/files/shared/share/zeliblue/Brewfile).
 
+### setup-homebrew
+
+A shortcut that runs each of the above `brew` commands.
+
 ### setup-davincibox
 
 Sets up a [davincibox](https://github.com/zelikos/davincibox) container with distrobox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
