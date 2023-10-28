@@ -32,12 +32,12 @@ screens:
             - Discord: com.discordapp.Discord
             - Element: im.riot.Riot
         Gaming:
-          description: Play games
+          description: Play your games
           default: false
           packages:
             - Steam: com.valvesoftware.Steam
             - itch: io.itch.itch
-            - Lutris: net.lutris.Lutris
+            - Cartridges: hu.kramo.Cartridges
         Graphics:
           description: Visual design and photography
           default: false
@@ -60,21 +60,6 @@ screens:
             - OBS Studio: com.obsproject.Studio
             - OBS GStreamer Plugin: com.obsproject.Studio.Plugin.Gstreamer
             - Boatswain (Streamdeck app): com.feaneron.Boatswain
-  dev-options:
-    source: yafti.screen.package
-    values:
-      title: Developer Options
-      show_terminal: true
-      package_manager: yafti.plugin.run
-      groups:
-        Setup Homebrew:
-          description: |
-            This will setup Homebrew on your system. Homebrew allows easy installation of CLI utilities from your host terminal. See https://brew.sh/ for more information.
-          default: false
-          packages:
-            - Install Homebrew: just --unstable brew
-            - Enable Homebrew in shells: just --unstable brew-shell
-            - Install some CLI utilities: just --unstable brew-utilities
   final-screen:
     source: yafti.screen.title
     values:
@@ -85,7 +70,7 @@ screens:
             run: /usr/bin/gnome-software
         - "Website":
             run: /usr/bin/xdg-open https://zelikos.dev/apps/zeliblue
-        - "Universal Blue":
+        - "Built on Universal Blue":
             run: /usr/bin/xdg-open https://universal-blue.org
       description: |
         Thanks for trying Zeliblue, we hope you enjoy it!
