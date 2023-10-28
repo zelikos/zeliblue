@@ -60,21 +60,6 @@ screens:
             - OBS Studio: com.obsproject.Studio
             - OBS GStreamer Plugin: com.obsproject.Studio.Plugin.Gstreamer
             - Boatswain (Streamdeck app): com.feaneron.Boatswain
-  dev-options:
-    source: yafti.screen.package
-    values:
-      title: Developer Options
-      show_terminal: true
-      package_manager: yafti.plugin.run
-      groups:
-        Setup Homebrew:
-          description: |
-            This will setup Homebrew on your system. Homebrew allows easy installation of CLI utilities from your host terminal. See https://brew.sh/ for more information.
-          default: false
-          packages:
-            - Install Homebrew: just --unstable brew
-            - Enable Homebrew in shells: just --unstable brew-shell
-            - Install some CLI utilities: just --unstable brew-utilities
   final-screen:
     source: yafti.screen.title
     values:
