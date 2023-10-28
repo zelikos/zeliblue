@@ -26,6 +26,8 @@ modules:
       - gamescope
       - gamescope-session-plus
       - gamescope-session-steam
+      - libei
+      - libei.i686
       - mangohud
       - sddm
       - sddm-sugar-steamOS

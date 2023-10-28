@@ -50,8 +50,7 @@ rpm-ostree install \
     libvdpau.i686 \
     libdbusmenu-gtk3.i686 \
     libatomic.i686 \
-    pipewire-alsa.i686 \
-    extest.i686
+    pipewire-alsa.i686
 
 echo "Installing Steam"
 
