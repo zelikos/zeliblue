@@ -22,23 +22,15 @@ rpm-ostree override replace \
         mesa-libgbm \
         mesa-libGL \
         mesa-libglapi \
-        mesa-va-drivers\
         mesa-vulkan-drivers \
-
-rpm-ostree override replace \
-    --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib:ml \
-        mesa-vulkan-drivers.i686 \
 
 # Install other 32-bit Steam dependencies
 
 echo "Installing other Steam dependencies"
 
 rpm-ostree install \
-    mesa-dri-drivers.i686 \
     vulkan-loader.i686 \
     alsa-lib.i686 \
-    extest.i686 \
     fontconfig.i686 \
     gtk2.i686 \
     libICE.i686 \
@@ -49,8 +41,6 @@ rpm-ostree install \
     libXinerama.i686 \
     libXtst.i686 \
     libXScrnSaver.i686 \
-    mesa-libGL.i686 \
-    mesa-libEGL.i686 \
     NetworkManager-libnm.i686 \
     nss.i686 \
     pulseaudio-libs.i686 \
@@ -60,7 +50,8 @@ rpm-ostree install \
     libvdpau.i686 \
     libdbusmenu-gtk3.i686 \
     libatomic.i686 \
-    pipewire-alsa.i686
+    pipewire-alsa.i686 \
+    extest.i686
 
 echo "Installing Steam"
 
