@@ -24,7 +24,8 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
       - gamescope
-      - gamescope-session
+      - gamescope-session-plus
+      - gamescope-session-steam
       - mangohud
       - sddm
       - sddm-sugar-steamOS
