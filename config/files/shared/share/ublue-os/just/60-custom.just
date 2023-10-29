@@ -14,8 +14,8 @@ toggle-autologin:
 
 # Refresh default flatpaks
 refresh-default-flatpaks:
-  pkexec rm /etc/ublue-os/system-flatpak-configured
-  pkexec /usr/bin/system-flatpak-setup
+  sudo rm /etc/ublue-os/system-flatpak-configured
+  sudo /usr/bin/system-flatpak-setup
   rm $HOME/.config/ublue-os/user-flatpak-configured
   /usr/bin/user-flatpak-setup
 
