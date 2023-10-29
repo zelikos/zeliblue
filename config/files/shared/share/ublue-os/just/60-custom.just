@@ -22,7 +22,7 @@ refresh-default-flatpaks:
 # Install Homebrew
 brew:
   echo "Installing homebrew ..."
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Enable Homebrew in shells
 brew-shell:
