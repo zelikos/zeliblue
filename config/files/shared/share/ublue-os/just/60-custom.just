@@ -67,9 +67,9 @@ brew-utilities:
 # Install Homebrew, configure shells, and install Zeliblue utilities
 setup-homebrew:
   #!/usr/bin/env bash
-  just brew
-  just brew-shell
-  just brew-utilities
+  just --unstable brew
+  just --unstable brew-shell
+  just --unstable brew-utilities
 
 # Setup DaVinciBox container
 setup-davincibox mode="":
@@ -84,7 +84,7 @@ setup-davincibox mode="":
 # Install DaVinci Resolve to DaVinciBox
 install-davinci installer="":
   #!/usr/bin/env bash
-  just setup-davincibox
+  just --unstable setup-davincibox
   if [[ {{installer}} == "" ]]; then
     echo "Please re-run this command with the path to DaVinci Resolve's installer."
     echo "Example 1 (installer in current directory):"
