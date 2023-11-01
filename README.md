@@ -87,12 +87,6 @@ Example 2 (if installer is in a different directory):
 
 Removes DaVinci Resolve app launchers and davincibox container.
 
-### toggle-autologin
-
-Toggles between autologin to the desktop, or to Game Mode.
-
-Only useful on Zeliblue Deck, but harmless to run on the other flavors—it creates/deletes an empty file which is checked for in a Zeliblue Deck script.
-
 ## Scope
 
 Zeliblue is created with the goal of providing an opiniated experience that emphasizes ease of use for non tech savvy users (i.e. "average" users), while also providing extra options for those with more computer experience. Those extra options are to be provided in a way that doesn't distract the average user, primarily via `just` commands.
