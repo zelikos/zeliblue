@@ -4,13 +4,7 @@
 
 # Toggle between desktop/gamescope autologin
 toggle-autologin:
-  #!/usr/bin/env bash
-  DESKTOP_AUTOLOGIN="/etc/zeliblue/desktop_autologin"
-  if [[ -f $DESKTOP_AUTOLOGIN ]]; then
-    sudo rm -f $DESKTOP_AUTOLOGIN
-  else
-    sudo touch $DESKTOP_AUTOLOGIN
-  fi
+  /usr/bin/zelideck-toggle-autologin
 
 # Refresh default flatpaks
 refresh-default-flatpaks:
