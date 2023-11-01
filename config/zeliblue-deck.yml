@@ -35,8 +35,6 @@ modules:
     remove:
       - mesa-va-drivers-freeworld
 
-  - type: steam-setup
-
   - type: systemd
     system:
       enabled:
@@ -50,4 +48,5 @@ modules:
 
   - type: script
     scripts:
+      - steam-install.sh
       - steamos-setup.sh

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -oue pipefail
 
 # Based on Bazzite's solution for installing Steam without package conflicts: https://github.com/ublue-os/bazzite/pull/330
