@@ -2,10 +2,6 @@
 
 # Include some of your custom scripts here!
 
-# Toggle between desktop/gamescope autologin
-toggle-autologin:
-  /usr/bin/zelideck-toggle-autologin
-
 # Refresh default flatpaks
 refresh-default-flatpaks:
   sudo rm /etc/ublue-os/system-flatpak-configured
