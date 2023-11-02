@@ -13,10 +13,8 @@ modules:
       - filelight
       - kate
       - kate-plugins
-      - kcalc
       - kfind
       - kwrite
-      - okular
 
   - type: default-flatpaks
     system:
