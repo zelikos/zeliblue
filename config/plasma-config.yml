@@ -11,13 +11,10 @@ modules:
       - ark
       - ark-libs
       - filelight
-      - gwenview
-      - gwenview-libs
       - kate
       - kate-plugins
-      - kcalc
       - kfind
-      - okular
+      - kwrite
 
   - type: default-flatpaks
     system:
