@@ -65,7 +65,7 @@ Installs some CLI utilities via Homebrew. The full list can be found in [the Bre
 
 ### setup-homebrew
 
-A shortcut that runs each of the above `brew` commands.
+A shortcut that runs `brew` and `brew-shell`. After those commands finish, it directs the user to re-launch their terminal to begin using Homebrew. Then, `brew-utilities` is suggested as a starting point for some extra utilities.
 
 ### setup-davincibox
 
