@@ -61,7 +61,7 @@ Enables Homebrew in bash, zsh, and fish.
 
 ### brew-utilities
 
-Installs some CLI utilities via Homebrew. The full list can be found in [the Brewfile](/config/files/shared/share/zeliblue/Brewfile).
+Installs some CLI utilities via Homebrew. These include an alternate CLI text editor, system monitoring tools, and Rust coreutils replacements. The full list can be found in [the Brewfile](/config/files/shared/share/zeliblue/Brewfile).
 
 ### setup-homebrew
 
