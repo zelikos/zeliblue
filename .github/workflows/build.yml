@@ -40,6 +40,7 @@ jobs:
         # Don't add module configuration files, you will get errors.
         recipe:
           - zeliblue.yml
+          - zeliblue-gts.yml
           - zeliblue-deck.yml
           - zeliblue-kinoite.yml
 # !!!
