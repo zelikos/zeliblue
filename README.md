@@ -39,7 +39,7 @@ You can also rebase an existing Silverblue/Kinoite installation to the latest bu
   systemctl reboot
   ```
 
-After first boot, the first time that [ublue-update]() runs it will automatically rebase you onto the signed image.
+After first boot, the first of the system updater will automatically rebase you onto the signed image.
 
 ## `just` commands
 
