@@ -23,6 +23,7 @@ modules:
         - org.gnome.Characters
         - org.gnome.clocks
         - org.gnome.Contacts
+        - com.vixalien.decibels
         - org.gnome.baobab
         - org.gnome.SimpleScan
         - org.gnome.Evince
