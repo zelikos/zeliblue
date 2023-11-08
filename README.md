@@ -16,6 +16,8 @@ Zeliblue features the GNOME desktop as the flagship experience. Notable changes 
 
 There are also some additional flavors of Zeliblue:
 
+Zeliblue GTS, which is nearly identical to the main image. The difference is that GTS follows the latest version of Fedora, minus one. In other words, when Zeliblue is on Fedora 39, GTS is on Fedora 38. While the main image should work well for most users, GTS is provided for those that desire extra stability.
+
 Zeliblue Plasma (zeliblue-kinoite) uses the Plasma desktop environment instead of GNOME. It replaces multiple apps that are layered into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
 
 Zeliblue Deck shares the same core as Zeliblue but with additional customizations to offer a SteamOS-like experience. It is functional but very experimental; it shouldn't *break* anything, but, if you're looking for a SteamOS alternative, I'd recommend using [uBlue's Bazzite](https://github.com/ublue-os/bazzite) instead.
@@ -37,7 +39,7 @@ You can also rebase an existing Silverblue/Kinoite installation to the latest bu
   systemctl reboot
   ```
 
-After first boot, the first time that [ublue-update]() runs it will automatically rebase you onto the signed image.
+After first boot, the first of the system updater will automatically rebase you onto the signed image.
 
 ## `just` commands
 

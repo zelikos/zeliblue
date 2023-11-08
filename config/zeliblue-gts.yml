@@ -1,11 +1,11 @@
 # image will be published to ghcr.io/<user>/<name>
-name: zeliblue
+name: zeliblue-gts
 # description will be included in the image's metadata
-description: An opiniated GNOME desktop experience, based on Fedora Silverblue
+description: Zeliblue GTS (Grand-Touring Support), for those needing extra stability
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 39
+image-version: gts
 
 # list of modules, executed in order
 # you can include multiple instances of the same module
