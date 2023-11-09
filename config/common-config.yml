@@ -9,6 +9,11 @@ modules:
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
 
+  - type: fonts
+    fonts:
+      google-fonts:
+        - Inter
+
   - type: rpm-ostree
     install:
       - fish

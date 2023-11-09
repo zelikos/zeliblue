@@ -8,6 +8,8 @@ shell = ['fish']
 clock-format='12h'
 clock-show-weekday=true
 font-antialiasing="rgba"
+font-name="Inter 11"
+document-font-name="Inter 11"
 gtk-theme="adw-gtk3"
 
 [org/gnome/desktop/wm/keybindings]
