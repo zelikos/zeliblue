@@ -11,8 +11,8 @@ modules:
 
   - type: fonts
     fonts:
-      - google-fonts:
-          - Inter
+      google-fonts:
+        - Inter
 
   - type: rpm-ostree
     install:
