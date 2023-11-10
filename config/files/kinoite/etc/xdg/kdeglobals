@@ -2,10 +2,11 @@
 DefaultProfile=Zeliblue.profile
 
 [General]
+fixed=Hack Nerd Font Mono,10,-1,5,50,0,0,0,0,0
 font=Inter,10,-1,5,50,0,0,0,0,0
 menuFont=Inter,10,-1,5,50,0,0,0,0,0
 smallestReadableFont=Inter,8,-1,5,50,0,0,0,0,0
-toolbarFont=Inter,10,-1,5,50,0,0,0,0,0
+toolbarFont=Inter,9,-1,5,50,0,0,0,0,0
 
 [WM]
 activeFont=Inter,10,-1,5,50,0,0,0,0,0

@@ -10,6 +10,7 @@ clock-show-weekday=true
 font-antialiasing="rgba"
 font-name="Inter 11"
 document-font-name="Inter 11"
+monospace-font-name="Hack Nerd Font Mono 10"
 gtk-theme="adw-gtk3"
 
 [org/gnome/desktop/wm/keybindings]

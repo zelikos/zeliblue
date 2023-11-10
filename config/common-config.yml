@@ -19,6 +19,8 @@ modules:
 
   - type: fonts
     fonts:
+      nerd-fonts:
+        - Hack
       google-fonts:
         - Inter
 
