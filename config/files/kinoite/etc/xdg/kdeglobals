@@ -5,7 +5,7 @@ DefaultProfile=Zeliblue.profile
 font=Inter,10,-1,5,50,0,0,0,0,0
 menuFont=Inter,10,-1,5,50,0,0,0,0,0
 smallestReadableFont=Inter,8,-1,5,50,0,0,0,0,0
-toolbarFont=Inter,10,-1,5,50,0,0,0,0,0
+toolbarFont=Inter,9,-1,5,50,0,0,0,0,0
 
 [WM]
 activeFont=Inter,10,-1,5,50,0,0,0,0,0
