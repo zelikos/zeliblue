@@ -1,3 +1,7 @@
+[Desktops]
+Number=4
+Rows=1
+
 [org.kde.kdecoration2]
 ButtonsOnLeft=S
 ButtonsOnRight=X
