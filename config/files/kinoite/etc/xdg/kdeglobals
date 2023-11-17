@@ -8,5 +8,8 @@ menuFont=Inter,10,-1,5,50,0,0,0,0,0
 smallestReadableFont=Inter,8,-1,5,50,0,0,0,0,0
 toolbarFont=Inter,9,-1,5,50,0,0,0,0,0
 
+[KDE]
+SingleClick=true
+
 [WM]
 activeFont=Inter,10,-1,5,50,0,0,0,0,0
