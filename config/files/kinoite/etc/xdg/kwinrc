@@ -2,6 +2,12 @@
 Number=4
 Rows=1
 
+[Effect-overview]
+BorderActivate=1,7
+
+[Effect-windowview]
+BorderActivateAll=9
+
 [org.kde.kdecoration2]
 ButtonsOnLeft=S
 ButtonsOnRight=X
