@@ -82,10 +82,9 @@ install-davinci installer="":
   just --unstable setup-davincibox
   if [[ $(echo {{installer}}) == "" ]]; then
     echo "Please re-run this command with the path to DaVinci Resolve's installer."
-    echo "Example 1 (installer in current directory):"
-    echo "just install-davinci DaVinci_Resolve_18.5.1_Linux.run"
-    echo "Example 2 (installer in different directory):"
-    echo "just install-davinci /path/to/DaVinci_Resolve_18.5.1_Linux.run"
+    echo "The full path is needed, even if in the current directory."
+    echo "Example:"
+    echo "just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run"
   else
     distrobox enter davincibox -- setup-davinci {{installer}} distrobox
   fi
