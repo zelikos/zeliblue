@@ -8,5 +8,3 @@ ublue_variants:
         info: Zeliblue GTS, for extra stability
       - label: zeliblue-kinoite
         info: Zeliblue with the KDE Plasma Desktop
-      - label: zeliblue-deck
-        info: SteamOS-like Experience (EXPERIMENTAL)
