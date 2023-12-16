@@ -87,3 +87,5 @@ remove-davinci:
 zeliblue-cli:
   #!/usr/bin/env bash
   distrobox assemble create --file /usr/etc/distrobox/zeliblue-cli.ini
+
+  distrobox enter zeliblue
