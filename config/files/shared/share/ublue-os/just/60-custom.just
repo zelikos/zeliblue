@@ -54,18 +54,6 @@ brew-utilities:
   fi
   brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
 
-# Install Homebrew, configure shells, and install Zeliblue utilities
-setup-homebrew:
-  #!/usr/bin/env bash
-  set -euxo pipefail
-  just --unstable brew
-  just --unstable brew-shell
-  echo "Homebrew succesfully installed and integrated with shells!"
-  echo "Re-launch your terminal to start using Homebrew."
-  echo ""
-  echo "If you would like to install some utilities to start with,"
-  echo "run just brew-utilities in the newly-launched terminal."
-
 # Setup DaVinciBox container
 setup-davincibox mode="":
   #!/usr/bin/env bash
