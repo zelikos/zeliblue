@@ -43,17 +43,6 @@ brew-shell:
     echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/conf.d/00_homebrew.fish
   fi
 
-# Install CLI utilties with Homebrew
-brew-utilities:
-  #!/usr/bin/env bash
-  set -euxo pipefail
-  if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]
-  then
-    mkdir -p $HOME/.local/share/zeliblue
-    cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
-  fi
-  brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
-
 # Setup DaVinciBox container
 setup-davincibox mode="":
   #!/usr/bin/env bash
@@ -88,5 +77,12 @@ remove-davinci:
 zeliblue-cli:
   #!/usr/bin/env bash
   distrobox assemble create --file /usr/etc/distrobox/zeliblue-cli.ini
+
+  if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]; then
+    mkdir -p $HOME/.local/share/zeliblue
+    cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
+  fi
+
+  distrobox enter zeliblue -- brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
 
   distrobox enter zeliblue
