@@ -95,3 +95,7 @@ remove-davinci:
   distrobox enter davincibox -- add-davinci-launcher remove
   distrobox stop -Y davincibox
   distrobox rm -Y davincibox
+
+zeliblue-cli:
+  #!/usr/bin/env bash
+  distrobox assemble create --file /usr/etc/distrobox/zeliblue-cli.ini
