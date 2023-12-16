@@ -9,11 +9,6 @@ refresh-default-flatpaks:
   rm $HOME/.config/ublue-os/user-flatpak-configured
   /usr/bin/user-flatpak-setup
 
-# Install Homebrew
-brew:
-  echo "Installing homebrew ..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # Enable Homebrew in shells
 brew-shell:
   #!/usr/bin/env bash
