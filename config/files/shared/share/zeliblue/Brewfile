@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-brew "atuin"
 brew "chezmoi"
 brew "gcc"
 brew "starship"
