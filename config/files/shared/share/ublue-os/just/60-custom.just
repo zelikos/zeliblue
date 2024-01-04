@@ -9,6 +9,11 @@ refresh-default-flatpaks:
   rm $HOME/.config/ublue-os/user-flatpak-configured
   /usr/bin/user-flatpak-setup
 
+# Install Homebrew
+brew:
+  echo "Installing homebrew ..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # Enable Homebrew in shells
 brew-shell:
   #!/usr/bin/env bash
@@ -37,6 +42,17 @@ brew-shell:
     mkdir -p "$HOME/.config/fish/conf.d/"
     echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/conf.d/00_homebrew.fish
   fi
+
+# Install CLI utilties with Homebrew
+brew-utilities:
+  #!/usr/bin/env bash
+  set -euxo pipefail
+  if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]
+  then
+    mkdir -p $HOME/.local/share/zeliblue
+    cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
+  fi
+  brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
 
 # Setup DaVinciBox container
 setup-davincibox mode="":

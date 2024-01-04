@@ -69,11 +69,19 @@ Removes DaVinci Resolve app launchers and davincibox container.
 
 ### zeliblue-cli
 
-Assembles a `zeliblue` distrobox intended as a Homebrew-first CLI experience.
+Assembles a `zeliblue` distrobox intended as the default CLI experience.
+
+### brew
+
+Install Homebrew as an alternative for CLI utilities.
 
 ### brew-shell
 
 Enables Homebrew in bash, zsh, and fish.
+
+### brew-utilities
+
+Install a set of CLI utilities via Homebrew. See the [Brewfile](config/files/shared/share/zeliblue/Brewfile) for the full list.
 
 ## Scope
 
