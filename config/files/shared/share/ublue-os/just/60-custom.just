@@ -67,7 +67,7 @@ setup-davincibox mode="":
 # Install DaVinci Resolve to DaVinciBox
 install-davinci installer="":
   #!/usr/bin/env bash
-  just --unstable setup-davincibox
+  just setup-davincibox
   if [[ $(echo {{installer}}) == "" ]]; then
     echo "Please re-run this command with the path to DaVinci Resolve's installer."
     echo "The full path is needed, even if in the current directory."
