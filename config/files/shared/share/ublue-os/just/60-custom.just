@@ -89,11 +89,4 @@ zeliblue-cli:
   #!/usr/bin/env bash
   distrobox assemble create --file /usr/etc/distrobox/zeliblue-cli.ini
 
-  if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]; then
-    mkdir -p $HOME/.local/share/zeliblue
-    cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
-  fi
-
-  distrobox enter zeliblue -- brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
-
   distrobox enter zeliblue
