@@ -51,22 +51,6 @@ For more about `just`, see [the manual](https://just.systems/man/en/).
 
 For existing installations to bring system flatpaks up-to-date with any additions/removals. This is a workaround until an automated solution is implemented.
 
-### brew
-
-Downloads and runs the [Homebrew](https://brew.sh/) installer.
-
-### brew-shell
-
-Enables Homebrew in bash, zsh, and fish.
-
-### brew-utilities
-
-Installs some CLI utilities via Homebrew. These include an alternate CLI text editor, system monitoring tools, and Rust coreutils replacements. The full list can be found in [the Brewfile](/config/files/shared/share/zeliblue/Brewfile).
-
-### setup-homebrew
-
-A shortcut that runs `brew` and `brew-shell`. After those commands finish, it directs the user to re-launch their terminal to begin using Homebrew. Then, `brew-utilities` is suggested as a starting point for some extra utilities.
-
 ### setup-davincibox
 
 Sets up a [davincibox](https://github.com/zelikos/davincibox) container with distrobox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
@@ -82,6 +66,22 @@ The full path to the installer is required, even if in the current directory.
 ### remove-davinci
 
 Removes DaVinci Resolve app launchers and davincibox container.
+
+### zeliblue-cli
+
+Assembles a `zeliblue` distrobox intended as the default CLI experience.
+
+### brew
+
+Install Homebrew as an alternative for CLI utilities.
+
+### brew-shell
+
+Enables Homebrew in bash, zsh, and fish.
+
+### brew-utilities
+
+Install a set of CLI utilities via Homebrew. See the [Brewfile](config/files/shared/share/zeliblue/Brewfile) for the full list.
 
 ## Scope
 
