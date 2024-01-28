@@ -4,8 +4,6 @@ modules:
 
   - type: bling # configure what to pull in from ublue-os/bling
     install:
-      - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
-                  # in your custom.just (added by default) or local justfile
       - ublue-os-wallpapers
       - ublue-update # https://github.com/ublue-os/ublue-update
       - dconf-update-service # a service unit that updates the dconf db on boot
