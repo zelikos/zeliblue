@@ -20,13 +20,7 @@ ARG RECIPE=recipe.yml
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
-
 COPY cosign.pub /usr/share/ublue-os/cosign.pub
-
-# Copy the bling from ublue-os/bling into tmp, to be installed later by the bling module
-# Feel free to remove these lines if you want to speed up image builds and don't want any bling
-COPY --from=ghcr.io/ublue-os/bling:latest /rpms /tmp/bling/rpms
-COPY --from=ghcr.io/ublue-os/bling:latest /files /tmp/bling/files
 
 # Copy build scripts & configuration
 COPY build.sh /tmp/build.sh
@@ -41,6 +35,9 @@ COPY modules /tmp/modules/
 # `yq` is used for parsing the yaml configuration
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
+
+# Change this if you want different version/tag of akmods.
+COPY --from=ghcr.io/ublue-os/akmods:main-39 /rpms /tmp/rpms
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
