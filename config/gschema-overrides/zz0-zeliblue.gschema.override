@@ -1,0 +1,9 @@
+#-------------- LOCKSCREEN MODIFICATIONS --------------#
+
+[org.gnome.desktop.peripherals.touchpad:GNOME-Greeter]
+tap-to-click=true
+
+[org.gnome.desktop.interface:GNOME-Greeter]
+font-name="Inter 11"
+
+#-------------- DESKTOP MODIFICATIONS --------------#
