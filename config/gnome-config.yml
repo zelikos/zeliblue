@@ -38,3 +38,7 @@ modules:
         - org.gnome.World.PikaBackup
       remove:
         - org.gnome.NautilusPreviewer
+
+  - type: gschema-overrides
+    include:
+      - zz0-zeliblue.gschema.override
