@@ -2,58 +2,6 @@
 
 # Include some of your custom scripts here!
 
-# Refresh default flatpaks
-refresh-default-flatpaks:
-  sudo rm /etc/ublue-os/system-flatpak-configured
-  sudo /usr/bin/system-flatpak-setup
-  rm $HOME/.config/ublue-os/user-flatpak-configured
-  /usr/bin/user-flatpak-setup
-
-# Install Homebrew
-brew:
-  echo "Installing homebrew ..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Enable Homebrew in shells
-brew-shell:
-  #!/usr/bin/env bash
-  set -euxo pipefail
-  echo "Adding homebrew to shell configuration"
-  touch $HOME/.zprofile
-  touch $HOME/.bashrc
-  if grep -q "linuxbrew" $HOME/.zprofile
-  then
-    echo "Brew configuration already present in .zprofile"
-  else
-    echo "Adding Brew configuration to .zprofile"
-    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile
-  fi
-  if grep -q "linuxbrew" $HOME/.bashrc
-  then
-    echo "Brew configuration already present in .bashrc"
-  else
-    echo "Adding Brew configuration to .bashrc"
-    echo 'eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.bashrc
-  fi
-  if [[ -f "$HOME/.config/fish/conf.d/00_homebrew.fish" ]]
-  then
-    echo "Brew configuration already present for fish"
-  else
-    mkdir -p "$HOME/.config/fish/conf.d/"
-    echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.config/fish/conf.d/00_homebrew.fish
-  fi
-
-# Install CLI utilties with Homebrew
-brew-utilities:
-  #!/usr/bin/env bash
-  set -euxo pipefail
-  if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]
-  then
-    mkdir -p $HOME/.local/share/zeliblue
-    cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
-  fi
-  brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
-
 # Setup DaVinciBox container
 setup-davincibox mode="":
   #!/usr/bin/env bash
@@ -85,8 +33,27 @@ remove-davinci:
   distrobox rm -Y davincibox
 
 # Initialize Zeliblue CLI environment
-zeliblue-cli:
+enable-zeliblue-cli:
   #!/usr/bin/env bash
-  distrobox assemble create --file /usr/etc/distrobox/zeliblue-cli.ini
+  mkdir -p ~/.config/containers/systemd
+  cp /usr/share/zeliblue/quadlets/zeliblue-cli.container ~/.config/containers/systemd/zeliblue-cli.container
 
-  distrobox enter zeliblue
+  systemctl --user daemon-reload
+
+  podman image pull ghcr.io/zelikos/zeliblue-cli:latest
+
+  systemctl --user start zeliblue-cli.service
+
+  systemctl --user enable --now podman-auto-update.timer
+
+# Disable Zeliblue CLI
+disable-zeliblue-cli:
+  #!/usr/bin/env bash
+  rm ~/.config/containers/systemd/zeliblue-cli.container
+
+  systemctl --user stop zeliblue-cli.service
+  systemctl --user disable --now podman-auto-update.timer
+
+  podman image rm ghcr.io/zelikos/zeliblue-cli:latest
+
+  systemctl --user daemon-reload
