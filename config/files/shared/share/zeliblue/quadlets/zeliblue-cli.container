@@ -41,3 +41,6 @@ Volume=/etc/resolv.conf:/etc/resolv.conf:ro
 
 [Service]
 TimeoutStartSec=300
+
+[Install]
+RequiredBy=default.target
