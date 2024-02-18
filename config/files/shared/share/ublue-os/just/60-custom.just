@@ -36,7 +36,7 @@ remove-davinci:
 enable-zeliblue-cli:
   #!/usr/bin/env bash
   mkdir -p ~/.config/containers/systemd
-  pkexec cp /usr/share/zeliblue/quadlets/zeliblue-cli.container ~/.config/containers/systemd/zeliblue-cli.container
+  cp /usr/share/zeliblue/quadlets/zeliblue-cli.container ~/.config/containers/systemd/zeliblue-cli.container
 
   systemctl --user daemon-reload
 
