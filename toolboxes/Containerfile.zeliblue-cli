@@ -6,6 +6,8 @@ LABEL com.github.containers.toolbox="true" \
 
 COPY ./toolboxes/packages.zeliblue-cli /toolbox-packages
 
+RUN cat toolbox-packages
+
 RUN dnf -y upgrade && \
     dnf -y install &(<toolbox-packages) && \
     dnf clean all
