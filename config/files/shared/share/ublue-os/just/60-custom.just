@@ -45,3 +45,15 @@ enable-zeliblue-cli:
   systemctl --user start zeliblue-cli.service
 
   systemctl --user enable --now podman-auto-update.timer
+
+# Disable Zeliblue CLI
+disable-zeliblue-cli:
+  #!/usr/bin/env bash
+  rm ~/.config/containers/systemd/zeliblue-cli.container
+
+  systemctl --user stop zeliblue-cli.service
+  systemctl --user disable --now podman-auto-update.timer
+
+  podman image rm ghcr.io/zelikos/zeliblue-cli:latest
+
+  systemctl --user daemon-reload
