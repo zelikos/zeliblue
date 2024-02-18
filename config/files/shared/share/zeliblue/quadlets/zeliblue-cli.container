@@ -8,7 +8,7 @@ ContainerName=zeliblue
 Environment=SHELL=%s
 Environment=HOME=%h
 Environment=container=podman
-Exec=--verbose --name %u --user %U --group %G --home %h --init "0" --nvidia "1" --pre-init-hooks " " --additional-packages " " -- " "
+Exec=--verbose --name %u --user %U --group %G --home %h --init "0" --nvidia "1" --pre-init-hooks " " -- " "
 Image=ghcr.io/zelikos/zeliblue-cli:latest
 HostName=zeliblue.%l
 Label=manager=distrobox
