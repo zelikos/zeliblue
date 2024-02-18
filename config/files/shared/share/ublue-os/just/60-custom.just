@@ -33,8 +33,12 @@ remove-davinci:
   distrobox rm -Y davincibox
 
 # Initialize Zeliblue CLI environment
-zeliblue-cli:
+enable-zeliblue-cli:
   #!/usr/bin/env bash
-  distrobox assemble create --file /usr/etc/distrobox/zeliblue-cli.ini
+  mkdir -p ~/.config/containers/systemd
+  pkexec cp /usr/share/zeliblue/quadlets/zeliblue-cli.container ~/.config/containers/systemd/zeliblue-cli.container
 
-  distrobox enter zeliblue
+  systemctl --user daemon-reload
+
+  systemctl --user enable --now podman-auto-update.timer
+  systemctl --user start zeliblue-cli.service
