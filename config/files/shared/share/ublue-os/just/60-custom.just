@@ -40,5 +40,8 @@ enable-zeliblue-cli:
 
   systemctl --user daemon-reload
 
-  systemctl --user enable --now podman-auto-update.timer
+  podman image pull ghcr.io/zelikos/zeliblue-cli:latest
+
   systemctl --user start zeliblue-cli.service
+
+  systemctl --user enable --now podman-auto-update.timer
