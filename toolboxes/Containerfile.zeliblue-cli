@@ -1,0 +1,13 @@
+FROM ghcr.io/ublue-os/fedora-toolbox:latest
+
+LABEL com.github.containers.toolbox="true" \
+      usage="This image is meant to be used with the toolbox or distrobox command" \
+      summary="A cloud-native terminal experience for Zeliblue, powered by Fedora"
+
+COPY ./toolboxes/packages.zeliblue-cli /toolbox-packages
+
+RUN dnf -y upgrade && \
+    dnf -y install $(<toolbox-packages) && \
+    dnf clean all
+
+RUN rm /toolbox-packages
