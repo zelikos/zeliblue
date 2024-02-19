@@ -87,6 +87,8 @@ if [ -z "$BASHRCSOURCED" ]; then
   # Enable starship
   eval "$(starship init bash)"
 
+  # Enable zoxide
+  eval "$(zoxide init bash --cmd cd)"
 fi
 
 # vim:ts=4:sw=4
