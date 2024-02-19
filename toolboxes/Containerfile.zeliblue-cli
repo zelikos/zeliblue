@@ -4,6 +4,7 @@ LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox or distrobox command" \
       summary="A cloud-native terminal experience for Zeliblue, powered by Fedora"
 
+COPY ./toolboxes/files /
 COPY ./toolboxes/packages.zeliblue-cli /toolbox-packages
 
 RUN dnf -y upgrade && \
