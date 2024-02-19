@@ -18,3 +18,6 @@ RUN curl -Lo /tmp/starship.tar.gz "https://github.com/starship/starship/releases
     tar -xzf /tmp/starship.tar.gz -C /tmp && \
     install -c -m 0755 /tmp/starship /usr/bin && \
     rm /tmp/*
+
+# Chezmoi
+RUN sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/bin
