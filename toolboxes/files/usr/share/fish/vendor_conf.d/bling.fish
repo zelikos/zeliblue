@@ -1,7 +1,7 @@
 if status is-interactive
     # set -gx STARSHIP_CONFIG /etc/starship.toml
-    eval "$(starship init fish)"
-    eval "$(zoxide init fish --cmd cd)"
+    starship init fish | source
+    zoxide init --cmd cd fish | source
     # set -gx HOST (hostname -s)
 end
 
@@ -20,7 +20,7 @@ alias xzegrep='rg -z' 2>/dev/null
 alias xzfgrep='rg -z -F' 2>/dev/null
 
 # Zoxide is handling cd
-alias cd='cd' 2>/dev/null
+# alias cd='cd' 2>/dev/null
 
 # Fd for find
 alias find='fd' 2>/dev/null
