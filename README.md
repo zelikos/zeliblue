@@ -47,10 +47,6 @@ Commands provided by Zeliblue are documented below.
 
 For more about `just`, see [the manual](https://just.systems/man/en/).
 
-### refresh-default-flatpaks
-
-For existing installations to bring system flatpaks up-to-date with any additions/removals. This is a workaround until an automated solution is implemented.
-
 ### setup-davincibox
 
 Sets up a [davincibox](https://github.com/zelikos/davincibox) container with distrobox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
@@ -67,21 +63,13 @@ The full path to the installer is required, even if in the current directory.
 
 Removes DaVinci Resolve app launchers and davincibox container.
 
-### zeliblue-cli
+### enable-zeliblue-cli
 
-Assembles a `zeliblue` distrobox intended as the default CLI experience.
+Enable an auto-updating `zeliblue` distrobox intended as the default CLI experience. The `zeliblue-cli` image is derived from [Universal Blue's fedora-toolbox](https://github.com/ublue-os/toolboxes).
 
-### brew
+### disable-zeliblue-cli
 
-Install Homebrew as an alternative for CLI utilities.
-
-### brew-shell
-
-Enables Homebrew in bash, zsh, and fish.
-
-### brew-utilities
-
-Install a set of CLI utilities via Homebrew. See the [Brewfile](config/files/shared/share/zeliblue/Brewfile) for the full list.
+Removes the `zeliblue-cli` image and disables other related changes made by the previous command.
 
 ## Scope
 
