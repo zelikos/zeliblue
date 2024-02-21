@@ -1,0 +1,10 @@
+[misc]
+only = ["distrobox"]
+ignore_failures = ["distrobox"]
+skip_notify = true
+assume_yes = true
+no_retry = true
+no_self_update = true
+
+[distrobox]
+use_root = false
