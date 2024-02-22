@@ -75,9 +75,10 @@ enable-zeliblue-cli:
 [private]
 disable-zeliblue-cli:
   #!/usr/bin/env bash
-  rm ~/.config/containers/systemd/zeliblue-cli.container
 
   systemctl --user stop zeliblue-cli.service
+  rm ~/.config/containers/systemd/zeliblue-cli.container
+
   systemctl --user disable --now podman-auto-update.timer
 
   podman image rm ghcr.io/zelikos/zeliblue-cli:latest
