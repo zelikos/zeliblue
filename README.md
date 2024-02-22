@@ -63,13 +63,9 @@ The full path to the installer is required, even if in the current directory.
 
 Removes DaVinci Resolve app launchers and davincibox container.
 
-### enable-zeliblue-cli
+### zeliblue-cli
 
-Enable an auto-updating `zeliblue` distrobox intended as the default CLI experience. The `zeliblue-cli` image is derived from [Universal Blue's fedora-toolbox](https://github.com/ublue-os/toolboxes).
-
-### disable-zeliblue-cli
-
-Removes the `zeliblue-cli` image and disables other related changes made by the previous command.
+Enable or disable an auto-updating `zeliblue` distrobox intended as the default CLI experience. The `zeliblue-cli` image is derived from [Universal Blue's fedora-toolbox](https://github.com/ublue-os/toolboxes).
 
 ## Scope
 
