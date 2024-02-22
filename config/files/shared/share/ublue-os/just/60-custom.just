@@ -32,7 +32,9 @@ remove-davinci:
   distrobox stop -Y davincibox
   distrobox rm -Y davincibox
 
-# Initialize Zeliblue CLI environment
+
+
+[private]
 enable-zeliblue-cli:
   #!/usr/bin/env bash
   mkdir -p ~/.config/containers/systemd
@@ -46,7 +48,7 @@ enable-zeliblue-cli:
 
   systemctl --user enable --now podman-auto-update.timer
 
-# Disable Zeliblue CLI
+[private]
 disable-zeliblue-cli:
   #!/usr/bin/env bash
   rm ~/.config/containers/systemd/zeliblue-cli.container
