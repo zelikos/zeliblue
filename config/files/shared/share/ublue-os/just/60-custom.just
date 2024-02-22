@@ -32,7 +32,31 @@ remove-davinci:
   distrobox stop -Y davincibox
   distrobox rm -Y davincibox
 
-
+# Toggle Zeliblue-CLI
+zeliblue-cli ACTION="prompt":
+    #!/usr/bin/bash
+    source /usr/lib/ujust/ujust.sh
+    CURRENT_STATE="Disabled"
+    if systemctl --quiet --user is-active zeliblue-cli.service; then
+      CURRENT_STATE="Enabled"
+    fi
+    OPTION={{ ACTION }}
+    if [ "$OPTION" == "prompt" ]; then
+      echo "Zeliblue CLI is currently: ${bold}${CURRENT_STATE}${normal}"
+      echo "Enable or Disable Zeliblue CLI?"
+      OPTION=$(ugum choose Enable Disable)
+    elif [ "$OPTION" == "help" ]; then
+      echo "Usage: ujust zeliblue-cli <option>"
+      echo "  <option>: Specify the quick option - 'enable' or 'disable'"
+      echo "  Use 'enable' to Enable Zeliblue CLI."
+      echo "  Use 'disable' to Disable Zeliblue CLI."
+      exit 0
+    fi
+    if [ "${OPTION,,}" == "enable" ]; then
+      just enable-zeliblue-cli
+    elif [ "${OPTION,,}" == "disable" ]; then
+      just disable-zeliblue-cli
+    fi
 
 [private]
 enable-zeliblue-cli:
