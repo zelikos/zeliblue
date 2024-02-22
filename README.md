@@ -2,7 +2,7 @@
 
 ![Zeliblue Desktop](/repo_content/desktop1.webp?raw=true)
 
-Zeliblue is based off of [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of creating your own personalized image-based Fedora experience. For more detailed information, check out the [uBlue homepage](https://universal-blue.org/) and the [main uBlue repo](https://github.com/ublue-os/main/).
+Zeliblue is based off of [ublue-os/startingpoint](https://github.com/ublue-os/startingpoint), which eases the process of creating your own personalized image-based Fedora experience. For more detailed information, check out the [uBlue homepage](https://universal-blue.org/).
 
 Zeliblue features the GNOME desktop as the flagship experience. Notable changes include:
 
@@ -22,9 +22,9 @@ Zeliblue Plasma (zeliblue-kinoite) uses the Plasma desktop environment instead o
 
 ## Installation
 
-I recommend looking into either the [main uBlue images](https://universal-blue.org/images/) or [making your own](https://universal-blue.org/tinker/make-your-own/), but, if you want to, here's how you can use Zelibue on your system:
+For most users, I would recommend looking into either [Bluefin](https://projectbluefin.io/) or [Bazzite](https://bazzite.gg/), or, for tinkerers, I recommend [making your own](https://universal-blue.org/tinker/make-your-own/). Both of the former two projects have many more contributors and a much larger community for support, whereas Zeliblue is run by one sole maintainer.
 
-The recommended installation method is to use the latest ISO from [the Releases page](https://github.com/zelikos/zeliblue/releases/tag/auto-iso).
+With that being said, for those that do still want to give Zeliblue a try, the recommended installation method is to use the latest ISO from [the Releases page](https://github.com/zelikos/zeliblue/releases/tag/auto-iso).
 
 You can also rebase an existing Silverblue/Kinoite installation to the latest build:
 
