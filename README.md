@@ -22,7 +22,7 @@ Zeliblue Plasma (zeliblue-kinoite) uses the Plasma desktop environment instead o
 
 ## Installation
 
-For most users, I would recommend looking into either [Bluefin](https://projectbluefin.io/) or [Bazzite](https://bazzite.gg/), or, for tinkerers, I recommend [making your own](https://universal-blue.org/tinker/make-your-own/). Both of the former two projects have many more contributors and a much larger community for support, whereas Zeliblue is run by one sole maintainer.
+For most users, I would recommend looking into either [Bluefin](https://projectbluefin.io/) or [Bazzite](https://bazzite.gg/), or, for tinkerers, I recommend [making your own](https://universal-blue.org/tinker/make-your-own/). Both of the former two projects have many more contributors and a much larger community for support, whereas Zeliblue is run by one lone maintainer.
 
 With that being said, for those that do still want to give Zeliblue a try, the recommended installation method is to use the latest ISO from [the Releases page](https://github.com/zelikos/zeliblue/releases/tag/auto-iso).
 
