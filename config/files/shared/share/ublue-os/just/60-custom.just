@@ -32,7 +32,33 @@ remove-davinci:
   distrobox stop -Y davincibox
   distrobox rm -Y davincibox
 
-# Initialize Zeliblue CLI environment
+# Toggle Zeliblue-CLI
+zeliblue-cli ACTION="prompt":
+    #!/usr/bin/bash
+    source /usr/lib/ujust/ujust.sh
+    CURRENT_STATE="Disabled"
+    if systemctl --quiet --user is-active zeliblue-cli.service; then
+      CURRENT_STATE="Enabled"
+    fi
+    OPTION={{ ACTION }}
+    if [ "$OPTION" == "prompt" ]; then
+      echo "Zeliblue CLI is currently: ${bold}${CURRENT_STATE}${normal}"
+      echo "Enable or Disable Zeliblue CLI?"
+      OPTION=$(ugum choose Enable Disable)
+    elif [ "$OPTION" == "help" ]; then
+      echo "Usage: ujust zeliblue-cli <option>"
+      echo "  <option>: Specify the quick option - 'enable' or 'disable'"
+      echo "  Use 'enable' to Enable Zeliblue CLI."
+      echo "  Use 'disable' to Disable Zeliblue CLI."
+      exit 0
+    fi
+    if [ "${OPTION,,}" == "enable" ]; then
+      just enable-zeliblue-cli
+    elif [ "${OPTION,,}" == "disable" ]; then
+      just disable-zeliblue-cli
+    fi
+
+[private]
 enable-zeliblue-cli:
   #!/usr/bin/env bash
   mkdir -p ~/.config/containers/systemd
@@ -46,14 +72,19 @@ enable-zeliblue-cli:
 
   systemctl --user enable --now podman-auto-update.timer
 
-# Disable Zeliblue CLI
+  echo "Zeliblue CLI is now enabled."
+
+[private]
 disable-zeliblue-cli:
   #!/usr/bin/env bash
-  rm ~/.config/containers/systemd/zeliblue-cli.container
 
   systemctl --user stop zeliblue-cli.service
+  rm ~/.config/containers/systemd/zeliblue-cli.container
+
   systemctl --user disable --now podman-auto-update.timer
 
   podman image rm ghcr.io/zelikos/zeliblue-cli:latest
 
   systemctl --user daemon-reload
+
+  echo "Zeliblue CLI is now disabled."
