@@ -16,13 +16,15 @@ setup-davincibox mode="":
 install-davinci installer="":
   #!/usr/bin/env bash
   just setup-davincibox
-  if [[ $(echo {{installer}}) == "" ]]; then
-    echo "Please re-run this command with the path to DaVinci Resolve's installer."
-    echo "The full path is needed, even if in the current directory."
+
+  INSTALLER_FILE=$(readlink -e {{installer}})
+
+  if [[ $(echo $INSTALLER_FILE) == "" ]]; then
+    echo "Please re-run this command with the full path to the DaVinci Resolve's installer."
     echo "Example:"
     echo "just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run"
   else
-    toolbox run --container davincibox setup-davinci {{installer}} toolbox
+    toolbox run --container davincibox setup-davinci $INSTALLER_FILE toolbox
   fi
 
 # Remove DaVinci Resolve and DaVinciBox
