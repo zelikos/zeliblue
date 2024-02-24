@@ -6,31 +6,33 @@
 setup-davincibox mode="":
   #!/usr/bin/env bash
   if [[ $(echo {{mode}}) == "refresh" ]]; then
-    distrobox stop -Y davincibox
-    distrobox rm -Y davincibox
+    podman container stop davincibox
+    podman container rm davincibox
   fi
   podman image pull ghcr.io/zelikos/davincibox:latest
-  distrobox create -i ghcr.io/zelikos/davincibox:latest -n davincibox
+  toolbox create -i ghcr.io/zelikos/davincibox:latest -c davincibox
 
 # Install DaVinci Resolve to DaVinciBox
 install-davinci installer="":
   #!/usr/bin/env bash
   just setup-davincibox
-  if [[ $(echo {{installer}}) == "" ]]; then
-    echo "Please re-run this command with the path to DaVinci Resolve's installer."
-    echo "The full path is needed, even if in the current directory."
+
+  INSTALLER_FILE=$(readlink -e {{installer}})
+
+  if [[ $(echo $INSTALLER_FILE) == "" ]]; then
+    echo "Please re-run this command with the full path to the DaVinci Resolve's installer."
     echo "Example:"
     echo "just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run"
   else
-    distrobox enter davincibox -- setup-davinci {{installer}} distrobox
+    toolbox run --container davincibox setup-davinci $INSTALLER_FILE toolbox
   fi
 
 # Remove DaVinci Resolve and DaVinciBox
 remove-davinci:
   #!/usr/bin/env bash
-  distrobox enter davincibox -- add-davinci-launcher remove
-  distrobox stop -Y davincibox
-  distrobox rm -Y davincibox
+  toolbox run --container davincibox add-davinci-launcher remove
+  podman container stop davincibox
+  podman container rm davincibox
 
 # Toggle Zeliblue-CLI
 zeliblue-cli ACTION="prompt":
