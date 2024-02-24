@@ -49,15 +49,13 @@ For more about `just`, see [the manual](https://just.systems/man/en/).
 
 ### setup-davincibox
 
-Sets up a [davincibox](https://github.com/zelikos/davincibox) container with distrobox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
+Sets up a [davincibox](https://github.com/zelikos/davincibox) container with toolbox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
 
 ### install-davinci
 
 Uses the `setup-davincibox` command, then installs DaVinci Resolve into davincibox, which also adds launchers to the app grid/menu for ease of use. DaVinci Resolve must be downloaded from [their website](https://www.blackmagicdesign.com/products/davinciresolve), and the installer passed to the command as a parameter.
 
 Example: `just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run`
-
-The full path to the installer is required, even if in the current directory.
 
 ### remove-davinci
 
