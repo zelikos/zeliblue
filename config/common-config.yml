@@ -38,7 +38,4 @@ modules:
 
   - type: yafti
 
-  - type: script
-    scripts:
-      # this sets up the proper policy & signing files for signed images to work
-      - signing.sh
+  - type: signing
