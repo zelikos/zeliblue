@@ -1,3 +1,4 @@
 .idea
 cosign.key
 config/zeliblue-testing.yml
+Containerfile
