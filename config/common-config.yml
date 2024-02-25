@@ -39,3 +39,7 @@ modules:
   - type: yafti
 
   - type: signing
+
+  - type: script
+    scripts:
+      - image-info.sh
