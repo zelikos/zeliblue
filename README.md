@@ -44,7 +44,6 @@ After first boot, the first of the system updater will automatically rebase you 
 On first boot of any Zeliblue flavor, a `justfile` is created in the user's home directory at `$HOME/.justfile`. The `justfile` gives access to Zeliblue's `just` commands; users can also add their own custom commands.
 
 Commands provided by Zeliblue are documented below.
-
 For more about `just`, see [the manual](https://just.systems/man/en/).
 
 ### setup-davincibox
