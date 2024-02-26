@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-mkdir -p $HOME/.local/share/konsole
-cp /usr/share/zeliblue/plasma-configs/konsole/Zeliblue.profile $HOME/.local/share/konsole/Zeliblue.profile
