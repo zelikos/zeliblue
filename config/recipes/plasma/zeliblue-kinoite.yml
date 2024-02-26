@@ -5,11 +5,11 @@ description: Zeliblue, with KDE Plasma
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 39
+image-version: latest
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
 
-  - from-file: common-config.yml
-  - from-file: plasma-config.yml
+  - from-file: common/common-config.yml
+  - from-file: common/plasma-config.yml
