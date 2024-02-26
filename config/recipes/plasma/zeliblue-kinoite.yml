@@ -11,5 +11,5 @@ image-version: latest
 # you can include multiple instances of the same module
 modules:
 
-  - from-file: common-config.yml
-  - from-file: plasma-config.yml
+  - from-file: common/common-config.yml
+  - from-file: common/plasma-config.yml
