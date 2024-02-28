@@ -2,8 +2,22 @@
 
 # Install Homebrew
 brew:
-  echo "Installing homebrew ..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  #!/usr/bin/env bash
+  if [[ ! -x "/var/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+    echo "Brew Installation"
+    echo "At the end of installation, the Brew installer will have a \"Next steps\" section."
+    echo "In Zeliblue, the steps listed for adding homebrew to your PATH are not necessary,"
+    echo "as they are already pre-configured. All you'll have to do is close and re-open the terminal!"
+    echo "Please type in \"I understand\" to proceed with brew installation."
+    read ACCEPT
+    if [ "$ACCEPT" == "I understand" ]; then
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    else
+      echo "Capitalization matters when you type \"I understand\""
+    fi
+  else
+    echo "Brew is already installed."
+  fi
 
 # Install CLI utilties with Homebrew
 brew-utilities:
