@@ -19,10 +19,9 @@ brew:
     echo "Brew is already installed."
   fi
 
-# Install CLI utilties with Homebrew
+# Install a small selection of CLI utilties via brew
 brew-utilities:
   #!/usr/bin/env bash
-  set -euxo pipefail
   if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]
   then
     mkdir -p $HOME/.local/share/zeliblue
