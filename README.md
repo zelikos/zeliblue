@@ -55,7 +55,24 @@ Both the `bash` and `fish` shells are already configured to work with Homebrew o
 
 ### brew-utilities
 
-Installs a selection of brew packages as a "starting pack" for using Homebrew.
+Installs a selection of brew packages as a "starter pack" for using Homebrew, focused on providing a more modern CLI experience:
+
+```
+atuin
+bat
+btop
+chezmoi
+eza
+fastfetch
+fd
+gcc
+git-delta
+micro
+ripgrep
+tldr
+starship
+zoxide
+```
 
 ### setup-davincibox
 
