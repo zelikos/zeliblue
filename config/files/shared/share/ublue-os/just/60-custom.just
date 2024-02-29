@@ -38,7 +38,7 @@ brew-utilities:
   if [ "${OPTION,,}" == "yes" ]; then
     if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]; then
       mkdir -p $HOME/.local/share/zeliblue
-      cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
+      cp /usr/etc/skel/.local/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
     fi
     echo "Installing Zeliblue CLI utilities..."
     brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
