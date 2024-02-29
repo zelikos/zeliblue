@@ -61,7 +61,7 @@ remove-davinci:
   podman container stop davincibox
   podman container rm davincibox
 
-# Toggle Zeliblue-CLI
+# Toggle Zeliblue-CLI container
 zeliblue-cli ACTION="prompt":
   #!/usr/bin/bash
   source /usr/lib/ujust/ujust.sh
