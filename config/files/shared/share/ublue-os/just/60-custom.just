@@ -21,13 +21,30 @@ brew:
 
 # Install a small selection of CLI utilties via brew
 brew-utilities:
-  #!/usr/bin/env bash
-  if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]
-  then
-    mkdir -p $HOME/.local/share/zeliblue
-    cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
-   fi
-   brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
+  #!/usr/bin/bash
+  source /usr/lib/ujust/ujust.sh
+
+  OPTION=""
+  echo "brew-utilities installs a handful of packages via brew,"
+  echo "intended to provide a more modern CLI experience."
+  echo "The full list can be found in the Brewfile at"
+  echo "$HOME/.local/share/zeliblue/Brewfile"
+  echo ""
+  echo "The fish shell is pre-configured by Zeliblue"
+  echo "to integrate these utilities if they are installed."
+  echo ""
+  echo "Proceed with installation?"
+  OPTION=$(ugum choose Yes No)
+  if [ "${OPTION,,}" == "yes" ]; then
+    if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]; then
+      mkdir -p $HOME/.local/share/zeliblue
+      cp /usr/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
+    fi
+    echo "Installing Zeliblue CLI utilities..."
+    brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
+  #elif [ "${OPTION,,}" == "no" ]; then
+  #  just disable-zeliblue-cli
+  fi
 
 # Setup DaVinciBox container
 setup-davincibox mode="":
