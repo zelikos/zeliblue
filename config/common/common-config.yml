@@ -13,6 +13,7 @@ modules:
                   # configuration you wish to end up in /etc/ on the booted system should be
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
+      - etc: /etc
 
   - type: fonts
     fonts:
@@ -29,6 +30,10 @@ modules:
     remove:
       - firefox
       - firefox-langpacks
+
+  - type: containerfile
+    snippets:
+      - RUN rm /etc/yum.repos.d/charm.repo
 
   - type: default-flatpaks
     system:
