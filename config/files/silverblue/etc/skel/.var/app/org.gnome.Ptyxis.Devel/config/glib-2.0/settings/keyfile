@@ -1,0 +1,15 @@
+[org/gnome/Ptyxis/Devel]
+profile-uuids=['c8f262fad578b7f8adda22aa65d13aca']
+default-profile-uuid='c8f262fad578b7f8adda22aa65d13aca'
+interface-style='dark'
+window-size=(127, 42)
+
+[org/gnome/Ptyxis/Devel/Profiles/c8f262fad578b7f8adda22aa65d13aca]
+label='Host'
+use-custom-command=true
+custom-command='sh -c "[ -x /usr/bin/fish ] && /usr/bin/fish || /usr/bin/bash"'
+default-container='session'
+opacity=1.0
+palette='gnome'
+preserve-container='never'
+login-shell=false
