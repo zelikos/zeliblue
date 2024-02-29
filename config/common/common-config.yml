@@ -24,6 +24,8 @@ modules:
   - type: rpm-ostree
     install:
       - fish
+      - glow
+      - gum
     remove:
       - firefox
       - firefox-langpacks
