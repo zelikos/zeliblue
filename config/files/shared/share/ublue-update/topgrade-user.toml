@@ -1,6 +1,6 @@
 [misc]
-only = ["brew_cask", "brew_formula", "distrobox", "toolbx"]
-ignore_failures = ["brew_cask", "brew_formula", "distrobox", "toolbx"]
+only = ["distrobox", "toolbx"]
+ignore_failures = ["distrobox", "toolbx"]
 skip_notify = true
 assume_yes = true
 no_retry = true
