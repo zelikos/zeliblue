@@ -2,9 +2,9 @@
 
 ![Zeliblue Desktop](/repo_content/desktop1.webp?raw=true)
 
-Zeliblue is based off of [BlueBuild](https://blue-build.org/).
+Zeliblue is a customized [Fedora Atomic Desktop](https://fedoraproject.org/atomic-desktops/) image, based on the [Universal Blue](http://universal-blue.org/) project, featuring the GNOME desktop as the flagship experience.
 
-Zeliblue features the GNOME desktop as the flagship experience. Notable changes include:
+Notable changes from vanilla GNOME and Fedora Silverblue include:
 
 - Workspace navigation shortcuts are adjusted, with the aim of being more intuitive for horizontal workspaces
 - GNOME Console replaces GNOME Terminal as the default terminal, and can be launched with Super+t
@@ -19,6 +19,8 @@ There are also some additional flavors of Zeliblue:
 Zeliblue GTS, which is nearly identical to the main image. The difference is that GTS follows the latest version of Fedora, minus one. In other words, when Zeliblue is on Fedora 39, GTS is on Fedora 38. While the main image should work well for most users, GTS is provided for those that desire extra stability.
 
 Zeliblue Plasma (zeliblue-kinoite) uses the Plasma desktop environment instead of GNOME. It replaces multiple apps that are layered into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
+
+Zeliblue is made with [BlueBuild](https://blue-build.org/).
 
 ## Installation
 
@@ -73,6 +75,8 @@ tldr
 starship
 zoxide
 ```
+
+The `fish` shell is configured by Zeliblue to utilize these packages if any are installed.
 
 ### setup-davincibox
 
