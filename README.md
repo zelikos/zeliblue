@@ -74,6 +74,8 @@ starship
 zoxide
 ```
 
+The `fish` shell is configured by Zeliblue to utilize these packages if any are installed.
+
 ### setup-davincibox
 
 Sets up a [davincibox](https://github.com/zelikos/davincibox) container with toolbox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
