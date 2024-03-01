@@ -10,7 +10,7 @@ modules:
   - type: files
     files:
       - shared/usr: /usr
-      - etc/etc: /etc
+      - shared/etc: /etc
 
   - type: fonts
     fonts:
