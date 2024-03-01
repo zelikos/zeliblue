@@ -3,8 +3,7 @@ escape() {
   sed 's/[&/\]/\\&/g' <<< "$1"
 }
 
-# TODO fix path
-TIP_FILE=$(ls "$HOME/dev/motd/tips/"*".md" | shuf -n 1)
+TIP_FILE=$(ls "/usr/share/zeliblue/motd/tips/"*".md" | shuf -n 1)
 if [[ -f "$TIP_FILE" ]]; then
   IMAGE_INFO="/usr/share/ublue-os/image-info.json"
   IMAGE_NAME=$(jq -r '."image-ref"' < $IMAGE_INFO)
