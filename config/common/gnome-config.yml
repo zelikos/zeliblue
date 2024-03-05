@@ -5,8 +5,11 @@ modules:
       - silverblue/usr: /usr
 
   - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
       - gnome-console
+      - gnome-shell-extension-hotedge
     remove:
       - gnome-classic-session
       - gnome-software-rpm-ostree
