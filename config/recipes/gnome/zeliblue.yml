@@ -13,8 +13,3 @@ modules:
 
   - from-file: common/common-config.yml
   - from-file: common/gnome-config.yml
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
-    install:
-      - gnome-shell-extension-hotedge
