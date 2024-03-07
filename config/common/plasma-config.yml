@@ -17,6 +17,7 @@ modules:
       - kwrite
 
   - type: default-flatpaks
+    notify: true
     system:
       install:
         - org.kde.ark
