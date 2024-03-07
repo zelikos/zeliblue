@@ -10,6 +10,6 @@ update:
 
 alias changelog := changelogs
 
- # Show the changelog
- changelogs:
-     rpm-ostree db diff --changelogs
+# Show the changelog
+changelogs:
+  rpm-ostree db diff --changelogs
