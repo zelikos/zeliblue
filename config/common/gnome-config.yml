@@ -18,6 +18,7 @@ modules:
       - gnome-tweaks
 
   - type: default-flatpaks
+    notify: true
     system:
       install:
         - org.gnome.Calculator

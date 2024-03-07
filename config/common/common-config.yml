@@ -33,7 +33,6 @@ modules:
       - RUN rm /etc/yum.repos.d/charm.repo
 
   - type: default-flatpaks
-    notify: true
     system:
       repo-name: flathub-system
       repo-title: "Flathub (system-wide)"
