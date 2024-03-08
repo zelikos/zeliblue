@@ -16,8 +16,10 @@ modules:
   - type: rpm-ostree
     remove:
       - gnome-classic-session
+      - gnome-shell
       - gnome-control-center
       - gnome-initial-setup
+      - gnome-software-rpm-ostree
       - gnome-software
       - gnome-system-monitor
       - gnome-terminal
