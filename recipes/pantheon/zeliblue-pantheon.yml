@@ -4,7 +4,7 @@ name: zeliblue-pantheon
 description: An opinionated Pantheon desktop experience, based on Fedora Silverblue
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/base-main
+base-image: ghcr.io/ublue-os/silverblue-main
 image-version: latest
 
 # list of modules, executed in order
@@ -12,4 +12,16 @@ image-version: latest
 modules:
 
   - from-file: common/common-config.yml
+
+  - type: rpm-ostree
+    remove:
+      - gnome-classic-session
+      - gnome-control-center
+      - gnome-initial-setup
+      - gnome-software
+      - gnome-system-monitor
+      - gnome-terminal
+      - gnome-terminal-nautilus
+      - gnome-tweaks
+
   - from-file: common/pantheon-config.yml
