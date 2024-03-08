@@ -1,0 +1,37 @@
+[org.gnome.desktop.interface:Pantheon]
+cursor-theme='elementary'
+gtk-theme='io.elementary.stylesheet.blueberry'
+icon-theme='elementary'
+document-font-name='Inter 10'
+font-name='Inter 9'
+monospace-font-name='Hack Nerd Font Mono 10'
+
+[org.gnome.desktop.peripherals.touchpad:Pantheon]
+natural-scroll=true
+tap-to-click=true
+
+[org.gnome.desktop.privacy:Pantheon]
+remove-old-temp-files=true
+remove-old-trash-files=true
+
+[org.gnome.desktop.sound:Pantheon]
+theme-name='elementary'
+
+[org.gnome.desktop.wm.preferences:Pantheon]
+button-layout='close:maximize'
+mouse-button-modifier='<Super>'
+resize-with-right-button=true
+theme='elementary'
+
+[org.gnome.mutter:Pantheon]
+overlay-key='Super_L'
+center-new-windows=true
+workspaces-only-on-primary=true
+
+[org.gnome.settings-daemon.peripherals.touchpad:Pantheon]
+horiz-scroll-enabled=true
+natural-scroll=true
+scroll-method='two-finger-scrolling'
+
+[org.gtk.Settings.FileChooser:Pantheon]
+sort-directories-first=true
