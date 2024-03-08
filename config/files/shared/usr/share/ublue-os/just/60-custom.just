@@ -71,8 +71,8 @@ install-davinci installer="":
     echo "just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run"
   else
     $INSTALLER_FILE --appimage-extract
-
     toolbox run --container davincibox setup-davinci "squashfs-root/AppRun" toolbox
+    rm -rf squashfs-root/
   fi
 
 # Remove DaVinci Resolve and DaVinciBox
