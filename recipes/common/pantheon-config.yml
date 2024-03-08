@@ -117,3 +117,7 @@ modules:
       repo-url: https://flatpak.elementary.io/repo.flatpakrepo
       repo-name: appcenter-user
       repo-title: "AppCenter"
+
+  - type: gschema-overrides
+    include:
+      - zz0-zeliblue-pantheon.gschema.override
