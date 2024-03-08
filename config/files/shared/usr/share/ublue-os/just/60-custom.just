@@ -59,9 +59,12 @@ setup-davincibox mode="":
 # Install DaVinci Resolve to DaVinciBox
 install-davinci installer="":
   #!/usr/bin/env bash
-  just setup-davincibox
-
-  set -oue pipefail
+  EXISTS=$(podman ps --all --filter name="davincibox" | grep -q " davincibox\$" && echo "1" || echo "0")
+  if [[ $EXISTS == "0" ]]; then
+    just setup-davincibox
+  else
+    just setup-davincibox refresh
+  fi
 
   INSTALLER_FILE=$(readlink -e {{installer}})
 
