@@ -112,7 +112,7 @@ modules:
         - io.elementary.videos//stable
         - org.gnome.Epiphany//stable
         - org.gnome.Evince//stable
-        - org.gnome.FileRoller/stable
+        - org.gnome.FileRoller//stable
     user:
       repo-url: https://flatpak.elementary.io/repo.flatpakrepo
       repo-name: appcenter-user
