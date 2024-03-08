@@ -9,8 +9,7 @@ modules:
       - appcenter
       - elementary-code
       - elementary-files
-      #- elementary-greeter
-      - gdm
+      - elementary-greeter
       - elementary-icon-theme
       - elementary-notifications
       - elementary-onboarding
@@ -23,7 +22,18 @@ modules:
       - elementary-terminal
       - elementary-theme
       - elementary-wallpapers
+      - flatpak
       - gala
+      - gnome-session
+      - gvfs
+      - gvfs-afc
+      - gvfs-afp
+      - gvfs-fuse
+      - gvfs-gphoto2
+      - gvfs-mtp
+      - gvfs-nfs
+      - gvfs-smb
+      - light-locker
       - granite-7
       - pantheon-agent-geoclue2
       - pantheon-agent-polkit
@@ -51,6 +61,7 @@ modules:
       - switchboard-plug-wacom
       - switchboard-plug-wallet
       - switchboard
+      - touchegg
       - wingpanel-applications-menu
       - wingpanel-indicator-bluetooth
       - wingpanel-indicator-datetime
@@ -62,6 +73,8 @@ modules:
       - wingpanel-indicator-session
       - wingpanel-indicator-sound
       - wingpanel
+      - xdg-desktop-portal
+      - xdg-desktop-portal-gtk
       - xdg-desktop-portal-pantheon
 
   - type: default-flatpaks
