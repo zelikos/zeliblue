@@ -26,6 +26,7 @@ jobs:
           # !! Add your recipes here
           - recipes/gnome/zeliblue.yml
           - recipes/plasma/zeliblue-kinoite.yml
+          - recipes/pantheon/zeliblue-pantheon.yml
           # - recipes/gnome/zeliblue-deck.yml
           # - recipes/gnome/zeliblue-gts.yml
     steps:
