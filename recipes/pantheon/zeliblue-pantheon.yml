@@ -1,0 +1,15 @@
+# image will be published to ghcr.io/<user>/<name>
+name: zeliblue-pantheon
+# description will be included in the image's metadata
+description: An opinionated Pantheon desktop experience, based on Fedora Silverblue
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/base-main
+image-version: latest
+
+# list of modules, executed in order
+# you can include multiple instances of the same module
+modules:
+
+  - from-file: common/common-config.yml
+  - from-file: common/pantheon-config.yml
