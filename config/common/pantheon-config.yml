@@ -38,6 +38,7 @@ modules:
       - pantheon-agent-geoclue2
       - pantheon-agent-polkit
       - pantheon-session-settings
+      - polkit
       - switchboard-plug-a11y
       - switchboard-plug-about
       - switchboard-plug-applications
