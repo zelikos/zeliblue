@@ -23,5 +23,6 @@ modules:
       - gnome-terminal
       - gnome-terminal-nautilus
       - gnome-tweaks
+      - nautilus
 
   - from-file: common/pantheon-config.yml
