@@ -25,6 +25,7 @@ remove-old-trash-files=true
 theme-name='elementary'
 
 [org.gnome.desktop.wm.preferences]
+button-layout='appmenu:close'
 mouse-button-modifier='<Super>'
 resize-with-right-button=false
 theme='elementary'
@@ -39,11 +40,17 @@ horiz-scroll-enabled=true
 natural-scroll=true
 scroll-method='two-finger-scrolling'
 
+[org.gnome.settings-daemon.plugins.xsettings]
+overrides = {'Gtk/DialogsUseHeader': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'appmenu:close'>}
+
 [org.gtk.Settings.FileChooser]
 sort-directories-first=true
 
 [org.gtk.gtk4.Settings.FileChooser]
 sort-directories-first=true
+
+[org.pantheon.desktop.gala.appearance]
+button-layout='appmenu:close'
 
 [org.pantheon.desktop.gala.behavior]
 overlay-action='io.elementary.wingpanel --toggle-indicator=app-launcher'
