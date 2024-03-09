@@ -78,7 +78,6 @@ modules:
       - switchboard-plug-sound
       - switchboard-plug-useraccounts
       - switchboard-plug-wacom
-      - switchboard-plug-wallet
       - switchboard
       - touchegg
       - wingpanel-applications-menu
