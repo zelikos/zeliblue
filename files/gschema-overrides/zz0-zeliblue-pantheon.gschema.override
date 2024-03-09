@@ -1,4 +1,11 @@
-[org.gnome.desktop.interface:Pantheon]
+[io.elementary.desktop.background]
+dim-wallpaper-in-dark-style=true
+
+[io.elementary.terminal.settings]
+audible-bell=true
+shell='fish'
+
+[org.gnome.desktop.interface]
 cursor-theme='elementary'
 gtk-theme='io.elementary.stylesheet.blueberry'
 icon-theme='elementary'
@@ -6,32 +13,37 @@ document-font-name='Inter 10'
 font-name='Inter 9'
 monospace-font-name='Hack Nerd Font Mono 10'
 
-[org.gnome.desktop.peripherals.touchpad:Pantheon]
+[org.gnome.desktop.peripherals.touchpad]
 natural-scroll=true
 tap-to-click=true
 
-[org.gnome.desktop.privacy:Pantheon]
+[org.gnome.desktop.privacy]
 remove-old-temp-files=true
 remove-old-trash-files=true
 
-[org.gnome.desktop.sound:Pantheon]
+[org.gnome.desktop.sound]
 theme-name='elementary'
 
-[org.gnome.desktop.wm.preferences:Pantheon]
-button-layout='close:maximize'
+[org.gnome.desktop.wm.preferences]
 mouse-button-modifier='<Super>'
-resize-with-right-button=true
+resize-with-right-button=false
 theme='elementary'
 
-[org.gnome.mutter:Pantheon]
+[org.gnome.mutter]
 overlay-key='Super_L'
 center-new-windows=true
 workspaces-only-on-primary=true
 
-[org.gnome.settings-daemon.peripherals.touchpad:Pantheon]
+[org.gnome.settings-daemon.peripherals.touchpad]
 horiz-scroll-enabled=true
 natural-scroll=true
 scroll-method='two-finger-scrolling'
 
-[org.gtk.Settings.FileChooser:Pantheon]
+[org.gtk.Settings.FileChooser]
 sort-directories-first=true
+
+[org.gtk.gtk4.Settings.FileChooser]
+sort-directories-first=true
+
+[org.pantheon.desktop.gala.behavior]
+overlay-action='io.elementary.wingpanel --toggle-indicator=app-launcher'
