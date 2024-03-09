@@ -59,7 +59,12 @@ setup-davincibox mode="":
 # Install DaVinci Resolve to DaVinciBox
 install-davinci installer="":
   #!/usr/bin/env bash
-  just setup-davincibox
+  EXISTS=$(podman ps --all --filter name="davincibox" | grep -q " davincibox\$" && echo "1" || echo "0")
+  if [[ $EXISTS == "0" ]]; then
+    just setup-davincibox
+  else
+    just setup-davincibox refresh
+  fi
 
   INSTALLER_FILE=$(readlink -e {{installer}})
 
@@ -68,7 +73,9 @@ install-davinci installer="":
     echo "Example:"
     echo "just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run"
   else
-    toolbox run --container davincibox setup-davinci $INSTALLER_FILE toolbox
+    $INSTALLER_FILE --appimage-extract
+    toolbox run --container davincibox setup-davinci "squashfs-root/AppRun" toolbox
+    rm -rf squashfs-root/
   fi
 
 # Remove DaVinci Resolve and DaVinciBox
