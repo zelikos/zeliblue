@@ -2,7 +2,7 @@
 
 alias upgrade := update
 
-# Upgrade system, containers, and brew
+# Upgrade system, apps, and containers
 update:
   #!/usr/bin/bash
   /usr/bin/topgrade --config /usr/share/zeliblue/topgrade.toml --keep
