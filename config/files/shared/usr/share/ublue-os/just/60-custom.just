@@ -42,6 +42,7 @@ brew-utilities:
     fi
     echo "Installing Zeliblue CLI utilities..."
     brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
+    echo "Utilities installed. Please restart your terminal."
   #elif [ "${OPTION,,}" == "no" ]; then
   #  just disable-zeliblue-cli
   fi
