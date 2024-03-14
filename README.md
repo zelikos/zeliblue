@@ -23,9 +23,25 @@ Zeliblue is made with [BlueBuild](https://blue-build.org/).
 
 For most users, I would recommend looking into either [Bluefin](https://projectbluefin.io/) or [Bazzite](https://bazzite.gg/), or, for tinkerers, I recommend [making your own](https://blue-build.org/learn/getting-started/). Both of the former two projects have many more contributors and a much larger community for support, whereas Zeliblue is run by one lone maintainer.
 
-With that being said, for those that do still want to give Zeliblue a try, the recommended installation method is to use the latest ISO from [the Releases page](https://github.com/zelikos/zeliblue/releases/tag/auto-iso).
+### ISOs
 
-You can also rebase an existing Silverblue/Kinoite installation to the latest build:
+For those that do still want to give Zeliblue a try, the currently-recommended method is to build an ISO using podman, then install Zeliblue from there.
+
+Podman:
+
+```
+sudo podman run --rm --privileged --volume .:/isogenerator/output \
+-e VERSION=39 -e IMAGE_REPO=ghcr.io/zelikos -e IMAGE_NAME=zeliblue \
+-e IMAGE_TAG=latest -e VARIANT=Silverblue ghcr.io/ublue-os/isogenerator:39
+```
+
+Pre-built ISOs will be made available in the near future.
+
+The isogenerator can also be run with docker. See [their README](https://github.com/ublue-os/isogenerator/blob/main/README.md) for more information.
+
+### Rebase
+
+You *can* also rebase an existing Silverblue/Kinoite installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
@@ -35,8 +51,14 @@ You can also rebase an existing Silverblue/Kinoite installation to the latest bu
   ```
   systemctl reboot
   ```
+- Then, rebase onto the signed image:
+  ```
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zelikos/zeliblue:latest
+  systemctl reboot
+  ```
 
-After first boot, the first of the system updater will automatically rebase you onto the signed image.
+If you instead want Zeliblue Plasma, replace `zeliblue` with `zeliblue-kinoite`, and, in the ISO action, `Silverblue` with `Kinoite`.
+
 
 ## `just` commands
 

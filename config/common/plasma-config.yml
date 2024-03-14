@@ -2,7 +2,7 @@ modules:
 
   - type: files
     files:
-      - kinoite/usr: /usr
+      - plasma/usr: /usr
 
   - type: rpm-ostree
     # install:
