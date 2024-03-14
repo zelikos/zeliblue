@@ -1,10 +1,10 @@
 # image will be published to ghcr.io/<user>/<name>
 name: zeliblue-pantheon
 # description will be included in the image's metadata
-description: An opinionated Pantheon desktop experience, based on Fedora Silverblue
+description: A lightly-opinionated Pantheon desktop experience, based on Fedora Atomic
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/base-main
 image-version: latest
 
 # list of modules, executed in order
@@ -13,16 +13,16 @@ modules:
 
   - from-file: common/common-config.yml
 
-  - type: rpm-ostree
-    remove:
-      - gnome-classic-session
-      - gnome-initial-setup
-      - gnome-software-rpm-ostree
-      - gnome-software
-      - gnome-system-monitor
-      - gnome-terminal
-      - gnome-terminal-nautilus
-      - gnome-tweaks
-      - nautilus
+  # - type: rpm-ostree
+  #   remove:
+  #     - gnome-classic-session
+  #     - gnome-initial-setup
+  #     - gnome-software-rpm-ostree
+  #     - gnome-software
+  #     - gnome-system-monitor
+  #     - gnome-terminal
+  #     - gnome-terminal-nautilus
+  #     - gnome-tweaks
+  #     - nautilus
 
   - from-file: common/pantheon-config.yml
