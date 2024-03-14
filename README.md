@@ -23,9 +23,7 @@ Zeliblue is made with [BlueBuild](https://blue-build.org/).
 
 For most users, I would recommend looking into either [Bluefin](https://projectbluefin.io/) or [Bazzite](https://bazzite.gg/), or, for tinkerers, I recommend [making your own](https://blue-build.org/learn/getting-started/). Both of the former two projects have many more contributors and a much larger community for support, whereas Zeliblue is run by one lone maintainer.
 
-With that being said, for those that do still want to give Zeliblue a try, the recommended installation method is to use the latest ISO from [the Releases page](https://github.com/zelikos/zeliblue/releases/tag/auto-iso).
-
-You can also rebase an existing Silverblue/Kinoite installation to the latest build:
+With that being said, for those that do still want to give Zeliblue a try, you can rebase an existing Silverblue/Kinoite installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```

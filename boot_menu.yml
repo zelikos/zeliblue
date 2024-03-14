@@ -1,8 +1,0 @@
-ublue_variants:
-  - label: zelikos/zeliblue
-    ks: /kickstart/ublue-os.ks
-    flavors:
-      - label: zeliblue
-        info: The main Zeliblue experience
-      - label: zeliblue-kinoite
-        info: Zeliblue with the KDE Plasma Desktop
