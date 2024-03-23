@@ -27,6 +27,7 @@ modules:
       - gnome-software
       - gnome-system-monitor
       - gnome-terminal
+      - malcontent-control
       - nemo
       - nemo-extensions
       - nemo-fileroller
