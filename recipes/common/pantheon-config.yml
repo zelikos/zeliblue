@@ -91,3 +91,7 @@ modules:
   - type: gschema-overrides
     include:
       - zz0-zeliblue-pantheon.gschema.override
+
+  - type: script
+    scripts:
+      - pantheon-tweaks.sh
