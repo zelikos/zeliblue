@@ -4,7 +4,7 @@ name: zeliblue-pantheon
 description: A lightly-opinionated Pantheon desktop experience, based on Fedora Atomic
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/base-main
+base-image: ghcr.io/ublue-os/onyx-main
 image-version: latest
 
 # list of modules, executed in order
@@ -13,16 +13,23 @@ modules:
 
   - from-file: common/common-config.yml
 
-  # - type: rpm-ostree
-  #   remove:
-  #     - gnome-classic-session
-  #     - gnome-initial-setup
-  #     - gnome-software-rpm-ostree
-  #     - gnome-software
-  #     - gnome-system-monitor
-  #     - gnome-terminal
-  #     - gnome-terminal-nautilus
-  #     - gnome-tweaks
-  #     - nautilus
+  - type: rpm-ostree
+    remove:
+      - budgie-backgrounds
+      - budgie-control-center
+      - budgie-desktop
+      - budgie-desktop-defaults
+      - budgie-desktop-view
+      - budgie-screensaver
+      - gedit
+      - gnome-software-rpm-ostree
+      - gnome-software
+      - gnome-system-monitor
+      - gnome-terminal
+      - nemo
+      - nemo-fileroller
+      - nemo-seahorse
+      - plymouth-system-theme
+      - slick-greeter
 
   - from-file: common/pantheon-config.yml
