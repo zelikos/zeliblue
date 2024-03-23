@@ -27,6 +27,7 @@ modules:
       - gnome-software
       - gnome-system-monitor
       - gnome-terminal
+      - lightdm-settings
       - nemo
       - nemo-extensions
       - nemo-fileroller
@@ -34,5 +35,7 @@ modules:
       - nemo-seahorse
       - nemo-search-helpers
       - plymouth-system-theme
+      - seahorse
+      - slick-greeter
 
   - from-file: common/pantheon-config.yml
