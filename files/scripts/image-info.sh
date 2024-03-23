@@ -19,8 +19,10 @@ IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 IMAGE_FLAVOR=""
 IMAGE_TAG="latest"
 
-if grep -q "kinoite" <<< "${BASE_IMAGE}"; then
+if grep -q "kinoite" <<< "${IMAGE_NAME}"; then
   IMAGE_FLAVOR="kinoite"
+elif grep -q "pantheon" <<< "${IMAGE_NAME}"; then
+  IMAGE_FLAVOR="pantheon"
 else
   IMAGE_FLAVOR="silverblue"
 fi
