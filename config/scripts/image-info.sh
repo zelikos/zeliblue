@@ -14,10 +14,12 @@ IMAGE_TAG="latest"
 if grep -q "silverblue" <<< "${BASE_IMAGE}"
 then
   sed -i '/^PRETTY_NAME/s/Silverblue/Zeliblue/' /usr/lib/os-release
+  sed -i '/^VERSION/s/Silverblue/Zeliblue/' /usr/lib/os-release
   IMAGE_FLAVOR="silverblue"
 elif grep -q "kinoite" <<< "${BASE_IMAGE}"
 then
   sed -i '/^PRETTY_NAME/s/Kinoite/Zeliblue Plasma/' /usr/lib/os-release
+  sed -i '/^VERSION/s/Kinoite/Zeliblue Plasma/' /usr/lib/os-release
   IMAGE_FLAVOR="kinoite"
 fi
 
