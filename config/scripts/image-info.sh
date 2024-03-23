@@ -9,6 +9,7 @@ IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_VENDOR="zelikos"
 IMAGE_REF="ostree-image-signed:docker://$IMAGE_VENDOR/$IMAGE_NAME"
 IMAGE_FLAVOR=""
+IMAGE_TAG="latest"
 
 if grep -q "silverblue" <<< "${BASE_IMAGE}"
 then
