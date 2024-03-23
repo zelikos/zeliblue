@@ -29,6 +29,6 @@ cat > $IMAGE_INFO <<EOF
   "image-ref": "$IMAGE_REF",
   "image-tag":"$IMAGE_TAG",
   "base-image-name": "$BASE_IMAGE",
-  "fedora-version": "$FEDORA_MAJOR_VERSION"
+  "fedora-version": "$OS_VERSION"
 }
 EOF
