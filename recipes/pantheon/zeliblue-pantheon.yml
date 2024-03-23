@@ -21,12 +21,14 @@ modules:
       - budgie-desktop-defaults
       - budgie-desktop-view
       - budgie-screensaver
+      - folder-color-switcher-nemo
       - gedit
       - gnome-software-rpm-ostree
       - gnome-software
       - gnome-system-monitor
       - gnome-terminal
       - nemo
+      - nemo-extensions
       - nemo-fileroller
       - nemo-python
       - nemo-seahorse
