@@ -29,7 +29,7 @@ modules:
       - nemo
       - nemo-fileroller
       - nemo-seahorse
+      - nemo-search-helpers
       - plymouth-system-theme
-      - slick-greeter
 
   - from-file: common/pantheon-config.yml
