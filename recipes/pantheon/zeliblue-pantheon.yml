@@ -28,6 +28,7 @@ modules:
       - gnome-terminal
       - nemo
       - nemo-fileroller
+      - nemo-python
       - nemo-seahorse
       - nemo-search-helpers
       - plymouth-system-theme
