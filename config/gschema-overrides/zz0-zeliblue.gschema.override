@@ -1,8 +1,5 @@
 #-------------- LOCKSCREEN MODIFICATIONS --------------#
 
-[org.gnome.desktop.peripherals.touchpad:GNOME-Greeter]
-tap-to-click=true
-
 [org.gnome.desktop.interface:GNOME-Greeter]
 font-name="Inter 11"
 
@@ -31,9 +28,6 @@ move-to-workspace-left = ['<Alt><Super>Left']
 move-to-workspace-right = ['<Alt><Super>Right']
 switch-to-workspace-left = ['<Super>Left']
 switch-to-workspace-right = ['<Super>Right']
-
-[org.gnome.desktop.peripherals.touchpad]
-tap-to-click=true
 
 [org.gnome.mutter]
 center-new-windows=true

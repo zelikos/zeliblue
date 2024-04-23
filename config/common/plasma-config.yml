@@ -13,6 +13,7 @@ modules:
       - filelight
       - kate
       - kate-plugins
+      - kate-krunner-plugin
       - kfind
       - kwrite
 
