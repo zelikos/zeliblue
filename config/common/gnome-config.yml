@@ -12,6 +12,7 @@ modules:
       - gnome-shell-extension-hotedge
     remove:
       - gnome-classic-session
+      - gnome-classic-session-xsession
       - gnome-software-rpm-ostree
       - gnome-terminal
       - gnome-terminal-nautilus
