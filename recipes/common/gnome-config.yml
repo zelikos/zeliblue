@@ -10,6 +10,7 @@ modules:
     install:
       - gnome-console
       - gnome-shell-extension-hotedge
+      - gnome-shell-extension-system76-scheduler
     remove:
       - gnome-classic-session
       - gnome-classic-session-xsession
