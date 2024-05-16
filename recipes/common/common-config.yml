@@ -20,10 +20,13 @@ modules:
         - Inter
 
   - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
     install:
       - fish
       - glow
       - gum
+      - system76-scheduler
     remove:
       - firefox
       - firefox-langpacks
@@ -38,6 +41,11 @@ modules:
       repo-title: "Flathub (system-wide)"
     user:
       repo-name: flathub-user
+
+  - type: systemd
+    system:
+      enabled:
+        - com.system76.Scheduler.service
 
   - type: yafti
 
