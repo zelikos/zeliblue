@@ -11,7 +11,7 @@ zeliblue-cli:
   echo "The full list can be found in the Brewfile at"
   echo "$HOME/.local/share/zeliblue/Brewfile"
   echo ""
-  echo "The fish shell is pre-configured by Zeliblue"
+  echo "The bash and fish shells are pre-configured by Zeliblue"
   echo "to integrate these utilities if they are installed."
   echo ""
   echo "Proceed with installation?"
