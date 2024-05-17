@@ -53,4 +53,5 @@ modules:
 
   - type: script
     scripts:
+      - brew.sh
       - image-info.sh
