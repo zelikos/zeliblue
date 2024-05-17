@@ -1,12 +1,12 @@
 # Include some of your custom scripts here!
 
 # Install a small selection of CLI utilties via brew
-brew-utilities:
+zeliblue-cli:
   #!/usr/bin/bash
   source /usr/lib/ujust/ujust.sh
 
   OPTION=""
-  echo "brew-utilities installs a handful of packages via brew,"
+  echo "zeliblue-cli installs a handful of packages via brew,"
   echo "intended to provide a more modern CLI experience."
   echo "The full list can be found in the Brewfile at"
   echo "$HOME/.local/share/zeliblue/Brewfile"
@@ -23,9 +23,7 @@ brew-utilities:
     fi
     echo "Installing Zeliblue CLI utilities..."
     brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
-    echo "Utilities installed. Please restart your terminal."
-  #elif [ "${OPTION,,}" == "no" ]; then
-  #  just disable-zeliblue-cli
+    echo "Installation complete. Please restart your terminal."
   fi
 
 # Setup DaVinciBox container
@@ -68,7 +66,7 @@ remove-davinci:
   podman container rm davincibox
 
 # Toggle Zeliblue-CLI container
-zeliblue-cli ACTION="prompt":
+zeliblue-cli-container ACTION="prompt":
   #!/usr/bin/bash
   source /usr/lib/ujust/ujust.sh
   CURRENT_STATE="Disabled"
@@ -77,14 +75,14 @@ zeliblue-cli ACTION="prompt":
   fi
   OPTION={{ ACTION }}
   if [ "$OPTION" == "prompt" ]; then
-    echo "Zeliblue CLI is currently: ${bold}${CURRENT_STATE}${normal}"
-    echo "Enable or Disable Zeliblue CLI?"
+    echo "Zeliblue CLI container is currently: ${bold}${CURRENT_STATE}${normal}"
+    echo "Enable or Disable Zeliblue CLI container?"
     OPTION=$(ugum choose Enable Disable)
   elif [ "$OPTION" == "help" ]; then
     echo "Usage: ujust zeliblue-cli <option>"
     echo "  <option>: Specify the quick option - 'enable' or 'disable'"
-    echo "  Use 'enable' to Enable Zeliblue CLI."
-    echo "  Use 'disable' to Disable Zeliblue CLI."
+    echo "  Use 'enable' to Enable the Zeliblue CLI container."
+    echo "  Use 'disable' to Disable the Zeliblue CLI container."
     exit 0
   fi
   if [ "${OPTION,,}" == "enable" ]; then
@@ -94,7 +92,7 @@ zeliblue-cli ACTION="prompt":
   fi
 
 [private]
-enable-zeliblue-cli:
+enable-zeliblue-cli-container:
   #!/usr/bin/env bash
   mkdir -p ~/.config/containers/systemd
   cp /usr/share/zeliblue/quadlets/zeliblue-cli.container ~/.config/containers/systemd/zeliblue-cli.container
@@ -110,7 +108,7 @@ enable-zeliblue-cli:
   echo "Zeliblue CLI is now enabled."
 
 [private]
-disable-zeliblue-cli:
+disable-zeliblue-cli-container:
   #!/usr/bin/env bash
 
   systemctl --user stop zeliblue-cli.service

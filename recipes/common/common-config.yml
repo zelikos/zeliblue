@@ -45,6 +45,7 @@ modules:
   - type: systemd
     system:
       enabled:
+        - brew-setup.service
         - com.system76.Scheduler.service
 
   - type: yafti
@@ -53,4 +54,5 @@ modules:
 
   - type: script
     scripts:
+      - brew.sh
       - image-info.sh
