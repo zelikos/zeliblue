@@ -7,8 +7,8 @@ Zeliblue is a customized [Fedora Atomic Desktop](https://fedoraproject.org/atomi
 Notable changes from vanilla GNOME and Fedora Silverblue include:
 
 - Workspace navigation shortcuts are adjusted, with the aim of being more intuitive for horizontal workspaces
-- GNOME Console replaces GNOME Terminal as the default terminal, and can be launched with Super+t
-- `fish` is set as the default shell in Console
+- Ptyxis replaces GNOME Terminal as the default terminal, and can be launched with Super+t
+- `fish` is set as the default shell in Ptyxis
 - Flathub is set up in the background on first boot, both system-wide (flathub-system) and for per-user installs (flathub-user)
 - GNOME Software defaults to installing apps from flathub-user
 - Core system apps are installed to flathub-system after first boot
