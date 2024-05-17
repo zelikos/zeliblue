@@ -23,6 +23,7 @@ modules:
     notify: true
     system:
       install:
+        - app.devsuite.Ptyxis
         - org.gnome.Calculator
         - org.gnome.Calendar
         - io.github.celluloid_player.Celluloid
