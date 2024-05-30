@@ -86,9 +86,9 @@ zeliblue-cli-container ACTION="prompt":
     exit 0
   fi
   if [ "${OPTION,,}" == "enable" ]; then
-    just enable-zeliblue-cli
+    just enable-zeliblue-cli-container
   elif [ "${OPTION,,}" == "disable" ]; then
-    just disable-zeliblue-cli
+    just disable-zeliblue-cli-container
   fi
 
 [private]
