@@ -7,6 +7,8 @@ modules:
       - ublue-update # https://github.com/ublue-os/ublue-update
       - dconf-update-service # a service unit that updates the dconf db on boot
 
+  - type: brew
+
   - type: files
     files:
       - shared/usr: /usr
@@ -45,7 +47,6 @@ modules:
   - type: systemd
     system:
       enabled:
-        - brew-setup.service
         - com.system76.Scheduler.service
 
   - type: yafti
@@ -54,5 +55,4 @@ modules:
 
   - type: script
     scripts:
-      - brew.sh
       - image-info.sh
