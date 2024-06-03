@@ -24,6 +24,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
     install:
       - fish
+      - gcc
       - glow
       - gum
       - system76-scheduler
@@ -45,8 +46,9 @@ modules:
   - type: systemd
     system:
       enabled:
-        - brew-setup.service
         - com.system76.Scheduler.service
+
+  - type: brew
 
   - type: yafti
 
@@ -54,5 +56,4 @@ modules:
 
   - type: script
     scripts:
-      - brew.sh
       - image-info.sh
