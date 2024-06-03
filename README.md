@@ -68,13 +68,7 @@ Commands provided by Zeliblue are documented below.
 
 For more about `just`, see [the manual](https://just.systems/man/en/).
 
-### brew
-
-Installs Homebrew.
-
-Both the `bash` and `fish` shells are already configured to work with Homebrew out-of-the-box, so no further configuration is required after installation.
-
-### brew-utilities
+### zeliblue-cli
 
 Installs a selection of brew packages as a "starter pack" for using Homebrew, focused on providing a more modern CLI experience:
 
@@ -111,7 +105,7 @@ Example: `just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run`
 
 Removes DaVinci Resolve app launchers and davincibox container.
 
-### zeliblue-cli
+### zeliblue-cli-container
 
 Enable or disable an auto-updating `zeliblue` distrobox intended as an alternative CLI experience, based on Fedora Toolbox. The `zeliblue-cli` image is derived from [Universal Blue's fedora-toolbox](https://github.com/ublue-os/toolboxes).
 
