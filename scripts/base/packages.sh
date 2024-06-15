@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usrbin/env bash
 
 set -ouex pipefail
 

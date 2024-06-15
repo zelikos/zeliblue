@@ -51,14 +51,12 @@ ARG SOURCE_TAG="${SOURCE_TAG}"
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY image-info.sh /tmp/image-info.sh
-COPY packages.sh /tmp/packages.sh
+COPY scripts/base /tmp/base/
 
 COPY system_files/shared /
 
 RUN mkdir -p /var/lib/alternatives && \
-    bash -c ". /tmp/image-info.sh" && \
-    bash -c ". /tmp/packages.sh" && \
+    bash -c ". /tmp/build-base.sh" && \
     ostree container commit
 
 # GNOME modifications
