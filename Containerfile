@@ -52,7 +52,6 @@ ARG SOURCE_TAG="${SOURCE_TAG}"
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY scripts/base /tmp/base/
-
 COPY system_files/shared /
 
 RUN mkdir -p /var/lib/alternatives && \
@@ -60,17 +59,11 @@ RUN mkdir -p /var/lib/alternatives && \
     ostree container commit
 
 # GNOME modifications
+
+COPY scripts/gnome /tmp/gnome/
 COPY system_files/gnome /
 
-# Test zeliblue gschema for errors. If there are no errors, proceed with compiling zeliblue gschema, which includes setting overrides. Also enable dconf-update service
-RUN mkdir -p /tmp/zeliblue-schema-test && \
-    find /usr/share/glib-2.0/schemas/ -type f ! -name "*.gschema.override" -exec cp {} /tmp/zeliblue-schema-test/ \; && \
-    cp /usr/share/glib-2.0/schemas/zz0-zeliblue.gschema.override /tmp/zeliblue-schema-test/ && \
-    echo "Running error test for zeliblue gschema override. Aborting if failed." && \
-    glib-compile-schemas --strict /tmp/zeliblue-schema-test && \
-    echo "Compiling gschema to include zeliblue setting overrides" && \
-    glib-compile-schemas /usr/share/glib-2.0/schemas &>/dev/null && \
-    systemctl enable dconf-update.service && \
+RUN bash -c ". /tmp/gnome/build-gnome.sh" && \
     ostree container commit
 
 ## NOTES:
