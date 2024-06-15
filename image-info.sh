@@ -29,7 +29,7 @@ cat > $IMAGE_INFO <<EOF
   "image-vendor": "$IMAGE_VENDOR",
   "image-ref": "$IMAGE_REF",
   "image-tag":"$IMAGE_TAG",
-  "base-image-name": "$BASE_IMAGE",
+  "base-image-name": "$SOURCE_IMAGE",
   "fedora-version": "$OS_VERSION"
 }
 EOF
