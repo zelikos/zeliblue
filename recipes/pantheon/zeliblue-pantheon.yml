@@ -4,7 +4,7 @@ name: zeliblue-pantheon
 description: A lightly-opinionated Pantheon desktop experience, based on Fedora Atomic
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/onyx-main
+base-image: ghcr.io/ublue-os/base-main
 image-version: latest
 
 # list of modules, executed in order
@@ -13,28 +13,28 @@ modules:
 
   - from-file: common/common-config.yml
 
-  - type: rpm-ostree
-    remove:
-      - budgie-backgrounds
-      - budgie-control-center
-      - budgie-desktop
-      - budgie-desktop-defaults
-      - budgie-desktop-view
-      - budgie-screensaver
-      - folder-color-switcher-nemo
-      - gedit
-      - gnome-software-rpm-ostree
-      - gnome-software
-      - gnome-system-monitor
-      - gnome-terminal
-      - malcontent-control
-      - nemo
-      - nemo-extensions
-      - nemo-fileroller
-      - nemo-python
-      - nemo-seahorse
-      - nemo-search-helpers
-      - plymouth-system-theme
-      - seahorse
+  # - type: rpm-ostree
+  #   remove:
+  #     - budgie-backgrounds
+  #     - budgie-control-center
+  #     - budgie-desktop
+  #     - budgie-desktop-defaults
+  #     - budgie-desktop-view
+  #     - budgie-screensaver
+  #     - folder-color-switcher-nemo
+  #     - gedit
+  #     - gnome-software-rpm-ostree
+  #     - gnome-software
+  #     - gnome-system-monitor
+  #     - gnome-terminal
+  #     - malcontent-control
+  #     - nemo
+  #     - nemo-extensions
+  #     - nemo-fileroller
+  #     - nemo-python
+  #     - nemo-seahorse
+  #     - nemo-search-helpers
+  #     - plymouth-system-theme
+  #     - seahorse
 
   - from-file: common/pantheon-config.yml
