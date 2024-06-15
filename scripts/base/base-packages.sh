@@ -17,7 +17,10 @@ curl -Lo /etc/yum.repos.d/_copr_ublue-os-staging.repo https://copr.fedorainfracl
 
 # Base packages
 
-pip install --prefix=/usr topgrade # Required for ublue-update
+# Required for ublue-update
+rpm-ostree install python3-pip
+pip install --prefix=/usr topgrade
+
 rpm-ostree install fish gcc glow gum rsms-inter-fonts rsms-inter-vf-fonts system76-scheduler ublue-update
 
 # Package removals
