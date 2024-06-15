@@ -51,6 +51,7 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 COPY packages.sh /tmp/packages.sh
 
 COPY system_files/shared /
+COPY system_files/gnome /
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/packages.sh && \
