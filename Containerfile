@@ -51,11 +51,25 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 COPY packages.sh /tmp/packages.sh
 
 COPY system_files/shared /
+
+# GNOME modifications
 COPY system_files/gnome /
+
+# Test zeliblue gschema for errors. If there are no errors, proceed with compiling zeliblue gschema, which includes setting overrides.
+RUN mkdir -p /tmp/zeliblue-schema-test && \
+    find /usr/share/glib-2.0/schemas/ -type f ! -name "*.gschema.override" -exec cp {} /tmp/zeliblue-schema-test/ \; && \
+    cp /usr/share/glib-2.0/schemas/zz0-zeliblue.gschema.override /tmp/zeliblue-schema-test/ && \
+    echo "Running error test for zeliblue gschema override. Aborting if failed." && \
+    glib-compile-schemas --strict /tmp/zeliblue-schema-test && \
+    echo "Compiling gschema to include zeliblue setting overrides" && \
+    glib-compile-schemas /usr/share/glib-2.0/schemas &>/dev/null && \
+    ostree container commit
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/packages.sh && \
+    systemctl enable dconf-update.service && \
     ostree container commit
+
 ## NOTES:
 # - /var/lib/alternatives is required to prevent failure with some RPM installs
 # - All RUN commands must end with ostree container commit
