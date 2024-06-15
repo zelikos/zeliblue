@@ -23,6 +23,14 @@ modules:
       - elementary-theme
       - elementary-wallpapers
       - gala
+      - gvfs
+      - gvfs-afc
+      - gvfs-afp
+      - gvfs-fuse
+      - gvfs-gphoto2
+      - gvfs-mtp
+      - gvfs-nfs
+      - gvfs-smb
       - light-locker
       - granite-7
       - pantheon-agent-geoclue2
@@ -63,6 +71,22 @@ modules:
       - wingpanel-indicator-sound
       - wingpanel
       - xdg-desktop-portal-pantheon
+      - xdg-user-dirs-gtk
+      - xorg-x11-drv-amdgpu
+      - xorg-x11-drv-ati
+      - xorg-x11-drv-evdev
+      - xorg-x11-drv-fbdev
+      - xorg-x11-drv-libinput
+      - xorg-x11-drv-nouveau
+      - xorg-x11-drv-qxl
+      - xorg-x11-drv-wacom
+      - xorg-x11-server-Xorg
+      - xorg-x11-xauth
+      - xorg-x11-xinit
+      - xorg-x11-drv-intel
+      - xorg-x11-drv-openchrome
+      - xorg-x11-drv-vesa
+      - xorg-x11-drv-vmware
 
   - type: default-flatpaks
     notify: true
