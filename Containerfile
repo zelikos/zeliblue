@@ -54,8 +54,8 @@ COPY packages.sh /tmp/packages.sh
 COPY system_files/shared /
 
 RUN mkdir -p /var/lib/alternatives && \
-    /tmp/image-info.sh && \
-    /tmp/packages.sh && \
+    bash -c ". /tmp/image-info.sh" && \
+    bash -c ". /tmp/packages.sh" && \
     ostree container commit
 
 # GNOME modifications
