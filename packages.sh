@@ -13,5 +13,9 @@ curl -Lo /etc/yum.repos.d/_copr_kylegospo-system76-scheduler.repo https://copr.f
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
+# Additional packages
 rpm-ostree install fish gcc system76-scheduler
+
+# Package removals
+
+rpm-ostree override remove firefox firefox-langpacks
