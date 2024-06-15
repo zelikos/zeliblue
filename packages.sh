@@ -14,7 +14,7 @@ curl -Lo /etc/yum.repos.d/_copr_kylegospo-system76-scheduler.repo https://copr.f
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Additional packages
-rpm-ostree install fish gcc glow gum system76-scheduler
+rpm-ostree install fish gcc glow gum jetbrains-mono-fonts rsms-inter-fonts rsms-inter-vf-fonts system76-scheduler
 
 # Package removals
 
