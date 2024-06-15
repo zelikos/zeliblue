@@ -56,7 +56,7 @@ COPY scripts/base /tmp/base/
 COPY system_files/shared /
 
 RUN mkdir -p /var/lib/alternatives && \
-    bash -c ". /tmp/build-base.sh" && \
+    bash -c ". /tmp/base/build-base.sh" && \
     ostree container commit
 
 # GNOME modifications
