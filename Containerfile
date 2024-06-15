@@ -48,14 +48,14 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY packages.sh /tmp/packages.sh
 COPY image-info.sh /tmp/image-info.sh
+COPY packages.sh /tmp/packages.sh
 
 COPY system_files/shared /
 
 RUN mkdir -p /var/lib/alternatives && \
-    /tmp/packages.sh && \
     /tmp/image-info.sh && \
+    /tmp/packages.sh && \
     ostree container commit
 
 # GNOME modifications
