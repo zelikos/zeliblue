@@ -1,0 +1,76 @@
+title: Welcome to Zeliblue
+properties:
+  mode: "run-on-change"
+screens:
+  first-screen:
+    source: yafti.screen.title
+    values:
+      title: "Welcome to Zeliblue"
+      icon: "/path/to/icon"
+      description: |
+        Default system apps are installing in the background, but it is safe to use your computer in the meantime.
+  additional-apps:
+    source: yafti.screen.package
+    values:
+      title: Additional Apps
+      show_terminal: true
+      package_manager: yafti.plugin.flatpak
+      package_manager_defaults:
+        user: true
+        system: false
+      groups:
+        Web Browsers:
+          description: Alternative web browsers
+          default: false
+          packages:
+            - Mozilla Firefox: org.mozilla.firefox
+            - Google Chrome: com.google.Chrome
+        Chat:
+          description: Talk with the world
+          default: false
+          packages:
+            - Discord: com.discordapp.Discord
+            - Element: im.riot.Riot
+        Gaming:
+          description: Play your games
+          default: false
+          packages:
+            - Steam: com.valvesoftware.Steam
+            - itch: io.itch.itch
+            - Cartridges: hu.kramo.Cartridges
+        Graphics:
+          description: Visual design and photography
+          default: false
+          packages:
+            - Darktable: org.darktable.Darktable
+            - Krita: org.kde.krita
+            - GIMP: org.gimp.GIMP
+            - Inkscape: org.inkscape.Inkscape
+        Productivity:
+          description: Keep organized, get work done
+          default: false
+          packages:
+            - LibreOffice: org.libreoffice.LibreOffice
+            - Errands (ToDo List): io.github.mrvladus.List
+            - Sticky Notes: com.vixalien.sticky
+        Streaming:
+          description: Broadcast to the internet
+          default: false
+          packages:
+            - OBS Studio: com.obsproject.Studio
+            - OBS GStreamer Plugin: com.obsproject.Studio.Plugin.Gstreamer
+            - Boatswain (Streamdeck app): com.feaneron.Boatswain
+  final-screen:
+    source: yafti.screen.title
+    values:
+      title: "All done!"
+      icon: "/path/to/icon"
+      links:
+        - "Install More Apps":
+            run: /usr/bin/gnome-software
+        - "Website":
+            run: /usr/bin/xdg-open https://zelikos.dev/apps/zeliblue
+        - "Built on Universal Blue":
+            run: /usr/bin/xdg-open https://universal-blue.org
+      description: |
+        Thanks for trying Zeliblue, we hope you enjoy it!

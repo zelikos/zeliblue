@@ -1,0 +1,16 @@
+[misc]
+only = ["distrobox", "flatpak", "firmware", "system", "toolbx"]
+ignore_failures = ["distrobox","flatpak", "toolbx"]
+skip_notify = true
+assume_yes = true
+no_retry = false
+no_self_update = true
+
+[distrobox]
+use_root = false
+
+[flatpak]
+use_sudo = false
+
+[linux]
+rpm_ostree = true
