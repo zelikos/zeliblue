@@ -21,6 +21,7 @@ IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_VENDOR="zelikos"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 IMAGE_TAG="latest"
+OS_VERSION="$(rpm -E %fedora)"
 
 cat > $IMAGE_INFO <<EOF
 {
