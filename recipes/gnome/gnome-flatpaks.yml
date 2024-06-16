@@ -1,0 +1,27 @@
+type: default-flatpaks
+notify: true
+system:
+  install:
+    - app.devsuite.Ptyxis
+    - org.gnome.Calculator
+    - org.gnome.Calendar
+    - io.github.celluloid_player.Celluloid
+    - org.gnome.Characters
+    - org.gnome.clocks
+    - org.gnome.Contacts
+    - com.vixalien.decibels
+    - org.gnome.baobab
+    - org.gnome.SimpleScan
+    - org.gnome.Papers
+    - org.gnome.font-viewer
+    - org.gnome.Logs
+    - org.gnome.Loupe
+    - org.gnome.Maps
+    - org.gnome.TextEditor
+    - org.gnome.Weather
+    - org.gnome.Epiphany
+    - com.github.tchx84.Flatseal
+    - org.gnome.World.PikaBackup
+  remove:
+    - org.gnome.Evince
+    - org.gnome.NautilusPreviewer
