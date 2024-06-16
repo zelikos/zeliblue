@@ -1,0 +1,4 @@
+type: files
+files:
+  - shared/usr: /usr
+  - shared/etc: /etc
