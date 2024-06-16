@@ -53,6 +53,7 @@ ARG SOURCE_TAG="${SOURCE_TAG}"
 
 COPY scripts/base /tmp/base/
 COPY system_files/shared /
+COPY cosign.pub /usr/share/ublue-os/
 
 RUN mkdir -p /var/lib/alternatives && \
     bash -c ". /tmp/base/build-base.sh" && \
