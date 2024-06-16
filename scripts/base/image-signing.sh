@@ -13,7 +13,7 @@ cp /usr/share/ublue-os/cosign.pub /usr/etc/pki/containers/"$IMAGE_NAME".pub
 
 FILE=/usr/etc/containers/policy.json
 
-yq -i -o=j '.transports.docker |=
+jq '.transports.docker |=
     {"'"$IMAGE_REGISTRY"'/'"$IMAGE_NAME"'": [
             {
                 "type": "sigstoreSigned",
