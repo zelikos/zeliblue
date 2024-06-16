@@ -25,19 +25,22 @@ For most users, I would recommend looking into either [Bluefin](https://projectb
 
 ### ISOs
 
-For those that do still want to give Zeliblue a try, the currently-recommended method is to build an ISO using podman, then install Zeliblue from there.
-
-Podman:
-
-```
-sudo podman run --rm --privileged --volume .:/isogenerator/output \
--e VERSION=39 -e IMAGE_REPO=ghcr.io/zelikos -e IMAGE_NAME=zeliblue \
--e IMAGE_TAG=latest -e VARIANT=Silverblue ghcr.io/ublue-os/isogenerator:39
-```
-
 Pre-built ISOs will be made available in the near future.
 
-The isogenerator can also be run with docker. See [their README](https://github.com/ublue-os/isogenerator/blob/main/README.md) for more information.
+For those that want to try Zeliblue in the meantime, you can also build an ISO yourself using podman.
+
+```
+mkdir ./iso-output
+
+sudo podman run --rm --privileged --volume ./iso-output:/build-container-installer/build --security-opt label=disable --pull=newer \
+ghcr.io/jasonn3/build-container-installer:latest \
+IMAGE_REPO=ghcr.io/zelikos \
+IMAGE_NAME=zeliblue \
+IMAGE_TAG=latest \
+VARIANT=Silverblue # If building zeliblue-kinoite, change this to Kinoite
+```
+
+The above can also be run with docker instead. See [BlueBuild's ISO documentation](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso) for more info.
 
 ### Rebase
 

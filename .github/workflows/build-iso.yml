@@ -1,3 +1,6 @@
+# Derived from fiftydinar's gidro-os https://github.com/fiftydinar/gidro-os/blob/main/.github/workflows/build_iso.yml
+# as well as from Bluefin https://github.com/ublue-os/bluefin/blob/main/.github/workflows/reusable-build-iso.yml
+
 name: Build ISO
 
 on:
