@@ -2,9 +2,9 @@
 
 set -ouex pipefail
 
+. /tmp/base/base-packages.sh
+. /tmp/base/brew.sh
 . /tmp/base/image-info.sh
 . /tmp/base/image-signing.sh
 . /tmp/base/install-fonts.sh
-. /tmp/base/base-packages.sh
-
-systemctl enable com.system76.Scheduler.service
+. /tmp/base/systemd-services.sh
