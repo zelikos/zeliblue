@@ -26,7 +26,7 @@ jq '.transports.docker |=
     }
 + .' "$FILE" > updated-policy.json
 
-mv update-policy.json "$FILE"
+mv updated-policy.json "$FILE"
 
 cp /usr/etc/containers/registries.d/ublue-os.yaml /usr/etc/containers/registries.d/"$IMAGE_NAME".yaml
 sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/"$IMAGE_NAME".yaml
