@@ -11,5 +11,15 @@ image-version: latest
 # you can include multiple instances of the same module
 modules:
 
-  - from-file: common/common-config.yml
-  - from-file: common/plasma-config.yml
+  - from-file: common/common-bling.yml
+  - from-file: common/common-files.yml
+  - from-file: common/common-flatpaks.yml
+  - from-file: common/common-fonts.yml
+  - from-file: common/common-packages.yml
+  - from-file: common/common-scripts.yml
+  - from-file: common/common-systemd.yml
+  - from-file: common/common-modules.yml
+
+  - from-file: plasma/plasma-files.yml
+  - from-file: plasma/plasma-packages.yml
+  - from-file: plasma/plasma-flatpaks.yml

@@ -1,0 +1,4 @@
+modules:
+  - type: brew
+  - type: yafti
+  - type: signing
