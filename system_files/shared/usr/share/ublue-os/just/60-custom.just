@@ -121,3 +121,18 @@ disable-zeliblue-cli-container:
   systemctl --user daemon-reload
 
   echo "Zeliblue CLI is now disabled."
+
+# Install system flatpaks for rebasers
+[private]
+install-system-flatpaks:
+    #!/usr/bin/bash
+    IMAGE_INFO="/usr/share/zeliblue/image-info.json"
+    BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
+    if [[ ${BASE_IMAGE_NAME} == 'silverblue' ]]; then
+        FLATPAKS="installer/gnome-flatpaks"
+    elif [[ ${BASE_IMAGE_NAME} == 'kinoite' ]]; then
+        FLATPAKS="installer/plasma-flatpaks"
+    fi
+    # TODO: Fix URL if/when this is merged to main
+    FLATPAK_LIST="$(curl https://raw.githubusercontent.com/zelikos/zeliblue/migrate-from-bluebuild/${FLATPAKS} | tr '\n' ' ')"
+    flatpak --system -y install --or-update ${FLATPAK_LIST}
