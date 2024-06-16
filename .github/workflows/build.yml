@@ -24,10 +24,10 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - gnome/zeliblue.yml
-          - plasma/zeliblue-kinoite.yml
-          # - gnome/zeliblue-deck.yml
-          # - gnome/zeliblue-gts.yml
+          - zeliblue.yml
+          - zeliblue-kinoite.yml
+          # - zeliblue-deck.yml
+          # - zeliblue-gts.yml
     steps:
        # the build is fully handled by the reusable github action
       - name: Build Custom Image
