@@ -1,9 +1,6 @@
-#!/usr/bin/env bash
+#!/usrbin/env bash
 
-# Tell this script to exit if there are any errors.
-# You should have this in every custom script, to ensure that your completed
-# builds actually ran successfully without any errors!
-set -oue pipefail
+set -ouex pipefail
 
 if grep -q "kinoite" <<< "${SOURCE_IMAGE}"; then
   sed -i '/^PRETTY_NAME/s/Kinoite/Zeliblue Plasma/' /usr/lib/os-release
