@@ -1,0 +1,4 @@
+type: systemd
+system:
+  enabled:
+    - lightdm-boot.service

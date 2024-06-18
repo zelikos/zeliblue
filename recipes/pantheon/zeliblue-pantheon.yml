@@ -49,3 +49,4 @@ modules:
   - from-file: pantheon/pantheon-flatpaks.yml
   - from-file: pantheon/pantheon-gschemas.yml
   - from-file: pantheon/pantheon-scripts.yml
+  - from-file: pantheon/pantheon-systemd.yml
