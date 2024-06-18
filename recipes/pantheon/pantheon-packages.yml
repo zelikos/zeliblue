@@ -7,7 +7,6 @@ install:
   - elementary-icon-theme
   - elementary-notifications
   - elementary-onboarding
-  - elementary-photos
   - elementary-print
   - elementary-settings-daemon
   - elementary-shortcut-overlay

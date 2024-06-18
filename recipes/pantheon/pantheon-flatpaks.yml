@@ -11,6 +11,7 @@ system:
     - io.elementary.capnet-assist//stable
     - io.elementary.mail//daily
     - io.elementary.music//stable
+    - io.elementary.photos//stable
     - io.elementary.screenshot//stable
     - io.elementary.tasks//stable
     - io.elementary.videos//stable
