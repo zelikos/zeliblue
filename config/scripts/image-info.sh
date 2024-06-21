@@ -15,6 +15,10 @@ if grep -q "kinoite" <<< "${BASE_IMAGE}"; then
   sed -i '/^PRETTY_NAME/s/Kinoite/Zeliblue Plasma/' /usr/lib/os-release
   sed -i '/^VERSION/s/Kinoite/Zeliblue Plasma/' /usr/lib/os-release
   IMAGE_FLAVOR="kinoite"
+elif grep -q "zeliblue-pantheon" <<< "${IMAGE_NAME}"; then
+  sed -i '/^PRETTY_NAME/s/Thirty Nine/Zeliblue Pantheon/' /usr/lib/os-release
+  sed -i '/^VERSION/s/Thirty Nine/Zeliblue Pantheon/' /usr/lib/os-release
+  IMAGE_FLAVOR="pantheon"
 else
   sed -i '/^PRETTY_NAME/s/Silverblue/Zeliblue/' /usr/lib/os-release
   sed -i '/^VERSION/s/Silverblue/Zeliblue/' /usr/lib/os-release

@@ -1,0 +1,13 @@
+# See https://github.com/ublue-os/cinnamon/blob/bf44562ddbed670cdd0d03a45ea08bdb8a6e96a7/system_files/usr/lib/systemd/system/ublue-lightdm-workaround.service#L4
+
+[Unit]
+Description=Work around broken LightDM install
+Before=lightdm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/lightdm-workaround.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
