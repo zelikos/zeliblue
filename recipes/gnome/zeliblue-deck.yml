@@ -35,10 +35,13 @@ modules:
     install:
       - extest.i686
       - gamescope
+      - gamescope-libs.i686
+      - gamescope-shaders
       - gamescope-session-plus
       - gamescope-session-steam
       - mangohud
       - sddm
+      - steamdeck-gnome-presets
     remove:
       - mesa-va-drivers-freeworld
 
