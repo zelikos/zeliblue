@@ -25,6 +25,12 @@ rpm-ostree override replace \
         mesa-libglapi \
         mesa-vulkan-drivers \
 
+rpm-ostree install \
+    gamescope \
+    gamescope-shaders \
+    gamescope-session-plus \
+    gamescope-session-steam
+
 # Install other 32-bit Steam dependencies
 
 echo "Installing other Steam dependencies"
