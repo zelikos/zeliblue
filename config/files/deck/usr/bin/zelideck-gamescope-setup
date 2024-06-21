@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# Setup gamescope environment
-echo "Writing gamescope environment settings"
-mkdir -p $HOME/.config/environment.d/
-touch $HOME/.config/environment.d/gamescope-session.conf
-echo "STEAMCMD=\"steam -steamos3 -gamepadui\"" > $HOME/.config/environment.d/gamescope-session.conf
