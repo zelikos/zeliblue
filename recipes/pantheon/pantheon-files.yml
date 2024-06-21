@@ -1,3 +1,4 @@
 type: files
 files:
   - pantheon/etc: /etc
+  - pantheon/usr: /usr
