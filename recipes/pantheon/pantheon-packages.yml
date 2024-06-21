@@ -3,6 +3,7 @@ install:
   - appcenter
   - elementary-code
   - elementary-files
+  - elementary-files-portal
   - elementary-greeter
   - elementary-icon-theme
   - elementary-notifications
