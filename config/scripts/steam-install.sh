@@ -30,6 +30,8 @@ rpm-ostree override replace \
 echo "Installing other Steam dependencies"
 
 rpm-ostree install \
+	extest.i686 \
+	gamescope-libs.i686 \
     vulkan-loader.i686 \
     alsa-lib.i686 \
     fontconfig.i686 \
