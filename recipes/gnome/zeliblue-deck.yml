@@ -40,8 +40,6 @@ modules:
       - libei.i686
       - mangohud
       - sddm
-      - sddm-sugar-steamOS
-      # - steam
     remove:
       - mesa-va-drivers-freeworld
 
