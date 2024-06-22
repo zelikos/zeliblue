@@ -33,10 +33,16 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
       - mangohud
+      - python3-pip
       - sddm
       - steamdeck-gnome-presets
     remove:
       - mesa-va-drivers-freeworld
+      - ublue-os-update-services
+
+  - type: containerfile
+    snippets:
+      - RUN pip install --prefix=/usr topgrade && rpm-ostree install ublue-update
 
   - type: systemd
     system:
