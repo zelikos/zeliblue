@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # The Steam client is known to call this script with the following parameter combinations:
 # steamos-update --supports-duplicate-detection     -- should do nothing
@@ -26,7 +26,10 @@ done
 
 
 if command -v ublue-update > /dev/null; then
-  if [ -n "${CHECK}" ]; then
+  if [ ! -f '/etc/gamemode-update-check' ]; then
+    touch /etc/gamemode-update-check
+    exit 7 # Skip the first update to simplify new installs.
+  elif [ -n "${CHECK}" ]; then
     if [ -f '/tmp/upgrade-installed' ]; then
       exit 7 # Upgrade already installed
     else
@@ -51,7 +54,7 @@ if command -v ublue-update > /dev/null; then
     fake_progress() {
       local value=0
       while [ ! -f '/tmp/upgrade-check' ]; do
-        sleep 10
+        sleep 12
         if [ ${value} -lt '100' ]; then
           echo ${value}'%'
           value=$(( value + 1 ))
@@ -60,15 +63,20 @@ if command -v ublue-update > /dev/null; then
       echo 100%
     }
     upgrade() {
+      # Log rotate the last session
+      if [ -f "${HOME}"/.steamos-update.log ]; then
+          cp "${HOME}"/.steamos-update.log "${HOME}"/.steamos-update.log.old
+      fi
+
       # Pull exit code from ublue-update
-      systemctl start ublue-update-force > /dev/null 2>&1
+      systemctl start ublue-update-force > "${HOME}"/.steamos-update.log 2>&1
       echo $? > /tmp/upgrade-check
     }
     upgrade | fake_progress
     # Check if upgrade failed
-    UPGRADE_CHECK=/tmp/upgrade-check
+    UPGRADE_CHECK=$(cat /tmp/upgrade-check)
     rm /tmp/upgrade-check
-    if [ ${UPGRADE_CHECK} -eq 0 ]; then
+    if [ "${UPGRADE_CHECK}" -eq 0 ]; then
       touch /tmp/upgrade-installed
     else
       exit 0 # Upgrade failed
