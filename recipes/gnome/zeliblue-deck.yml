@@ -29,10 +29,6 @@ modules:
   - from-file: gnome/gnome-flatpaks.yml
   - from-file: gnome/gnome-gschemas.yml
 
-  - type: files
-    files:
-      - deck/usr: /usr
-
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
@@ -62,3 +58,7 @@ modules:
     scripts:
       - steam-install.sh
       - steamos-setup.sh
+
+  - type: files
+    files:
+      - deck/usr: /usr
