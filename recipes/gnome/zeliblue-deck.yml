@@ -38,10 +38,6 @@ modules:
     remove:
       - mesa-va-drivers-freeworld
 
-  - type: files
-    files:
-      - deck/usr: /usr
-
   - type: systemd
     system:
       enabled:
