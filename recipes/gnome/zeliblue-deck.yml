@@ -11,7 +11,11 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 modules:
 
-  - from-file: common/common-bling.yml
+  # - from-file: common/common-bling.yml
+  - type: bling
+    install:
+    - dconf-update-service
+
   - from-file: common/common-files.yml
   - from-file: common/common-flatpaks.yml
   - from-file: common/common-fonts.yml
@@ -34,10 +38,16 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
       - mangohud
+      - python3-pip
       - sddm
       - steamdeck-gnome-presets
     remove:
       - mesa-va-drivers-freeworld
+      - ublue-os-update-services
+  
+  - type: containerfile
+    snippets:
+      - RUN pip install --prefix=/usr topgrade && rpm-ostree install ublue-update
 
   - type: systemd
     system:
