@@ -57,3 +57,7 @@ modules:
     scripts:
       - steam-install.sh
       - steamos-setup.sh
+
+  - type: files
+    files:
+      - deck/usr: /usr
