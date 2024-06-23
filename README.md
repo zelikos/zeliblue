@@ -9,6 +9,8 @@ Notable changes from vanilla GNOME and Fedora Silverblue include:
 - Workspace navigation shortcuts are adjusted, with the aim of being more intuitive for horizontal workspaces
 - Ptyxis replaces GNOME Terminal as the default terminal, and can be launched with Super+t
 - `fish` is set as the default shell in Ptyxis
+- [Homebrew](https://brew.sh/) is enabled out of the box
+- The `fish` shell is configured to integrate with certain [CLI utilities](#zeliblue-cli) for a more modern terminal experience
 - Flathub is set up in the background on first boot, both system-wide (flathub-system) and for per-user installs (flathub-user)
 - GNOME Software defaults to installing apps from flathub-user
 - Core system apps are installed to flathub-system after first boot
