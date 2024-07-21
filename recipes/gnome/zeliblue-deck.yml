@@ -25,9 +25,9 @@ modules:
   - from-file: gnome/gnome-flatpaks.yml
   - from-file: gnome/gnome-gschemas.yml
 
-  - type: files
-    files:
-      - deck/usr: /usr
+  - files:
+    - source: system_files/deck
+      destination: /
 
   - type: rpm-ostree
     repos:

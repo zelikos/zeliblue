@@ -1,3 +1,4 @@
 type: files
 files:
-  - plasma/usr: /usr
+  - source: system_files/plasma
+    destination: /
