@@ -1,3 +1,4 @@
 type: files
 files:
-  - gnome/usr: /usr
+  - source: system_files/gnome
+    destination: /

@@ -1,4 +1,4 @@
 type: files
 files:
-  - shared/usr: /usr
-  - shared/etc: /etc
+  - source: system_files/shared
+    destination: /
