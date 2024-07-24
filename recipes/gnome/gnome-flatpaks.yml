@@ -9,7 +9,7 @@ system:
     - org.gnome.Characters
     - org.gnome.clocks
     - org.gnome.Contacts
-    - com.vixalien.decibels
+    - org.gnome.Decibels
     - org.gnome.baobab
     - org.gnome.SimpleScan
     - org.gnome.Papers
