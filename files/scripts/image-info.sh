@@ -37,7 +37,7 @@ EOF
 
 # OS Release File
 sed -i "s/^VARIANT_ID=.*/VARIANT_ID=$IMAGE_NAME/" /usr/lib/os-release
-sed -i "s/^PRETTY_NAME=.*/PRETTY_NAME=\"Zeliblue (FROM Fedora ${BASE_IMAGE^} $FEDORA_MAJOR_VERSION)\"/" /usr/lib/os-release
+sed -i "s/^PRETTY_NAME=.*/PRETTY_NAME=\"Zeliblue (FROM Fedora ${BASE_IMAGE^} $OS_VERSION)\"/" /usr/lib/os-release
 sed -i "s/^NAME=.*/NAME=\"$IMAGE_PRETTY_NAME\"/" /usr/lib/os-release
 sed -i "s|^HOME_URL=.*|HOME_URL=\"$HOME_URL\"|" /usr/lib/os-release
 sed -i "s|^DOCUMENTATION_URL=.*|DOCUMENTATION_URL=\"$DOCUMENTATION_URL\"|" /usr/lib/os-release
