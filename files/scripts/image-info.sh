@@ -7,9 +7,9 @@ set -oue pipefail
 
 IMAGE_PRETTY_NAME="Zeliblue"
 HOME_URL="https://github.com/zelikos/zeliblue"
-DOCUMENTATION_URL=$HOME_URL
+DOCUMENTATION_URL="https://github.com/zelikos/zeliblue/blob/main/README.md"
 SUPPORT_URL="https://github.com/zelikos/zeliblue/issues"
-BUG_REPORT_URL=$SUPPORT_URL
+BUG_REPORT_URL="https://github.com/zelikos/zeliblue/issues"
 
 IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_VENDOR="zelikos"
