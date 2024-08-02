@@ -5,58 +5,20 @@ description: A lightly-opinionated Pantheon desktop experience, based on Fedora 
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/base-main
-image-version: 39
+image-version: 40
 
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
-
   - from-file: common/common-bling.yml
   - from-file: common/common-files.yml
   - from-file: common/common-flatpaks.yml
   - from-file: common/common-fonts.yml
-#  - from-file: common/common-packages.yml
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
-    install:
-      - fish
-      - gcc
-      - glow
-      - gum
-      - rsms-inter-fonts.noarch
-      - system76-scheduler
-    remove:
-      - firefox
-      - firefox-langpacks
+  - from-file: common/common-packages.yml
 
   - from-file: common/common-scripts.yml
   - from-file: common/common-systemd.yml
   - from-file: common/common-modules.yml
-
-  # - type: rpm-ostree
-  #   remove:
-  #     - budgie-backgrounds
-  #     - budgie-control-center
-  #     - budgie-desktop
-  #     - budgie-desktop-defaults
-  #     - budgie-desktop-view
-  #     - budgie-screensaver
-  #     - folder-color-switcher-nemo
-  #     - gedit
-  #     - gnome-software-rpm-ostree
-  #     - gnome-software
-  #     - gnome-system-monitor
-  #     - gnome-terminal
-  #     - malcontent-control
-  #     - nemo
-  #     - nemo-extensions
-  #     - nemo-fileroller
-  #     - nemo-python
-  #     - nemo-seahorse
-  #     - nemo-search-helpers
-  #     - plymouth-system-theme
-  #     - seahorse
 
   - from-file: pantheon/pantheon-files.yml
   - from-file: pantheon/pantheon-packages.yml
