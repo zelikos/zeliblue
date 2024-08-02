@@ -2,9 +2,9 @@ type: rpm-ostree
 repos:
   - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
 install:
-  - gnome-console
   - gnome-shell-extension-hotedge
   - gnome-shell-extension-system76-scheduler
+  - ptyxis
 remove:
   - gnome-classic-session
   - gnome-classic-session-xsession

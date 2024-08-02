@@ -1,6 +1,6 @@
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>t'
-command='flatpak run app.devsuite.Ptyxis'
+command='ptyxis'
 name="Launch terminal"
 
 [org/gnome/settings-daemon/plugins/media-keys]

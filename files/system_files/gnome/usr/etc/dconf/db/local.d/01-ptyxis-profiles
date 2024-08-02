@@ -1,0 +1,4 @@
+[org/gnome/Ptyxis/Profiles/922db7bc3085927f3d2928b266ad4f81]
+label='Host'
+use-custom-command=true
+custom-command='sh -c "[ -x /usr/bin/fish ] && /usr/bin/fish || /usr/bin/bash"'
