@@ -9,9 +9,6 @@ font-name="Inter 11"
 favorite-apps = ['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.World.PikaBackup.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
 enabled-extensions = ['hotedge@jonathan.jdoda.ca', 's76-scheduler@mattjakeman.com']
 
-[org.gnome.Console]
-shell = ['fish']
-
 [org.gnome.desktop.interface]
 clock-format='12h'
 clock-show-weekday=true
@@ -45,6 +42,11 @@ use-tree-view=true
 
 [org.gnome.nautilus.preferences]
 show-create-link=true
+
+[org.gnome.Ptyxis]
+interface-style="dark"
+profile-uuids=['922db7bc3085927f3d2928b266ad4f81']
+default-profile-uuid='922db7bc3085927f3d2928b266ad4f81'
 
 [org.gnome.software]
 packaging-format-preference=['flatpak:flathub-user']
