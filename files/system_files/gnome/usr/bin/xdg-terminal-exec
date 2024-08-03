@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# Imported from Bluefin: https://github.com/ublue-os/bluefin/blob/main/system_files/silverblue/usr/bin/xdg-terminal-exec
 
 if command -v /usr/bin/ptyxis > /dev/null; then
   if [[ -z "$@" ]]; then
