@@ -5,6 +5,8 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
+# Adapted from Bazzite's image-info script: https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/libexec/containerbuild/image-info
+
 IMAGE_PRETTY_NAME="Zeliblue"
 HOME_URL="https://github.com/zelikos/zeliblue"
 DOCUMENTATION_URL="https://github.com/zelikos/zeliblue/blob/main/README.md"
