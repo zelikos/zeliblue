@@ -15,6 +15,7 @@ system:
     - org.gnome.Logs
     - org.gnome.Loupe
     - org.gnome.Maps
+    - net.nokyan.Resources
     - org.gnome.Showtime
     - org.gnome.TextEditor
     - org.gnome.Weather
