@@ -4,7 +4,6 @@ system:
   install:
     - org.gnome.Calculator
     - org.gnome.Calendar
-    - io.github.celluloid_player.Celluloid
     - org.gnome.Characters
     - org.gnome.clocks
     - org.gnome.Contacts
@@ -16,11 +15,13 @@ system:
     - org.gnome.Logs
     - org.gnome.Loupe
     - org.gnome.Maps
+    - org.gnome.Showtime
     - org.gnome.TextEditor
     - org.gnome.Weather
     - org.gnome.Epiphany
     - com.github.tchx84.Flatseal
     - org.gnome.World.PikaBackup
   remove:
+    - io.github.celluloid_player.Celluloid
     - org.gnome.Evince
     - org.gnome.NautilusPreviewer
