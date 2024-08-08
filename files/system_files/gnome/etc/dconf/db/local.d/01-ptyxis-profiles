@@ -2,3 +2,4 @@
 label='Host'
 use-custom-command=true
 custom-command='sh -c "[ -x /usr/bin/fish ] && /usr/bin/fish || /usr/bin/bash"'
+preserve-directory='always'
