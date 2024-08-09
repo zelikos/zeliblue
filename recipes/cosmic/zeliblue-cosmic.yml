@@ -5,7 +5,7 @@ description: An opinionated COSMIC desktop experience, based on Fedora Atomic
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/cosmic
-image-version: latest
+image-version: latest-amd64
 
 # list of modules, executed in order
 # you can include multiple instances of the same module
