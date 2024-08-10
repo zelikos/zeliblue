@@ -2,5 +2,3 @@ type: akmods
 install:
   - openrazer
   - openrgb
-  - xpadneo
-  - xone
