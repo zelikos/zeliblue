@@ -1,27 +1,56 @@
 # image will be published to ghcr.io/<user>/<name>
 name: zeliblue-deck
 # description will be included in the image's metadata
-description: A Zeliblue-flavored SteamOS experience, based on Bazzite
+description: A Zeliblue-flavored SteamOS experience, inspired by Bazzite
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/bazzite-deck-gnome
-image-version: latest # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: latest
 
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
+  - from-file: common/common-bling.yml
   - from-file: common/common-files.yml
   - from-file: common/common-flatpaks.yml
   - from-file: common/common-fonts.yml
+  - from-file: common/common-packages.yml
   - from-file: common/common-scripts.yml
-
-  - type: rpm-ostree
-    install:
-      - rsms-inter-fonts.noarch
-      - rsms-inter-vf-fonts
-
-  - type: signing
+  - from-file: common/common-systemd.yml
+  - from-file: common/common-modules.yml
 
   - from-file: gnome/gnome-files.yml
+  - from-file: gnome/gnome-packages.yml
   - from-file: gnome/gnome-flatpaks.yml
   - from-file: gnome/gnome-gschemas.yml
+
+  - files:
+      - source: system_files/deck
+        destination: /
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+    install:
+      - mangohud
+      - sddm
+      - steamdeck-gnome-presets
+    remove:
+      - mesa-va-drivers-freeworld
+
+  - type: containerfile
+    snippets:
+      - RUN curl -Lo /tmp/steam-jupiter.pkg.tar.zst https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/steam-jupiter-stable-1.0.0.79-1-x86_64.pkg.tar.zst && mkdir -p /usr/etc/first-boot && tar --no-same-owner --no-same-permissions --no-overwrite-dir -I zstd -xvf /tmp/steam-jupiter.pkg.tar.zst usr/lib/steam/bootstraplinux_ubuntu12_32.tar.xz -o > /usr/etc/first-boot/bootstraplinux_ubuntu12_32.tar.xz && rm -f /tmp/steam-jupiter.pkg.tar.zst
+
+  - type: script
+    scripts:
+      - steam-install.sh
+      - steamos-setup.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - zelideck-autologin.service
+        - sddm.service
+      disabled:
+        - gdm.service
