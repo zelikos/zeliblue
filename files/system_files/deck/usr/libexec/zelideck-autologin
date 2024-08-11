@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 USER=$(id -nu 1000)
+HOME=$(getent passwd $USER | cut -d: -f6)
 
 # SteamOS SDDM config
 SDDM_CONF='/etc/sddm.conf.d/steamos.conf'
@@ -13,7 +14,7 @@ if [[ -f ${AUTOLOGIN_CONF} ]]; then
 fi
 
 # Configure autologin if Steam has been updated
-if [[ ! -f $DESKTOP_AUTOLOGIN && -f /var/home/$USER/.local/share/Steam/ubuntu12_32/steamui.so ]]; then
+if [[ ! -f ${DESKTOP_AUTOLOGIN} && -f $HOME/.local/share/Steam/ubuntu12_32/steamui.so ]]; then
   sed -i 's/.*Session=.*/Session=gamescope-session.desktop/g' ${SDDM_CONF}
 else
   sed -i 's/.*Session=.*/Session=gnome-wayland.desktop/g' ${SDDM_CONF}

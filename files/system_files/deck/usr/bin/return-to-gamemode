@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 USER=$(id -nu 1000)
 HOME=$(getent passwd $USER | cut -d: -f6)
