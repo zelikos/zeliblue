@@ -154,8 +154,7 @@ rpm-ostree override replace \
         mesa-libglapi \
         mesa-vulkan-drivers \
 
-# Install other 32-bit Steam dependencies
-echo "Installing other Steam dependencies"
+echo "Installing Steam & dependencies"
 rpm-ostree install \
     extest.i686 \
     vulkan-loader.i686 \
@@ -181,11 +180,15 @@ rpm-ostree install \
     libatomic.i686 \
     pipewire-alsa.i686
 
+sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/fedora-updates.repo
+rpm-ostree install \
+  mesa-vulkan-drivers.i686 \
+  mesa-va-drivers-freeworld.i686 \
+  mesa-vdpau-drivers-freeworld.i686
 echo "Installing Steam"
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
 sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree.repo
 sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
-sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/fedora-updates.repo
 rpm-ostree install steam
 sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree.repo
