@@ -2,8 +2,7 @@
 
 set -oue pipefail
 
-# Based on Bazzite's solution for installing Steam without package conflicts: https://github.com/ublue-os/bazzite/pull/330
-
+# Based on Bazzite's Containerfile: https://github.com/ublue-os/bazzite/blob/main/Containerfile
 
 # Enable bazzite-multilib for their build of Mesa, and for extest later.
 echo "Adding bazzite-multilib repository"
@@ -25,19 +24,11 @@ rpm-ostree override replace \
         mesa-libglapi \
         mesa-vulkan-drivers \
 
-rpm-ostree install \
-    gamescope \
-    gamescope-shaders \
-    gamescope-session-plus \
-    gamescope-session-steam
-
 # Install other 32-bit Steam dependencies
-
 echo "Installing other Steam dependencies"
-
 rpm-ostree install \
-	extest.i686 \
-	gamescope-libs.i686 \
+    extest.i686 \
+    gamescope-libs.i686 \
     vulkan-loader.i686 \
     alsa-lib.i686 \
     fontconfig.i686 \
@@ -62,7 +53,6 @@ rpm-ostree install \
     pipewire-alsa.i686
 
 echo "Installing Steam"
-
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
 sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree.repo
 sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
@@ -72,6 +62,18 @@ sed -i '0,/enabled=1/s//enabled=0/' /etc/yum.repos.d/rpmfusion-nonfree-steam.rep
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree.repo
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/rpmfusion-nonfree-updates.repo
 sed -i '0,/enabled=0/s//enabled=1/' /etc/yum.repos.d/fedora-updates.repo
+
+# Setup Gamescope
+rpm-ostree install \
+    gamescope \
+    gamescope-legacy \
+    gamescope-libs.i686 \
+    gamescope-shaders
+
+# Add bootstrap_steam.tar.gz used by gamescope-session (Thanks GE & Nobara Project!)
+mkdir -p /usr/share/gamescope-session-plus/
+curl -Lo /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz https://large-package-sources.nobaraproject.org/bootstrap_steam.tar.gz
+rpm-ostree install gamescope-session-plus gamescope-session-steam
 
 # Cleanup
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo
