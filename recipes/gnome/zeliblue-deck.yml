@@ -14,13 +14,13 @@ modules:
   - from-file: common/common-flatpaks.yml
   - from-file: common/common-fonts.yml
   - from-file: common/common-scripts.yml
-  - from-file: common/common-systemd.yml
-  - from-file: common/common-modules.yml
 
   - type: rpm-ostree
     install:
       - rsms-inter-fonts.noarch
       - rsms-inter-vf-fonts
+
+  - type: signing
 
   - from-file: gnome/gnome-files.yml
   - from-file: gnome/gnome-packages.yml
