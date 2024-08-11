@@ -1,7 +1,7 @@
 # image will be published to ghcr.io/<user>/<name>
 name: zeliblue-deck
 # description will be included in the image's metadata
-description: A zeliblue-based SteamOS experience
+description: A Zeliblue-flavored SteamOS experience, based on Bazzite
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/bazzite-deck-gnome
