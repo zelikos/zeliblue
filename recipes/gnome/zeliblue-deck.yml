@@ -4,7 +4,7 @@ name: zeliblue-deck
 description: A zeliblue-based SteamOS experience
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/bazzite-deck-gnome
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # list of modules, executed in order
@@ -23,41 +23,3 @@ modules:
   - from-file: gnome/gnome-packages.yml
   - from-file: gnome/gnome-flatpaks.yml
   - from-file: gnome/gnome-gschemas.yml
-
-  - files:
-      - source: system_files/deck
-        destination: /
-
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
-    install:
-      - mangohud
-      - python3-pip
-      - sddm
-      - steamdeck-gnome-presets
-    remove:
-      - mesa-va-drivers-freeworld
-      - ublue-os-update-services
-
-  - type: containerfile
-    snippets:
-      - RUN pip install --prefix=/usr topgrade && rpm-ostree install ublue-update
-      - RUN curl -Lo /tmp/steam-jupiter.pkg.tar.zst https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/steam-jupiter-stable-1.0.0.79-1-x86_64.pkg.tar.zst && mkdir -p /usr/etc/first-boot && tar --no-same-owner --no-same-permissions --no-overwrite-dir -I zstd -xvf /tmp/steam-jupiter.pkg.tar.zst usr/lib/steam/bootstraplinux_ubuntu12_32.tar.xz -o > /usr/etc/first-boot/bootstraplinux_ubuntu12_32.tar.xz && rm -f /tmp/steam-jupiter.pkg.tar.zst
-
-  - type: script
-    scripts:
-      - steam-install.sh
-      - steamos-setup.sh
-
-  - type: files
-    files:
-      - deck/usr: /usr
-
-  - type: systemd
-    system:
-      enabled:
-        - zelideck-autologin.service
-        - sddm.service
-      disabled:
-        - gdm.service
