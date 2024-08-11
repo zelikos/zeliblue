@@ -10,6 +10,6 @@ ln -s /usr/bin/steamos-logger /usr/bin/steamos-info
 ln -s /usr/bin/steamos-logger /usr/bin/steamos-notice
 ln -s /usr/bin/steamos-logger /usr/bin/steamos-warning
 sed -i 's@/usr/bin/steam@/usr/bin/zelideck-steam@g' /usr/share/applications/steam.desktop
-mkdir -p "/usr/etc/xdg/autostart"
-cp "/usr/share/applications/steam.desktop" "/usr/etc/xdg/autostart/steam.desktop"
-sed -i 's@/usr/bin/zelideck-steam %U@/usr/bin/zelideck-steam -silent %U@g' /usr/etc/xdg/autostart/steam.desktop
+mkdir -p "/etc/xdg/autostart"
+cp "/usr/share/applications/steam.desktop" "/etc/xdg/autostart/steam.desktop"
+sed -i 's@/usr/bin/zelideck-steam %U@/usr/bin/zelideck-steam -silent %U@g' /etc/xdg/autostart/steam.desktop
