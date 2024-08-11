@@ -37,6 +37,8 @@ modules:
       - mangohud
       - sddm
       - steamdeck-gnome-presets
+      - steam_notif_daemon
+
     remove:
       - mesa-va-drivers-freeworld
 
