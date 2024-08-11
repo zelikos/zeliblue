@@ -153,6 +153,7 @@ rpm-ostree override replace \
         mesa-libGL \
         mesa-libglapi \
         mesa-vulkan-drivers \
+        xorg-x11-server-Xwayland
 
 rpm-ostree install \
     mesa-va-drivers-freeworld \
