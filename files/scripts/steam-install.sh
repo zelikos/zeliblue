@@ -154,6 +154,10 @@ rpm-ostree override replace \
         mesa-libglapi \
         mesa-vulkan-drivers \
 
+rpm-ostree install \
+    mesa-va-drivers-freeworld \
+    mesa-vdpau-drivers-freeworld.x86_64
+
 echo "Installing Steam & dependencies"
 rpm-ostree install \
     extest.i686 \
