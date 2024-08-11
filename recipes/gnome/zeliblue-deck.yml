@@ -32,6 +32,7 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
+      - ds-inhibit
       - mangohud
       - sddm
       - steamdeck-gnome-presets
@@ -46,6 +47,7 @@ modules:
   - type: systemd
     system:
       enabled:
+        - ds-inhibit.service
         - gamescope-workaround.service
         - zelideck-autologin.service
         - sddm.service
