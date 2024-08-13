@@ -1,0 +1,4 @@
+type: akmods
+install:
+  - openrazer
+  - openrgb
