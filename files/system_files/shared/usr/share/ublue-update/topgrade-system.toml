@@ -1,6 +1,5 @@
 [misc]
-only = ["brew_cask", "brew_formula", "system"]
-ignore_failures = ["brew_cask", "brew_formula"]
+only = ["system"]
 skip_notify = true
 assume_yes = true
 no_retry = true
