@@ -24,7 +24,7 @@ if status is-interactive
     alias l1='eza -1'
   end
 
-  if command -q ripgrep
+  if command -q rg
     # Ripgrep for grep
     alias grep='rg' 2>/dev/null
     alias egrep='rg' 2>/dev/null
