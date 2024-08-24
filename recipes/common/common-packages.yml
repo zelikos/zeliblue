@@ -1,4 +1,6 @@
 type: rpm-ostree
+repos:
+  - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
 install:
   - fastfetch
   - fish
@@ -7,6 +9,7 @@ install:
   - gum
   - rsms-inter-fonts.noarch
   - rsms-inter-vf-fonts
+  - scx-scheds
 remove:
   - firefox
   - firefox-langpacks
