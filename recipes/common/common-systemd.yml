@@ -1,4 +1,0 @@
-type: systemd
-system:
-  enabled:
-    - com.system76.Scheduler.service

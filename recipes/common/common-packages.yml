@@ -1,6 +1,4 @@
 type: rpm-ostree
-repos:
-  - https://copr.fedorainfracloud.org/coprs/kylegospo/system76-scheduler/repo/fedora-%OS_VERSION%/kylegospo-system76-scheduler-fedora-%OS_VERSION%.repo
 install:
   - fastfetch
   - fish
@@ -9,7 +7,6 @@ install:
   - gum
   - rsms-inter-fonts.noarch
   - rsms-inter-vf-fonts
-  - system76-scheduler
 remove:
   - firefox
   - firefox-langpacks
