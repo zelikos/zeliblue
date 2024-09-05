@@ -22,4 +22,6 @@ modules:
 
   - from-file: gnome/gnome-flatpaks.yml
   - from-file: gnome/gnome-gschemas.yml
+
+  - from-file: sway/sway-files.yml
   - from-file: sway/sway-packages.yml

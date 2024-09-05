@@ -1,0 +1,4 @@
+type: files
+files:
+  - source: system_files/gnome/etc/dconf
+    destination: /etc/dconf
