@@ -1,3 +1,6 @@
 type: rpm-ostree
 install:
+  - alacritty
   - ptyxis
+remove:
+  - foot
