@@ -25,6 +25,7 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
+          - cosmic/zeliblue-cosmic.yml
           - gnome/zeliblue.yml
           - plasma/zeliblue-kinoite.yml
           # - gnome/zeliblue-deck.yml
