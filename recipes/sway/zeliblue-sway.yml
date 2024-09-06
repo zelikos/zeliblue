@@ -25,3 +25,4 @@ modules:
 
   - from-file: sway/sway-files.yml
   - from-file: sway/sway-packages.yml
+  - from-file: sway/sway-scripts.yml
