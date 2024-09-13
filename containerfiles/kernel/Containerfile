@@ -1,5 +1,7 @@
-# FROM ghcr.io/ublue-os/fsync-ba-kernel:40 AS fsync
-COPY --from=ghcr.io/ublue-os/fsync-ba-kernel:40 /tmp/rpms /tmp/fsync-rpms
+ARG KERNEL_FLAVOR="fsync-ba"
+ARG KERNEL_VERSION="40"
+
+COPY --from=ghcr.io/ublue-os/${KERNEL_FLAVOR}-kernel:${KERNEL_VERSION} /tmp/rpms /tmp/fsync-rpms
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     # --mount=type=bind,from=fsync,src=/tmp/rpms,dst=/tmp/fsync-rpms \
     rpm-ostree cliwrap install-to-root / && \
@@ -8,3 +10,8 @@ RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     /tmp/fsync-rpms/kernel-core-*.rpm \
     /tmp/fsync-rpms/kernel-modules-*.rpm \
     /tmp/fsync-rpms/kernel-uki-virt-*.rpm
+
+COPY --from=ghcr.io/ublue-os/akmods/${KERNEL_FLAVOR}-${KERNEL_VERSION} /rpms /tmp/akmods-rpms
+RUN rpm-ostree install \
+    /tmp/akmods-rpms/kmods/*openrazer*.rpm \
+    /tmp/akmods-rpms/kmods/*openrgb*.rpm \
