@@ -1,9 +1,10 @@
-  FROM ghcr.io/ublue-os/fsync-ba-kernel:40 AS fsync
-  RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
-      --mount=type=bind,from=fsync,src=/tmp/rpms,dst=/tmp/fsync-rpms \
-      rpm-ostree cliwrap install-to-root / && \
-      rpm-ostree override replace --experimental \
-        /tmp/fsync-rpms/kernel-[0-9]*.rpm \
-        /tmp/fsync-rpms/kernel-core-*.rpm \
-        /tmp/fsync-rpms/kernel-modules-*.rpm \
-        /tmp/fsync-rpms/kernel-uki-virt-*.rpm
+# FROM ghcr.io/ublue-os/fsync-ba-kernel:40 AS fsync
+COPY --from=ghcr.io/ublue-os/fsync-ba-kernel:40 /tmp/rpms /tmp/fsync-rpms
+RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
+    # --mount=type=bind,from=fsync,src=/tmp/rpms,dst=/tmp/fsync-rpms \
+    rpm-ostree cliwrap install-to-root / && \
+    rpm-ostree override replace --experimental \
+    /tmp/fsync-rpms/kernel-[0-9]*.rpm \
+    /tmp/fsync-rpms/kernel-core-*.rpm \
+    /tmp/fsync-rpms/kernel-modules-*.rpm \
+    /tmp/fsync-rpms/kernel-uki-virt-*.rpm
