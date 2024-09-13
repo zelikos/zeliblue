@@ -56,3 +56,9 @@ sort-directories-first=true
 
 [org.gtk.settings.file-chooser]
 sort-directories-first=true
+
+[com.github.stunkymonkey.nautilus-open-any-terminal]
+flatpak='off'
+keybindings=''
+new-tab=false
+terminal='ptyxis'
