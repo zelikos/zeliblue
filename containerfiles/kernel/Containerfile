@@ -11,7 +11,7 @@ RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     /tmp/fsync-rpms/kernel-modules-*.rpm \
     /tmp/fsync-rpms/kernel-uki-virt-*.rpm
 
-COPY --from=ghcr.io/ublue-os/akmods/${kernel_flavor}-${kernel_version} /rpms /tmp/akmods-rpms
+COPY --from=ghcr.io/ublue-os/akmods:${kernel_flavor}-${kernel_version} /rpms /tmp/akmods-rpms
 RUN rpm-ostree install \
     /tmp/akmods-rpms/kmods/*openrazer*.rpm \
     /tmp/akmods-rpms/kmods/*openrgb*.rpm \
