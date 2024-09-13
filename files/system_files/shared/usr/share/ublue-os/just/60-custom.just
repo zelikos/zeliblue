@@ -4,12 +4,13 @@
 zeliblue-cli:
   #!/usr/bin/bash
   source /usr/lib/ujust/ujust.sh
+  BREWFILE="/usr/share/zeliblue/homebrew/zeliblue-cli.Brewfile"
 
   OPTION=""
   echo "zeliblue-cli installs a handful of packages via brew,"
   echo "intended to provide a more modern CLI experience."
   echo "The full list can be found in the Brewfile at"
-  echo "$HOME/.local/share/zeliblue/Brewfile"
+  echo "$BREWFILE"
   echo ""
   echo "The fish shell is pre-configured by Zeliblue"
   echo "to integrate these utilities if they are installed."
@@ -17,12 +18,8 @@ zeliblue-cli:
   echo "Proceed with installation?"
   OPTION=$(ugum choose Yes No)
   if [ "${OPTION,,}" == "yes" ]; then
-    if [[ ! -f $HOME/.local/share/zeliblue/Brewfile ]]; then
-      mkdir -p $HOME/.local/share/zeliblue
-      cp /usr/etc/skel/.local/share/zeliblue/Brewfile $HOME/.local/share/zeliblue/Brewfile
-    fi
     echo "Installing Zeliblue CLI utilities..."
-    brew bundle --file=$HOME/.local/share/zeliblue/Brewfile
+    brew bundle --file=$BREWFILE --no-lock
     echo "Installation complete. Please restart your terminal."
   fi
 
