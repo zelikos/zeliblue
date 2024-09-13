@@ -15,4 +15,4 @@ COPY --from=ghcr.io/ublue-os/akmods:fsync-ba-40 /rpms /tmp/akmods-rpms
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     rpm-ostree install \
     /tmp/akmods-rpms/kmods/*openrazer*.rpm \
-    /tmp/akmods-rpms/kmods/*openrgb*.rpm \
+    /tmp/akmods-rpms/kmods/*openrgb*.rpm
