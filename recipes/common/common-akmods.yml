@@ -1,4 +1,5 @@
 type: akmods
+base: fsync
 install:
   - openrazer
   - openrgb
