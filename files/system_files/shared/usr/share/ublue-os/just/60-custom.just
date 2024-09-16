@@ -26,12 +26,23 @@ zeliblue-cli:
 # Setup DaVinciBox container
 setup-davincibox mode="":
   #!/usr/bin/env bash
+  davincibox_flavor=""
+
   if [[ $(echo {{mode}}) == "refresh" ]]; then
     podman container stop davincibox
     podman container rm davincibox
   fi
-  podman image pull ghcr.io/zelikos/davincibox:latest
-  toolbox create -i ghcr.io/zelikos/davincibox:latest -c davincibox
+
+  if lshw -c video 2>/dev/null | grep -qi "driver=nvidia"; then
+    echo "Nvidia GPU detected."
+    davincibox_flavor="davincibox"
+  else
+    echo "No NVIDIA GPU detected. Using OpenCL."
+    davincibox_flavor="davincibox-opencl"
+  fi
+
+  podman image pull "ghcr.io/zelikos/$davincibox_flavor:latest"
+  toolbox create -i "ghcr.io/zelikos/$davincibox_flavor:latest" -c davincibox
 
 # Install DaVinci Resolve to DaVinciBox
 install-davinci installer="":
