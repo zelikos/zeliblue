@@ -7,7 +7,6 @@ install:
   - gum
   - rsms-inter-fonts.noarch
   - rsms-inter-vf-fonts
-  - scx-scheds
 remove:
   - firefox
   - firefox-langpacks
