@@ -28,8 +28,6 @@ jobs:
           - cosmic/zeliblue-cosmic.yml
           - gnome/zeliblue.yml
           - plasma/zeliblue-kinoite.yml
-          # - gnome/zeliblue-deck.yml
-          # - gnome/zeliblue-gts.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
