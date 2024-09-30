@@ -15,6 +15,7 @@ image-version: latest
 modules:
   - type: containerfile
     snippets:
+      - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Plasma"
       - ARG ZELIBLUE_IMAGE_TAG=stable
 
   - from-file: common/common-base.yml
