@@ -18,7 +18,4 @@ modules:
       - ARG ZELIBLUE_IMAGE_TAG=stable
 
   - from-file: common/common-base.yml
-
-  - from-file: plasma/plasma-files.yml
-  - from-file: plasma/plasma-packages.yml
-  - from-file: plasma/plasma-flatpaks.yml
+  - from-file: plasma/plasma-base.yml

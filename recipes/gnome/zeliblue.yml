@@ -18,8 +18,4 @@ modules:
       - ARG ZELIBLUE_IMAGE_TAG=stable
 
   - from-file: common/common-base.yml
-
-  - from-file: gnome/gnome-files.yml
-  - from-file: gnome/gnome-packages.yml
-  - from-file: gnome/gnome-flatpaks.yml
-  - from-file: gnome/gnome-gschemas.yml
+  - from-file: gnome/gnome-base.yml
