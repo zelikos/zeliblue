@@ -17,7 +17,7 @@ IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_VENDOR="zelikos"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 IMAGE_FLAVOR=""
-IMAGE_TAG="latest"
+IMAGE_TAG="$ZELIBLUE_IMAGE_TAG"
 
 if grep -q "kinoite" <<< "${BASE_IMAGE}"; then
   IMAGE_FLAVOR="kinoite"
