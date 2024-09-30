@@ -2,6 +2,8 @@
 name: zeliblue-cosmic
 # description will be included in the image's metadata
 description: An opinionated COSMIC desktop experience, based on Fedora Atomic
+alt-tags:
+  - testing
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/cosmic
