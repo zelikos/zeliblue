@@ -21,8 +21,10 @@ IMAGE_TAG="$ZELIBLUE_IMAGE_TAG"
 
 if grep -q "kinoite" <<< "${BASE_IMAGE}"; then
   IMAGE_FLAVOR="kinoite"
-else
+elif grep -q "silverblue" <<< "${BASE_IMAGE}"; then
   IMAGE_FLAVOR="silverblue"
+else
+  IMAGE_FLAVOR="atomic"
 fi
 
 cat > $IMAGE_INFO <<EOF
