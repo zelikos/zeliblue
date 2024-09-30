@@ -16,6 +16,7 @@ BUG_REPORT_URL="https://github.com/zelikos/zeliblue/issues"
 IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_VENDOR="zelikos"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
+BASIC_NAME="zeliblue"
 IMAGE_FLAVOR=""
 IMAGE_TAG="$ZELIBLUE_IMAGE_TAG"
 
@@ -47,8 +48,8 @@ sed -i "s|^HOME_URL=.*|HOME_URL=\"$HOME_URL\"|" /usr/lib/os-release
 sed -i "s|^DOCUMENTATION_URL=.*|DOCUMENTATION_URL=\"$DOCUMENTATION_URL\"|" /usr/lib/os-release
 sed -i "s|^SUPPORT_URL=.*|SUPPORT_URL=\"$SUPPORT_URL\"|" /usr/lib/os-release
 sed -i "s|^BUG_REPORT_URL=.*|BUG_REPORT_URL=\"$BUG_REPORT_URL\"|" /usr/lib/os-release
-sed -i "s|^CPE_NAME=\"cpe:/o:fedoraproject:fedora|CPE_NAME=\"cpe:/o:zelikos:${IMAGE_PRETTY_NAME,}|" /usr/lib/os-release
-sed -i "s/^DEFAULT_HOSTNAME=.*/DEFAULT_HOSTNAME=\"${IMAGE_PRETTY_NAME,}\"/" /usr/lib/os-release
+sed -i "s|^CPE_NAME=\"cpe:/o:fedoraproject:fedora|CPE_NAME=\"cpe:/o:zelikos:${BASIC_NAME,}|" /usr/lib/os-release
+sed -i "s/^DEFAULT_HOSTNAME=.*/DEFAULT_HOSTNAME=\"${BASIC_NAME,}\"/" /usr/lib/os-release
 sed -i "s/^ID=fedora/ID=zeliblue\nID_LIKE=\"fedora\"/" /usr/lib/os-release
 # sed -i "s/^LOGO=.*/LOGO=$LOGO_ICON/" /usr/lib/os-release
 # sed -i "s/^ANSI_COLOR=.*/ANSI_COLOR=\"$LOGO_COLOR\"/" /usr/lib/os-release
