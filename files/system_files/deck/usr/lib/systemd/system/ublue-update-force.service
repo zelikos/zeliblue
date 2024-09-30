@@ -1,7 +1,0 @@
-[Unit]
-Description=Force Universal Blue Update Oneshot Service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/ublue-update --force
-RemainAfterExit=no

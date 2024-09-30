@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Game Mode
-Exec=systemctl start return-to-gamemode.service
-Terminal=false
-Type=Application
-StartupNotify=false
