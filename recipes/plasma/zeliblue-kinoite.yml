@@ -17,17 +17,5 @@ modules:
     snippets:
       - ARG ZELIBLUE_IMAGE_TAG=stable
 
-  # - from-file: common/common-kernel.yml
-  - from-file: common/common-akmods.yml
-  - from-file: common/common-bling.yml
-  - from-file: common/common-files.yml
-  - from-file: common/common-flatpaks.yml
-  - from-file: common/common-fonts.yml
-  - from-file: common/common-packages.yml
-  - from-file: common/common-scripts.yml
-  # - from-file: common/common-systemd.yml
-  - from-file: common/common-modules.yml
-
-  - from-file: plasma/plasma-files.yml
-  - from-file: plasma/plasma-packages.yml
-  - from-file: plasma/plasma-flatpaks.yml
+  - from-file: common/common-base.yml
+  - from-file: plasma/plasma-base.yml

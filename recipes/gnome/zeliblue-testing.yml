@@ -29,7 +29,4 @@ modules:
   - from-file: testing/testing-kernel.yml
   - from-file: testing/testing-packages.yml
 
-  - from-file: gnome/gnome-files.yml
-  - from-file: gnome/gnome-packages.yml
-  - from-file: gnome/gnome-flatpaks.yml
-  - from-file: gnome/gnome-gschemas.yml
+  - from-file: gnome/gnome-base.yml
