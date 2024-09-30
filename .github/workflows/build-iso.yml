@@ -11,7 +11,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/build_iso.yml'
+      - ".github/workflows/build_iso.yml"
 
 env:
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
@@ -32,7 +32,7 @@ jobs:
       matrix:
         image_name: [zeliblue]
         major_version: [40]
-        image_tag: [latest]
+        image_tag: [stable]
 
     steps:
       - name: Fetch current date
@@ -53,9 +53,9 @@ jobs:
           image_repo: ${{ env.IMAGE_REGISTRY }}
           image_name: ${{ matrix.image_name }}
           image_tag: ${{ matrix.image_tag }}
-          variant: 'Silverblue'
-          enrollment_password: 'ublue-os'
-          secure_boot_key_url: 'https://github.com/ublue-os/akmods/raw/main/certs/public_key.der'
+          variant: "Silverblue"
+          enrollment_password: "ublue-os"
+          secure_boot_key_url: "https://github.com/ublue-os/akmods/raw/main/certs/public_key.der"
           iso_name: ${{ matrix.image_name }}.iso
           enable_cache_dnf: "false"
           enable_cache_skopeo: "false"
@@ -71,7 +71,7 @@ jobs:
           mkdir ${ISO_UPLOAD_DIR}
           mv ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }} ${ISO_UPLOAD_DIR}
           mv ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM ${ISO_UPLOAD_DIR}
-          echo "iso-upload-dir=${ISO_UPLOAD_DIR}" >> $GITHUB_OUTPUT     
+          echo "iso-upload-dir=${ISO_UPLOAD_DIR}" >> $GITHUB_OUTPUT
 
       - name: Upload ISO to R2 Zeliblue Bucket
         if: github.ref_name == 'main'
