@@ -17,7 +17,7 @@ IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_VENDOR="zelikos"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 IMAGE_FLAVOR=""
-IMAGE_TAG="latest"
+IMAGE_TAG="$ZELIBLUE_IMAGE_TAG"
 
 if grep -q "kinoite" <<< "${BASE_IMAGE}"; then
   IMAGE_FLAVOR="kinoite"
@@ -47,7 +47,7 @@ sed -i "s|^SUPPORT_URL=.*|SUPPORT_URL=\"$SUPPORT_URL\"|" /usr/lib/os-release
 sed -i "s|^BUG_REPORT_URL=.*|BUG_REPORT_URL=\"$BUG_REPORT_URL\"|" /usr/lib/os-release
 sed -i "s|^CPE_NAME=\"cpe:/o:fedoraproject:fedora|CPE_NAME=\"cpe:/o:zelikos:${IMAGE_PRETTY_NAME,}|" /usr/lib/os-release
 sed -i "s/^DEFAULT_HOSTNAME=.*/DEFAULT_HOSTNAME=\"${IMAGE_PRETTY_NAME,}\"/" /usr/lib/os-release
-sed -i "s/^ID=fedora/ID=${IMAGE_PRETTY_NAME,}\nID_LIKE=\"rhel centos fedora\"/" /usr/lib/os-release
+sed -i "s/^ID=fedora/ID=${IMAGE_PRETTY_NAME,}\nID_LIKE=\"fedora\"/" /usr/lib/os-release
 # sed -i "s/^LOGO=.*/LOGO=$LOGO_ICON/" /usr/lib/os-release
 # sed -i "s/^ANSI_COLOR=.*/ANSI_COLOR=\"$LOGO_COLOR\"/" /usr/lib/os-release
 sed -i "/^REDHAT_BUGZILLA_PRODUCT=/d; /^REDHAT_BUGZILLA_PRODUCT_VERSION=/d; /^REDHAT_SUPPORT_PRODUCT=/d; /^REDHAT_SUPPORT_PRODUCT_VERSION=/d" /usr/lib/os-release

@@ -13,6 +13,10 @@ image-version: latest
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  - type: containerfile
+    snippets:
+      - ARG ZELIBLUE_IMAGE_TAG=stable
+
   # - from-file: common/common-kernel.yml
   - from-file: common/common-akmods.yml
   - from-file: common/common-bling.yml
