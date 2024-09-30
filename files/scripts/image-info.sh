@@ -7,7 +7,7 @@ set -oue pipefail
 
 # Adapted from Bazzite's image-info script: https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/libexec/containerbuild/image-info
 
-IMAGE_PRETTY_NAME="Zeliblue"
+IMAGE_PRETTY_NAME="$ZELIBLUE_PRETTY_NAME"
 HOME_URL="https://github.com/zelikos/zeliblue"
 DOCUMENTATION_URL="https://github.com/zelikos/zeliblue/blob/main/README.md"
 SUPPORT_URL="https://github.com/zelikos/zeliblue/issues"
@@ -41,7 +41,7 @@ EOF
 
 # OS Release File
 sed -i "s/^VARIANT_ID=.*/VARIANT_ID=$IMAGE_NAME/" /usr/lib/os-release
-sed -i "s/^PRETTY_NAME=.*/PRETTY_NAME=\"Zeliblue (FROM Fedora ${IMAGE_FLAVOR^} $OS_VERSION)\"/" /usr/lib/os-release
+sed -i "s/^PRETTY_NAME=.*/PRETTY_NAME=\"$IMAGE_PRETTY_NAME (FROM Fedora ${IMAGE_FLAVOR^} $OS_VERSION)\"/" /usr/lib/os-release
 sed -i "s/^NAME=.*/NAME=\"$IMAGE_PRETTY_NAME\"/" /usr/lib/os-release
 sed -i "s|^HOME_URL=.*|HOME_URL=\"$HOME_URL\"|" /usr/lib/os-release
 sed -i "s|^DOCUMENTATION_URL=.*|DOCUMENTATION_URL=\"$DOCUMENTATION_URL\"|" /usr/lib/os-release

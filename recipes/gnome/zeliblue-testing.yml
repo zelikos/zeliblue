@@ -14,6 +14,7 @@ image-version: latest
 modules:
   - type: containerfile
     snippets:
+      - ARG ZELIBLUE_PRETTY_NAME="Zeliblue"
       - ARG ZELIBLUE_IMAGE_TAG=testing
 
   # - from-file: common/common-akmods.yml
