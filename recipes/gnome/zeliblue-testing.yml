@@ -12,7 +12,6 @@ image-version: latest
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
-  - from-file: common/common-kernel.yml
   # - from-file: common/common-akmods.yml
   - from-file: common/common-bling.yml
   - from-file: common/common-files.yml
@@ -23,6 +22,7 @@ modules:
   #  - from-file: common/common-systemd.yml
   - from-file: common/common-modules.yml
 
+  - from-file: testing/testing-kernel.yml
   - from-file: testing/testing-packages.yml
 
   - from-file: gnome/gnome-files.yml
