@@ -40,7 +40,7 @@ sudo podman run --rm --privileged --volume ./iso-output:/build-container-install
 ghcr.io/jasonn3/build-container-installer:latest \
 IMAGE_REPO=ghcr.io/zelikos \
 IMAGE_NAME=zeliblue \
-IMAGE_TAG=latest \
+IMAGE_TAG=stable \
 VARIANT=Silverblue # If building zeliblue-kinoite, change this to Kinoite
 ```
 
@@ -52,7 +52,7 @@ You *can* also rebase an existing Silverblue/Kinoite installation to the latest 
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/zelikos/zeliblue:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/zelikos/zeliblue:stable
   ```
 - Reboot to complete the rebase:
   ```
@@ -60,7 +60,7 @@ You *can* also rebase an existing Silverblue/Kinoite installation to the latest 
   ```
 - Then, rebase onto the signed image:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zelikos/zeliblue:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zelikos/zeliblue:stable
   systemctl reboot
   ```
 
