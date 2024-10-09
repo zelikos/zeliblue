@@ -1,3 +1,4 @@
 type: script
 scripts:
   - image-info.sh
+  - hide-launchers.sh
