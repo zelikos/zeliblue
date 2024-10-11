@@ -28,5 +28,5 @@ modules:
   - from-file: testing/testing-kernel.yml
   - from-file: testing/testing-packages.yml
 
-  # - from-file: cosmic/cosmic-files.yml
+  - from-file: cosmic/cosmic-files.yml
   - from-file: cosmic/cosmic-flatpaks.yml
