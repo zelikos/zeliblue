@@ -29,22 +29,17 @@ For most users, I would recommend looking into either [Bluefin](https://projectb
 
 ### ISOs
 
-Pre-built ISOs will be made available in the near future.
+Pre-built ISOs are currently private and only for the GNOME edition of Zeliblue. These may be be made publicly available in the future.
 
-For those that want to try Zeliblue in the meantime, you can also build an ISO yourself using podman.
+For those that want to try Zeliblue in the meantime, or that want an ISO of other Zeliblue flavors, you can either rebase using the instructions in the next section, or you can build the ISO yourself. The recommended method is by using the [BlueBuild CLI utility](https://github.com/blue-build/cli?tab=readme-ov-file#installation):
 
 ```
-mkdir ./iso-output
+# Zeliblue
+bluebuild generate-iso --variant gnome image ghcr.io/zelikos/zeliblue:stable
 
-sudo podman run --rm --privileged --volume ./iso-output:/build-container-installer/build --security-opt label=disable --pull=newer \
-ghcr.io/jasonn3/build-container-installer:latest \
-IMAGE_REPO=ghcr.io/zelikos \
-IMAGE_NAME=zeliblue \
-IMAGE_TAG=stable \
-VARIANT=Silverblue # If building zeliblue-kinoite, change this to Kinoite
+# Zeliblue Plasma
+bluebuild generate-iso --variant kinoite image ghcr.io/zelikos/zeliblue-kinoite:stable
 ```
-
-The above can also be run with docker instead. See [BlueBuild's ISO documentation](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso) for more info.
 
 ### Rebase
 
