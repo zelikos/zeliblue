@@ -31,7 +31,7 @@ For most users, I would recommend looking into either [Bluefin](https://projectb
 
 Pre-built ISOs are currently private and only for the GNOME edition of Zeliblue. These may be be made publicly available in the future.
 
-For those that want to try Zeliblue in the meantime, or that want an ISO of other Zeliblue flavors, you can either rebase using the instructions in the next section, or you can build the ISO yourself. The recommended method is by using the [BlueBuild CLI utility](https://github.com/blue-build/cli?tab=readme-ov-file#installation):
+For those that want to try Zeliblue in the meantime, or that want an ISO of other Zeliblue flavors, you can either rebase using the instructions in the next section, or you can build the ISO yourself. The recommended method is by using the [BlueBuild CLI utility](https://github.com/blue-build/cli?tab=readme-ov-file#installation) (requires v0.9.0 or later):
 
 ```
 # Zeliblue
