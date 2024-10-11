@@ -21,3 +21,4 @@ system:
     - org.gnome.Epiphany
     - com.github.tchx84.Flatseal
     - org.gnome.World.PikaBackup
+    - io.github.flattool.Warehouse
