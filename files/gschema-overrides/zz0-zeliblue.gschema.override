@@ -18,21 +18,9 @@ document-font-name="Inter 11"
 monospace-font-name="Hack Nerd Font Mono 10"
 gtk-theme="adw-gtk3"
 
-[org.gnome.desktop.wm.keybindings]
-move-to-workspace-1 = ['<Alt><Super>Home']
-move-to-workspace-last = ['<Alt><Super>End']
-move-to-workspace-left = ['<Alt><Super>Left']
-move-to-workspace-right = ['<Alt><Super>Right']
-switch-to-workspace-left = ['<Super>Left']
-switch-to-workspace-right = ['<Super>Right']
-
 [org.gnome.mutter]
 center-new-windows=true
 check-alive-timeout=uint32 20000
-
-[org.gnome.mutter.keybindings]
-toggle-tiled-left = ['<Control><Super>Left']
-toggle-tiled-right = ['<Control><Super>Right']
 
 [org.gnome.nautilus.icon-view]
 captions = ['size', 'date_modified', 'none']
