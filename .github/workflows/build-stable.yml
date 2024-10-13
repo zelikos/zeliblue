@@ -1,0 +1,26 @@
+name: Zeliblue Stable
+on:
+  schedule:
+    - cron:
+        "00 06 * * *" # build at 06:00 UTC every day
+        # (20 minutes after last ublue images start building)
+  pull_request:
+    branches:
+      - main
+    paths-ignore: # don't rebuild if only documentation has changed
+      - "**.md"
+  workflow_dispatch: # allow manually triggering builds
+
+jobs:
+  build_gnome:
+    name: Build Zeliblue GNOME
+    uses: ./.github/workflows/reusable-build.yml
+    secrets: inherit
+    with:
+      recipe: gnome/zeliblue.yml
+  build_plasma:
+    name: Build Zeliblue Plasma
+    uses: ./.github/workflows/reusable-build.yml
+    secrets: inherit
+    with:
+      recipe: plasma/zeliblue-kinoite.yml
