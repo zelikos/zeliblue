@@ -1,0 +1,27 @@
+name: Zeliblue Testing
+on:
+  schedule:
+    - cron:
+        "00 06 * * *" # build at 06:00 UTC every day
+        # (20 minutes after last ublue images start building)
+  push:
+    branches:
+      - main
+    paths-ignore: # don't rebuild if only documentation has changed
+      - "**.md"
+  pull_request:
+  workflow_dispatch: # allow manually triggering builds
+
+jobs:
+  build_gnome:
+    name: Zeliblue GNOME Testing
+    uses: ./.github/workflows/reusable-build.yml
+    secrets: inherit
+    with:
+      recipe: gnome/zeliblue-testing.yml
+  build_plasma:
+    name: Zeliblue COSMIC Testing
+    uses: ./.github/workflows/reusable-build.yml
+    secrets: inherit
+    with:
+      recipe: cosmic/zeliblue-cosmic.yml
