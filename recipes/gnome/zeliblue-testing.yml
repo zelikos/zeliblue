@@ -38,7 +38,6 @@ modules:
     install:
       - gnome-shell-extension-hotedge
       - nautilus-open-any-terminal
-      - ptyxis
     remove:
       - gnome-classic-session
       - gnome-software-rpm-ostree
