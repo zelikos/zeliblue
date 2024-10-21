@@ -56,4 +56,4 @@ terminal='ptyxis'
 
 # Folder names & .desktop shortcut content is recognized as a relocatable schema
 [org.gnome.desktop.app-folders]
-folder-children=['Games', 'Utilities', 'Containers', 'Development', 'Productivity']
+folder-children=['Games', 'Utilities', 'Development', 'Productivity']
