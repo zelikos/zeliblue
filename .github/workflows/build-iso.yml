@@ -59,9 +59,10 @@ jobs:
           iso_name: ${{ matrix.image_name }}.iso
           enable_cache_dnf: "false"
           enable_cache_skopeo: "false"
-          # enable_flatpak_dependencies: "false"
-          # flatpak_remote_name: "flathub-system"
-          # flatpak_remote_url: "https://flathub.org/repo/flathub.flatpakrepo"
+          enable_flatpak_dependencies: "true"
+          flatpak_remote_name: "flathub"
+          flatpak_remote_url: "https://flathub.org/repo/flathub.flatpakrepo"
+          flatpak_remote_refs_dir: /github/workspace/files/flatpaks/gnome
 
       - name: Move ISO to Upload Directory
         id: upload-directory
