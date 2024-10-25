@@ -1,5 +1,19 @@
 # Include some of your custom scripts here!
 
+# Restore default apps installation
+restore-default-apps:
+  #!/usr/bin/bash
+  IMAGE_INFO="/usr/share/zeliblue/image-info.json"
+  IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
+  if [[ ${IMAGE_FLAVOR} == 'silverblue' ]]; then
+    FLATPAKS="gnome/gnome-flatpaks"
+  # TODO: Add Kinoite flatpaks list
+  # elif [[ ${IMAGE_FLAVOR} == 'kinoite' ]]; then
+  #   FLATPAKS="plasma/plasma-flatpaks"
+  fi
+  FLATPAK_LIST="$(curl https://raw.githubusercontent.com/zelikos/zeliblue/main/files/flatpaks/${FLATPAKS} | tr '\n' ' ')"
+  flatpak --system -y install --or-update ${FLATPAK_LIST}
+
 # Install a small selection of CLI utilties via brew
 zeliblue-cli:
   #!/usr/bin/bash

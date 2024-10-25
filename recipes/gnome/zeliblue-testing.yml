@@ -43,5 +43,4 @@ modules:
       - gnome-software-rpm-ostree
       - gnome-tweaks
 
-  - from-file: gnome/gnome-flatpaks.yml
   - from-file: gnome/gnome-gschemas.yml
