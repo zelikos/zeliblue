@@ -62,7 +62,7 @@ jobs:
           enable_flatpak_dependencies: "true"
           flatpak_remote_name: "flathub"
           flatpak_remote_url: "https://flathub.org/repo/flathub.flatpakrepo"
-          flatpak_remote_refs_dir: /github/workspace/files/flatpaks/gnome
+          flatpak_remote_refs_dir: "files/flatpaks/gnome"
 
       - name: Move ISO to Upload Directory
         id: upload-directory
