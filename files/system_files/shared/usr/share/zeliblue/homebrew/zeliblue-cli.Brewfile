@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-brew "atuin"
 brew "bat"
 brew "btop"
 brew "chezmoi"
