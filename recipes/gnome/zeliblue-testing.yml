@@ -28,19 +28,4 @@ modules:
   - from-file: testing/testing-kernel.yml
   - from-file: testing/testing-packages.yml
 
-  # - from-file: gnome/gnome-base.yml
-  - from-file: gnome/gnome-files.yml
-  # - from-file: gnome/gnome-packages.yml
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
-    install:
-      - gnome-shell-extension-hotedge
-      - nautilus-open-any-terminal
-    remove:
-      - gnome-classic-session
-      - gnome-software-rpm-ostree
-      - gnome-tweaks
-
-  - from-file: gnome/gnome-gschemas.yml
+  - from-file: gnome/gnome-base.yml
