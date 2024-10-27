@@ -4,7 +4,6 @@ repos:
   - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
 install:
   - gnome-shell-extension-hotedge
-  - nautilus-open-any-terminal
 remove:
   - gnome-classic-session
   - gnome-software-rpm-ostree
