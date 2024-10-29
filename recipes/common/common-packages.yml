@@ -5,6 +5,7 @@ install:
   - gcc
   - glow
   - gum
+  - micro
   - rsms-inter-fonts.noarch
   - rsms-inter-vf-fonts
 remove:
