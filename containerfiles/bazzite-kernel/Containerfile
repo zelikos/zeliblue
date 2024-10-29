@@ -1,7 +1,7 @@
 # Install fsync kernel
-COPY --from=ghcr.io/ublue-os/fsync-kernel:40 /tmp/rpms /tmp/fsync-rpms
+COPY --from=ghcr.io/ublue-os/bazzite-kernel:41 /tmp/rpms /tmp/fsync-rpms
 RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
-    echo "Installing fsync kernel" && \
+    echo "Installing Bazzite kernel" && \
     rpm-ostree cliwrap install-to-root / && \
     rpm-ostree override replace --experimental \
     /tmp/fsync-rpms/kernel-[0-9]*.rpm \
