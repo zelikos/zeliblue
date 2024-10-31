@@ -6,5 +6,4 @@ install:
   - gnome-shell-extension-hotedge
 remove:
   - gnome-classic-session
-  - gnome-software-rpm-ostree
   - gnome-tweaks
