@@ -32,7 +32,7 @@ modules:
       - micro
       - rsms-inter-fonts.noarch
       - rsms-inter-vf-fonts
-     remove:
+    remove:
       - lutris
 
   - from-file: gnome/gnome-files.yml
