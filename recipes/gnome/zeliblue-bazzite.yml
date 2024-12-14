@@ -1,0 +1,37 @@
+# image will be published to ghcr.io/<user>/<name>
+name: zeliblue-bazzite
+# description will be included in the image's metadata
+description: A Bazzite-based Zeliblue experience
+alt-tags:
+  - testing
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bazzite-deck-gnome
+image-version: latest
+
+# list of modules, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: containerfile
+    snippets:
+      - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Bazzite"
+      - ARG ZELIBLUE_IMAGE_TAG=testing
+
+  - from-file: common/common-files.yml
+  - from-file: common/common-flatpaks.yml
+  - from-file: common/common-fonts.yml
+
+  - type: script
+    scripts:
+      - image-info.sh
+
+  - type: signing
+
+  - type: rpm-ostree
+    install:
+      - micro
+      - rsms-inter-fonts.noarch
+      - rsms-inter-vf-fonts
+
+  - from-file: gnome/gnome-files.yml
+  - from-file: gnome/gnome-gschemas.yml
