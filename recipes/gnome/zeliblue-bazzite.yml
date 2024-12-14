@@ -17,5 +17,21 @@ modules:
       - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Bazzite"
       - ARG ZELIBLUE_IMAGE_TAG=testing
 
-  - from-file: common/common-base.yml
+  # - from-file: common/common-base.yml
+  - from-file: common/common-files.yml
+  - from-file: common/common-flatpaks.yml
+  - from-file: common/common-fonts.yml
+
+  - type: script
+    scripts:
+      - image-info.sh
+
+  - type: signing
+
+  - type: rpm-ostree
+    install:
+      - micro
+      - rsms-inter-fonts.noarch
+      - rsms-inter-vf-fonts
+
   - from-file: gnome/gnome-base.yml
