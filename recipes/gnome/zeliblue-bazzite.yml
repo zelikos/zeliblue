@@ -1,0 +1,21 @@
+# image will be published to ghcr.io/<user>/<name>
+name: zeliblue-bazzite
+# description will be included in the image's metadata
+description: A Bazzite-based Zeliblue experience
+alt-tags:
+  - testing
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/bazzite-deck-gnome
+image-version: latest
+
+# list of modules, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: containerfile
+    snippets:
+      - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Bazzite"
+      - ARG ZELIBLUE_IMAGE_TAG=testing
+
+  - from-file: common/common-base.yml
+  - from-file: gnome/gnome-base.yml
