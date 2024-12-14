@@ -32,6 +32,8 @@ modules:
       - micro
       - rsms-inter-fonts.noarch
       - rsms-inter-vf-fonts
+     remove:
+      - lutris
 
   - from-file: gnome/gnome-files.yml
   - from-file: gnome/gnome-gschemas.yml
