@@ -18,6 +18,9 @@ document-font-name="Inter 11"
 monospace-font-name="Hack Nerd Font Mono 10"
 gtk-theme="adw-gtk3"
 
+[org.gnome.desktop.wm.preferences]
+button-layout='appmenu:close'
+
 [org.gnome.mutter]
 center-new-windows=true
 check-alive-timeout=uint32 20000
@@ -44,12 +47,6 @@ sort-directories-first=true
 
 [org.gtk.settings.file-chooser]
 sort-directories-first=true
-
-[com.github.stunkymonkey.nautilus-open-any-terminal]
-flatpak='off'
-keybindings=''
-new-tab=false
-terminal='ptyxis'
 
 #-------------- REMAINING SCHEMAS IN THIS SETTING SECTION ARE LOCATED IN DCONF --------------#
 # Settings bellow are supported with gschema override, but other settings, which are relocatable schemas, are not. Edit dconfs if you need to modify relocatable schemas.
