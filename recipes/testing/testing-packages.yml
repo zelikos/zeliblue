@@ -5,4 +5,6 @@ repos:
 install:
   - gamescope-session-plus
   - gamescope-session-steam
+  - mangohud
   - scx-scheds
+  - steam
