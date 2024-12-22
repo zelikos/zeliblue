@@ -21,6 +21,11 @@ modules:
   - from-file: common/common-flatpaks.yml
   - from-file: common/common-fonts.yml
 
+  - type: files
+    files:
+      - source: system_files/overrides
+        destination: /
+
   - type: script
     scripts:
       - image-info.sh
