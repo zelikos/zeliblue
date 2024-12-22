@@ -34,7 +34,6 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
       - gamescope.x86_64
-      - gamescope-libs.i686
       - gamescope-shaders
       - gamescope-session-plus
       - gamescope-session-steam

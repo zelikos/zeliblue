@@ -68,6 +68,7 @@ rpm-ostree install \
   libatomic.i686 \
   pipewire-alsa.i686 \
   gobject-introspection \
+  gamescope-libs.i686 \
   steam
 
 # Add bootstrap_steam.tar.gz used by gamescope-session (Thanks GE & Nobara Project!)
