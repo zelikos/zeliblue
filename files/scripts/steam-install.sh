@@ -69,6 +69,9 @@ rpm-ostree install \
   pipewire-alsa.i686 \
   gobject-introspection \
   gamescope \
+  gamescope-shaders \
+  gamescope-session-plus \
+  gamescope-session-steam \
   gamescope-libs.i686 \
   steam
 
