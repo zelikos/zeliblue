@@ -103,6 +103,8 @@ modules:
       - gamescope.x86_64
       - gamescope-libs.i686
       - gamescope-shaders
+      - gamescope-session-steam
+      - gamescope-session-plus
 
   - type: rpm-ostree
     repos:
