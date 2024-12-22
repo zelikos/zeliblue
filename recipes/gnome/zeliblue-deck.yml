@@ -33,10 +33,17 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
+      - jupiter-fan-control
+      - jupiter-hw-support-btrfs
       - libei
       - libei.i686
       - mangohud
+      - powerbuttond
+      - sdgyrodsu
+      - steam_notif_daemon
+      - steamdeck-dsp
       - sddm
+      - vpower
 
   - type: systemd
     system:
