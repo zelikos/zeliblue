@@ -24,7 +24,8 @@ modules:
 
   - from-file: gnome/gnome-base.yml
 
-  - files:
+  - type: files
+    files:
       - source: system_files/deck
         destination: /
 
