@@ -41,8 +41,6 @@ modules:
       - mangohud
       - sddm
       # - steam
-    remove:
-      - mesa-va-drivers-freeworld
 
   - type: systemd
     system:
