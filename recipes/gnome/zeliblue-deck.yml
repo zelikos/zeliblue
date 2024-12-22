@@ -95,6 +95,7 @@ modules:
       - libatomic.i686
       - pipewire-alsa.i686
       - gobject-introspection
+      - mangohud
       - steam
 
   - type: rpm-ostree
@@ -106,15 +107,14 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/ycollet/audinux/repo/fedora-%OS_VERSION%/ycollet-audinux-fedora-%OS_VERSION%.repo
     install:
       - jupiter-fan-control
       - jupiter-hw-support-btrfs
-      - mangohud
       - powerbuttond
       - sdgyrodsu
       - steam_notif_daemon
       - steamdeck-dsp
+      - steamdeck-gnome-presets
       - sddm
       - vpower
 
@@ -130,5 +130,4 @@ modules:
 
   - type: script
     scripts:
-      # - steam-install.sh
       - steamos-setup.sh

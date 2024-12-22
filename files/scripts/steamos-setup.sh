@@ -18,3 +18,7 @@ sed -i 's@/usr/bin/steam@/usr/bin/zelideck-steam@g' /usr/share/applications/stea
 mkdir -p /etc/skel/.config/autostart/
 cp "/usr/share/applications/steam.desktop" "/etc/skel/.config/autostart/steam.desktop"
 sed -i 's@/usr/bin/zelideck-steam %U@/usr/bin/zelideck-steam -silent %U@g' /etc/skel/.config/autostart/steam.desktop
+
+# Add bootstrap_steam.tar.gz used by gamescope-session (Thanks GE & Nobara Project!)
+mkdir -p /usr/share/gamescope-session-plus/
+curl -Lo /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz https://large-package-sources.nobaraproject.org/bootstrap_steam.tar.gz
