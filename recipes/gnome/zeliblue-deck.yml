@@ -1,0 +1,143 @@
+# image will be published to ghcr.io/<user>/<name>
+name: zeliblue-deck
+# description will be included in the image's metadata
+description: A zeliblue-based SteamOS experience
+alt-tags:
+  - testing
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: latest # latest is also supported if you want new updates ASAP
+
+# list of modules, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: containerfile
+    snippets:
+      - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Deck"
+      - ARG ZELIBLUE_IMAGE_TAG=testing
+
+  - from-file: common/common-base.yml
+
+  - from-file: testing/testing-kernel.yml
+  - from-file: testing/testing-packages.yml
+
+  - from-file: gnome/gnome-base.yml
+
+  - type: files
+    files:
+      - source: system_files/deck
+        destination: /
+
+  - type: rpm-ostree
+    replace:
+      - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
+        packages:
+          - mesa-libxatracker
+          - mesa-libglapi
+          - mesa-dri-drivers
+          - mesa-libgbm
+          - mesa-libEGL
+          - mesa-vulkan-drivers
+          - mesa-libGL
+          - pipewire
+          - pipewire-alsa
+          - pipewire-gstreamer
+          - pipewire-jack-audio-connection-kit
+          - pipewire-jack-audio-connection-kit-libs
+          - pipewire-libs
+          - pipewire-pulseaudio
+          - pipewire-utils
+          - pipewire-plugin-libcamera
+          - bluez
+          - bluez-obexd
+          - bluez-cups
+          - bluez-libs
+          - xorg-x11-server-Xwayland
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/ycollet/audinux/repo/fedora-%OS_VERSION%/ycollet-audinux-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
+    install:
+      - ladspa-caps-plugins
+      - ladspa-noise-suppression-for-voice
+      - pipewire-module-filter-chain-sofa
+      - libei
+      - libei.i686
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+    install:
+      - at-spi2-core.i686
+      - atk.i686
+      - vulkan-loader.i686
+      - alsa-lib.i686
+      - fontconfig.i686
+      - gtk2.i686
+      - libICE.i686
+      - libnsl.i686
+      - libxcrypt-compat.i686
+      - libpng12.i686
+      - libXext.i686
+      - libXinerama.i686
+      - libXtst.i686
+      - libXScrnSaver.i686
+      - NetworkManager-libnm.i686
+      - nss.i686
+      - pulseaudio-libs.i686
+      - libcurl.i686
+      - systemd-libs.i686
+      - libva.i686
+      - libvdpau.i686
+      - libdbusmenu-gtk3.i686
+      - libatomic.i686
+      - pipewire-alsa.i686
+      - gobject-introspection
+      - mangohud
+      - steam
+
+  - type: rpm-ostree
+    install:
+      - gamescope.x86_64
+      - gamescope-libs.i686
+      - gamescope-shaders
+      - gamescope-session-steam
+      - gamescope-session-plus
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+    install:
+      - jupiter-fan-control
+      - jupiter-hw-support-btrfs
+      - powerbuttond
+      - sdgyrodsu
+      - steam_notif_daemon
+      - steamdeck-dsp
+      - steamdeck-gnome-presets
+      - sddm
+      - vpower
+
+  - type: rpm-ostree
+    replace:
+      - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+        packages:
+          - ublue-update
+          - upower
+          - upower-libs
+
+  - type: systemd
+    system:
+      enabled:
+        - zelideck-autologin.service
+        - wireplumber-workaround.service
+        - pipewire-workaround.service
+        - sddm.service
+      disabled:
+        - gdm.service
+
+  - type: script
+    scripts:
+      - steamos-setup.sh

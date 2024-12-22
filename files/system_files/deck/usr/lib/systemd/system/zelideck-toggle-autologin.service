@@ -1,0 +1,5 @@
+[Unit]
+Description=Toggle desktop autologin
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/zelideck-toggle-autologin
