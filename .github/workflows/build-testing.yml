@@ -31,3 +31,9 @@ jobs:
     secrets: inherit
     with:
       recipe: cosmic/zeliblue-cosmic.yml
+  build_deck:
+    name: Zeliblue Deck Testing
+    uses: ./.github/workflows/reusable-build.yml
+    secrets: inherit
+    with:
+      recipe: gnome/zeliblue-deck.yml
