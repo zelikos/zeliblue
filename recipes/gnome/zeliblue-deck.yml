@@ -70,7 +70,6 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
-      - jupiter-sd-mounting-btrfs
       - at-spi2-core.i686
       - atk.i686
       - vulkan-loader.i686
