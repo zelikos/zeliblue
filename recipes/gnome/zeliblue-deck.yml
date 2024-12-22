@@ -46,12 +46,11 @@ modules:
     system:
       enabled:
         - zelideck-autologin.service
+        - wireplumber-workaround.service
+        - pipewire-workaround.service
         - sddm.service
       disabled:
         - gdm.service
-    user:
-      enabled:
-        - zelideck-gamescope-setup.service
 
   - type: script
     scripts:
