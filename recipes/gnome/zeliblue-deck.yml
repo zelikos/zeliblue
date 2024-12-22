@@ -6,8 +6,8 @@ alt-tags:
   - testing
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/zelikos/zeliblue
-image-version: testing # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/ublue-os/silverblue-main
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # list of modules, executed in order
 # you can include multiple instances of the same module
@@ -17,12 +17,12 @@ modules:
       - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Deck"
       - ARG ZELIBLUE_IMAGE_TAG=testing
 
-  # - from-file: common/common-base.yml
+  - from-file: common/common-base.yml
 
-  # - from-file: testing/testing-kernel.yml
-  # - from-file: testing/testing-packages.yml
+  - from-file: testing/testing-kernel.yml
+  - from-file: testing/testing-packages.yml
 
-  # - from-file: gnome/gnome-base.yml
+  - from-file: gnome/gnome-base.yml
 
   - type: files
     files:
