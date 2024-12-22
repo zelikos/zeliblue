@@ -68,6 +68,7 @@ rpm-ostree install \
   libatomic.i686 \
   pipewire-alsa.i686 \
   gobject-introspection \
+  gamescope \
   gamescope-libs.i686 \
   steam
 
