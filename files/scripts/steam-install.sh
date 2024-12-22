@@ -12,32 +12,32 @@ curl -Lo /etc/yum.repos.d/negativo17-fedora-rar.repo https://negativo17.org/repo
 curl -Lo /etc/yum.repos.d/_copr_kylegospo-bazzite-multilib.repo https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-"${OS_VERSION}"/kylegospo-bazzite-multilib-fedora-"${OS_VERSION}".repo?arch=x86_64
 
 # Ensure that needed Mesa packages are installed from bazzite-multilib
-echo "Installing Mesa packages from bazzite-multilib"
+# echo "Installing Mesa packages from bazzite-multilib"
 
-rpm-ostree override replace \
-    --experimental \
-    --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib \
-      mesa-libxatracker \
-      mesa-libglapi \
-      mesa-dri-drivers \
-      mesa-libgbm \
-      mesa-libEGL \
-      mesa-vulkan-drivers \
-      mesa-libGL \
-      pipewire \
-      pipewire-alsa \
-      pipewire-gstreamer \
-      pipewire-jack-audio-connection-kit \
-      pipewire-jack-audio-connection-kit-libs \
-      pipewire-libs \
-      pipewire-pulseaudio \
-      pipewire-utils \
-      pipewire-plugin-libcamera \
-      bluez \
-      bluez-obexd \
-      bluez-cups \
-      bluez-libs \
-      xorg-x11-server-Xwayland
+# rpm-ostree override replace \
+#     --experimental \
+#     --from repo=copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib \
+#       mesa-libxatracker \
+#       mesa-libglapi \
+#       mesa-dri-drivers \
+#       mesa-libgbm \
+#       mesa-libEGL \
+#       mesa-vulkan-drivers \
+#       mesa-libGL \
+#       pipewire \
+#       pipewire-alsa \
+#       pipewire-gstreamer \
+#       pipewire-jack-audio-connection-kit \
+#       pipewire-jack-audio-connection-kit-libs \
+#       pipewire-libs \
+#       pipewire-pulseaudio \
+#       pipewire-utils \
+#       pipewire-plugin-libcamera \
+#       bluez \
+#       bluez-obexd \
+#       bluez-cups \
+#       bluez-libs \
+#       xorg-x11-server-Xwayland
 
 echo "Installing other Steam dependencies"
 

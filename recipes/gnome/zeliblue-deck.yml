@@ -30,6 +30,32 @@ modules:
         destination: /
 
   - type: rpm-ostree
+    replace:
+      - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-"${OS_VERSION}"/kylegospo-bazzite-multilib-fedora-"${OS_VERSION}".repo?arch=x86_64
+        packages:
+          - mesa-libxatracker
+          - mesa-libglapi
+          - mesa-dri-drivers
+          - mesa-libgbm
+          - mesa-libEGL
+          - mesa-vulkan-drivers
+          - mesa-libGL
+          - pipewire
+          - pipewire-alsa
+          - pipewire-gstreamer
+          - pipewire-jack-audio-connection-kit
+          - pipewire-jack-audio-connection-kit-libs
+          - pipewire-libs
+          - pipewire-pulseaudio
+          - pipewire-utils
+          - pipewire-plugin-libcamera
+          - bluez
+          - bluez-obexd
+          - bluez-cups
+          - bluez-libs
+          - xorg-x11-server-Xwayland
+
+  - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/ycollet/audinux/repo/fedora-%OS_VERSION%/ycollet-audinux-fedora-%OS_VERSION%.repo
