@@ -118,6 +118,14 @@ modules:
       - sddm
       - vpower
 
+  - type: rpm-ostree
+    replace:
+      - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+        packages:
+          - ublue-update
+          - upower
+          - upower-libs
+
   - type: systemd
     system:
       enabled:
