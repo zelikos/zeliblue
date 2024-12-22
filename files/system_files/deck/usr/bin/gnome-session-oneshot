@@ -1,11 +1,16 @@
 #!/usr/bin/bash
+
 set -e
+
 die() { echo >&2 "!! $*"; exit 1; }
+
 SENTINEL_FILE="steamos-session-select"
+
 # If we proceed, execute this
 CHAINED_SESSION="/usr/bin/gnome-session"
 # If we decide the sentinel is consumed, execute this command instead and fail
 RESTORE_SESSION=(/usr/bin/steamos-session-select) # No arguments restores the session
+
 # Find or check config sentinel
 function check_sentinel()
 {
@@ -14,6 +19,7 @@ function check_sentinel()
     # Rather than break we'll just launch plasma and hope for the best?
     return 0
   fi
+
   local config_dir="${XDG_CONF_DIR:-"$HOME/.config"}"
   (
     cd "$HOME"
@@ -25,10 +31,13 @@ function check_sentinel()
       return 1
     fi
     rm "$SENTINEL_FILE"
+
   ) || return 1 # If we couldn't read the value or it wasn't what we wanted
+
   # Found value and removed it, we're good to continue
   return 0
 }
+
 if CONFIGURED_CHAINED_SESSION=$(check_sentinel); then
   # We found and consumed the oneshot sentinel, proceed to launch plasma
   echo >&2 "$0: Found and removed sentinel file for one-shot desktop, proceeding to launch"

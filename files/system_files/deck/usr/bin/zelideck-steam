@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
-LAUNCH_OPTIONS=""
-# If Steam has been launched before we can safely launch with -steamdeck
-# to maintain the gamemode update branch
-if [ -f $HOME/.local/share/Steam/ubuntu12_32/steamui.so ]; then
-  LAUNCH_OPTIONS="-steamos3 -gamepadui"
+
+SYS_ID="$(cat /sys/devices/virtual/dmi/id/product_name)"
+
+if [ ! -d $HOME/.local/share/Steam ]; then
+  # Set up steam with the bootstrap before starting it, this allows steam to run for the first time even with no network access
+  if [[ -f "/usr/share/gamescope-session-plus/bootstrap_steam.tar.gz" ]]; then
+      mkdir -p ~/.local/share
+      tar xf /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz -C ~/.local/share
+  fi
 fi
-/usr/bin/steam "$LAUNCH_OPTIONS" "$*"
-fi
+
+# Required to maintain the Steam update branch between desktop & Steam Game Mode
+DECK_OPTION="-steamdeck"
+
+/usr/bin/steam "$DECK_OPTION" "$@"
