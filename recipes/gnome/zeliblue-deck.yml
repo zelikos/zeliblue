@@ -68,6 +68,44 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+    install:
+      - jupiter-sd-mounting-btrfs
+      - at-spi2-core.i686
+      - atk.i686
+      - vulkan-loader.i686
+      - alsa-lib.i686
+      - fontconfig.i686
+      - gtk2.i686
+      - libICE.i686
+      - libnsl.i686
+      - libxcrypt-compat.i686
+      - libpng12.i686
+      - libXext.i686
+      - libXinerama.i686
+      - libXtst.i686
+      - libXScrnSaver.i686
+      - NetworkManager-libnm.i686
+      - nss.i686
+      - pulseaudio-libs.i686
+      - libcurl.i686
+      - systemd-libs.i686
+      - libva.i686
+      - libvdpau.i686
+      - libdbusmenu-gtk3.i686
+      - libatomic.i686
+      - pipewire-alsa.i686
+      - gobject-introspection
+      - steam
+
+  - type: rpm-ostree
+    install:
+      - gamescope.x86_64
+      - gamescope-libs.i686
+      - gamescope-shaders
+
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/ycollet/audinux/repo/fedora-%OS_VERSION%/ycollet-audinux-fedora-%OS_VERSION%.repo
     install:
       - jupiter-fan-control
@@ -92,5 +130,5 @@ modules:
 
   - type: script
     scripts:
-      - steam-install.sh
+      # - steam-install.sh
       - steamos-setup.sh
