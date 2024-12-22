@@ -32,7 +32,10 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/ycollet/audinux/repo/fedora-%OS_VERSION%/ycollet-audinux-fedora-%OS_VERSION%.repo
     install:
+      - ladspa-caps-plugins
+      - ladspa-noise-suppression-for-voice
       - jupiter-fan-control
       - jupiter-hw-support-btrfs
       - libei
