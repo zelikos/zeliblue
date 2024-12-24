@@ -4,7 +4,7 @@ Description=Force Universal Blue Update Oneshot Service
 [Service]
 Type=oneshot
 Environment="TOPGRADE_SKIP_BRKC_NOTIFY=true"
-ExecStart=/usr/bin/ublue-update --force
+ExecStart=/usr/bin/topgrade --config /usr/share/zeliblue/topgrade.toml
 RemainAfterExit=no
 Nice=19
 CPUSchedulingPolicy=batch
