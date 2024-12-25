@@ -16,8 +16,8 @@ ln -s /usr/bin/steamos-logger /usr/bin/steamos-notice
 ln -s /usr/bin/steamos-logger /usr/bin/steamos-warning
 sed -i 's@/usr/bin/steam@/usr/bin/zelideck-steam@g' /usr/share/applications/steam.desktop
 mkdir -p /etc/skel/.config/autostart/
-cp "/usr/share/applications/steam.desktop" "/etc/skel/.config/autostart/steam.desktop"
-sed -i 's@/usr/bin/zelideck-steam %U@/usr/bin/zelideck-steam -silent %U@g' /etc/skel/.config/autostart/steam.desktop
+cp "/usr/share/applications/steam.desktop" "/etc/xdg/autostart/steam.desktop"
+sed -i 's@/usr/bin/zelideck-steam %U@/usr/bin/zelideck-steam -silent %U@g' /etc/xdg/autostart/steam.desktop
 
 # Add bootstrap_steam.tar.gz used by gamescope-session (Thanks GE & Nobara Project!)
 mkdir -p /usr/share/gamescope-session-plus/
