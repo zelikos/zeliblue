@@ -139,10 +139,6 @@ modules:
         - pipewire-sysconf.service
         - sddm.service
       disabled:
-        - jupiter-fan-control.service
-        - vpower.service
-        - jupiter-biosupdate.service
-        - jupiter-controller-update.service
         - gdm.service
 
   - type: script
