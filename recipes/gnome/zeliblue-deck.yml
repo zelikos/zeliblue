@@ -133,9 +133,15 @@ modules:
       enabled:
         - zelideck-autologin.service
         - wireplumber-workaround.service
+        - wireplumber-sysconf.service
         - pipewire-workaround.service
+        - pipewire-sysconf.service
         - sddm.service
       disabled:
+        - jupiter-fan-control.service
+        - vpower.service
+        - jupiter-biosupdate.service
+        - jupiter-controller-update.service
         - gdm.service
 
   - type: script
