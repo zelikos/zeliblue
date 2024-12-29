@@ -63,6 +63,7 @@ modules:
       - ladspa-caps-plugins
       - ladspa-noise-suppression-for-voice
       - pipewire-module-filter-chain-sofa
+      - i2c-tools
       - libei
       - libei.i686
 
