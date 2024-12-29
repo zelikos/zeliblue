@@ -35,6 +35,7 @@ curl -Lo /tmp/linux-firmware-galileo/hpnv21g.bin https://gitlab.com/evlaV/linux-
 xz --check=crc32 /tmp/linux-firmware-galileo/*
 mv -vf /tmp/linux-firmware-galileo/* /usr/lib/firmware/qca/
 rm -rf /tmp/linux-firmware-galileo
+rm -rf /usr/share/alsa/ucm2/conf.d/acp5x/Valve-Jupiter-1.conf
 
 # Dock updater
 git clone https://gitlab.com/evlaV/jupiter-dock-updater-bin.git \
