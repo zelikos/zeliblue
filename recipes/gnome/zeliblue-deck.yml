@@ -147,3 +147,5 @@ modules:
   - type: script
     scripts:
       - steamos-setup.sh
+
+  - type: initramfs
