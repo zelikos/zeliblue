@@ -56,3 +56,7 @@ sed -i 's@/usr/bin/zelideck-steam %U@/usr/bin/zelideck-steam -silent %U@g' /etc/
 # Add bootstrap_steam.tar.gz used by gamescope-session (Thanks GE & Nobara Project!)
 mkdir -p /usr/share/gamescope-session-plus/
 curl -Lo /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz https://large-package-sources.nobaraproject.org/bootstrap_steam.tar.gz
+
+# Finalizing
+cp --no-dereference --preserve=links /usr/lib/libdrm.so.2 /usr/lib/libdrm.so && \
+cp --no-dereference --preserve=links /usr/lib64/libdrm.so.2 /usr/lib64/libdrm.so && \
