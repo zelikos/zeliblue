@@ -116,6 +116,7 @@ modules:
       - jupiter-fan-control
       - jupiter-hw-support-btrfs
       - powerbuttond
+      - ryzenadj
       - sdgyrodsu
       - steam_notif_daemon
       - steamdeck-dsp
