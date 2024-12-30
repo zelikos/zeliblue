@@ -1,0 +1,65 @@
+#!/usr/bin/bash
+
+# Ported from Bazzite: https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/libexec/bazzite-user-setup
+
+if [ "${EUID:-$(id -u)}" -lt 1000 ]; then
+  echo "Bazzite user setup ran as unsupported user. Exiting."
+  exit 0
+fi
+
+IMAGE_INFO="/usr/share/ublue-os/image-info.json"
+IMAGE_NAME=$(jq -r '."image-name"' < $IMAGE_INFO)
+BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
+FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
+
+SYS_ID="$(/usr/libexec/hwsupport/sysid)"
+VEN_ID="$(cat /sys/devices/virtual/dmi/id/chassis_vendor)"
+
+# INIT
+BAZZITE_CONFIG_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zeliblue"
+mkdir -p "$BAZZITE_CONFIG_DIR"
+
+# SCRIPT VERSION
+USER_SETUP_VER=43
+USER_SETUP_VER_FILE="$BAZZITE_CONFIG_DIR/version"
+USER_SETUP_FEDORA_VER_FILE="$BAZZITE_CONFIG_DIR/fedora_version"
+USER_SETUP_IMAGE_VER_FILE=$BAZZITE_CONFIG_DIR/image_name""
+
+# Run script if updated
+if [[ -f $USER_SETUP_VER_FILE && -f $USER_SETUP_FEDORA_VER_FILE && -f $USER_SETUP_IMAGE_VER_FILE ]]; then
+  USER_SETUP_VER_RAN=$(cat $USER_SETUP_VER_FILE)
+  USER_SETUP_FEDORA_VER_RAN=$(cat $USER_SETUP_FEDORA_VER_FILE)
+  USER_SETUP_IMAGE_VER_RAN=$(cat $USER_SETUP_IMAGE_VER_FILE)
+
+  if [[ $USER_SETUP_VER = "$USER_SETUP_VER_RAN" && $FEDORA_VERSION = "$USER_SETUP_FEDORA_VER_RAN" && $BASE_IMAGE_NAME = "$USER_SETUP_IMAGE_VER_RAN" ]]; then
+    echo "User setup v$USER_SETUP_VER has already run. Exiting..."
+    exit 0
+  fi
+fi
+
+if [[ $IMAGE_NAME =~ "deck" || $IMAGE_NAME =~ "ally" ]]; then
+  echo 'Running setup for Silverblue on Steam Deck'
+
+  echo 'Tweaking GNOME indexer'
+  if [[ ! -f "$HOME/.steam/.trackerignore" ]]; then
+    mkdir -p "$HOME/.steam"
+    touch "$HOME/.steam/.trackerignore"
+  fi
+  if [[ ! -f "${XDG_DATA_HOME:-$HOME/.local/share}/Steam/.trackerignore" ]]; then
+    mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/Steam"
+    touch "${XDG_DATA_HOME:-$HOME/.local/share}/Steam/.trackerignore"
+  fi
+fi
+
+  # SDGyroDSU Setup
+  if /usr/libexec/hwsupport/valve-hardware; then
+    systemctl --user enable --now sdgyrodsu.service
+  else
+    systemctl --user disable --now sdgyrodsu.service
+  fi
+
+# Prevent future executions
+echo "Writing state file"
+echo $USER_SETUP_VER > $USER_SETUP_VER_FILE
+echo $FEDORA_VERSION > $USER_SETUP_FEDORA_VER_FILE
+echo $BASE_IMAGE_NAME > $USER_SETUP_IMAGE_VER_FILE
