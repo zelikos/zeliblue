@@ -63,9 +63,6 @@ modules:
       - ladspa-caps-plugins
       - ladspa-noise-suppression-for-voice
       - pipewire-module-filter-chain-sofa
-      - i2c-tools
-      - libei
-      - libei.i686
 
   - type: rpm-ostree
     repos:
@@ -97,6 +94,7 @@ modules:
       - pipewire-alsa.i686
       - gobject-introspection
       - mangohud
+      - extest.i686
       - steam
 
   - type: rpm-ostree
