@@ -10,8 +10,8 @@ RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
     /tmp/fsync-rpms/kernel-uki-virt-*.rpm
 
 # Install akmods
-# COPY --from=ghcr.io/ublue-os/akmods:fsync-40 /rpms /tmp/akmods-rpms
-# RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
-#     echo "Installing akmods" && \
-#     rpm-ostree install \
-#     /tmp/akmods-rpms/kmods/*openrazer*.rpm
+COPY --from=ghcr.io/ublue-os/akmods-extra:bazzite-41 /rpms /tmp/akmods-rpms
+RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
+    echo "Installing akmods" && \
+    rpm-ostree install \
+    /tmp/akmods-rpms/kmods/*ryzen-smu*.rpm
