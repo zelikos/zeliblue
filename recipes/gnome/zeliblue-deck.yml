@@ -30,6 +30,16 @@ modules:
         destination: /
 
   - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
+    install:
+      - mesa-dri-drivers.i686
+
+  - type: script
+    scripts:
+      - mesa-fix_1.sh
+
+  - type: rpm-ostree
     replace:
       - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
         packages:
@@ -54,6 +64,10 @@ modules:
           - bluez-cups
           - bluez-libs
           - xorg-x11-server-Xwayland
+
+  - type: script
+    scripts:
+      - mesa-fix_2.sh
 
   - type: rpm-ostree
     repos:
