@@ -37,37 +37,7 @@ modules:
 
   - type: script
     scripts:
-      - mesa-fix_1.sh
-
-  - type: rpm-ostree
-    replace:
-      - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
-        packages:
-          - mesa-libxatracker
-          - mesa-libglapi
-          - mesa-dri-drivers
-          - mesa-libgbm
-          - mesa-libEGL
-          - mesa-vulkan-drivers
-          - mesa-libGL
-          - pipewire
-          - pipewire-alsa
-          - pipewire-gstreamer
-          - pipewire-jack-audio-connection-kit
-          - pipewire-jack-audio-connection-kit-libs
-          - pipewire-libs
-          - pipewire-pulseaudio
-          - pipewire-utils
-          - pipewire-plugin-libcamera
-          - bluez
-          - bluez-obexd
-          - bluez-cups
-          - bluez-libs
-          - xorg-x11-server-Xwayland
-
-  - type: script
-    scripts:
-      - mesa-fix_2.sh
+      - mesa-fix.sh
 
   - type: rpm-ostree
     repos:
