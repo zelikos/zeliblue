@@ -95,9 +95,11 @@ modules:
     repos:
       - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
     install:
+      - acpica-tools
       - jupiter-fan-control
       - jupiter-hw-support-btrfs
       - powerbuttond
+      - python3-vdf
       - ryzenadj
       - sdgyrodsu
       - steam_notif_daemon
