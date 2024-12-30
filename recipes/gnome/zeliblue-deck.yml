@@ -106,6 +106,7 @@ modules:
       - gamescope-shaders
       - gamescope-session-steam
       - gamescope-session-plus
+      - wlr-randr
 
   - type: rpm-ostree
     repos:
