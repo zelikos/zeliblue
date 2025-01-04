@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-DESKTOP_AUTOLOGIN="/etc/zeliblue/desktop_autologin"
-if [[ -f $DESKTOP_AUTOLOGIN ]]; then
-    sudo rm -f $DESKTOP_AUTOLOGIN
-    notify-send "Game Mode Autologin" "System will automatically log in to Game Mode on next boot" --app-name="Toggle Autologin" -u NORMAL
-else
-    sudo touch $DESKTOP_AUTOLOGIN
-    notify-send "Desktop Autologin" "System will automatically log in to desktop on next boot" --app-name="Toggle Autologin" -u NORMAL
-fi
