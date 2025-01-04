@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Toggle Desktop Autologin
-Exec=systemctl start zelideck-toggle-autologin.service
-Terminal=false
-Type=Application
-StartupNotify=false
