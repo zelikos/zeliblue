@@ -84,6 +84,7 @@ modules:
   - type: rpm-ostree
     install:
       - gamescope.x86_64
+      - gamescope-libs.x86_64
       - gamescope-libs.i686
       - gamescope-shaders
       - gamescope-session-steam
