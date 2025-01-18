@@ -7,7 +7,7 @@ alt-tags:
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/zelikos/zeliblue
-image-version: stable # latest is also supported if you want new updates ASAP
+image-version: testing # latest is also supported if you want new updates ASAP
 
 # list of modules, executed in order
 # you can include multiple instances of the same module
