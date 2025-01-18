@@ -1,4 +1,9 @@
 modules:
   - from-file: plasma/plasma-files.yml
-  - from-file: plasma/plasma-packages.yml
+
+  # - from-file: plasma/plasma-packages.yml
+  - type: script
+    scripts:
+      - plasma-packages-dnf5.sh
+
   - from-file: plasma/plasma-flatpaks.yml
