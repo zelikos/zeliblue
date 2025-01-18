@@ -69,3 +69,4 @@ modules:
       - steamos-setup.sh
 
   - type: initramfs
+    source: local
