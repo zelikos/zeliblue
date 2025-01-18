@@ -1,4 +1,9 @@
 modules:
   - from-file: gnome/gnome-files.yml
-  - from-file: gnome/gnome-packages.yml
+
+  # - from-file: gnome/gnome-packages.yml
+  - type: script
+    scripts:
+      - gnome-packages-dnf5.sh
+
   - from-file: gnome/gnome-gschemas.yml

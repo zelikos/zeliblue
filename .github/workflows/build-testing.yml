@@ -2,7 +2,7 @@ name: Zeliblue Testing
 on:
   schedule:
     - cron:
-        "00 06 * * *" # build at 06:00 UTC every day
+        "00 07 * * *" # build at 06:00 UTC every day
         # (20 minutes after last ublue images start building)
   push:
     branches:
@@ -19,12 +19,12 @@ jobs:
     secrets: inherit
     with:
       recipe: gnome/zeliblue-testing.yml
-  build_bazzite:
-    name: Zeliblue Bazzite Testing
-    uses: ./.github/workflows/reusable-build.yml
-    secrets: inherit
-    with:
-      recipe: gnome/zeliblue-bazzite.yml
+  # build_bazzite:
+  #   name: Zeliblue Bazzite Testing
+  #   uses: ./.github/workflows/reusable-build.yml
+  #   secrets: inherit
+  #   with:
+  #     recipe: gnome/zeliblue-bazzite.yml
   build_cosmic:
     name: Zeliblue COSMIC Testing
     uses: ./.github/workflows/reusable-build.yml
