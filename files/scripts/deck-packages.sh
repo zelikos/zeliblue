@@ -31,6 +31,7 @@ dnf5 -y install \
   mangohud \
   pipewire-module-filter-chain-sofa \
   powerbuttond \
+  scx-scheds \
   sdgyrodsu \
   sddm \
   steam \
