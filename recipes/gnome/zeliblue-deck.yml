@@ -17,100 +17,40 @@ modules:
       - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Deck"
       - ARG ZELIBLUE_IMAGE_TAG=testing
 
-  - from-file: common/common-base.yml
+  - from-file: common/common-bling.yml
+  - from-file: common/common-files.yml
+  - from-file: common/common-flatpaks.yml
+  - from-file: common/common-fonts.yml
+
+  - type: script
+    scripts:
+      - common-packages-dnf5.sh
+
+  - from-file: common/common-scripts.yml
+  - from-file: common/common-modules.yml
+
+  - type: script
+    scripts:
+      - unwrap.sh
 
   - from-file: testing/testing-kernel.yml
-  - from-file: testing/testing-packages.yml
 
-  - from-file: gnome/gnome-base.yml
+  - from-file: gnome/gnome-files.yml
+
+  - type: script
+    scripts:
+      - gnome-packages-dnf5.sh
+
+  - from-file: gnome/gnome-gschemas.yml
 
   - type: files
     files:
       - source: system_files/deck
         destination: /
 
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
-    install:
-      - mesa-dri-drivers.i686
-
   - type: script
     scripts:
-      - mesa-fix.sh
-
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/ycollet/audinux/repo/fedora-%OS_VERSION%/ycollet-audinux-fedora-%OS_VERSION%.repo
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite-multilib/repo/fedora-%OS_VERSION%/kylegospo-bazzite-multilib-fedora-%OS_VERSION%.repo?arch=x86_64
-    install:
-      - ladspa-caps-plugins
-      - ladspa-noise-suppression-for-voice
-      - pipewire-module-filter-chain-sofa
-
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
-    install:
-      - at-spi2-core.i686
-      - atk.i686
-      - vulkan-loader.i686
-      - alsa-lib.i686
-      - fontconfig.i686
-      - gtk2.i686
-      - libICE.i686
-      - libnsl.i686
-      - libxcrypt-compat.i686
-      - libpng12.i686
-      - libXext.i686
-      - libXinerama.i686
-      - libXtst.i686
-      - libXScrnSaver.i686
-      - NetworkManager-libnm.i686
-      - nss.i686
-      - pulseaudio-libs.i686
-      - libcurl.i686
-      - systemd-libs.i686
-      - libva.i686
-      - libvdpau.i686
-      - libdbusmenu-gtk3.i686
-      - libatomic.i686
-      - pipewire-alsa.i686
-      - gobject-introspection
-      - mangohud
-      - extest.i686
-      - steam
-
-  - type: rpm-ostree
-    install:
-      - gamescope.x86_64
-      - gamescope-libs.x86_64
-      - gamescope-libs.i686
-      - gamescope-shaders
-      - gamescope-session-steam
-      - gamescope-session-plus
-
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
-    install:
-      - jupiter-fan-control
-      - jupiter-hw-support-btrfs
-      - powerbuttond
-      - sdgyrodsu
-      - steam_notif_daemon
-      - steamdeck-dsp
-      - steamdeck-gnome-presets
-      - sddm
-      - vpower
-
-  - type: rpm-ostree
-    replace:
-      - from-repo: https://copr.fedorainfracloud.org/coprs/kylegospo/bazzite/repo/fedora-%OS_VERSION%/kylegospo-bazzite-fedora-%OS_VERSION%.repo
-        packages:
-          # - ublue-update
-          - upower
-          - upower-libs
+      - deck-packages.sh
 
   - type: systemd
     system:
@@ -129,3 +69,4 @@ modules:
       - steamos-setup.sh
 
   - type: initramfs
+    source: local
