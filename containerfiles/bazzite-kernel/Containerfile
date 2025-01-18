@@ -1,13 +1,20 @@
-# Install fsync kernel
-COPY --from=ghcr.io/ublue-os/bazzite-kernel:41 /tmp/rpms /tmp/fsync-rpms
-RUN --mount=type=cache,dst=/var/cache/rpm-ostree \
+# Install bazzite kernel
+COPY --from=ghcr.io/ublue-os/bazzite-kernel:41 /tmp/rpms /tmp/bazzite-kernel-rpms
+RUN --mount=type=cache,dst=/var/cache/libdnf5 \
+    --mount=type=cache,dst=/var/cache/rpm-ostree \
     echo "Installing Bazzite kernel" && \
-    rpm-ostree cliwrap install-to-root / && \
-    rpm-ostree override replace --experimental \
-    /tmp/fsync-rpms/kernel-[0-9]*.rpm \
-    /tmp/fsync-rpms/kernel-core-*.rpm \
-    /tmp/fsync-rpms/kernel-modules-*.rpm \
-    /tmp/fsync-rpms/kernel-uki-virt-*.rpm
+
+    rpm --erase kernel --nodeps && \
+    rpm --erase kernel-core --nodeps && \
+    rpm --erase kernel-modules --nodeps && \
+    rpm --erase kernel-modules-core --nodeps && \
+    rpm --erase kernel-modules-extra --nodeps && \
+
+    dnf5 -y install \
+    /tmp/bazzite-kernel-rpms/kernel-[0-9]*.rpm \
+    /tmp/bazzite-kernel-rpms/kernel-core-*.rpm \
+    /tmp/bazzite-kernel-rpms/kernel-modules-*.rpm \
+    /tmp/bazzite-kernel-rpms/kernel-uki-virt-*.rpm
 
 # Install akmods
 # COPY --from=ghcr.io/ublue-os/akmods-extra:bazzite-41 /rpms /tmp/akmods-rpms
