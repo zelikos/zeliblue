@@ -1,5 +1,6 @@
 modules:
   - from-file: gnome/gnome-files.yml
+  - from-file: gnome/gnome-flatpaks.yml
 
   # - from-file: gnome/gnome-packages.yml
   - type: script
