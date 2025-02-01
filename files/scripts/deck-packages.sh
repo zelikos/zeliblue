@@ -7,6 +7,7 @@ set -oue pipefail
 
 dnf5 -y copr enable kylegospo/bazzite
 dnf5 -y copr enable kylegospo/bazzite-multilib
+dnf5 -y copr enable lizardbyte/beta
 dnf5 -y copr enable ublue-os/staging
 dnf5 -y copr enable ycollet/audinux
 dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release{,-extras}
@@ -39,6 +40,7 @@ dnf5 -y install \
   steam_notif_daemon \
   steamdeck-gnome-presets \
   steamdeck-dsp \
+  sunshine \
   vkbasalt \
   vpower
 
