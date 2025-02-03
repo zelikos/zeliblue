@@ -28,6 +28,10 @@ modules:
     scripts:
       - deck-packages.sh
 
+  - type: gschema-overrides
+    include:
+      - zz1-zeliblue-deck.gschema.override
+
   - type: systemd
     system:
       enabled:

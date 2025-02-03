@@ -1,0 +1,12 @@
+#-------------- LOCKSCREEN MODIFICATIONS --------------#
+
+#-------------- DESKTOP MODIFICATIONS --------------#
+
+[org.gnome.desktop.session]
+idle-delay=0
+
+[org.gnome.gnome-session]
+logout-prompt=false
+
+#-------------- REMAINING SCHEMAS IN THIS SETTING SECTION ARE LOCATED IN DCONF --------------#
+# Settings bellow are supported with gschema override, but other settings, which are relocatable schemas, are not. Edit dconfs if you need to modify relocatable schemas.
