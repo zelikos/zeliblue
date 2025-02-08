@@ -5,7 +5,7 @@
 [org.gnome.desktop.session]
 idle-delay=0
 
-[org.gnome.gnome-session]
+[org.gnome.SessionManager]
 logout-prompt=false
 
 #-------------- REMAINING SCHEMAS IN THIS SETTING SECTION ARE LOCATED IN DCONF --------------#
