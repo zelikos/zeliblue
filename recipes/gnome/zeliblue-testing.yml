@@ -18,6 +18,4 @@ modules:
       - ARG ZELIBLUE_IMAGE_TAG=testing
 
   - from-file: common/common-base.yml
-  - from-file: common/common-akmods.yml
-
   - from-file: gnome/gnome-base.yml
