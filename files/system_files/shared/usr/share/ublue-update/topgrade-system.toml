@@ -1,9 +1,0 @@
-[misc]
-only = ["system"]
-skip_notify = true
-assume_yes = true
-no_retry = true
-no_self_update = true
-
-[linux]
-rpm_ostree = true
