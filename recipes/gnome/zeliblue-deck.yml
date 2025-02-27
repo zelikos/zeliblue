@@ -37,6 +37,7 @@ modules:
   - type: systemd
     system:
       enabled:
+        - ds-inhibit.service
         - zelideck-autologin.service
         - wireplumber-workaround.service
         - wireplumber-sysconf.service

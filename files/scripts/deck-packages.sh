@@ -20,6 +20,7 @@ dnf5 -y swap --repo copr:copr.fedorainfracloud.org:kylegospo:bazzite ibus ibus
 dnf5 -y swap --repo copr:copr.fedorainfracloud.org:kylegospo:bazzite upower upower
 
 dnf5 -y install \
+  ds-inhibit \
   extest.i686 \
   galileo-mura \
   gamescope.x86_64 \
