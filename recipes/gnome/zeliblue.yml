@@ -22,3 +22,6 @@ modules:
   - from-file: common/coreos-kernel.yml
 
   - from-file: gnome/gnome-base.yml
+
+  - type: initramfs
+    source: local
