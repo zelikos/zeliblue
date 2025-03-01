@@ -18,8 +18,9 @@ modules:
       - ARG ZELIBLUE_IMAGE_TAG=testing
 
   - from-file: common/common-base.yml
+  - from-file: common/bazzite-kernel.yml
+
   - from-file: gnome/gnome-base.yml
-  - from-file: testing/testing-kernel.yml
 
   - type: files
     files:
