@@ -19,4 +19,6 @@ modules:
       - ARG ZELIBLUE_IMAGE_TAG=stable
 
   - from-file: common/common-base.yml
+  - from-file: common/coreos-kernel.yml
+
   - from-file: gnome/gnome-base.yml
