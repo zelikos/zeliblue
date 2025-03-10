@@ -19,6 +19,34 @@ dnf5 -y swap --repo copr:copr.fedorainfracloud.org:kylegospo:bazzite-multilib xo
 dnf5 -y swap --repo copr:copr.fedorainfracloud.org:kylegospo:bazzite ibus ibus
 dnf5 -y swap --repo copr:copr.fedorainfracloud.org:kylegospo:bazzite upower upower
 
+dnf5 versionlock add \
+        pipewire \
+        pipewire-alsa \
+        pipewire-gstreamer \
+        pipewire-jack-audio-connection-kit \
+        pipewire-jack-audio-connection-kit-libs \
+        pipewire-libs \
+        pipewire-plugin-libcamera \
+        pipewire-pulseaudio \
+        pipewire-utils \
+        bluez \
+        bluez-cups \
+        bluez-libs \
+        bluez-obexd \
+        xorg-x11-server-Xwayland \
+        switcheroo-control \
+        mesa-dri-drivers \
+        mesa-filesystem \
+        mesa-libEGL \
+        mesa-libGL \
+        mesa-libgbm \
+        mesa-libglapi \
+        mesa-va-drivers \
+        mesa-vulkan-drivers \
+        ibus \
+        upower \
+        upower-libs
+
 dnf5 -y install \
   ds-inhibit \
   extest.i686 \
