@@ -5,7 +5,7 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
-dnf5 -y copr enable kylegospo/bazzite
+dnf5 -y copr enable bazzite-org/bazzite
 dnf5 -y copr enable ublue-os/staging
 
 dnf5 -y install gnome-shell-extension-hotedge
