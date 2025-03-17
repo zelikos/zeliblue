@@ -5,6 +5,10 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
+# Workaround for regression with dnf5
+# https://github.com/rpm-software-management/dnf5/issues/2134
+dnf5 -y downgrade dnf5-5.2.10.0-2.fc41
+
 dnf5 -y copr enable bazzite-org/bazzite
 dnf5 -y copr enable bazzite-org/bazzite-multilib
 dnf5 -y copr enable lizardbyte/beta
