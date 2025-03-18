@@ -75,7 +75,8 @@ dnf5 -y install \
   steamdeck-dsp \
   sunshine \
   vkbasalt \
-  vpower
+  vpower \
+  ublue-update
 
 # Add bootstrap_steam.tar.gz used by gamescope-session (Thanks GE & Nobara Project!)
 mkdir -p /usr/share/gamescope-session-plus/
