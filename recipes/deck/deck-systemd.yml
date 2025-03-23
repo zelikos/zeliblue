@@ -1,0 +1,12 @@
+type: systemd
+system:
+  enabled:
+    - ds-inhibit.service
+    - zelideck-autologin.service
+    - wireplumber-workaround.service
+    - wireplumber-sysconf.service
+    - pipewire-workaround.service
+    - pipewire-sysconf.service
+    - sddm.service
+  disabled:
+    - gdm.service

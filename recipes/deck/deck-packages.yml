@@ -1,0 +1,23 @@
+# type: dnf
+# source: ghcr.io/blue-build/modules/dnf:dnf-module
+# repos:
+#   copr:
+#     - ublue-os/packages
+# install:
+#   packages:
+#     - fastfetch
+#     - fish
+#     - glow
+#     - gum
+#     - micro
+#     - rsms-inter-fonts
+#     - rsms-inter-vf-fonts
+#     - ublue-polkit-rules
+# remove:
+#   packages:
+#     - firefox
+#     - firefox-langpacks
+
+type: script
+scripts:
+  - deck-packages.sh
