@@ -1,4 +1,8 @@
 #!/usr/bin/bash
+
+notify-send "Beginning full system update..." --app-name="Zeliblue Update" -u NORMAL
+echo "Beginning full system update..."
+
 bootc upgrade
 
 # Updates system Flatpaks
@@ -16,3 +20,6 @@ if [[ -O /var/home/linuxbrew/.linuxbrew/bin/brew ]]; then
     # Upgrade will run brew update if needed
     /var/home/linuxbrew/.linuxbrew/bin/brew upgrade
 fi
+
+notify-send "Full system update completed" --app-name="Zeliblue Update" -u NORMAL
+echo "Full system update completed."

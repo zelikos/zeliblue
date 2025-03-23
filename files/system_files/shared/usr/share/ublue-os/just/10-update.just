@@ -2,9 +2,11 @@
 
 alias upgrade := update
 
-# Upgrade system, apps, and containers
+# Upgrade system, apps, and Homebrew packages
 update:
-  systemctl start zeliblue-update.service
+    #!/usr/bin/bash
+    echo "Running Zeliblue Update service..."
+    systemctl start zeliblue-update.service
 
 alias auto-update := toggle-updates
 
