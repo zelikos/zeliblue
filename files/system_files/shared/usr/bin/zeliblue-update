@@ -1,18 +1,19 @@
 #!/usr/bin/bash
 
-function notify-send-system {
-     if [[ ${LOGINCTL_VERSION} -ge 256 ]]; then
-       user_name=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .user')
-       uid=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .uid')
-     else
-       user_name=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .user')
-       uid=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .uid')
-     fi
-     xdg_runtime_path="/run/user/$uid"
-     sudo -u "$user_name" DBUS_SESSION_BUS_ADDRESS=unix:path="$xdg_runtime_path"/bus notify-send "Zeliblue Update" "$1" --app-name="Zeliblue Update" -u NORMAL
-}
+# TODO: Troubleshoot and re-enable later
+# function notify-send-system {
+#      if [[ ${LOGINCTL_VERSION} -ge 256 ]]; then
+#        user_name=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .user')
+#        uid=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .uid')
+#      else
+#        user_name=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .user')
+#        uid=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .uid')
+#      fi
+#      xdg_runtime_path="/run/user/$uid"
+#      sudo -u "$user_name" DBUS_SESSION_BUS_ADDRESS=unix:path="$xdg_runtime_path"/bus notify-send "Zeliblue Update" "$1" --app-name="Zeliblue Update" -u NORMAL
+# }
 
-notify-send-system "Beginning full system update..."
+# notify-send-system "Beginning full system update..."
 echo "Beginning full system update..."
 
 bootc upgrade
@@ -33,5 +34,5 @@ if [[ -O /var/home/linuxbrew/.linuxbrew/bin/brew ]]; then
     /var/home/linuxbrew/.linuxbrew/bin/brew upgrade
 fi
 
-notify-send-system "Full system update completed"
+# notify-send-system "Full system update completed"
 echo "Full system update completed."
