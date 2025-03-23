@@ -8,7 +8,6 @@ set -oue pipefail
 dnf5 -y install \
   fastfetch \
   fish \
-  gcc \
   glow \
   gum \
   micro \

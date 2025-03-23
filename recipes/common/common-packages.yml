@@ -2,7 +2,6 @@ type: rpm-ostree
 install:
   - fastfetch
   - fish
-  - gcc
   - glow
   - gum
   - micro
