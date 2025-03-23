@@ -41,6 +41,7 @@ modules:
         - ublue-os-update-services
 
   - from-file: common/common-scripts.yml
+  - from-file: common/common-systemd.yml
   - from-file: common/common-modules.yml
 
   # - from-file: gnome/gnome-base.yml
