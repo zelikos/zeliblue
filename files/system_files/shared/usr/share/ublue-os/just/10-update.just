@@ -5,7 +5,7 @@ alias upgrade := update
 # Upgrade system, apps, and Homebrew packages
 update:
     #!/usr/bin/bash
-    /usr/bin/zeliblue-update
+    /usr/bin/pkexec /usr/bin/zeliblue-update
 
 alias auto-update := toggle-updates
 
