@@ -1,12 +1,17 @@
-type: rpm-ostree
+type: dnf
+source: ghcr.io/blue-build/modules/dnf:dnf-module
+repos:
+  copr:
+    - ublue-os/packages
 install:
   - fastfetch
   - fish
   - glow
   - gum
   - micro
-  - rsms-inter-fonts.noarch
+  - rsms-inter-fonts
   - rsms-inter-vf-fonts
+  - ublue-polkit-rules
 remove:
   - firefox
   - firefox-langpacks
