@@ -1,0 +1,38 @@
+#!/usr/bin/bash
+
+# TODO: Troubleshoot and re-enable later
+# function notify-send-system {
+#      if [[ ${LOGINCTL_VERSION} -ge 256 ]]; then
+#        user_name=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .user')
+#        uid=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .uid')
+#      else
+#        user_name=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .user')
+#        uid=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .uid')
+#      fi
+#      xdg_runtime_path="/run/user/$uid"
+#      sudo -u "$user_name" DBUS_SESSION_BUS_ADDRESS=unix:path="$xdg_runtime_path"/bus notify-send "Zeliblue Update" "$1" --app-name="Zeliblue Update" -u NORMAL
+# }
+
+# notify-send-system "Beginning full system update..."
+echo "Beginning full system update..."
+
+bootc upgrade
+
+# Updates system Flatpaks
+if flatpak remotes | grep -q system; then
+    flatpak update -y
+fi
+
+# Update user Flatpaks
+if flatpak remotes | grep -q user; then
+    flatpak update --user -y
+fi
+
+# Guard Brew if the user does not own brew/doesn't exist
+if [[ -O /var/home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    # Upgrade will run brew update if needed
+    /var/home/linuxbrew/.linuxbrew/bin/brew upgrade
+fi
+
+# notify-send-system "Full system update completed"
+echo "Full system update completed."

@@ -2,26 +2,10 @@
 
 alias upgrade := update
 
-# Upgrade system, apps, and containers
+# Upgrade system, apps, and Homebrew packages
 update:
     #!/usr/bin/bash
-    bootc upgrade
-
-    # Updates system Flatpaks
-    if flatpak remotes | grep -q system; then
-        flatpak update -y
-    fi
-
-    # Update user Flatpaks
-    if flatpak remotes | grep -q user; then
-        flatpak update --user -y
-    fi
-
-    # Guard Brew if the user does not own brew/doesn't exist
-    if [[ -O /var/home/linuxbrew/.linuxbrew/bin/brew ]]; then
-        # Upgrade will run brew update if needed
-        /var/home/linuxbrew/.linuxbrew/bin/brew upgrade
-    fi
+    /usr/bin/pkexec /usr/bin/zeliblue-update
 
 alias auto-update := toggle-updates
 

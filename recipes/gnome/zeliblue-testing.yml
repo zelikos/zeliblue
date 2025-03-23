@@ -34,13 +34,14 @@ modules:
         - glow
         - gum
         - micro
-        - ublue-polkit-rules
     remove:
       packages:
         - firefox
         - firefox-langpacks
+        - ublue-os-update-services
 
   - from-file: common/common-scripts.yml
+  - from-file: common/common-systemd.yml
   - from-file: common/common-modules.yml
 
   # - from-file: gnome/gnome-base.yml

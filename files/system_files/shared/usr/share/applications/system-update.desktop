@@ -5,4 +5,4 @@ Comment=Update system, apps, containers, and more
 Icon=software-update-available-symbolic
 Categories=ConsoleOnly;System;
 Terminal=true
-Exec=/usr/bin/ujust update
+Exec=/usr/bin/pkexec /usr/bin/zeliblue-update
