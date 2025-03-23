@@ -33,7 +33,7 @@ zeliblue-cli:
   OPTION=$(ugum choose Yes No)
   if [ "${OPTION,,}" == "yes" ]; then
     echo "Installing Zeliblue CLI utilities..."
-    brew bundle --file=$BREWFILE --no-lock
+    brew bundle --file=$BREWFILE
     echo "Installation complete. Please restart your terminal."
   fi
 
