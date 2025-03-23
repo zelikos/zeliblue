@@ -25,7 +25,7 @@ modules:
 
   - type: script
     snippets:
-      - dnf5 -y install fastfetch fish gcc glow gum micro
+      - dnf5 -y install fastfetch fish glow gum micro
       - dnf5 -y remove firefox firefox-langpacks
 
   - from-file: common/common-scripts.yml
