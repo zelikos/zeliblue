@@ -4,14 +4,16 @@ repos:
   copr:
     - ublue-os/packages
 install:
-  - fastfetch
-  - fish
-  - glow
-  - gum
-  - micro
-  - rsms-inter-fonts
-  - rsms-inter-vf-fonts
-  - ublue-polkit-rules
+  packages:
+    - fastfetch
+    - fish
+    - glow
+    - gum
+    - micro
+    - rsms-inter-fonts
+    - rsms-inter-vf-fonts
+    - ublue-polkit-rules
 remove:
-  - firefox
-  - firefox-langpacks
+  packages:
+    - firefox
+    - firefox-langpacks
