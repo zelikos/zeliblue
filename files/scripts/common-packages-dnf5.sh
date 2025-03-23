@@ -5,6 +5,8 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
+dnf5 -y copr enable ublue-os/packages
+
 dnf5 -y install \
   fastfetch \
   fish \
@@ -12,7 +14,8 @@ dnf5 -y install \
   gum \
   micro \
   rsms-inter-fonts \
-  rsms-inter-vf-fonts
+  rsms-inter-vf-fonts \
+  ublue-polkit-rules
 
 dnf5 -y remove \
   firefox \

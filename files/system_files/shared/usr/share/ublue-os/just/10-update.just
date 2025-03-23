@@ -4,9 +4,8 @@ alias upgrade := update
 
 # Upgrade system, apps, and containers
 update:
-  #!/usr/bin/bash
-    # TODO: Use bootc upgrade in the future
-    rpm-ostree upgrade
+    #!/usr/bin/bash
+    bootc upgrade
 
     # Updates system Flatpaks
     if flatpak remotes | grep -q system; then
