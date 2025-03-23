@@ -22,10 +22,23 @@ modules:
   - from-file: common/common-files.yml
   - from-file: common/common-flatpaks.yml
 
-  - type: script
-    snippets:
-      - dnf5 -y install fastfetch fish glow gum micro
-      - dnf5 -y remove firefox firefox-langpacks
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    repos:
+      copr:
+        - ublue-os/packages
+    install:
+      packages:
+        - fastfetch
+        - fish
+        - glow
+        - gum
+        - micro
+        - ublue-polkit-rules
+    remove:
+      packages:
+        - firefox
+        - firefox-langpacks
 
   - from-file: common/common-scripts.yml
   - from-file: common/common-modules.yml
@@ -33,11 +46,7 @@ modules:
   # - from-file: gnome/gnome-base.yml
   - from-file: gnome/gnome-files.yml
   - from-file: gnome/gnome-flatpaks.yml
-
-  # - from-file: gnome/gnome-packages.yml
-  - type: script
-    scripts:
-      - gnome-packages-dnf5.sh
+  - from-file: gnome/gnome-packages.yml
 
   - type: gschema-overrides
     include:

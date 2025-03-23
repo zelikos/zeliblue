@@ -1,0 +1,62 @@
+modules:
+  - type: script
+    snippets:
+      - dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release{,-extras}
+
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    repos:
+      copr:
+        - bazzite-org/bazzite
+        - bazzite-org/bazzite-multilib
+        - lizardbyte/beta
+        - ublue-os/staging
+        - ycollet/audinux
+    replace:
+      - from-repo: terra-extras
+        packages:
+          - mesa-filesystem
+      - from-repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib
+        packages:
+          - pipewire
+          - bluez
+          - xorg-x11-server-Xwayland
+      - from-repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
+        packages:
+          - ibus
+          - upower
+
+  - type: script
+    snippets:
+      - dnf5 versionlock add pipewire pipewire-alsa pipewire-gstreamer pipewire-jack-audio-connection-kit pipewire-jack-audio-connection-kit-libs pipewire-libs pipewire-plugin-libcamera pipewire-pulseaudio pipewire-utils bluez bluez-cups bluez-libs bluez-obexd xorg-x11-server-Xwayland switcheroo-control mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-va-drivers mesa-vulkan-drivers ibus upower upower-libs
+
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    install:
+      packages:
+        - ds-inhibit
+        - galileo-mura
+        - gamescope.x86_64
+        - gamescope-libs.x86_64
+        - gamescope-libs.i686
+        - gamescope-shaders
+        - jupiter-fan-control
+        - jupiter-hw-support-btrfs
+        - ladspa-caps-plugins
+        - ladspa-noise-suppression-for-voice
+        - mangohud
+        - pipewire-module-filter-chain-sofa
+        - powerbuttond
+        - scx-scheds
+        - sdgyrodsu
+        - steam
+        - steam_notif_daemon
+        - steamdeck-dsp
+        - sunshine
+        - vkbasalt
+        - vpower
+        - ublue-update
+        - repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
+          packages:
+            - gamescope-session-plus
+            - gamescope-session-steam

@@ -18,43 +18,25 @@ modules:
       - ARG ZELIBLUE_IMAGE_TAG=testing
 
   - from-file: common/common-base.yml
-  - from-file: common/bazzite-kernel.yml
-
   - from-file: gnome/gnome-base.yml
+  - from-file: common/bazzite-kernel.yml
+  - from-file: deck/deck-base.yml
+  - from-file: deck/deck-gschemas.yml
 
-  - type: files
-    files:
-      - source: system_files/deck
-        destination: /
-
-  - type: script
-    scripts:
-      - deck-packages.sh
-
-  - type: gschema-overrides
-    include:
-      - zz1-zeliblue-deck.gschema.override
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    install:
+      packages:
+        - extest.i686
+        - sddm
+        - steamdeck-gnome-presets
 
   - type: systemd
     system:
       enabled:
-        - ds-inhibit.service
-        - zelideck-autologin.service
-        - wireplumber-workaround.service
-        - wireplumber-sysconf.service
-        - pipewire-workaround.service
-        - pipewire-sysconf.service
         - sddm.service
       disabled:
         - gdm.service
-
-  - type: script
-    scripts:
-      - steamos-setup.sh
-
-  - type: script
-    scripts:
-      - image-info.sh
 
   - type: initramfs
     source: local
