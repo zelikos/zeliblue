@@ -12,8 +12,8 @@ install:
     - micro
     - rsms-inter-fonts
     - rsms-inter-vf-fonts
-    - ublue-polkit-rules
 remove:
   packages:
     - firefox
     - firefox-langpacks
+    - ublue-os-update-services
