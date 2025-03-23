@@ -7,6 +7,3 @@ system:
     - wireplumber-sysconf.service
     - pipewire-workaround.service
     - pipewire-sysconf.service
-    - sddm.service
-  disabled:
-    - gdm.service

@@ -31,5 +31,12 @@ modules:
         - sddm
         - steamdeck-gnome-presets
 
+  - type: systemd
+    system:
+      enabled:
+        - sddm.service
+      disabled:
+        - gdm.service
+
   - type: initramfs
     source: local
