@@ -23,5 +23,13 @@ modules:
   - from-file: deck/deck-base.yml
   - from-file: deck/deck-gschemas.yml
 
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    install:
+      packages:
+        - extest.i686
+        - sddm
+        - steamdeck-gnome-presets
+
   - type: initramfs
     source: local
