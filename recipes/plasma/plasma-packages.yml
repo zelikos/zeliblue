@@ -1,12 +1,12 @@
-type: rpm-ostree
-# install:
-#  - ksystemlog
+type: dnf
+source: ghcr.io/blue-build/modules/dnf:dnf-module
 remove:
-  - ark
-  - ark-libs
-  - filelight
-  - kate
-  - kate-plugins
-  - kate-krunner-plugin
-  - kfind
-  - kwrite
+  packages:
+    - ark
+    - ark-libs
+    - filelight
+    - kate
+    - kate-plugins
+    - kate-krunner-plugin
+    - kfind
+    - kwrite
