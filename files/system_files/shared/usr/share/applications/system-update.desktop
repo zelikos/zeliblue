@@ -5,4 +5,4 @@ Comment=Update system, apps, containers, and more
 Icon=software-update-available-symbolic
 Categories=ConsoleOnly;System;
 Terminal=true
-Exec=systemctl start zeliblue-update.service
+Exec=/usr/bin/zeliblue-update
