@@ -55,7 +55,6 @@ modules:
         - sunshine
         - vkbasalt
         - vpower
-        - ublue-update
         - repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
           packages:
             - gamescope-session-plus
