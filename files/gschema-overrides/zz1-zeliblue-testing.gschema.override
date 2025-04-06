@@ -11,7 +11,6 @@ enabled-extensions = ['hotedge@jonathan.jdoda.ca']
 clock-format='12h'
 clock-show-weekday=true
 font-antialiasing="rgba"
-gtk-theme="adw-gtk3"
 
 [org.gnome.desktop.wm.preferences]
 button-layout='appmenu:close'
