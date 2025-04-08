@@ -24,7 +24,7 @@ jobs:
   #   uses: ./.github/workflows/reusable-build.yml
   #   secrets: inherit
   #   with:
-  #     recipe: gnome/zeliblue-deck.yml
+  #     recipe: gnome/zeliblue-deck-testing.yml
   build_cosmic:
     name: Zeliblue COSMIC Testing
     uses: ./.github/workflows/reusable-build.yml
