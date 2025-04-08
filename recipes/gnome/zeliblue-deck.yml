@@ -3,7 +3,7 @@ name: zeliblue-deck
 # description will be included in the image's metadata
 description: A zeliblue-based SteamOS experience
 alt-tags:
-  - testing
+  - stable
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
@@ -15,7 +15,7 @@ modules:
   - type: containerfile
     snippets:
       - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Deck"
-      - ARG ZELIBLUE_IMAGE_TAG=testing
+      - ARG ZELIBLUE_IMAGE_TAG=stable
 
   - from-file: common/common-base.yml
   - from-file: gnome/gnome-base.yml
