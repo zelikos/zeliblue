@@ -1,5 +1,5 @@
 # Install CoreOS Stable kernel
-COPY --from=ghcr.io/ublue-os/akmods:coreos-stable-42 /kernel-rpms /tmp/coreos-kernel-rpms
+COPY --from=ghcr.io/ublue-os/akmods:coreos-stable-41 /kernel-rpms /tmp/coreos-kernel-rpms
 RUN --mount=type=cache,dst=/var/cache/libdnf5 \
     --mount=type=cache,dst=/var/cache/rpm-ostree \
     echo "Installing CoreOS Stable kernel" && \
