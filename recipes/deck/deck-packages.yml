@@ -9,6 +9,7 @@ modules:
       copr:
         - bazzite-org/bazzite
         - bazzite-org/bazzite-multilib
+        - bieszczaders/kernel-cachyos-addons
         - lizardbyte/beta
         - ublue-os/staging
         - ycollet/audinux
