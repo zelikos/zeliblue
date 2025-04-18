@@ -1,5 +1,5 @@
 # Install bazzite kernel
-COPY --from=ghcr.io/ublue-os/akmods:bazzite-41 /kernel-rpms /tmp/bazzite-kernel-rpms
+COPY --from=ghcr.io/ublue-os/akmods:bazzite-42 /kernel-rpms /tmp/bazzite-kernel-rpms
 RUN --mount=type=cache,dst=/var/cache/libdnf5 \
     --mount=type=cache,dst=/var/cache/rpm-ostree \
     echo "Installing Bazzite kernel" && \
