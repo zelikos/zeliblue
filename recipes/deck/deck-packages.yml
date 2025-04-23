@@ -26,6 +26,8 @@ modules:
         packages:
           - ibus
           - upower
+          - wireplumber
+          - wireplumber-libs
 
   - type: script
     snippets:
