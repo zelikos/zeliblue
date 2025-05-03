@@ -7,7 +7,7 @@ set -oue pipefail
 
 # Deck firmware
 
-JUPITER_FIRMWARE_VERSION="jupiter-20240917.1"
+JUPITER_FIRMWARE_VERSION="jupiter-20241205.1"
 
 mkdir -p /tmp/linux-firmware-neptune
 curl -Lo /tmp/linux-firmware-neptune/cs35l41-dsp1-spk-cali.bin https://gitlab.com/evlaV/linux-firmware-neptune/-/raw/"${JUPITER_FIRMWARE_VERSION}"/cs35l41-dsp1-spk-cali.bin
