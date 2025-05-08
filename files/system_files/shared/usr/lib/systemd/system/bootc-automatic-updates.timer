@@ -6,9 +6,8 @@ After=network-online.target
 Wants=network-online.target
 
 [Timer]
-OnBootSec=1h
-OnCalendar=*-*-* 4:00:00
-OnUnitInactiveSec=1d
+OnBootSec=20m
+OnUnitInactiveSec=6h
 RandomizedDelaySec=10m
 Persistent=true
 
