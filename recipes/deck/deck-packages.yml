@@ -14,7 +14,7 @@ modules:
         - ublue-os/staging
         - ycollet/audinux
     replace:
-      - from-repo: terra-extras
+      - from-repo: terra-mesa
         packages:
           - mesa-filesystem
       - from-repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite-multilib
