@@ -35,34 +35,41 @@ modules:
 
   - type: dnf
     install:
+      packages:
+        - gamescope.x86_64
+        - gamescope-libs.x86_64
+        - gamescope-libs.i686
+        - gamescope-shaders
+        - ladspa-caps-plugins
+        - ladspa-noise-suppression-for-voice
+        - mangohud
+        - pipewire-module-filter-chain-sofa
+        - scx-scheds
+        - sunshine
+        - vkbasalt
+
+  - type: dnf
+    install:
       install-weak-deps: false
       packages:
         - steam
 
   - type: dnf
-    source: ghcr.io/blue-build/modules/dnf:dnf-module
     install:
       packages:
         - ds-inhibit
         - galileo-mura
-        - gamescope.x86_64
-        - gamescope-libs.x86_64
-        - gamescope-libs.i686
-        - gamescope-shaders
         - jupiter-fan-control
         - jupiter-hw-support-btrfs
-        - ladspa-caps-plugins
-        - ladspa-noise-suppression-for-voice
-        - mangohud
-        - pipewire-module-filter-chain-sofa
         - powerbuttond
-        - scx-scheds
         - sdgyrodsu
         - steam_notif_daemon
         - steamdeck-dsp
-        - sunshine
-        - vkbasalt
         - vpower
+
+  - type: dnf
+    install:
+      packages:
         - repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
           packages:
             - gamescope-session-plus
