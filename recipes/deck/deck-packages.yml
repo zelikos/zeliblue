@@ -34,15 +34,10 @@ modules:
       - dnf5 versionlock add pipewire pipewire-alsa pipewire-gstreamer pipewire-jack-audio-connection-kit pipewire-jack-audio-connection-kit-libs pipewire-libs pipewire-plugin-libcamera pipewire-pulseaudio pipewire-utils bluez bluez-cups bluez-libs bluez-obexd xorg-x11-server-Xwayland switcheroo-control mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-va-drivers mesa-vulkan-drivers ibus upower upower-libs
 
   - type: dnf
-    repos:
-      files:
-        - https://negativo17.org/repos/fedora-steam.repo
     install:
       install-weak-deps: false
       packages:
-        - repo: fedora-steam
-          packages:
-            - steam
+        - steam
 
   - type: dnf
     source: ghcr.io/blue-build/modules/dnf:dnf-module
