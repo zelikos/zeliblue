@@ -2,6 +2,7 @@ modules:
   - type: script
     snippets:
       - dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release{,-extras}
+      - dnf config-manager setopt terra-mesa.enabled=1
 
   - type: dnf
     source: ghcr.io/blue-build/modules/dnf:dnf-module
