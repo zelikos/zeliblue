@@ -9,6 +9,7 @@ install:
     - fish
     - glow
     - gum
+    - iwd
     - micro
     - rsms-inter-fonts
     - rsms-inter-vf-fonts
