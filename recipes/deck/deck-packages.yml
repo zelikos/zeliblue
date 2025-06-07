@@ -39,9 +39,9 @@ modules:
       packages:
         - ds-inhibit
         - galileo-mura
-        - gamescope.x86_64
-        - gamescope-libs.x86_64
-        - gamescope-libs.i686
+        - gamescope-119.f873ec78-1.bazzite
+        - gamescope-libs-119.f873ec78-1.bazzite.x86_64
+        - gamescope-libs-119.f873ec78-1.bazzite.i686
         - gamescope-shaders
         - jupiter-fan-control
         - jupiter-hw-support-btrfs
