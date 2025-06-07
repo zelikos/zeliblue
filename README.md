@@ -18,8 +18,6 @@ Notable changes from vanilla GNOME and Fedora Silverblue include:
 
 There is also Zeliblue Plasma (zeliblue-kinoite), which uses the Plasma desktop environment instead of GNOME. It replaces multiple apps that are layered into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
 
-A preview image for the alpha COSMIC desktop (zeliblue-cosmic) is also available. It is only recommended for those that want to experiment with the COSMIC desktop environment since COSMIC is still in an alpha state, and should not be used in production.
-
 Zeliblue is made with [BlueBuild](https://blue-build.org/).
 
 ## Installation
