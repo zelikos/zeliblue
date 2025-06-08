@@ -39,10 +39,10 @@ modules:
       packages:
         - ds-inhibit
         - galileo-mura
-        - gamescope.x86_64
-        - gamescope-libs.x86_64
-        - gamescope-libs.i686
-        - gamescope-shaders
+        # - gamescope
+        # - gamescope-libs.x86_64
+        # - gamescope-libs.i686
+        # - gamescope-shaders
         - jupiter-fan-control
         - jupiter-hw-support-btrfs
         - ladspa-caps-plugins
@@ -63,6 +63,15 @@ modules:
       install-weak-deps: false
       packages:
         - steam
+
+  - type: dnf
+    repos:
+      copr:
+        disable:
+          - bazzite-org/bazzite-multilib
+    install:
+      packages:
+        - gamescope
 
   - type: dnf
     install:
