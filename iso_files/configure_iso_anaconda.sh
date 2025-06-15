@@ -117,7 +117,7 @@ fi
 #     echo "Bluefin ${IMAGE_TAG^^} release $VERSION_ID (${VERSION_CODENAME:=Big Bird})" >/etc/system-release
 # else
 #     echo "Bluefin release $VERSION_ID ($VERSION_CODENAME)" >/etc/system-release
-fi
+# fi
 echo "Zeliblue release $VERSION_ID ($VERSION_CODENAME)" >/etc/system-release
 sed -i 's/ANACONDA_PRODUCTVERSION=.*/ANACONDA_PRODUCTVERSION=""/' /usr/{,s}bin/liveinst || true
 sed -i 's|^Icon=.*|Icon=/usr/share/pixmaps/fedora-logo-icon.png|' /usr/share/applications/liveinst.desktop || true
