@@ -98,7 +98,7 @@ jobs:
         env:
           OUTPUT_PATH: ${{ steps.build.outputs.iso-dest }}
           FLAVOR: ${{ matrix.flavor }}
-          OUTPUT_NAME: ${{ steps.image_ref.outputs.artifact_format }}
+          OUTPUT_NAME: "zeliblue-stable"
           IMAGE_VERSION: ${{ matrix.image_version }}
         run: |
           set -x
