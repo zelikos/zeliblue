@@ -1,0 +1,19 @@
+name: Zeliblue Stable ISO
+on:
+  schedule:
+    - cron: "0 0 1 * *" # Build & upload ISO every month
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/reusable-build-live-iso.yml"
+      - ".github/workflows/build-zeliblue-iso.yml"
+      - "iso_files/configure_iso_anaconda.sh"
+
+jobs:
+  build_zeliblue_iso:
+    name: Zeliblue GNOME Stable ISO
+    uses: ./.github/workflows/reusable-build-live-iso.yml
+    secrets: inherit
+    with:
+      image: zeliblue
+      version: stable
