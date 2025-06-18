@@ -1,0 +1,12 @@
+name: Zeliblue Deck ISO
+on:
+  workflow_dispatch:
+
+jobs:
+  build_zeliblue_iso:
+    name: Zeliblue Deck Stable ISO
+    uses: ./.github/workflows/reusable-build-live-iso.yml
+    secrets: inherit
+    with:
+      image: zeliblue-deck
+      version: stable
