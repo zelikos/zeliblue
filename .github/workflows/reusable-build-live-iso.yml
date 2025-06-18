@@ -2,17 +2,29 @@
 name: Build ISOs (Live Anaconda)
 
 on:
-  schedule:
-    - cron: "0 0 1 * *" # Build & upload ISO every month
-  workflow_dispatch:
-  pull_request:
-    paths:
-      - ".github/workflows/build-live-iso.yml"
-      - "iso_files/configure_iso_anaconda.sh"
+  workflow_call:
+    inputs:
+      image:
+        description: "Image to build ISO for"
+        required: true
+        type: string
+      version:
+        description: "Stable or Testing"
+        required: true
+        type: string
+
+  # schedule:
+  #   - cron: "0 0 1 * *" # Build & upload ISO every month
+  # workflow_dispatch:
+  # pull_request:
+  #   paths:
+  #     - ".github/workflows/reusable-build-live-iso.yml"
+  #     - "iso_files/configure_iso_anaconda.sh"
 
 env:
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
-  IMAGE_NAME: "zeliblue"
+  IMAGE_NAME: ${{ inputs.image }}
+  IMAGE_TAG: ${{ inputs.version }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
@@ -28,19 +40,6 @@ jobs:
         platform: [amd64]
         flavor: ["silverblue"]
         image_version: ["stable"]
-        # include:
-        #   - platform: amd64
-        #     flavor: "main"
-        #     image_version: lts
-        #   - platform: arm64
-        #     flavor: "main"
-        #     image_version: lts
-        #   - platform: amd64
-        #     flavor: gdx
-        #     image_version: lts
-        #   - platform: arm64
-        #     flavor: gdx
-        #     image_version: lts
     permissions:
       contents: read
       packages: read
@@ -74,15 +73,14 @@ jobs:
 
       - name: Format image ref
         id: image_ref
-        env:
-          FLAVOR: ${{ matrix.flavor }}
+        # env:
+        #   FLAVOR: ${{ matrix.flavor }}
         run: |
           set -eoux pipefail
-          image_name="zeliblue"
-          image_ref="${IMAGE_REGISTRY}/${image_name}"
+          image_ref="${IMAGE_REGISTRY}/${IMAGE_NAME}"
           KARGS="NONE"
           echo "image_ref=$image_ref" >> "${GITHUB_OUTPUT}"
-          echo "artifact_format="$image_name-${{ matrix.image_version }}-$(uname -m)"" >> "${GITHUB_OUTPUT}"
+          echo "artifact_format="${IMAGE_NAME}-${{ matrix.image_version }}-$(uname -m)"" >> "${GITHUB_OUTPUT}"
           echo "kargs=$KARGS" >> "${GITHUB_OUTPUT}"
 
       - name: Build ISO
@@ -98,7 +96,7 @@ jobs:
         id: rename
         env:
           OUTPUT_PATH: ${{ steps.build.outputs.iso-dest }}
-          FLAVOR: ${{ matrix.flavor }}
+          # FLAVOR: ${{ matrix.flavor }}
           OUTPUT_NAME: ${{ steps.image_ref.outputs.artifact_format }}
           IMAGE_VERSION: ${{ matrix.image_version }}
         run: |
@@ -110,25 +108,25 @@ jobs:
           echo "output_directory=$OUTPUT_DIRECTORY" >> "${GITHUB_OUTPUT}"
 
       - name: Upload to Job Artifacts
-        if: github.event_name == 'pull_request'
+        # if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: ${{ steps.image_ref.outputs.artifact_format }}
           if-no-files-found: error
           path: ${{ steps.rename.outputs.output_directory }}
 
-      - name: Upload to CloudFlare
-        if: github.event_name != 'pull_request'
-        shell: bash
-        env:
-          RCLONE_CONFIG_R2_TYPE: s3
-          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
-          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          RCLONE_CONFIG_R2_REGION: auto
-          RCLONE_CONFIG_R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
-          SOURCE_DIR: ${{ steps.rename.outputs.output_directory }}
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y rclone
-          rclone copy "${SOURCE_DIR}" R2:zeliblue
+      # - name: Upload to CloudFlare
+      #   if: github.event_name != 'pull_request'
+      #   shell: bash
+      #   env:
+      #     RCLONE_CONFIG_R2_TYPE: s3
+      #     RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+      #     RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      #     RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      #     RCLONE_CONFIG_R2_REGION: auto
+      #     RCLONE_CONFIG_R2_ENDPOINT: ${{ secrets.R2_ENDPOINT }}
+      #     SOURCE_DIR: ${{ steps.rename.outputs.output_directory }}
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y rclone
+      #     rclone copy "${SOURCE_DIR}" R2:zeliblue
