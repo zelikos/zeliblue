@@ -1,0 +1,7 @@
+io.neovim.nvim
+org.vim.Vim
+dev.neovide.neovide
+io.github.zyedidia.micro
+com.helix_editor.Helix
+org.gnu.emacs
+app.devsuite.Ptyxis
