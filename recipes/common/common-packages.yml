@@ -1,5 +1,4 @@
 type: dnf
-source: ghcr.io/blue-build/modules/dnf:dnf-module
 repos:
   copr:
     - ublue-os/packages
@@ -18,3 +17,8 @@ remove:
     - firefox
     - firefox-langpacks
     - ublue-os-update-services
+# # Fix in fwupd for /etc/os-release ID not being fedora
+replace:
+  - from-repo: copr:copr.fedorainfracloud.org:ublue-os:staging
+    packages:
+      - fwupd
