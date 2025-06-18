@@ -39,7 +39,6 @@ jobs:
       matrix:
         platform: [amd64]
         flavor: ["silverblue"]
-        image_version: ["stable"]
     permissions:
       contents: read
       packages: read
@@ -80,14 +79,14 @@ jobs:
           image_ref="${IMAGE_REGISTRY}/${IMAGE_NAME}"
           KARGS="NONE"
           echo "image_ref=$image_ref" >> "${GITHUB_OUTPUT}"
-          echo "artifact_format="${IMAGE_NAME}-${{ matrix.image_version }}-$(uname -m)"" >> "${GITHUB_OUTPUT}"
+          echo "artifact_format="${IMAGE_NAME}-${IMAGE_TAG}-$(uname -m)"" >> "${GITHUB_OUTPUT}"
           echo "kargs=$KARGS" >> "${GITHUB_OUTPUT}"
 
       - name: Build ISO
         id: build
         uses: ublue-os/titanoboa@main
         with:
-          image-ref: ${{ steps.image_ref.outputs.image_ref }}:${{ matrix.image_version }}
+          image-ref: ${{ steps.image_ref.outputs.image_ref }}:${{ env.IMAGE_TAG }}
           flatpaks-list: ${{ github.workspace }}/iso_files/system-flatpaks.list
           hook-post-rootfs: ${{ github.workspace }}/iso_files/configure_iso_anaconda.sh
           kargs: ${{ steps.image_ref.outputs.kargs }}
@@ -98,7 +97,7 @@ jobs:
           OUTPUT_PATH: ${{ steps.build.outputs.iso-dest }}
           # FLAVOR: ${{ matrix.flavor }}
           OUTPUT_NAME: ${{ steps.image_ref.outputs.artifact_format }}
-          IMAGE_VERSION: ${{ matrix.image_version }}
+          IMAGE_VERSION: ${{ env.IMAGE_TAG }}
         run: |
           set -x
           mkdir -p output
