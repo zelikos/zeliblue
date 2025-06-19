@@ -12,6 +12,7 @@ sbkey='https://github.com/ublue-os/akmods/raw/main/certs/public_key.der'
 
 # Remove packages from liveCD to save space
 # dnf remove -y google-noto-fonts-all ublue-brew ublue-motd yaru-theme || true
+dnf remove -y ublue-brew || true
 
 # Setup dock
 tee /usr/share/glib-2.0/schemas/zz2-org.gnome.shell.gschema.override <<EOF
