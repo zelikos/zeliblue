@@ -7,8 +7,10 @@ on:
   push:
     branches:
       - main
-    paths-ignore: # don't rebuild if only documentation has changed
-      - "**.md"
+    paths-ignore:
+      - "./**.md"
+      - "iso_files/**"
+      - ".github/workflows/**-iso.yml"
   pull_request:
   workflow_dispatch: # allow manually triggering builds
 
