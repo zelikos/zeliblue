@@ -13,6 +13,7 @@ install:
     - micro
     - rsms-inter-fonts
     - rsms-inter-vf-fonts
+    - ublue-brew
 remove:
   packages:
     - firefox
