@@ -9,6 +9,37 @@ update:
 
 alias auto-update := toggle-updates
 
+switch BRANCH="prompt":
+    #!/usr/bin/bash
+
+    switch_channel () {
+      /usr/bin/pkexec /usr/bin/zeliblue-update --rebase $1
+    }
+
+    OPTION={{ BRANCH }}
+    case $OPTION in
+      stable|testing)
+        echo "Switching to $OPTION channel..."
+        switch_channel $OPTION
+        exit 0
+        ;;
+      prompt)
+        channel=$(cut -d ":" -f4 <<< "$(rpm-ostree status --booted | grep -m 1 zeliblue)")
+        echo "Current release channel: $channel"
+        echo "Select release channel to switch to:"
+        channel=$(ugum choose Stable Testing Cancel)
+        if [[ $channel,, == "cancel" ]]; then
+          exit 0
+        else
+          switch_channel $channel,,
+        fi
+        exit 0
+        ;;
+      *)
+        echo "Branch $OPTION not recognized."
+        echo "Syntax: ujust switch <stable|testing>"
+    esac
+
 # Turn automatic updates on or off
 toggle-updates ACTION="prompt":
     #!/usr/bin/bash
