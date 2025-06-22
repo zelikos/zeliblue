@@ -28,10 +28,10 @@ switch BRANCH="prompt":
         echo "Current release channel: $channel"
         echo "Select release channel to switch to:"
         channel=$(ugum choose Stable Testing Cancel)
-        if [[ $channel,, == "cancel" ]]; then
+        if [[ "${channel,,}" == "cancel" ]]; then
           exit 0
         else
-          switch_channel $channel,,
+          switch_channel "${channel,,}"
         fi
         exit 0
         ;;
