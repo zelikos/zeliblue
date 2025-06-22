@@ -19,7 +19,7 @@ if [[ $# -eq 1 ]]; then
           exit 0
           ;;
         testing)
-          echo rc
+          echo beta
           exit 0
           ;;
         # unstable)
@@ -37,7 +37,7 @@ if [[ $# -eq 1 ]]; then
       ;;
     -l)
       echo rel
-      echo rc
+      # echo rc
       echo beta
       # echo bc
       # echo main
