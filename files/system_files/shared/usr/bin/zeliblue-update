@@ -1,24 +1,28 @@
 #!/usr/bin/bash
 
-# TODO: Troubleshoot and re-enable later
-# function notify-send-system {
-#      if [[ ${LOGINCTL_VERSION} -ge 256 ]]; then
-#        user_name=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .user')
-#        uid=$(loginctl list-users -j | jq -r '.[] | select(.state == "active") | .uid')
-#      else
-#        user_name=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .user')
-#        uid=$(loginctl list-users --output=json | jq -r '.[] | select(.state == "active") | .uid')
-#      fi
-#      xdg_runtime_path="/run/user/$uid"
-#      sudo -u "$user_name" DBUS_SESSION_BUS_ADDRESS=unix:path="$xdg_runtime_path"/bus notify-send "Zeliblue Update" "$1" --app-name="Zeliblue Update" -u NORMAL
-# }
+source /etc/os-release
 
-# notify-send-system "Beginning full system update..."
+switch_image () {
+  rebase_to=$1
+  bootc switch --enforce-container-sigpolicy ghcr.io/zelikos/$rebase_to
+}
 
 if [[ $1 == "--check" ]]; then
   echo "Checking if update is available..."
   bootc update --check | grep "Update available"
   exit $?
+elif [[ $1 == "--rebase" ]]; then
+  branch=$2
+  case $branch in
+    stable|testing)
+      switch_image "$VARIANT_ID:$branch"
+      exit 0
+      ;;
+    *)
+      echo "Error: Branch $branch not recognized."
+      exit 1
+      ;;
+  esac
 else
   echo "Beginning full system update..."
 
