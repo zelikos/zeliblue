@@ -3,7 +3,11 @@ system:
   enabled:
     - ds-inhibit.service
     - zelideck-autologin.service
+    - zelideck-hardware-setup.service
     - wireplumber-workaround.service
     - wireplumber-sysconf.service
     - pipewire-workaround.service
     - pipewire-sysconf.service
+user:
+  enabled:
+    - zelideck-user-setup.service
