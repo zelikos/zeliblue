@@ -8,6 +8,7 @@ system:
     - wireplumber-sysconf.service
     - pipewire-workaround.service
     - pipewire-sysconf.service
+    - scx_loader.service
 user:
   enabled:
     - zelideck-user-setup.service
