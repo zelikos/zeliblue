@@ -7,7 +7,7 @@ if [ "${EUID:-$(id -u)}" -lt 1000 ]; then
   exit 0
 fi
 
-IMAGE_INFO="/usr/share/ublue-os/image-info.json"
+IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_NAME=$(jq -r '."image-name"' < $IMAGE_INFO)
 BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
 FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
