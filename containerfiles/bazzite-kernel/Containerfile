@@ -4,17 +4,12 @@ RUN --mount=type=cache,dst=/var/cache/libdnf5 \
     --mount=type=cache,dst=/var/cache/rpm-ostree \
     echo "Installing Bazzite kernel" && \
 
-    rpm --erase kernel --nodeps && \
-    rpm --erase kernel-core --nodeps && \
-    rpm --erase kernel-modules --nodeps && \
-    rpm --erase kernel-modules-core --nodeps && \
-    rpm --erase kernel-modules-extra --nodeps && \
+    dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra && \
 
     dnf5 -y install \
     /tmp/bazzite-kernel-rpms/kernel-[0-9]*.rpm \
     /tmp/bazzite-kernel-rpms/kernel-core-*.rpm \
-    /tmp/bazzite-kernel-rpms/kernel-modules-*.rpm \
-    /tmp/bazzite-kernel-rpms/kernel-uki-virt-*.rpm
+    /tmp/bazzite-kernel-rpms/kernel-modules-*.rpm
 
 # Install akmods
 # COPY --from=ghcr.io/ublue-os/akmods-extra:bazzite-41 /rpms /tmp/akmods-rpms

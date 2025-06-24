@@ -1,20 +1,15 @@
 # Install CoreOS Stable kernel
-COPY --from=ghcr.io/ublue-os/akmods:coreos-stable-41 /kernel-rpms /tmp/coreos-kernel-rpms
+COPY --from=ghcr.io/ublue-os/akmods:coreos-stable-42 /kernel-rpms /tmp/coreos-kernel-rpms
 RUN --mount=type=cache,dst=/var/cache/libdnf5 \
     --mount=type=cache,dst=/var/cache/rpm-ostree \
     echo "Installing CoreOS Stable kernel" && \
 
-    rpm --erase kernel --nodeps && \
-    rpm --erase kernel-core --nodeps && \
-    rpm --erase kernel-modules --nodeps && \
-    rpm --erase kernel-modules-core --nodeps && \
-    rpm --erase kernel-modules-extra --nodeps && \
+    dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra && \
 
     dnf5 -y install \
     /tmp/coreos-kernel-rpms/kernel-[0-9]*.rpm \
     /tmp/coreos-kernel-rpms/kernel-core-*.rpm \
-    /tmp/coreos-kernel-rpms/kernel-modules-*.rpm \
-    /tmp/coreos-kernel-rpms/kernel-uki-virt-*.rpm
+    /tmp/coreos-kernel-rpms/kernel-modules-*.rpm
 
 # Install akmods
 # COPY --from=ghcr.io/ublue-os/akmods:coreos-stable-41 /rpms /tmp/akmods-rpms
