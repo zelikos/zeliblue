@@ -2,7 +2,7 @@
 
 # Ported from Bazzite: https://github.com/ublue-os/bazzite/blob/main/system_files/desktop/shared/usr/libexec/bazzite-hardware-setup
 
-IMAGE_INFO="/usr/share/ublue-os/image-info.json"
+IMAGE_INFO="/usr/share/zeliblue/image-info.json"
 IMAGE_NAME=$(jq -r '."image-name"' < $IMAGE_INFO)
 IMAGE_BRANCH=$(jq -r '."image-branch"' < $IMAGE_INFO)
 IMAGE_FLAVOR=$(jq -r '."image-flavor"' < $IMAGE_INFO)
