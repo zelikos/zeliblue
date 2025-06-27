@@ -17,10 +17,9 @@ modules:
     snippets:
       - ARG ZELIBLUE_PRETTY_NAME="Zeliblue"
       - ARG ZELIBLUE_IMAGE_TAG=stable
+      - ARG AKMODS_FLAVOR="coreos-stable"
 
   - from-file: common/common-base.yml
-  - from-file: common/coreos-kernel.yml
-
   - from-file: gnome/gnome-base.yml
 
   - type: initramfs
