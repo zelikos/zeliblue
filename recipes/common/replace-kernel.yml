@@ -1,0 +1,7 @@
+modules:
+  - type: script
+    scripts:
+      - replace-kernel.sh
+
+  - type: initramfs
+    source: local

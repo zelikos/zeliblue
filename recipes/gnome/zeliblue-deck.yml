@@ -16,10 +16,10 @@ modules:
     snippets:
       - ARG ZELIBLUE_PRETTY_NAME="Zeliblue Deck"
       - ARG ZELIBLUE_IMAGE_TAG=stable
+      - ARG AKMODS_FLAVOR="bazzite"
 
   - from-file: common/common-base.yml
   - from-file: gnome/gnome-base.yml
-  - from-file: common/bazzite-kernel.yml
   - from-file: deck/deck-base.yml
   - from-file: deck/deck-gschemas.yml
 

@@ -16,6 +16,7 @@ modules:
     snippets:
       - ARG ZELIBLUE_PRETTY_NAME="Zeliblue"
       - ARG ZELIBLUE_IMAGE_TAG=testing
+      - ARG AKMODS_FLAVOR="main"
 
   - from-file: common/common-base.yml
   - from-file: gnome/gnome-base.yml
