@@ -16,7 +16,7 @@ Notable changes from vanilla GNOME and Fedora Silverblue include:
 - System apps are selected based on the official [GNOME Core apps](https://apps.gnome.org/), with some substitutions and additions
 - And more miscellaneous tweaks
 
-There is also Zeliblue Plasma (zeliblue-kinoite), which uses the Plasma desktop environment instead of GNOME. It replaces multiple apps that are layered into the upstream image with Flatpak equivalents, as well as using `fish` as the default shell in Konsole.
+There was previously a Zeliblue Plasma (zeliblue-kinoite), but this image is now deprecated and no longer receives updates.
 
 Zeliblue is made with [BlueBuild](https://blue-build.org/).
 
