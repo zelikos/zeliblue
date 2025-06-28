@@ -91,7 +91,7 @@ jobs:
           # Image to be installed to target system
           container-image: ${{ steps.image_ref.outputs.image_ref }}:${{ env.IMAGE_TAG }}
           flatpaks-list: ${{ github.workspace }}/iso_files/system-flatpaks.list
-          hook-post-rootfs: ${{ github.workspace }}/iso_files/configure_iso_anaconda.sh
+          hook-post-rootfs: ${{ github.workspace }}/iso_files/${{ env.IMAGE_NAME }}_iso_config.sh
           kargs: ${{ steps.image_ref.outputs.kargs }}
 
       - name: Rename ISO
