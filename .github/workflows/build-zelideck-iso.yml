@@ -1,6 +1,11 @@
 name: Zeliblue Deck ISO
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/reusable-build-live-iso.yml"
+      - ".github/workflows/build-zelideck-iso.yml"
+      - "iso_files/configure_iso_anaconda.sh"
 
 jobs:
   build_zeliblue_iso:
