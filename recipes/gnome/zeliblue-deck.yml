@@ -37,6 +37,3 @@ modules:
         - sddm.service
       disabled:
         - gdm.service
-
-  - type: initramfs
-    source: local

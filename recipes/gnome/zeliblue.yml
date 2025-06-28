@@ -21,6 +21,3 @@ modules:
 
   - from-file: common/common-base.yml
   - from-file: gnome/gnome-base.yml
-
-  - type: initramfs
-    source: local
