@@ -5,7 +5,6 @@ modules:
       - dnf config-manager setopt terra-mesa.enabled=1
 
   - type: dnf
-    source: ghcr.io/blue-build/modules/dnf:dnf-module
     repos:
       copr:
         - bazzite-org/bazzite
@@ -38,6 +37,7 @@ modules:
     install:
       packages:
         - ds-inhibit
+        - extest.i686
         - galileo-mura
         # - gamescope
         # - gamescope-libs.x86_64
@@ -52,8 +52,10 @@ modules:
         - powerbuttond
         - scx-scheds
         - sdgyrodsu
+        - sddm
         - steam_notif_daemon
         - steamdeck-dsp
+        - steamdeck-gnome-presets
         - sunshine
         - vkbasalt
         - vpower

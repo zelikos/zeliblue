@@ -9,6 +9,9 @@ system:
     - pipewire-workaround.service
     - pipewire-sysconf.service
     - scx_loader.service
+    - sddm.service
+  disabled:
+    - gdm.service
 user:
   enabled:
     - zelideck-user-setup.service
