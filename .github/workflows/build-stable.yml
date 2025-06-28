@@ -19,10 +19,10 @@ jobs:
     uses: ./.github/workflows/reusable-build.yml
     secrets: inherit
     with:
-      recipe: gnome/zeliblue.yml
+      recipe: images/zeliblue.yml
   build_deck:
     name: Zeliblue Deck
     uses: ./.github/workflows/reusable-build.yml
     secrets: inherit
     with:
-      recipe: gnome/zeliblue-deck.yml
+      recipe: images/zeliblue-deck.yml

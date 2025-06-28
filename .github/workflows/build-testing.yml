@@ -24,10 +24,10 @@ jobs:
     uses: ./.github/workflows/reusable-build.yml
     secrets: inherit
     with:
-      recipe: gnome/zeliblue-testing.yml
+      recipe: images/zeliblue-testing.yml
   build_deck_testing:
     name: Zeliblue Deck Testing
     uses: ./.github/workflows/reusable-build.yml
     secrets: inherit
     with:
-      recipe: gnome/zeliblue-deck-testing.yml
+      recipe: images/zeliblue-deck-testing.yml
