@@ -12,6 +12,10 @@ on:
       - "iso_files/**"
       - ".github/workflows/**-iso.yml"
   pull_request:
+    paths-ignore:
+      - "./**.md"
+      - "iso_files/**"
+      - ".github/workflows/**-iso.yml"
   workflow_dispatch: # allow manually triggering builds
 
 jobs:
