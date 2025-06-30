@@ -1,6 +1,7 @@
 modules:
   - from-file: deck/deck-files.yml
   - from-file: deck/deck-gschemas.yml
+  - from-file: deck/deck-justfiles.yml
   - from-file: deck/deck-packages.yml
   - from-file: deck/deck-systemd.yml
   - from-file: deck/deck-scripts.yml
