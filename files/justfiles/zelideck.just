@@ -7,7 +7,7 @@ setup-decky ACTION="":
     fi
     source /usr/lib/ujust/ujust.sh
     DECKY_STATE="${b}${red}Not Installed${n}"
-    if [[ -d $HOME/homebrew/plugins ]]; then
+    if [[ -f $HOME/homebrew/services/PluginLoader ]]; then
       DECKY_STATE="${b}${green}Installed${n}"
     fi
     OPTION={{ ACTION }}
