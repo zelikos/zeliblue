@@ -1,5 +1,7 @@
-type: rpm-ostree
+type: dnf
 repos:
-  - https://copr.fedorainfracloud.org/coprs/ublue-os/staging/repo/fedora-%OS_VERSION%/ublue-os-staging-fedora-%OS_VERSION%.repo
+  copr:
+    - ublue-os/staging
 install:
-  - scx-scheds
+  packages:
+    - bazaar

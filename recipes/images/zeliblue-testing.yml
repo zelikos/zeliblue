@@ -20,11 +20,4 @@ modules:
 
   - from-file: common/common-base.yml
   - from-file: gnome/gnome-base.yml
-
-  - type: dnf
-    repos:
-      copr:
-        - ublue-os/staging
-    install:
-      packages:
-        - bazaar
+  - from-file: testing/testing-base.yml
