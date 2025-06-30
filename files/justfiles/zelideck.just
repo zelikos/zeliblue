@@ -23,7 +23,19 @@ setup-decky ACTION="":
       echo "Decky is $DECKY_STATE"
       OPTION=$(Choose "Install Decky" "Install Decky Prerelease" "Uninstall Decky" "Exit")
     fi
-    if [[ "${OPTION,,}" =~ install ]]; then
+    if [[ "${OPTION,,}" =~ uninstall ]]; then
+      echo "Uninstalling Decky Loader..."
+      curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/uninstall.sh | sh
+      echo "Decky Loader has been uninstalled."
+    elif [[ "${OPTION,,}" =~ prerelease ]]; then
+      export HOME=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
+      if [ ! -L "/home/deck" ] && [ ! -e "/home/deck" ]  && [ "$HOME" != "/home/deck" ]; then
+        echo "Making a /home/deck symlink to fix plugins that do not use environment variables."
+        sudo ln -sf "$HOME" /home/deck
+      fi
+      curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_prerelease.sh | sh
+      sudo chcon -R -t bin_t $HOME/homebrew/services/PluginLoader
+    elif [[ "${OPTION,,}" =~ install ]]; then
       export HOME=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
       if [ ! -L "/home/deck" ] && [ ! -e "/home/deck" ]  && [ "$HOME" != "/home/deck" ]; then
         echo "Making a /home/deck symlink to fix plugins that do not use environment variables."
@@ -34,18 +46,4 @@ setup-decky ACTION="":
       fi
       curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_release.sh | sh
       sudo chcon -R -t bin_t $HOME/homebrew/services/PluginLoader
-    fi
-    if [[ "${OPTION,,}" =~ prerelease ]]; then
-      export HOME=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
-      if [ ! -L "/home/deck" ] && [ ! -e "/home/deck" ]  && [ "$HOME" != "/home/deck" ]; then
-        echo "Making a /home/deck symlink to fix plugins that do not use environment variables."
-        sudo ln -sf "$HOME" /home/deck
-      fi
-      curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_prerelease.sh | sh
-      sudo chcon -R -t bin_t $HOME/homebrew/services/PluginLoader
-    fi
-    if [[ "${OPTION,,}" =~ uninstall ]]; then
-      echo "Uninstalling Decky Loader..."
-      curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/uninstall.sh | sh
-      echo "Decky Loader has been uninstalled."
     fi
