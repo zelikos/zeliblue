@@ -1,9 +1,7 @@
 type: dnf
-source: ghcr.io/blue-build/modules/dnf:dnf-module
 repos:
   copr:
     - bazzite-org/bazzite
-    - ublue-os/staging
 install:
   packages:
     - gnome-shell-extension-hotedge

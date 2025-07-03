@@ -1,4 +1,0 @@
-[Containments][2][Applets][5][Configuration][General]
-groupedTaskVisualization=1
-launchers=preferred://filemanager,applications:org.mozilla.firefox.desktop,applications:systemsettings.desktop,applications:org.kde.discover.desktop
-showOnlyCurrentDesktop=false

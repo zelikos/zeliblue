@@ -24,7 +24,3 @@ system:
     - com.github.tchx84.Flatseal
     - org.gnome.World.PikaBackup
     - io.github.flattool.Warehouse
-  remove:
-    - io.github.celluloid_player.Celluloid
-    - org.gnome.Evince
-    - org.gnome.NautilusPreviewer

@@ -1,4 +1,0 @@
-modules:
-  - from-file: plasma/plasma-files.yml
-  - from-file: plasma/plasma-packages.yml
-  - from-file: plasma/plasma-flatpaks.yml

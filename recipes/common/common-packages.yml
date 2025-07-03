@@ -11,8 +11,6 @@ install:
     - gum
     - iwd
     - micro
-    - rsms-inter-fonts
-    - rsms-inter-vf-fonts
     - ublue-brew
 remove:
   packages:
