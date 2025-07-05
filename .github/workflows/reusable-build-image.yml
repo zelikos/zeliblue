@@ -11,6 +11,10 @@ on:
         description: "Update stream of image"
         required: true
         type: string
+      kernel:
+        description: "Kernel to install"
+        required: true
+        type: string
 
 env:
   IMAGE_DESC: "An opinionated GNOME desktop experience, based on Fedora Silverblue"
@@ -108,6 +112,9 @@ jobs:
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
           oci: false
+          build-args: |
+            AKMODS_FLAVOR=${{ inputs.kernel }}
+            ZELIBLUE_IMAGE_TAG=${{ inputs.stream_name }}
           extra-args: --target=${{ env.IMAGE_NAME }}
 
       # These `if` statements are so that pull requests for your custom images do not make it publish any packages under your name without you knowing

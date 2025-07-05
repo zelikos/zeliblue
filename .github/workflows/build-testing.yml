@@ -30,6 +30,7 @@ jobs:
     with:
       image: zeliblue
       stream_name: testing
+      kernel: main
   build_deck_testing:
     name: Zeliblue Deck Testing
     # uses: ./.github/workflows/reusable-build.yml
@@ -41,3 +42,4 @@ jobs:
     with:
       image: zeliblue-deck
       stream_name: testing
+      kernel: bazzite

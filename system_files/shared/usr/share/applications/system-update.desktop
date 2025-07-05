@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=System Update
+Comment=Update system, apps, containers, and more
+Icon=software-update-available-symbolic
+Categories=ConsoleOnly;System;
+Terminal=true
+Exec=/usr/bin/pkexec /usr/bin/zeliblue-update

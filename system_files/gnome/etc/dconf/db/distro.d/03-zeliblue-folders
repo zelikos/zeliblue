@@ -1,0 +1,21 @@
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['com.github.tchx84.Flatseal.desktop', 'io.github.flattool.Warehouse.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.World.PikaBackup.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Games]
+categories=['Game']
+name='Games'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/Development]
+apps=['io.github.dvlv.boxbuddyrs.desktop', 'com.github.marhkb.Pods.desktop', 'io.podman_desktop.PodmanDesktop.desktop']
+categories=['Development', 'Distrobox', 'IDE']
+name='Development'
+translate=false
+
+[org/gnome/desktop/app-folders/folders/Productivity]
+apps=['org.gnome.SimpleScan.desktop', 'org.gnome.Papers.desktop', 'org.gnome.Connections.desktop']
+name='Productivity'
+translate=false

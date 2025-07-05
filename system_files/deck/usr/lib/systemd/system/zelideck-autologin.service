@@ -1,0 +1,8 @@
+[Unit]
+Description=Enables ZeliDeck autologin
+Before=display-manager.service
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/zelideck-autologin
+[Install]
+WantedBy=multi-user.target

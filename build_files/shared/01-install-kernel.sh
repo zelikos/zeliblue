@@ -5,6 +5,8 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
+echo "===Installing kernel==="
+
 # Remove Existing Kernel
 dnf5 -y remove kernel-{core,modules,modules-core,modules-extra,tools,tools-libs}
 
