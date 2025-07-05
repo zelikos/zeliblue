@@ -18,7 +18,7 @@ echo "===Installing packages==="
 
 dnf5 -y swap \
   --repo=terra-mesa \
-  mesa-filesystem
+  mesa-filesystem mesa-filesystem
 
 # Swap packages from bazzite-multilib
 for package in bluez xorg-x11-server-Xwayland; do
