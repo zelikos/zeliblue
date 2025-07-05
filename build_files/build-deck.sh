@@ -20,7 +20,7 @@ rsync -rvK /ctx/system_files/deck/ /
 /ctx/build_files/deck/02-steamos-setup.sh
 
 # systemd services, gschemas, etc
-/ctx/build_files/base/03-deck-config-services.sh
+/ctx/build_files/deck/03-deck-config-services.sh
 
 # Finalize
 /ctx/build_files/shared/02-finalize.sh
