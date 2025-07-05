@@ -13,10 +13,8 @@ SUPPORT_URL="https://github.com/zelikos/zeliblue/issues"
 BUG_REPORT_URL="https://github.com/zelikos/zeliblue/issues"
 
 IMAGE_INFO="/usr/share/zeliblue/image-info.json"
-IMAGE_VENDOR="zelikos"
 IMAGE_REF="ostree-image-signed:docker://ghcr.io/$IMAGE_VENDOR/$IMAGE_NAME"
 BASIC_NAME="zeliblue"
-IMAGE_FLAVOR="silverblue"
 
 cat > $IMAGE_INFO <<EOF
 {
@@ -25,7 +23,7 @@ cat > $IMAGE_INFO <<EOF
   "image-vendor": "$IMAGE_VENDOR",
   "image-ref": "$IMAGE_REF",
   "image-tag": "$ZELIBLUE_IMAGE_TAG",
-  "base-image-name": "$BASE_IMAGE",
+  "base-image-name": "$BASE_IMAGE_NAME",
   "fedora-version": "$OS_VERSION"
 }
 EOF

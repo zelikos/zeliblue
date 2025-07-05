@@ -14,8 +14,11 @@ FROM ${BASE_IMAGE}:${OS_VERSION} as zeliblue
 ARG AKMODS_FLAVOR="coreos-stable"
 ARG ZELIBLUE_PRETTY_NAME="Zeliblue"
 ARG IMAGE_NAME="zeliblue"
+ARG IMAGE_FLAVOR="main"
 ARG ZELIBLUE_IMAGE_TAG="stable"
 ARG IMAGE_VENDOR="zelikos"
+ARG OS_VERSION="42"
+ARG BASE_IMAGE_NAME="silverblue"
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
@@ -36,8 +39,12 @@ FROM zeliblue as zeliblue-deck
 ARG AKMODS_FLAVOR="bazzite"
 ARG ZELIBLUE_PRETTY_NAME="Zeliblue Deck"
 ARG IMAGE_NAME="zeliblue-deck"
+ARG IMAGE_FLAVOR="deck"
 ARG ZELIBLUE_IMAGE_TAG="stable"
 ARG IMAGE_VENDOR="zelikos"
+ARG OS_VERSION="42"
+ARG BASE_IMAGE_NAME="silverblue"
+
 
 ### MODIFICATIONS
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
