@@ -1,4 +1,5 @@
 ARG OS_VERSION="42"
+ARG BASE_IMAGE="ghcr.io/ublue-os/silverblue-main"
 
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
@@ -7,7 +8,7 @@ COPY /system_files /system_files
 COPY /just /just
 
 # Base Image
-FROM ghcr.io/ublue-os/silverblue-main:${OS_VERSION} as zeliblue
+FROM ${BASE_IMAGE}:${OS_VERSION} as zeliblue
 
 # Zeliblue image info
 ARG AKMODS_FLAVOR="coreos-stable"
