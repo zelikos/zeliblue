@@ -25,7 +25,7 @@ jobs:
     # secrets: inherit
     # with:
     #   recipe: images/zeliblue-testing.yml
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/reusable-build-image.yml
     secrets: inherit
     with:
       image: zeliblue
@@ -36,7 +36,7 @@ jobs:
     # secrets: inherit
     # with:
     #   recipe: images/zeliblue-deck-testing.yml
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/reusable-build-image.yml
     secrets: inherit
     with:
       image: zeliblue-deck
