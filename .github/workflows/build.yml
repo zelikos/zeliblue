@@ -7,7 +7,7 @@ on:
         description: "Image to build"
         required: true
         type: string
-      tag:
+      stream_name:
         description: "Update stream of image"
         required: true
         type: string
@@ -18,10 +18,10 @@ env:
   IMAGE_LOGO_URL: "https://avatars.githubusercontent.com/u/120078124?s=200&v=4" # Put your own image here for a fancy profile on https://artifacthub.io/!
   IMAGE_NAME: "${{ inputs.image }}" # output image name, usually same as repo name
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}" # do not edit
-  DEFAULT_TAG: "${{ inputs.tag }}"
+  DEFAULT_TAG: "${{ inputs.stream_name }}"
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.brand_name}}-${{ inputs.stream_name }}
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.image}}-${{ inputs.stream_name }}
   cancel-in-progress: true
 
 jobs:

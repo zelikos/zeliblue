@@ -29,7 +29,7 @@ jobs:
     secrets: inherit
     with:
       image: zeliblue
-      tag: testing
+      stream_name: testing
   build_deck_testing:
     name: Zeliblue Deck Testing
     # uses: ./.github/workflows/reusable-build.yml
@@ -40,4 +40,4 @@ jobs:
     secrets: inherit
     with:
       image: zeliblue-deck
-      tag: testing
+      stream_name: testing
