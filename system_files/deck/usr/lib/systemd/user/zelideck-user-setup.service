@@ -1,0 +1,9 @@
+[Unit]
+Description=Configure Zeliblue Deck for current user
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/zelideck-user-setup
+
+[Install]
+WantedBy=default.target
