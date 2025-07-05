@@ -4,7 +4,7 @@ set -ouex pipefail
 
 echo "===Copying files==="
 
-cp -r /ctx/just/zeliblue.just /tmp/just/zeliblue.just
+mkdir /tmp/just && cp /ctx/just/zeliblue.just /tmp/just/
 rsync -rvK /ctx/system_files/shared/ /
 rsync -rvK /ctx/system_files/gnome/ /
 

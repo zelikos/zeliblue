@@ -4,7 +4,7 @@ set -ouex pipefail
 
 echo "===Copying files==="
 
-cp -r /ctx/just/zelideck.just /tmp/just/zelideck.just
+mkdir /tmp/just && cp /ctx/just/zelideck.just /tmp/just/
 rsync -rvK /ctx/system_files/deck/ /
 
 # Generate image-info.json
