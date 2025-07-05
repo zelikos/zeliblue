@@ -62,7 +62,8 @@ dnf5 -y --setopt=install_weak_deps=False install \
   steam
 
 dnf5 -y copr disable bazzite-org/bazzite-multilib
+dnf5 -y install gamescope
+
 dnf5 -y install \
-  gamescope \
-  gamescope-session-plus \
-  gamescope-session-steam
+  --repo copr:copr.fedorainfracloud.org:bazzite-org:bazzite \
+  gamescope-session-plus gamescope-session-steam
