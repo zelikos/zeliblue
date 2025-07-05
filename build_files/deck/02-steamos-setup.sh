@@ -5,7 +5,7 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
-# Deck firmware
+echo "===Installing Steam Deck firmware"
 
 JUPITER_FIRMWARE_VERSION="jupiter-20241205.1"
 
@@ -43,6 +43,8 @@ git clone https://gitlab.com/evlaV/jupiter-dock-updater-bin.git \
         /tmp/jupiter-dock-updater-bin
 mv -v /tmp/jupiter-dock-updater-bin/packaged/usr/lib/jupiter-dock-updater /usr/libexec/jupiter-dock-updater
 rm -rf /tmp/jupiter-dock-updater-bin
+
+echo "===Setting up Steam Game Mode"
 
 # Steam setup
 ln -s /usr/bin/steamos-logger /usr/bin/steamos-info
