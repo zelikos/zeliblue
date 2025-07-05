@@ -11,7 +11,7 @@ rsync -rvK /ctx/system_files/deck/ /
 /ctx/build_files/shared/00-image-info.sh
 
 # Install kernel & any akmods
-/ctx/build_files/shared/01-install-kernel.sh
+# /ctx/build_files/shared/01-install-kernel.sh
 
 # Enable extra repositories & install packages
 /ctx/build_files/deck/01-deck-packages.sh
