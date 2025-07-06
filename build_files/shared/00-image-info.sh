@@ -7,6 +7,8 @@ set -oue pipefail
 
 echo "===Generating image info==="
 
+source /usr/lib/os-release
+
 HOME_URL="https://github.com/zelikos/zeliblue"
 DOCUMENTATION_URL="https://github.com/zelikos/zeliblue/blob/main/README.md"
 SUPPORT_URL="https://github.com/zelikos/zeliblue/issues"
@@ -24,7 +26,7 @@ cat > $IMAGE_INFO <<EOF
   "image-ref": "$IMAGE_REF",
   "image-tag": "$ZELIBLUE_IMAGE_TAG",
   "base-image-name": "$BASE_IMAGE_NAME",
-  "fedora-version": "$OS_VERSION"
+  "fedora-version": "$VERSION_ID"
 }
 EOF
 
