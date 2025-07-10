@@ -21,10 +21,6 @@ on:
 jobs:
   build_gnome:
     name: Zeliblue GNOME Testing
-    # uses: ./.github/workflows/reusable-build.yml
-    # secrets: inherit
-    # with:
-    #   recipe: images/zeliblue-testing.yml
     uses: ./.github/workflows/reusable-build-image.yml
     secrets: inherit
     with:
@@ -33,10 +29,6 @@ jobs:
       kernel: main
   build_deck_testing:
     name: Zeliblue Deck Testing
-    # uses: ./.github/workflows/reusable-build.yml
-    # secrets: inherit
-    # with:
-    #   recipe: images/zeliblue-deck-testing.yml
     uses: ./.github/workflows/reusable-build-image.yml
     secrets: inherit
     with:
