@@ -6,41 +6,29 @@ Zeliblue is a customized [Fedora Atomic Desktop](https://fedoraproject.org/atomi
 
 Notable changes from vanilla GNOME and Fedora Silverblue include:
 
-- Ptyxis replaces GNOME Terminal as the default terminal, and can be launched with Super+t
+- Ptyxis, the default Terminal app, can be launched with Super+t
 - `fish` is set as the default shell in Ptyxis
 - [Homebrew](https://brew.sh/) is enabled out of the box
 - The `fish` shell is configured to integrate with certain [CLI utilities](#zeliblue-cli) for a more modern terminal experience
-- Flathub is set up in the background on first boot, both system-wide (flathub-system) and for per-user installs (flathub-user)
-- GNOME Software defaults to installing apps from flathub-user
-- Core system apps are installed to flathub-system after first boot
-- System apps are selected based on the official [GNOME Core apps](https://apps.gnome.org/), with some substitutions and additions
+- Flathub is set up as the default Flatpak remote during installation
+- Default system apps are selected based on the official [GNOME Core apps](https://apps.gnome.org/), with some substitutions and additions
 - And more miscellaneous tweaks
 
 There was previously a Zeliblue Plasma (zeliblue-kinoite), but this image is now deprecated and no longer receives updates.
 
-Zeliblue is made with [BlueBuild](https://blue-build.org/).
+Zeliblue is built upon [Universal Blue](https://universal-blue.org/).
 
 ## Installation
 
-For most users, I would recommend looking into either [Bluefin](https://projectbluefin.io/) or [Bazzite](https://bazzite.gg/), or, for tinkerers, I recommend [making your own](https://blue-build.org/learn/getting-started/). Both of the former two projects have many more contributors and a much larger community for support, whereas Zeliblue is run by one lone maintainer.
+For most users, I would recommend looking into either [Bluefin](https://projectbluefin.io/) or [Bazzite](https://bazzite.gg/), or, for tinkerers, I recommend [making your own](https://blue-build.org/learn/getting-started/). Both of the former two projects have many more contributors and a much larger community for support, whereas Zeliblue is run by one lone maintainer. If you want to try Zeliblue anyway, you can follow the instructions below.
 
 ### ISOs
 
-Pre-built ISOs are currently private and only for the GNOME edition of Zeliblue. These may be be made publicly available in the future.
-
-For those that want to try Zeliblue in the meantime, or that want an ISO of other Zeliblue flavors, you can either rebase using the instructions in the next section, or you can build the ISO yourself. The recommended method is by using the [BlueBuild CLI utility](https://github.com/blue-build/cli?tab=readme-ov-file#installation) (requires v0.9.0 or later):
-
-```
-# Zeliblue
-bluebuild generate-iso --variant gnome image ghcr.io/zelikos/zeliblue:stable
-
-# Zeliblue Plasma
-bluebuild generate-iso --variant kinoite image ghcr.io/zelikos/zeliblue-kinoite:stable
-```
+ISOs can be found in the [GitHub Action artifacts](https://github.com/zelikos/zeliblue/actions/workflows/build-zeliblue-iso.yml) for ISO builds. ISOs for Zeliblue are built on the first day of each month. Zeliblue Deck ISOs are currently unscheduled.
 
 ### Rebase
 
-You *can* also rebase an existing Silverblue/Kinoite installation to the latest build:
+You can also rebase an existing Silverblue installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
@@ -56,14 +44,11 @@ You *can* also rebase an existing Silverblue/Kinoite installation to the latest 
   systemctl reboot
   ```
 
-If you instead want Zeliblue Plasma, replace `zeliblue` with `zeliblue-kinoite`, and, in the ISO action, `Silverblue` with `Kinoite`.
-
+Note: upon rebasing, you won't have any of Zeliblue's default apps installed. To remedy this, run `ujust restore-default-apps` in Terminal.
 
 ## `just` commands
 
-On first boot of any Zeliblue flavor, a `justfile` is created in the user's home directory at `$HOME/.justfile`. The `justfile` gives access to Zeliblue's `just` commands; users can also add their own custom commands.
-
-Commands provided by Zeliblue are documented below.
+Zeliblue features `ujust`, much like Bluefin and Bazzite. Custom commands provided by Zeliblue are documented below; Zeliblue also has access to most of the `just` commands common to other Universal Blue images. Run `ujust --choose` in a terminal to browse through them.
 
 For more about `just`, see [the manual](https://just.systems/man/en/).
 
@@ -72,19 +57,17 @@ For more about `just`, see [the manual](https://just.systems/man/en/).
 Installs a selection of brew packages as a "starter pack" for using Homebrew, focused on providing a more modern CLI experience:
 
 ```
-atuin
 bat
 btop
 chezmoi
+dysk
 eza
-fastfetch
 fd
-gcc
 git-delta
-micro
 ripgrep
-tldr
 starship
+tealdeer
+trash-cli
 zoxide
 ```
 
