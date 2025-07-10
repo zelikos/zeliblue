@@ -16,13 +16,17 @@ on:
 jobs:
   build_gnome:
     name: Zeliblue GNOME
-    uses: ./.github/workflows/reusable-build.yml
+    uses: ./.github/workflows/reusable-build-image.yml
     secrets: inherit
     with:
-      recipe: images/zeliblue.yml
+      image: zeliblue
+      stream_name: stable
+      kernel: coreos-stable
   build_deck:
     name: Zeliblue Deck
-    uses: ./.github/workflows/reusable-build.yml
+    uses: ./.github/workflows/reusable-build-image.yml
     secrets: inherit
     with:
-      recipe: images/zeliblue-deck.yml
+      image: zeliblue-deck
+      stream_name: stable
+      kernel: bazzite

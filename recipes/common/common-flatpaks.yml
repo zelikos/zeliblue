@@ -1,6 +1,0 @@
-type: default-flatpaks
-system:
-  repo-name: flathub
-  repo-title: "Flathub (system-wide)"
-user:
-  repo-name: flathub-user

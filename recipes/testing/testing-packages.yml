@@ -1,7 +1,0 @@
-type: dnf
-repos:
-  copr:
-    - ublue-os/staging
-install:
-  packages:
-    - bazaar

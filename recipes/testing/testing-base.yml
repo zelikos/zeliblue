@@ -1,3 +1,0 @@
-modules:
-  - from-file: testing/testing-files.yml
-  - from-file: testing/testing-packages.yml

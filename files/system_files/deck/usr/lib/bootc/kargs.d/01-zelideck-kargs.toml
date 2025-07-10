@@ -1,6 +1,0 @@
-kargs = [
-    "amdgou.ppfeaturemask=0xfff7ffff",
-    "amd_pstate=active",
-    "bluetooth.disable_ertm=1",
-    "preempt=full",
-]
