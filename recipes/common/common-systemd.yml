@@ -1,6 +1,0 @@
-type: systemd
-system:
-  masked:
-    - rpm-ostreed-automatic.timer
-  enabled:
-    - bootc-automatic-updates.timer

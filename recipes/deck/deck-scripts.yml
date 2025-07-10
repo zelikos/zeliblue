@@ -1,4 +1,0 @@
-type: script
-scripts:
-  - steamos-setup.sh
-  - image-info.sh

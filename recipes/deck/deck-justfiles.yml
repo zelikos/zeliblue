@@ -1,4 +1,0 @@
-type: justfiles
-validate: true
-include:
-  - zelideck.just

@@ -1,6 +1,0 @@
-type: files
-files:
-  - source: system_files/shared
-    destination: /
-  - source: system_files/overrides
-    destination: /
