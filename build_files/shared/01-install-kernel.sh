@@ -25,3 +25,15 @@ dnf5 -y install \
 
 
 dnf5 versionlock add kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra
+
+if [[ $AKMODS_FLAVOR == "bazzite" ]]; then
+  # Fetch Extra AKMODS
+  skopeo copy --retry-times 3 docker://ghcr.io/ublue-os/akmods-extra:"${AKMODS_FLAVOR}"-"$(rpm -E %fedora)" dir:/tmp/akmods-extra
+  AKMODS_TARGZ=$(jq -r '.layers[].digest' </tmp/akmods-extra/manifest.json | cut -d : -f 2)
+  tar -xvzf /tmp/akmods-extra/"$AKMODS_TARGZ" -C /tmp/
+  mv /tmp/rpms/* /tmp/akmods-extra/
+
+  dnf5 -y install \
+      /tmp/akmods-extra/kmods/*zenergy*.rpm \
+      /tmp/akmods-extra/kmods/*ryzen-smu*.rpm
+fi
