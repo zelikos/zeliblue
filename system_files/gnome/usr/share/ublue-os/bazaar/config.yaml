@@ -1,22 +1,20 @@
 css: |
   .curated-section {
-    border-radius: 14px;
     margin: 12px;
-    background-color: alpha(var(--accent-bg-color), 0.1);
   }
   .curated-section banner-text {
     padding: 24px;
     color: var(--accent-color);
   }
   .curated-section title {
-    font-size: 3em;
+    font-size: 2em;
   }
 sections:
   - title: "Web Browsers"
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
-    banner-height: 140
+    banner-height: 100
     appids:
       - org.mozilla.firefox
       - com.google.Chrome
@@ -29,7 +27,7 @@ sections:
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
-    banner-height: 140
+    banner-height: 100
     appids:
       - de.haeckerfelix.Shortwave
       - io.bassi.Amberol
@@ -48,7 +46,7 @@ sections:
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
-    banner-height: 140
+    banner-height: 100
     appids:
       - org.gnome.gitlab.somas.Apostrophe
       - io.github.alainm23.planify
@@ -70,7 +68,7 @@ sections:
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
-    banner-height: 140
+    banner-height: 100
     appids:
       - com.discordapp.Discord
       - com.valvesoftware.Steam
@@ -91,7 +89,7 @@ sections:
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
-    banner-height: 140
+    banner-height: 100
     appids:
       - org.gnome.gitlab.cheywood.Buffer
       - io.github.kelvinnovais.Kasasa
@@ -115,7 +113,7 @@ sections:
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
-    banner-height: 140
+    banner-height: 100
     appids:
       - io.podman_desktop.PodmanDesktop
       - com.ranfdev.DistroShelf
@@ -140,7 +138,7 @@ sections:
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
-    banner-height: 140
+    banner-height: 100
     appids:
       - org.endlessos.Key
       - io.github.david_swift.Flashcards
