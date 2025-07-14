@@ -13,14 +13,6 @@ on:
         required: true
         type: string
 
-  # schedule:
-  #   - cron: "0 0 1 * *" # Build & upload ISO every month
-  # workflow_dispatch:
-  # pull_request:
-  #   paths:
-  #     - ".github/workflows/reusable-build-live-iso.yml"
-  #     - "iso_files/configure_iso_anaconda.sh"
-
 env:
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
   IMAGE_NAME: ${{ inputs.image }}
@@ -53,14 +45,11 @@ jobs:
           sudo apt install -y \
             podman
 
-      - name: Maximize build space
-        if: matrix.platform != 'arm64'
-        uses: ublue-os/remove-unwanted-software@cc0becac701cf642c8f0a6613bbdaf5dc36b259e # v9
-        with:
-          remove-codeql: true
-
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Mount BTRFS for podman storage
+        uses: ublue-os/container-storage-action@main
 
       # - name: Setup Just
       #   uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
