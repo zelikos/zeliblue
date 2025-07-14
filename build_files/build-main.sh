@@ -2,6 +2,8 @@
 
 set -ouex pipefail
 
+mkdir -p /var/roothome
+
 echo "===Copying files==="
 
 mkdir /tmp/just && cp /ctx/just/zeliblue.just /tmp/just/
@@ -15,13 +17,13 @@ rsync -rvK /ctx/system_files/gnome/ /
 /ctx/build_files/shared/01-install-kernel.sh
 
 # Enable extra repositories & install packages
-/ctx/build_files/base/01-packages.sh
+/ctx/build_files/main/01-main-packages.sh
 
 # systemd services, gschemas, etc
-/ctx/build_files/base/02-config-services.sh
+/ctx/build_files/main/02-main-config-services.sh
 
 # Overrides
-/ctx/build_files/base/03-overrides.sh
+/ctx/build_files/main/03-main-overrides.sh
 
 # Finalize
 /ctx/build_files/shared/02-finalize.sh

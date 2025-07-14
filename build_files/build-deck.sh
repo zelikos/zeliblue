@@ -2,6 +2,8 @@
 
 set -ouex pipefail
 
+mkdir -p /var/roothome
+
 echo "===Copying files==="
 
 mkdir /tmp/just && cp /ctx/just/zelideck.just /tmp/just/
