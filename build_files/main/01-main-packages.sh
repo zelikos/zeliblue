@@ -25,12 +25,4 @@ if [[ $ZELIBLUE_IMAGE_TAG == "testing" ]]; then
 fi
 
 dnf5 -y remove \
-  firefox \
-  firefox-langpacks \
-  gnome-classic-session \
-  gnome-tweaks \
-  ublue-os-update-services
-
-dnf5 -y swap \
-  --repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
-  fwupd fwupd
+  gnome-classic-session
