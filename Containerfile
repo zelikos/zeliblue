@@ -7,7 +7,10 @@ COPY /build_files /build_files
 COPY /system_files /system_files
 COPY /just /just
 
-# Base Image
+# # Base Image
+# FROM ${BASE_IMAGE}:${OS_VERSION} as zeliblue
+
+# Main Image
 FROM ${BASE_IMAGE}:${OS_VERSION} as zeliblue
 
 # Zeliblue image info
@@ -27,7 +30,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build_files/build.sh && \
+    /ctx/build_files/build-main.sh && \
     ostree container commit
 
 
