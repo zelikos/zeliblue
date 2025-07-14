@@ -33,7 +33,11 @@ if [[ $AKMODS_FLAVOR == "bazzite" ]]; then
   tar -xvzf /tmp/akmods-extra/"$AKMODS_TARGZ" -C /tmp/
   mv /tmp/rpms/* /tmp/akmods-extra/
 
+  dnf5 -y copr enable ublue-os/akmods
+
   dnf5 -y install \
       /tmp/akmods-extra/kmods/*zenergy*.rpm \
       /tmp/akmods-extra/kmods/*ryzen-smu*.rpm
+
+  dnf5 -y copr remove ublue-os/akmods
 fi
