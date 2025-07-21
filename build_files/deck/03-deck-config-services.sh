@@ -10,7 +10,7 @@ find /usr/share/glib-2.0/schemas/ -type f ! -name "*.gschema.override" -exec cp 
 cp /usr/share/glib-2.0/schemas/zz1-zeliblue-deck.gschema.override /tmp/zeliblue-schema-test/
 
 echo "Running error test for zeliblue gschema override. Aborting if failed."
-glib-compile-schemas /tmp/zeliblue-schema-test
+glib-compile-schemas --strict /tmp/zeliblue-schema-test
 echo "Compiling gschema to include zeliblue setting overrides"
 glib-compile-schemas /usr/share/glib-2.0/schemas &>/dev/null
 
