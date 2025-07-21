@@ -10,17 +10,24 @@ css: |
     font-size: 2em;
   }
 sections:
-  - title: "Web Browsers"
+  - title: "Networking"
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
     banner-height: 100
     appids:
       - org.mozilla.firefox
-      - com.google.Chrome
-      - com.vivaldi.Vivaldi
       - org.chromium.Chromium
-      - com.microsoft.Edge
+      - com.google.Chrome
+      - org.gnome.Fractal
+      - com.discordapp.Discord
+      - org.gnome.gitlab.cheywood.Pulp
+      - org.gnome.Connections
+      - app.drey.Warp
+      - io.github.nozwock.Packet
+      - io.github.tobagin.digger
+      - io.github.lo2dev.Echo
+      - xyz.ketok.Speedtest
     classes:
       - curated-section
   - title: "Media"
@@ -42,6 +49,26 @@ sections:
       - org.gnome.gitlab.YaLTeR.VideoTrimmer
     classes:
       - curated-section
+  - title: "Graphics"
+    banner-fit: cover
+    banner-text-halign: start
+    banner-text-valign: center
+    banner-height: 100
+    appids:
+      - com.github.PintaProject.Pinta
+      - org.gimp.GIMP
+      - org.kde.krita
+      - org.inkscape.Inkscape
+      - org.blender.Blender
+      - io.github.nokse22.Exhibit
+      - io.gitlab.adhami3310.Converter
+      - io.gitlab.theevilskeleton.Upscaler
+      - com.github.huluti.Curtail
+      - com.jeffser.Pigment
+      - com.github.finefindus.eyedropper
+      - be.alexandervanhee.gradia
+    classes:
+      - curated-section
   - title: "Office & Productivity"
     banner-fit: cover
     banner-text-halign: start
@@ -53,15 +80,14 @@ sections:
       - com.vixalien.sticky
       - io.github.mrvladus.List
       - re.sonny.Eloquent
-      - org.onlyoffice.desktopeditors
       - org.libreoffice.LibreOffice
+      - org.onlyoffice.desktopeditors
       - app.drey.Typewriter
-      - com.github.PintaProject.Pinta
-      - org.kde.krita
-      - org.inkscape.Inkscape
-      - org.blender.Blender
-      - io.github.nokse22.Exhibit
-      - org.gnome.Fractal
+      - org.gnome.gitlab.cheywood.Buffer
+      - io.github.kelvinnovais.Kasasa
+      - com.belmoussaoui.Decoder
+      - com.belmoussaoui.Authenticator
+      - com.bitwarden.desktop
     classes:
       - curated-section
   - title: "Games"
@@ -70,7 +96,6 @@ sections:
     banner-text-valign: center
     banner-height: 100
     appids:
-      - com.discordapp.Discord
       - com.valvesoftware.Steam
       - io.itch.itch
       - com.heroicgameslauncher.hgl
@@ -85,28 +110,18 @@ sections:
       - org.gnome.Sudoku
     classes:
       - curated-section
-  - title: "Utilities"
+  - title: "System Tools"
     banner-fit: cover
     banner-text-halign: start
     banner-text-valign: center
     banner-height: 100
     appids:
-      - org.gnome.gitlab.cheywood.Buffer
-      - io.github.kelvinnovais.Kasasa
-      - app.drey.Warp
-      - io.github.nozwock.Packet
-      - io.gitlab.theevilskeleton.Upscaler
-      - org.gnome.gitlab.cheywood.Pulp
       - io.gitlab.adhami3310.Impression
-      - com.belmoussaoui.Decoder
-      - com.belmoussaoui.Authenticator
-      - org.gnome.World.Secrets
-      - com.bitwarden.desktop
-      - io.gitlab.adhami3310.Converter
-      - com.jeffser.Pigment
-      - com.github.finefindus.eyedropper
-      - be.alexandervanhee.gradia
+      - io.github.nokse22.inspector
+      - org.gnome.Firmware
+      - app.drey.KeyRack
       - page.codeberg.libre_menu_editor.LibreMenuEditor
+      - io.github.plrigaux.sysd-manager
     classes:
       - curated-section
   - title: "Developers"
@@ -123,15 +138,11 @@ sections:
       - re.sonny.Commit
       - me.iepure.devtoolbox
       - de.leopoldluley.Clapgrep
-      - app.drey.KeyRack
-      - io.github.lo2dev.Echo
       - org.gnome.design.IconLibrary
       - io.github.ronniedroid.concessio
       - dev.geopjr.Calligraphy
       - io.github.nokse22.asciidraw
       - dev.geopjr.Collision
-      - io.github.tobagin.digger
-      - io.github.plrigaux.sysd-manager
     classes:
       - curated-section
   - title: "Knowledge & Education"
