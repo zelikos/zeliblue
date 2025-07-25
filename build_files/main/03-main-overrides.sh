@@ -12,5 +12,13 @@ for file in fish htop nvtop; do
     fi
 done
 
+# Swap to sudo-rs
+if [[ $ZELIBLUE_IMAGE_TAG == "testing" ]]; then
+  dnf5 -y install sudo-rs
+  ln -sf /usr/bin/su-rs /usr/bin/su
+  ln -sf /usr/bin/sudo-rs /usr/bin/sudo
+  ln -sf /usr/bin/visudo-rs /usr/bin/visudo
+fi
+
 # Override files from Universal Blue
 rsync -rvK /ctx/system_files/overrides/ /
