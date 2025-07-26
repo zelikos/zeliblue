@@ -23,8 +23,12 @@ dnf5 -y install \
   /tmp/kernel-rpms/kernel-core-*.rpm \
   /tmp/kernel-rpms/kernel-modules-*.rpm
 
-
 dnf5 versionlock add kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra
+
+# Install akmods
+dnf5 -y copr enable ublue-os/akmods
+
+dnf5 -y install /tmp/akmods/kmods/*framework-laptop*.rpm
 
 if [[ $AKMODS_FLAVOR == "bazzite" ]]; then
   # Fetch Extra AKMODS
@@ -33,11 +37,9 @@ if [[ $AKMODS_FLAVOR == "bazzite" ]]; then
   tar -xvzf /tmp/akmods-extra/"$AKMODS_TARGZ" -C /tmp/
   mv /tmp/rpms/* /tmp/akmods-extra/
 
-  dnf5 -y copr enable ublue-os/akmods
-
   dnf5 -y install \
       /tmp/akmods-extra/kmods/*zenergy*.rpm \
       /tmp/akmods-extra/kmods/*ryzen-smu*.rpm
-
-  dnf5 -y copr remove ublue-os/akmods
 fi
+
+dnf5 -y copr remove ublue-os/akmods
