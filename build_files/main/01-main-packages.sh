@@ -17,6 +17,7 @@ dnf5 -y install \
   glow \
   gum \
   iwd \
+  intel-lpmd \
   micro \
   ublue-brew
 
