@@ -28,14 +28,14 @@ for package in bluez xorg-x11-server-Xwayland; do
 done
 
 # Swap packages from bazzite
-for package in ibus upower wireplumber wireplumber-libs; do
+for package in upower wireplumber wireplumber-libs; do
   dnf5 -y swap \
     --repo=copr:copr.fedorainfracloud.org:bazzite-org:bazzite \
     $package $package
 done
 
 # Lock swapped package versions
-dnf5 versionlock add bluez bluez-cups bluez-libs bluez-obexd xorg-x11-server-Xwayland switcheroo-control mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-va-drivers mesa-vulkan-drivers ibus upower upower-libs
+dnf5 versionlock add bluez bluez-cups bluez-libs bluez-obexd xorg-x11-server-Xwayland switcheroo-control mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libglapi mesa-va-drivers mesa-vulkan-drivers upower upower-libs
 
 dnf5 -y install \
   ds-inhibit \
