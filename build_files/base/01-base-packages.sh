@@ -30,7 +30,6 @@ dnf5 -y install \
 # Batteries included
 dnf5 -y install \
   alsa-firmware \
-  android-udev-rules \
   distrobox \
   fdk-aac \
   ffmpeg \
@@ -54,7 +53,6 @@ dnf5 -y install \
   pam-u2f \
   pam_yubico \
   pamu2fcfg \
-  pipewire-libs-extra \
   solaar-udev \
   traceroute \
   wireguard-tools \
