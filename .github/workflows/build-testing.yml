@@ -27,6 +27,7 @@ jobs:
       image: zeliblue
       stream_name: testing
       kernel: main
+      os_version: "43"
   build_deck_testing:
     name: Zeliblue Deck Testing
     uses: ./.github/workflows/reusable-build-image.yml
@@ -35,3 +36,4 @@ jobs:
       image: zeliblue-deck
       stream_name: testing
       kernel: bazzite
+      os_version: "43"
