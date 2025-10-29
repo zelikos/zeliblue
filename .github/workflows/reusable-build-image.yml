@@ -15,6 +15,10 @@ on:
         description: "Kernel to install"
         required: true
         type: string
+      os_version:
+        description: "Release version of base OS"
+        required: true
+        type: string
 
 env:
   IMAGE_DESC: "An opinionated GNOME desktop experience, based on Fedora Silverblue"
@@ -113,6 +117,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
           oci: false
           build-args: |
+            OS_VERSION=${{ inputs.os_version }}
             AKMODS_FLAVOR=${{ inputs.kernel }}
             ZELIBLUE_IMAGE_TAG=${{ inputs.stream_name }}
           extra-args: --target=${{ env.IMAGE_NAME }}

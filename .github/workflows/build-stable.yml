@@ -22,6 +22,7 @@ jobs:
       image: zeliblue
       stream_name: stable
       kernel: coreos-stable
+      os_version: "42"
   build_deck:
     name: Zeliblue Deck
     uses: ./.github/workflows/reusable-build-image.yml
@@ -30,3 +31,4 @@ jobs:
       image: zeliblue-deck
       stream_name: stable
       kernel: bazzite
+      os_version: "42"
