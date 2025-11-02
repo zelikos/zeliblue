@@ -22,6 +22,7 @@ dnf5 -y install \
   ublue-brew
 
 if [[ $ZELIBLUE_IMAGE_TAG == "testing" ]]; then
+  dnf5 -y remove gnome-software
   dnf5 -y install bazaar
 fi
 
