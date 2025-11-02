@@ -4,7 +4,7 @@
 #-------------- DESKTOP MODIFICATIONS --------------#
 
 [org.gnome.shell]
-favorite-apps = ['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.World.PikaBackup.desktop', 'org.gnome.Software.desktop', 'org.gnome.Settings.desktop']
+favorite-apps = ['org.gnome.Nautilus.desktop', 'org.gnome.Epiphany.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.World.PikaBackup.desktop', 'org.gnome.Software.desktop', 'io.github.kolunmi.Bazaar.desktop', 'org.gnome.Settings.desktop']
 enabled-extensions = ['hotedge@jonathan.jdoda.ca']
 
 [org.gnome.desktop.interface]
