@@ -1,0 +1,8 @@
+app.devsuite.Ptyxis
+com.helix_editor.Helix
+dev.neovide.neovide
+io.github.zyedidia.micro
+io.github.kolunmi.Bazaar
+io.neovim.nvim
+org.gnu.emacs
+org.vim.Vim
