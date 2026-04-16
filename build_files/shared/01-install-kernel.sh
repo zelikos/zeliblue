@@ -41,9 +41,9 @@ mv -f 50-dracut.install.bak 50-dracut.install
 popd
 
 # Install akmods
-dnf5 -y copr enable ublue-os/akmods
+# dnf5 -y copr enable ublue-os/akmods
 
-dnf5 -y install /tmp/akmods/kmods/*framework-laptop*.rpm
+# dnf5 -y install /tmp/akmods/kmods/*framework-laptop*.rpm
 
 if [[ $AKMODS_FLAVOR == "bazzite" ]]; then
   # Fetch Extra AKMODS
@@ -57,4 +57,4 @@ if [[ $AKMODS_FLAVOR == "bazzite" ]]; then
       /tmp/akmods-extra/kmods/*ryzen-smu*.rpm
 fi
 
-dnf5 -y copr remove ublue-os/akmods
+# dnf5 -y copr remove ublue-os/akmods
