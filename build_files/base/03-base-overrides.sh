@@ -21,7 +21,7 @@ OVERRIDES=(
     "mesa-vulkan-drivers"
 )
 
-dnf5 distro-sync -y --repo='fedora-multimedia' "${OVERRIDES[@]}"
+dnf5 distro-sync --skip-unavailable -y --repo='fedora-multimedia' "${OVERRIDES[@]}"
 
 # Replace podman provided policy.json with ublue-os one.
 mv /usr/etc/containers/policy.json /etc/containers/policy.json
