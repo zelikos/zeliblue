@@ -68,7 +68,3 @@ dnf5 -y remove \
   firefox-langpacks \
   gnome-software-rpm-ostree \
   totem-video-thumbnailer
-
-dnf5 -y swap \
-  --repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
-  fwupd fwupd
