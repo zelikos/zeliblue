@@ -1,0 +1,11 @@
+[Flatpak Preinstall net.nokyan.Resources]
+Branch=stable
+
+[Flatpak Preinstall com.github.tchx84.Flatseal]
+Branch=stable
+
+[Flatpak Preinstall org.gnome.World.PikaBackup]
+Branch=stable
+
+[Flatpak Preinstall io.github.flattool.Warehouse]
+Branch=stable

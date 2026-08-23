@@ -42,8 +42,6 @@ You can also rebase an existing Silverblue installation to the latest build:
   systemctl reboot
   ```
 
-Note: upon rebasing, you won't have any of Zeliblue's default apps installed. To remedy this, run `ujust restore-default-apps` in Terminal.
-
 ## Scope
 
 Zeliblue is created with the goal of providing an opiniated experience that emphasizes ease of use for non tech savvy users (i.e. "average" users), while also providing extra options for those with more computer experience. Those extra options are to be provided in a way that doesn't distract the average user, primarily via `just` commands.
