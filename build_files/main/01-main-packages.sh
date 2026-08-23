@@ -12,8 +12,6 @@ echo "===Installing packages==="
 dnf5 -y install \
   fastfetch \
   fish \
-  glow \
-  gum \
   iwd \
   intel-lpmd
 

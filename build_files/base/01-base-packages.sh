@@ -21,7 +21,6 @@ echo "===Installing packages==="
 
 # uBlue packages
 dnf5 -y install \
-  ublue-os-just \
   ublue-os-luks \
   ublue-polkit-rules \
   ublue-os-signing \
