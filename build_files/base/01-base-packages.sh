@@ -67,3 +67,6 @@ dnf5 -y remove \
   firefox-langpacks \
   gnome-software-rpm-ostree \
   totem-video-thumbnailer
+  
+# Swap from tuned to PPD
+dnf -y swap tuned-ppd power-profiles-daemon
