@@ -32,19 +32,10 @@ EOF
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 systemctl disable rpm-ostree-countme.service
-# systemctl disable tailscaled.service
 systemctl disable bootloader-update.service
-systemctl disable brew-upgrade.timer
-systemctl disable brew-update.timer
-systemctl disable brew-setup.service
 systemctl disable rpm-ostreed-automatic.timer
-# systemctl disable uupd.timer
-# systemctl disable ublue-system-setup.service
-# systemctl disable ublue-guest-user.service
 systemctl disable check-sb-key.service
-# systemctl --global disable ublue-flatpak-manager.service
 systemctl --global disable podman-auto-update.timer
-# systemctl --global disable ublue-user-setup.service
 
 # Configure Anaconda
 
@@ -151,16 +142,6 @@ EOF
 tee /usr/share/anaconda/post-scripts/disable-fedora-flatpak.ks <<'EOF'
 %post --erroronfail
 systemctl disable flatpak-add-fedora-repos.service
-%end
-EOF
-
-# Install Flatpaks
-tee /usr/share/anaconda/post-scripts/install-flatpaks.ks <<'EOF'
-%post --erroronfail --nochroot
-deployment="$(ostree rev-parse --repo=/mnt/sysimage/ostree/repo ostree/0/1/0)"
-target="/mnt/sysimage/ostree/deploy/default/deploy/$deployment.0/var/lib/"
-mkdir -p "$target"
-rsync -aAXUHKP /var/lib/flatpak "$target"
 %end
 EOF
 
