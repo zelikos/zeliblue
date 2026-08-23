@@ -5,7 +5,6 @@ ARG BASE_IMAGE="quay.io/fedora-ostree-desktops/silverblue"
 FROM scratch AS ctx
 COPY /build_files /build_files
 COPY /system_files /system_files
-COPY /just /just
 
 # # Base Image
 FROM ${BASE_IMAGE}:${OS_VERSION} as zeliblue-base

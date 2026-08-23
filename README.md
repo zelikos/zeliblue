@@ -8,8 +8,6 @@ Notable changes from vanilla GNOME and Fedora Silverblue include:
 
 - Ptyxis, the default Terminal app, can be launched with Super+t
 - `fish` is set as the default shell in Ptyxis
-- [Homebrew](https://brew.sh/) is enabled out of the box
-- The `fish` shell is configured to integrate with certain [CLI utilities](#zeliblue-cli) for a more modern terminal experience
 - Flathub is set up as the default Flatpak remote during installation
 - Default system apps are selected based on the official [GNOME Core apps](https://apps.gnome.org/), with some substitutions and additions
 - And more miscellaneous tweaks
@@ -43,53 +41,6 @@ You can also rebase an existing Silverblue installation to the latest build:
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/zelikos/zeliblue:stable
   systemctl reboot
   ```
-
-Note: upon rebasing, you won't have any of Zeliblue's default apps installed. To remedy this, run `ujust restore-default-apps` in Terminal.
-
-## `just` commands
-
-Zeliblue features `ujust`, much like Bluefin and Bazzite. Custom commands provided by Zeliblue are documented below; Zeliblue also has access to most of the `just` commands common to other Universal Blue images. Run `ujust --choose` in a terminal to browse through them.
-
-For more about `just`, see [the manual](https://just.systems/man/en/).
-
-### zeliblue-cli
-
-Installs a selection of brew packages as a "starter pack" for using Homebrew, focused on providing a more modern CLI experience:
-
-```
-bat
-btop
-chezmoi
-dysk
-eza
-fd
-git-delta
-ripgrep
-starship
-tealdeer
-trash-cli
-zoxide
-```
-
-The `fish` shell is configured by Zeliblue to utilize these packages if any are installed.
-
-### setup-davincibox
-
-Sets up a [davincibox](https://github.com/zelikos/davincibox) container with toolbox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
-
-### install-davinci
-
-Uses the `setup-davincibox` command, then installs DaVinci Resolve into davincibox, which also adds launchers to the app grid/menu for ease of use. DaVinci Resolve must be downloaded from [their website](https://www.blackmagicdesign.com/products/davinciresolve), and the installer passed to the command as a parameter.
-
-Example: `just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run`
-
-### remove-davinci
-
-Removes DaVinci Resolve app launchers and davincibox container.
-
-### zeliblue-cli-container
-
-Enable or disable an auto-updating `zeliblue` distrobox intended as an alternative CLI experience, based on Fedora Toolbox. The `zeliblue-cli` image is derived from [Universal Blue's fedora-toolbox](https://github.com/ublue-os/toolboxes).
 
 ## Scope
 

@@ -6,7 +6,6 @@ mkdir -p /var/roothome
 
 echo "===Copying files==="
 
-mkdir /tmp/just && cp /ctx/just/zeliblue.just /tmp/just/
 rsync -rvK /ctx/system_files/shared/ /
 rsync -rvK /ctx/system_files/gnome/ /
 

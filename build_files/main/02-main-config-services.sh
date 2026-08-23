@@ -18,8 +18,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas &>/dev/null
 echo "===Configuring systemd services==="
 
 systemctl enable dconf-update.service
-systemctl enable brew-upgrade.timer
-systemctl enable brew-update.timer
 systemctl enable bootc-automatic-updates.timer
 systemctl mask rpm-ostreed-automatic.timer
 systemctl disable flatpak-add-fedora-repos.service
