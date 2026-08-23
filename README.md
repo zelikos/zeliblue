@@ -44,30 +44,6 @@ You can also rebase an existing Silverblue installation to the latest build:
 
 Note: upon rebasing, you won't have any of Zeliblue's default apps installed. To remedy this, run `ujust restore-default-apps` in Terminal.
 
-## `just` commands
-
-Zeliblue features `ujust`, much like Bluefin and Bazzite. Custom commands provided by Zeliblue are documented below; Zeliblue also has access to most of the `just` commands common to other Universal Blue images. Run `ujust --choose` in a terminal to browse through them.
-
-For more about `just`, see [the manual](https://just.systems/man/en/).
-
-### setup-davincibox
-
-Sets up a [davincibox](https://github.com/zelikos/davincibox) container with toolbox. Optionally takes "refresh" as a parameter to rebuild the container with the latest version of davincibox.
-
-### install-davinci
-
-Uses the `setup-davincibox` command, then installs DaVinci Resolve into davincibox, which also adds launchers to the app grid/menu for ease of use. DaVinci Resolve must be downloaded from [their website](https://www.blackmagicdesign.com/products/davinciresolve), and the installer passed to the command as a parameter.
-
-Example: `just install-davinci /full/path/to/DaVinci_Resolve_18.5.1_Linux.run`
-
-### remove-davinci
-
-Removes DaVinci Resolve app launchers and davincibox container.
-
-### zeliblue-cli-container
-
-Enable or disable an auto-updating `zeliblue` distrobox intended as an alternative CLI experience, based on Fedora Toolbox. The `zeliblue-cli` image is derived from [Universal Blue's fedora-toolbox](https://github.com/ublue-os/toolboxes).
-
 ## Scope
 
 Zeliblue is created with the goal of providing an opiniated experience that emphasizes ease of use for non tech savvy users (i.e. "average" users), while also providing extra options for those with more computer experience. Those extra options are to be provided in a way that doesn't distract the average user, primarily via `just` commands.
