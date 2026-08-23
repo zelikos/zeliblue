@@ -8,29 +8,6 @@ restore-default-apps:
     FLATPAK_LIST="$(curl https://raw.githubusercontent.com/zelikos/zeliblue/main/iso_files/system-flatpaks.list | tr '\n' ' ')"
     flatpak --system -y install --or-update ${FLATPAK_LIST}
 
-# Install a small selection of CLI utilties via brew
-zeliblue-cli:
-    #!/usr/bin/bash
-    source /usr/lib/ujust/ujust.sh
-    BREWFILE="/usr/share/zeliblue/homebrew/zeliblue-cli.Brewfile"
-
-    OPTION=""
-    echo "zeliblue-cli installs a handful of packages via brew,"
-    echo "intended to provide a more modern CLI experience."
-    echo "The full list can be found in the Brewfile at"
-    echo "$BREWFILE"
-    echo ""
-    echo "The fish shell is pre-configured by Zeliblue"
-    echo "to integrate these utilities if they are installed."
-    echo ""
-    echo "Proceed with installation?"
-    OPTION=$(ugum choose Yes No)
-    if [ "${OPTION,,}" == "yes" ]; then
-      echo "Installing Zeliblue CLI utilities..."
-      brew bundle --file=$BREWFILE
-      echo "Installation complete. Please restart your terminal."
-    fi
-
 # Setup DaVinciBox container
 setup-davincibox mode="":
     #!/usr/bin/env bash

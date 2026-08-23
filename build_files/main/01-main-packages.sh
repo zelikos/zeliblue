@@ -15,9 +15,7 @@ dnf5 -y install \
   glow \
   gum \
   iwd \
-  intel-lpmd \
-  micro \
-  ublue-brew
+  intel-lpmd
 
 # Swap GNOME Software for Bazaar
 dnf5 -y remove gnome-software

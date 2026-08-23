@@ -8,8 +8,6 @@ Notable changes from vanilla GNOME and Fedora Silverblue include:
 
 - Ptyxis, the default Terminal app, can be launched with Super+t
 - `fish` is set as the default shell in Ptyxis
-- [Homebrew](https://brew.sh/) is enabled out of the box
-- The `fish` shell is configured to integrate with certain [CLI utilities](#zeliblue-cli) for a more modern terminal experience
 - Flathub is set up as the default Flatpak remote during installation
 - Default system apps are selected based on the official [GNOME Core apps](https://apps.gnome.org/), with some substitutions and additions
 - And more miscellaneous tweaks
@@ -51,27 +49,6 @@ Note: upon rebasing, you won't have any of Zeliblue's default apps installed. To
 Zeliblue features `ujust`, much like Bluefin and Bazzite. Custom commands provided by Zeliblue are documented below; Zeliblue also has access to most of the `just` commands common to other Universal Blue images. Run `ujust --choose` in a terminal to browse through them.
 
 For more about `just`, see [the manual](https://just.systems/man/en/).
-
-### zeliblue-cli
-
-Installs a selection of brew packages as a "starter pack" for using Homebrew, focused on providing a more modern CLI experience:
-
-```
-bat
-btop
-chezmoi
-dysk
-eza
-fd
-git-delta
-ripgrep
-starship
-tealdeer
-trash-cli
-zoxide
-```
-
-The `fish` shell is configured by Zeliblue to utilize these packages if any are installed.
 
 ### setup-davincibox
 
