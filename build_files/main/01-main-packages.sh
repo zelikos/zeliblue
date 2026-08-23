@@ -6,14 +6,12 @@ echo "===Enabling extra repositories==="
 
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y copr enable ublue-os/staging
-dnf5 -y copr enable bazzite-org/bazzite
 
 echo "===Installing packages==="
 
 dnf5 -y install \
   fastfetch \
   fish \
-  gnome-shell-extension-hotedge \
   glow \
   gum \
   iwd \
