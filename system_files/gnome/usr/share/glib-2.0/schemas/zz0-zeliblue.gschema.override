@@ -29,6 +29,11 @@ sort-directories-first=true
 [org.gtk.settings.file-chooser]
 sort-directories-first=true
 
+[io.github.kolunmi.Bazaar]
+auto-update=true
+auto-update-notifications=true
+hide-eol=false
+
 #-------------- REMAINING SCHEMAS IN THIS SETTING SECTION ARE LOCATED IN DCONF --------------#
 # Settings bellow are supported with gschema override, but other settings, which are relocatable schemas, are not. Edit dconfs if you need to modify relocatable schemas.
 
